@@ -70,10 +70,8 @@ request to the blockchain node with endpoint `/node_info`, for example:
 
 ```jsonc
 
-//TODO -- RPC ENDPOINT IS OUT OF DATE
-
 // Request
-curl -X GET "https://stargate.cosmos.network/node_info" -H "accept: application/json"
+curl -sS https://rpc.cosmos.network/status | jq .result.node_info
 
 // Response
 {
