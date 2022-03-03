@@ -11,7 +11,9 @@ requires: CAIP-2, CAIP-10
 supercedes: CAIP-7
 --- 
 
-# Introduction
+# EOSIO Namespace
+
+## Introduction
 
 The [EOSIO][] blockchain introduces some interesting variations on the account
 model but for the sake of cross-chain addressing conforms quite well to
