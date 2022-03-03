@@ -106,8 +106,8 @@ curl -X GET "https://stargate.cosmos.network/node_info" -H "accept: application/
 }
 ```
 The response will return a JSON object which will include node information and
-the blockchain reference can be retrieved from `node_info.network` to be
-addressable conformant with this namespace specification.
+the `chain_id` defined above can be retrieved from `node_info.network`; this can
+be used directly as the `reference` section of a CAIP-2 or CAIP-10 .
 
 ## Rationale
 
@@ -136,7 +136,9 @@ earlier ones and to define equality sets, pending standardization in [ICS][].
 
 ## Backwards Compatibility
 
-TODO
+Before the `-version-` suffix convention was widely adopted, the "epoch"
+terminology and the suffix `-epoch-` was used (until late 2020). Otherwise,
+there are no backwards compatibility issues.
 
 ## Test Cases
 
