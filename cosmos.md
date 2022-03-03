@@ -65,8 +65,8 @@ References prefixed by `hashed-` are defined as
 
 ### Resolution Method
 
-To resolve a blockchain reference for the Cosmos namespace, make a REST GET
-request to the blockchain node with endpoint `/node_info`, for example:
+To resolve a blockchain reference for the Cosmos namespace, make a GET
+request to the Tendermint RPC enpoint of the blockchain node with path `/status`, for example:
 
 ```jsonc
 
