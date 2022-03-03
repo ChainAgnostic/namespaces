@@ -178,7 +178,7 @@ cosmos:hashed-843d2fc87f40eeb9
 - [configuration objects][]: Tendermint core requires each chain have a unit genesis block and genesis block timestamp, and derives a chain ID (`chain_id` in their semantics) deterministically from those values; these
 - [ICS]: The InterChain Standards are canonically maintained in this repo, and cover all aspects of interop and addressing between/across Cosmos chains and networks
 - [ICP]: The InterChain Protocol is used to enable bridges and multi-chain compatibility between Tendermint chains
-- [ICB#517]: A placeholder for a more up-to-date specification on `chain_id` validation/constraints 
+- [IBC#517]: A placeholder for a more up-to-date specification on `chain_id` validation/constraints 
 
 [IBC#517]: https://github.com/cosmos/ibc/issues/517
 [ICS]: https://github.com/cosmos/ibc
