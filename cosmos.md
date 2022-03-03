@@ -49,7 +49,7 @@ the first 7 characters are `hashed-`, however, it should be assumed to be a hash
 of a `chain_id`; the original can be retrieved from any node as described below.  
 
 Note: some `chain_id`s include a version in the format `-version-X` where X is
-an integer. For more information, see [ICB#517][].
+an integer. For more information, see [IBC#517][].
 
 ### Hashed References
 
