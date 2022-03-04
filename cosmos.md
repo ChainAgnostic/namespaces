@@ -17,11 +17,15 @@ This document describes the syntax and structure of the [Cosmos][] namespace,
 which formalized a URI scheme for references on the broader Cosmos ecosystem.
 This ecosystem includes many different kinds of blockchains, variously
 interoperable and interconnected, but share the consensus rules and
-[configuration objects][] of the Tendermint consensus engine.  The namespace thus
-defined includes blockchains generated using the [Cosmos
+[configuration objects][] of the Tendermint consensus engine.  The namespace
+thus defined includes blockchains generated using the [Cosmos
 SDK](https://github.com/cosmos/cosmos-sdk) such as Cosmoshub, Binance, and the
 Cosmos Testnets, but also [Weave](https://github.com/iov-one/weave)-based
-blockchains, like IOV.
+blockchains, like IOV.  These blockchains can have drastically different
+properties and capabilities, but have certain interoperability commitments
+imposed by the shared SDK and use the message-based Inter-Blockchain
+Communication Protocoal (IBC) to communicate and move assets between them along
+"[channels][]".
 
 ## CAIP-2
 
@@ -29,27 +33,42 @@ blockchains, like IOV.
 
 ### Reference basics
 
-Cosmos chains consist of the namespace prefix `cosmos` and a reference.
+Cosmos chains consist of the namespace prefix `cosmos:` and a reference.
 
-Each reference is a `chain_id` from the genesis file used to initiate a
-Tendermint blockchain; this file is a JSON object, and thus the `chain_id` is a
-unique, JSON-compatible unicode string. For an example, see the [configuration
-objects][] section of the tendermint core specification.  It can be referenced
-directly or by its hash according to an algorithm defined below.  All nodes of
-any given network also return the string when queried for basic configuration
-information, as described below. 
+Each reference is a `chain_id` derived from a hash of the entire contents of the
+genesis file used to initiate (or re-initiate) a Tendermint blockchain. This
+file consists of a JSON object, and thus the `chain_id` is a unique, JSON-compatible
+unicode string. For an example, see the [configuration objects][] section of the
+Tendermint core specification.  It can be referenced directly or by its hash
+according to an algorithm defined below.  All nodes of any given network also
+return the string when queried for basic configuration information, as described
+below. 
 
 Note: An empty or null `chain_id` must be treated as an error.
 
 ### Direct References
 
-If the `chain_id` matches the case-sensitive pattern `[-a-zA-Z0-9]{1,32}` and
-does not start with "hashed-", it can be assumed to refer to a `chain_id`.  If
-the first 7 characters are `hashed-`, however, it should be assumed to be a hash
-of a `chain_id`; the original can be retrieved from any node as described below.  
+If a CASA reference matches the case-sensitive pattern `[-a-zA-Z0-9]{1,32}` and
+does not start with "hashed-", it can be assumed to refer directly to a
+`chain_id` in its entirety.  If the first 7 characters are `hashed-`,
+however, it should be assumed to be a hash of a `chain_id`; the original can be
+retrieved from any node of that chain as described below.  
 
-Note: some `chain_id`s include a version in the format `-version-X` where X is
-an integer. For more information, see [IBC#517][].
+Note: some `chain_id`s include a version in the format `-X` where X is an
+integer counter increased with each successive interruption or upgrade to the
+network protocol; at such events, chainstate carries over to the "heir" chain,
+but for addressing purposes, this new chain is a distinct chain with a new
+`chain_id`.  Some Tendermint clients abstract out this chain identity issue, but
+this is standardized at the Tendermint protocol level, not the broader Cosmos
+SDK level or its IBC coordination protocol.
+
+For more context on mutable `chain_id`s and so-called "state-dumps" across
+blockheight-resetting protocol upgrades, see [IBC#517][] and [clients][].
+Addresses and state survive across such `chain_id`-modifying events, but since
+transactions targeting an older `chain_id` will not be executed by an upgraded
+network, cross-chain implementers are recommended to proceed with caution and to
+do further research on how to best ensure they are only sending transactions to
+live/current chains.
 
 ### Hashed References
 
@@ -63,10 +82,15 @@ References prefixed by `hashed-` are defined as
 - `first_16_chars`= a function to extract the first 16 characters of the
   resulting string and dropping the rest
 
+As `chain_id`s can be up to 50 characters long, `chain_id`s with a length of
+over 32 characters will need to be referred to by hash to fit the length limits
+of CAIP-2.
+
 ### Resolution Method
 
-To resolve a blockchain reference for the Cosmos namespace, make a GET
-request to the Tendermint RPC enpoint of the blockchain node with path `/status`, for example:
+To resolve a blockchain reference for the Cosmos namespace, make a GET request
+to the Tendermint RPC enpoint of the blockchain node with path `/status`, for
+example:
 
 ```jsonc
 
@@ -75,37 +99,28 @@ curl -sS https://rpc.cosmos.network/status | jq .result.node_info
 
 // Response
 {
-  "application_version": {
-    "build_tags": "string",
-    "client_name": "string",
-    "commit": "string",
-    "go": "string",
-    "name": "string",
-    "server_name": "string",
-    "version": "string"
+  "protocol_version": {
+    "p2p": "8",
+    "block": "11",
+    "app": "0"
   },
-  "node_info": {
-    "id": "string",
-    "moniker": "validator-name",
-    "protocol_version": {
-      "p2p": 7,
-      "block": 10,
-      "app": 0
-    },
-    "network": "gaia-2",
-    "channels": "string",
-    "listen_addr": "192.168.56.1:26656",
-    "version": "0.15.0",
-    "other": {
-      "tx_index": "on",
-      "rpc_address": "tcp://0.0.0.0:26657"
-    }
+  "id": "d8a79ceb43ac6215452f00ffabfa7d2a9f533d56",
+  "listen_addr": "tcp://0.0.0.0:26020",
+  "network": "cosmoshub-4",
+  "version": "v0.34.14",
+  "channels": "40202122233038606100",
+  "moniker": "nodeasy",
+  "other": {
+    "tx_index": "on",
+    "rpc_address": "tcp://0.0.0.0:26021"
   }
 }
 ```
 The response will return a JSON object which will include node information and
-the `chain_id` defined above can be retrieved from `node_info.network`; this can
-be used directly as the `reference` section of a CAIP-2 or CAIP-10 .
+the `chain_id` defined above can be retrieved from the `network` property of the
+response object; this can be used directly as the `reference` section of a
+CAIP-2 or CAIP-10 if it matches the regular expression listed above, or hashed
+if not.
 
 ## Rationale
 
@@ -119,28 +134,31 @@ specification. No real world example of this case is known to the author yet.
 
 One unique trait of the Cosmos ecosystem is that if chainstate is broken, chains
 can be "rebooted" at a later time; when this happens, a new genesis block is
-generated from a new configuration object and new `chain_id`. This requires a
-versioning syntax for `chain_id`s using the `-version-X` suffix (where X is a
-sequential integer counter). The Cosmos hub itself is also versioned (in
-so-called "epochs"), but without the `-version` suffix, leading to `chain_id`s
-like `cosmoshub-1`, `cosmoshub-2`, `cosmoshub-3`, etc.
+generated from a new configuration object and the "snapshot" of state at the
+last block. To allow ordering of blocks after block height is thus reset to 0, a
+versioning syntax for `chain_id`s is use. The `chain_id`s of blockchains that
+support this versioning pattern take the suffix `-X` (where X is a sequential
+integer counter). The Cosmos hub (a coordination chain) is also versioned this
+way, leading to `chain_id`s like `cosmoshub-1`, `cosmoshub-2`, and `cosmoshub-4`
+(the current one at time of writing).
 
 For the purposes of this specification and of interoperability on the CASA
 model, we treat each rebooted chain as a distinct blockchain reference;
 translation between them or dereferencing from an older version to a newer
 version is out of scope of this specification. It is the responsibility of a
-higher-level application to interpret some chains as "sequels" or heirs of
-earlier ones and to define equality sets, pending standardization in [ICS][].
+clients and higher-level applications to interpret some chains as "sequels" or
+heirs of earlier ones and to define equality sets.
 
 ## Backwards Compatibility
 
-Before the `-version-` suffix convention was widely adopted, the "epoch"
-terminology and the suffix `-epoch-` was used (until late 2020). Otherwise,
-there are no backwards compatibility issues.
+Early (pre-Q32020) `chain_id`s included a prefix `-epoch-` before the number in
+automatically-iterating chains, and client methods from the period referred to
+"versions" as "epochs"; for more information, see
+[cosmos/cosmos-sdk#7483](https://github.com/cosmos/cosmos-sdk/pull/7483).
 
 ## Test Cases
 
-This is a list of manually composed examples
+This is a list of manually composed examples:
 
 ```
 # Cosmos Hubs (Tendermint + Cosmos SDK)
@@ -165,26 +183,45 @@ cosmos:hashed-99df5cd68192b33e
 # chain_id "123456789012345678901234567890123456789012345678" (too long for direct reference)
 cosmos:hashed-0204c92a0388779d
 
-# chain_ids " ", "wonderland🧝‍♂️" (invalid character for the direct definition)
+# chain_ids " ", "wonderland🧝‍♂️" (invalid characters for the direct definition)
 cosmos:hashed-36a9e7f1c95b82ff
 cosmos:hashed-843d2fc87f40eeb9
 ```
 
+## CAIP-19
+
+TODO
+- Asset types:
+    - [CW20][] - how different from ERC20 for addressing/crosschain purposes?
+    - [channels][] - token-balance across two different chains
 
 ## References
 
 - [ChainID tips][]: A useful thread on chainIDs on the Cosmos SDK github repo
-- [IOV Core TS]: A reference implementation of the CAIP-2 section of this specification in the IOV Core SDK
-- [configuration objects][]: Tendermint core requires each chain have a unit genesis block and genesis block timestamp, and derives a chain ID (`chain_id` in their semantics) deterministically from those values; these
-- [ICS]: The InterChain Standards are canonically maintained in this repo, and cover all aspects of interop and addressing between/across Cosmos chains and networks
-- [ICP]: The InterChain Protocol is used to enable bridges and multi-chain compatibility between Tendermint chains
-- [IBC#517]: A placeholder for a more up-to-date specification on `chain_id` validation/constraints 
+- [IOV Core TS][]: A reference implementation of the CAIP-2 section of this specification in the IOV Core SDK
+- [configuration objects][]: Tendermint core requires each chain have a unit
+      genesis block and genesis block timestamp, and derives a chain ID
+      (`chain_id` in their semantics) deterministically from those values; these
+- [IBC]: The Inter Blockchain Communication Protocol is used to enable bridges and multi-chain compatibility between Tendermint chains
+- [channels][]: The Inter-Blockchain Communication protocol establishes
+      persistent "channels" between the clients of independent Cosmos-based
+      blockchains; these can maintain state for assets across two chains like a
+      bridged asset or smart contract.
+- [ICS]: The InterChain Standards are canonically maintained in this repo, and
+      cover all aspects of interop and addressing between/across Cosmos chains
+      and networks; these are equivalent to BIPs, EIPs, and CAIPs.
+- [IBC#517]: A GitHub thread containing a concise explanation of `chain_id` validation/constraints across Cosmos contexts 
 
+[addresses][]: https://docs.cosmos.network/v0.42/basics/accounts.html
 [IBC#517]: https://github.com/cosmos/ibc/issues/517
+[IBC]: https://github.com/cosmos/ibc-go/blob/main/docs/ibc/overview.md
 [ICS]: https://github.com/cosmos/ibc
-[configuration objects]: https://docs.tendermint.com/v0.35/tendermint-core/using-tendermint.html#fields
 [ChainID tips]: https://github.com/cosmos/cosmos-sdk/issues/5363
+[channels]: https://github.com/cosmos/ibc-go/blob/main/docs/ibc/overview.md#channels
+[clients]: https://github.com/cosmos/ibc-go/blob/main/docs/ibc/overview.md#clients
+[configuration objects]: https://docs.tendermint.com/v0.35/tendermint-core/using-tendermint.html#fields
 [IOV Core TS]: https://github.com/iov-one/iov-core/blob/1cd39e708b/packages/iov-cosmos/src/caip5.ts
+[BIP_0173]: https://en.bitcoin.it/wiki/BIP_0173
 [CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
 [CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md
 [CAIP-19]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-19.md
