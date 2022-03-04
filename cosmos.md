@@ -203,6 +203,10 @@ transformations of 32-byte secp256k1 public keys, prefixed by `cosmos` for an
 account address and `cosmosvaloper` for a validator address. For further
 information, see the [accounts][] section of the Cosmos documentation.
 
+These addresses can be validated with the following regular expressions, as the
+hexadecimals are normalized to lowercase: `cosmos[0-9a-f]{32}` for wallet
+addresses, `cosmosvaloper[0-9a-f]{32}` for validators.
+
 ### Test Cases
 
 TODO
