@@ -187,6 +187,25 @@ cosmos:hashed-0204c92a0388779d
 cosmos:hashed-36a9e7f1c95b82ff
 cosmos:hashed-843d2fc87f40eeb9
 ```
+## CAIP-10
+
+### Context
+
+Cosmos manages accounts on the "account" model rather than the UXTO model, but
+uses the format for "segwit" addresses proposed in the Bitcoin codebase by
+[BIP_0173][]. 
+
+### Syntax
+
+Valid CAIP-10 `account_id`s in this namespace are 20-byte "bech32"
+(i.e. checksummed base32 expressions, as defined in [BIP_0173][])
+transformations of 32-byte secp256k1 public keys, prefixed by `cosmos` for an
+account address and `cosmosvaloper` for a validator address. For further
+information, see the [accounts][] section of the Cosmos documentation.
+
+### Test Cases
+
+TODO
 
 ## CAIP-19
 
