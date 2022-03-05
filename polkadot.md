@@ -61,7 +61,12 @@ to be CAIP-2/CAIP-10 compatible.
 ### Rationale
 
 The rationale behind the use of block hash from the genesis block stems from its
-usage in the Polkadot architecture in network and consensus.  Collision risk was not considered significant .
+usage in the Polkadot architecture in network and consensus.
+
+### Syntax
+
+As CAIP-2 references for this namespace are 32-byte SHA256 hashes in lowercase
+hex, they can be validated with the simple regular expression: `[0-9a-f]{32}`
 
 ### Backwards Compatibility
 
@@ -104,6 +109,14 @@ type or validation of addresses using the included checksum are out of scope,
 although both are specified in [SS58][].
 
 ### Syntax
+
+As the default/standard expression of an address in Polkadot is a 47-character
+base58 string, the following regular expression can be used for validating
+addresses:
+
+```
+[1-9A-HJ-NP-Za-km-z]{47}
+```
 
 ### Test Cases
 
