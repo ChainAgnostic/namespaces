@@ -1,37 +1,21 @@
 ---
-namespace-identifier: cosmos
-title: Cosmos Namespace
+namespace-identifier: cosmos-caip2
+title: Cosmos Namespace - Chains
 author: Simon Warta (@webmaster128)
 discussions-to: https://github.com/ChainAgnostic/CAIPs/issues/5, https://github.com/ChainAgnostic/CAIPs/issues/6, https://github.com/ChainAgnostic/CAIPs/pull/1
 status: Draft
 type: Standard
 created: 2022-03-01
 updated: 2022-03-01
-requires: CAIP-2, CAIP-10
-supercedes: CAIP-5
+requires: CAIP-2
+supersedes: CAIP-5
 ---
 
-# Namespace for Cosmos chains
-
-This document describes the syntax and structure of the [Cosmos][] namespace,
-which formalized a URI scheme for references on the broader Cosmos ecosystem.
-This ecosystem includes many different kinds of blockchains, variously
-interoperable and interconnected, but share the consensus rules and
-[configuration objects][] of the Tendermint consensus engine.  The namespace
-thus defined includes blockchains generated using the [Cosmos
-SDK](https://github.com/cosmos/cosmos-sdk) such as Cosmoshub, Binance, and the
-Cosmos Testnets, but also [Weave](https://github.com/iov-one/weave)-based
-blockchains, like IOV.  These blockchains can have drastically different
-properties and capabilities, but have certain interoperability commitments
-imposed by the shared SDK and use the message-based Inter-Blockchain
-Communication Protocoal (IBC) to communicate and move assets between them along
-"[channels][]".
-
-## CAIP-2
+# CAIP-2
 
 *For context, see the [CAIP-2][] specification.*
 
-### Reference basics
+## Rationale
 
 Cosmos chains consist of the namespace prefix `cosmos:` and a reference.
 
@@ -45,6 +29,8 @@ return the string when queried for basic configuration information, as described
 below. 
 
 Note: An empty or null `chain_id` must be treated as an error.
+
+## Syntax 
 
 ### Direct References
 
@@ -86,6 +72,33 @@ As `chain_id`s can be up to 50 characters long, `chain_id`s with a length of
 over 32 characters will need to be referred to by hash to fit the length limits
 of CAIP-2.
 
+### Rationale
+
+While there is no enforced restriction on `chain_id`, the authors of this
+document did not find a chain ID in the wild that does not conform to the
+restrictions of the direct reference definition above.
+
+Cosmos blockchains with a chain ID not matching `[-a-zA-Z0-9]{1,32}` or prefixed
+with "hashed-" would need to be hashed in order to conform to this namespace
+specification. No real world example of this case is known to the author yet.
+
+One unique trait of the Cosmos ecosystem is that if chainstate is broken, chains
+can be "rebooted" at a later time; when this happens, a new genesis block is
+generated from a new configuration object and the "snapshot" of state at the
+last block. To allow ordering of blocks after block height is thus reset to 0, a
+versioning syntax for `chain_id`s is use. The `chain_id`s of blockchains that
+support this versioning pattern take the suffix `-X` (where X is a sequential
+integer counter). The Cosmos hub (a coordination chain) is also versioned this
+way, leading to `chain_id`s like `cosmoshub-1`, `cosmoshub-2`, and `cosmoshub-4`
+(the current one at time of writing).
+
+For the purposes of this specification and of interoperability on the CASA
+model, we treat each rebooted chain as a distinct blockchain reference;
+translation between them or dereferencing from an older version to a newer
+version is out of scope of this specification. It is the responsibility of a
+clients and higher-level applications to interpret some chains as "sequels" or
+heirs of earlier ones and to define equality sets.
+
 ### Resolution Method
 
 To resolve a blockchain reference for the Cosmos namespace, make a GET request
@@ -122,34 +135,7 @@ response object; this can be used directly as the `reference` section of a
 CAIP-2 or CAIP-10 if it matches the regular expression listed above, or hashed
 if not.
 
-## Rationale
-
-While there is no enforced restriction on `chain_id`, the authors of this
-document did not find a chain ID in the wild that does not conform to the
-restrictions of the direct reference definition above.
-
-Cosmos blockchains with a chain ID not matching `[-a-zA-Z0-9]{1,32}` or prefixed
-with "hashed-" would need to be hashed in order to conform to this namespace
-specification. No real world example of this case is known to the author yet.
-
-One unique trait of the Cosmos ecosystem is that if chainstate is broken, chains
-can be "rebooted" at a later time; when this happens, a new genesis block is
-generated from a new configuration object and the "snapshot" of state at the
-last block. To allow ordering of blocks after block height is thus reset to 0, a
-versioning syntax for `chain_id`s is use. The `chain_id`s of blockchains that
-support this versioning pattern take the suffix `-X` (where X is a sequential
-integer counter). The Cosmos hub (a coordination chain) is also versioned this
-way, leading to `chain_id`s like `cosmoshub-1`, `cosmoshub-2`, and `cosmoshub-4`
-(the current one at time of writing).
-
-For the purposes of this specification and of interoperability on the CASA
-model, we treat each rebooted chain as a distinct blockchain reference;
-translation between them or dereferencing from an older version to a newer
-version is out of scope of this specification. It is the responsibility of a
-clients and higher-level applications to interpret some chains as "sequels" or
-heirs of earlier ones and to define equality sets.
-
-## Backwards Compatibility
+### Backwards Compatibility
 
 Early (pre-Q32020) `chain_id`s included a prefix `-epoch-` before the number in
 automatically-iterating chains, and client methods from the period referred to
@@ -187,36 +173,6 @@ cosmos:hashed-0204c92a0388779d
 cosmos:hashed-36a9e7f1c95b82ff
 cosmos:hashed-843d2fc87f40eeb9
 ```
-## CAIP-10
-
-### Context
-
-Cosmos manages accounts on the "account" model rather than the UXTO model, but
-uses the format for "segwit" addresses proposed in the Bitcoin codebase by
-[BIP_0173][]. 
-
-### Syntax
-
-Valid CAIP-10 `account_id`s in this namespace are 20-byte "bech32"
-(i.e. checksummed base32 expressions, as defined in [BIP_0173][])
-transformations of 32-byte secp256k1 public keys, prefixed by `cosmos` for an
-account address and `cosmosvaloper` for a validator address. For further
-information, see the [accounts][] section of the Cosmos documentation.
-
-These addresses can be validated with the following regular expressions, as the
-hexadecimals are normalized to lowercase: `cosmos[0-9a-f]{32}` for wallet
-addresses, `cosmosvaloper[0-9a-f]{32}` for validators.
-
-### Test Cases
-
-TODO
-
-## CAIP-19
-
-TODO
-- Asset types:
-    - [CW20][] - how different from ERC20 for addressing/crosschain purposes?
-    - [channels][] - token-balance across two different chains
 
 ## References
 
