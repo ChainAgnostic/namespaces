@@ -1,14 +1,6 @@
 ---
 namespace-identifier: eip155
 title: EIP155 Namespace, aka EVM Chains
-author: Simon Warta (@webmaster128), ligi <ligi@ligi.de>, Pedro Gomes (@pedrouid), Antoine Herzog (@antoineherzog), Pedro Gomes (@pedrouid), Joel Thorstensson (@oed)
-discussions-to: https://github.com/ChainAgnostic/namespaces/pulls/2
-status: Draft
-type: Standard
-created: 2022-01-19
-updated: 2022-01-19
-requires: CAIP-2, CAIP-10, CAIP-19
-supersedes: CAIP-3, CAIP-21, CAIP-22
 ---
 
 # Namespace for EIP155 chains
