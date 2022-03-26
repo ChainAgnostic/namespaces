@@ -11,7 +11,7 @@ requires: CAIP-2, CAIP-10
 supersedes: CAIP-3
 ---
 
-# Context
+# CAIP-10
 
 *For context, see the [CAIP-10][] specification.*
 
@@ -29,6 +29,16 @@ ratification of [EIP55][], however, a particular normalization of lowercase- and
 uppercase- `abcdefABCDEF` characters was invented as an efficient form of
 checksum. See [EIP55][] for specification.
 
+### Backwards Compatibility
+
+An earlier version of the CAIP-10 schema was defined by appending as suffix the
+CAIP-2 chainId delimited by the at sign (@), i.e.
+`0x22227A31dd842196A246d8f3b775998560eAa61d@eip155:1` in the above example. This
+was changed [Aug 11,
+2021](https://github.com/ChainAgnostic/CAIPs/commit/0697e26601d30d8e99df17954ed3
+e5a1fd59e049) and some systems built against the earlier drafts may present
+accounts in this manner.
+
 ## Test Cases
 
 ```
@@ -45,16 +55,6 @@ eip155:137:0x0495766cD136138Fc492Dd499B8DC87A92D6685b
 eip155:137:0x0495766CD136138FC492DD499B8DC87A92D6685B
 
 ```
-
-## Backwards Compatibility
-
-An earlier version of the CAIP-10 schema was defined by appending as suffix the
-CAIP-2 chainId delimited by the at sign (@), i.e.
-`0x22227A31dd842196A246d8f3b775998560eAa61d@eip155:1` in the above example. This
-was changed [Aug 11,
-2021](https://github.com/ChainAgnostic/CAIPs/commit/0697e26601d30d8e99df17954ed3
-e5a1fd59e049) and some systems built against the earlier drafts may present
-accounts in this manner.
 
 ## References
 

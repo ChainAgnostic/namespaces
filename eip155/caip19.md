@@ -11,7 +11,7 @@ requires: CAIP-2, CAIP-10, CAIP-19
 supersedes: CAIP-21, CAIP-22
 ---
 
-# Context
+# CAIP-19
 
 *For context, see the [CAIP-19][] specification.*
 

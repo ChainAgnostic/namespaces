@@ -11,23 +11,26 @@ requires: CAIP-2
 supersedes: CAIP-3
 ---
 
-# Context
+# CAIP-2
 
 *For context, see the [CAIP-2][] specification.*
 
-## Context
+## Rationale
 
 The chain ID defined in EIP155 is the most widely used chain identifier in the
 Ethereum ecosystem known to the authors. It optimizes for uniqueness and its
 usage for replay protection has helped it achieve wide adoption. Unique network
 IDs can be self-registered in the [ethereum-lists/chains][] registry.
 
+## Syntax
+
 For reference, The format of reference currently specified in EIP155 is an
 unsigned integer in decimal representation. Due to length restrictions of the
 reference field (32 characters), the largest supported `CHAIN_ID` at time of
 writing is `99999999999999999999999999999999`.
 
-## Resolution Method
+
+### Resolution Method
 
 To resolve a blockchain reference for the EIP155 namespace, make a JSON-RPC
 request to a blockchain node with method `eth_chainId`, for example:
