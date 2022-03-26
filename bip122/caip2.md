@@ -11,7 +11,7 @@ requires: CAIP-2
 supersedes: CAIP-4
 ---
 
-# Context
+# CAIP-2
 
 *For context, see the [CAIP-2][] specification.*
 
@@ -20,11 +20,13 @@ supersedes: CAIP-4
 The chain ID identifiers for BIP122 are specified in [BIP122's chain ID
 definition](https://github.com/bitcoin/bips/blob/master/bip-0122.mediawiki#definition-of-chain-id).
 
+## Syntax
+
 The syntax for BIP122 chain ID can be summarized as a 32-character prefix from
 the hash of the genesis block of a given chain, in lowercase hex
 representation.
 
-## Resolution Method
+### Resolution Method
 
 To query for a Chain ID to represent or checksum a BIP122 reference, make a
 JSON-RPC request to the blockchain node with method `getblockhash`, for example:

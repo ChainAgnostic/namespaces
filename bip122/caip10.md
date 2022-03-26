@@ -11,7 +11,7 @@ requires: CAIP-2, CAIP-10
 supersedes: CAIP-4
 ---
 
-# Context
+# CAIP-10
 
 *For context, see the [CAIP-10][] specification.*
 
@@ -26,7 +26,16 @@ CAIP-10 reference.
 
 See [Specification section of BIP13](https://github.com/bitcoin/bips/blob/master/bip-0013.mediawiki#Specification).
 
-### Test Cases
+### Backwards Compatibility
+
+Previously, the legacy CAIP-10 schema was defined by appending as suffix the
+CAIP-2 chainId delimited by the at sign (@)
+
+#### Legacy example
+
+`128Lkh3S7CkDTBZ8W7BbpsN3YYizJMp8p6@bip122:000000000019d6689c085ae165831e93`
+
+## Test Cases
 
 ```
 # Bitcoin mainnet
@@ -35,14 +44,6 @@ bip122:000000000019d6689c085ae165831e93:128Lkh3S7CkDTBZ8W7BbpsN3YYizJMp8p6
 # Litecoin
 bip122:12a765e31ffd4059bada1e25190f6e98:128Lkh3S7CkDTBZ8W7BbpsN3YYizJMp8p6
 ```
-
-### Backwards Compatibility
-
-Previously, the legacy CAIP-10 schema was defined by appending as suffix the
-CAIP-2 chainId delimited by the at sign (@)
-
-#### Legacy example
-`128Lkh3S7CkDTBZ8W7BbpsN3YYizJMp8p6@bip122:000000000019d6689c085ae165831e93`
 
 ## References
 
