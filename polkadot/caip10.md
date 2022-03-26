@@ -11,7 +11,7 @@ requires: ["CAIP-2", "CAIP-10"]
 supersedes: CAIP-13
 ---
 
-# Context
+# CAIP-10
 
 *For context, see the [CAIP-10][] specification.*
 
@@ -27,10 +27,16 @@ The specification defining these across the entire Polkadot namespace is
 
 While the above describes a given keypair as generating many addresses per
 network, a 47-character multiaddress is the default expression, unique per
-chain.  This was used to express addresses in CAIP-10, with other expressions
-out of scope of this specification. Similarly, recovery of chain ID from account
-type or validation of addresses using the included checksum are out of scope,
-although both are specified in [SS58][].
+chain.  Note that a single private key will thus produce different
+multiaddresses on each chain where it is used, so de-duplicating accounts in a
+multi-Polkadot context requires implementing full support for advanced SS58
+functions.
+
+As the default multi-address was used to express individual addresses in
+CAIP-10, other possible expressions are out of scope of this specification.
+Similarly, recovery of chain ID from account type or validation of addresses
+using the included checksum are out of scope, although both are specified in
+[SS58][].
 
 ## Syntax
 
@@ -42,7 +48,7 @@ addresses:
 [1-9A-HJ-NP-Za-km-z]{47}
 ```
 
-### Test Cases
+## Test Cases
 
 This is a list of examples composed using the [polkadot.subscan tool][]:
 

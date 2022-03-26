@@ -11,20 +11,28 @@ requires: CAIP-2
 supersedes: CAIP-13
 ---
 
-# Context
+# CAIP-2
 
 *For context, see the [CAIP-2][] specification.*
+
+## Rationale
 
 The namespace is called "polkadot" to refer to Polkadot-like "parachains,"
 parallel and independent Layer 1s coordinated by the Polkadot relay chains.
 
-## Reference Definition
+The rationale behind the use of block hash from the genesis block stems from its
+usage in the Polkadot architecture in network and consensus.
+
+## Syntax
 
 The definition for this namespace will use the `genesis-hash` as an indentifier
 for different Polkadot chains. The format is a 32 character prefix of the block
 hash (lower case SHA256 hex).
 
-## Resolution Method
+As CAIP-2 references for this namespace are 32-byte SHA256 hashes in lowercase
+hex, they can be validated with the simple regular expression: `[0-9a-f]{32}`
+
+### Resolution Method
 
 To resolve a blockchain reference for the Polkadot namespace, make a JSON-RPC
 request to the blockchain node with method `chain_getBlockHash`, for example:
@@ -49,21 +57,11 @@ The response will return as a value for the result a hash for the block with
 height 0 that should be sliced to its first 16 bytes (32 characters for base 16)
 to be CAIP-2/CAIP-10 compatible.
 
-## Rationale
-
-The rationale behind the use of block hash from the genesis block stems from its
-usage in the Polkadot architecture in network and consensus.
-
-## Syntax
-
-As CAIP-2 references for this namespace are 32-byte SHA256 hashes in lowercase
-hex, they can be validated with the simple regular expression: `[0-9a-f]{32}`
-
 ### Backwards Compatibility
 
 Not applicable
 
-### Test Cases
+## Test Cases
 
 This is a list of manually composed examples
 
