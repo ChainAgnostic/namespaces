@@ -1,6 +1,6 @@
 ---
-namespace-identifier: bip122
-title: BIP122 Namespace
+namespace-identifier: bip122-caip10
+title: BIP122 Namespace - Addresses
 author: Simon Warta (@webmaster128), ligi <ligi@ligi.de>, Pedro Gomes (@pedrouid)
 discussions-to: https://github.com/ChainAgnostic/namespaces/pulls/3
 status: Draft
