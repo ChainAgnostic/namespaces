@@ -7,31 +7,15 @@ status: Draft
 type: Standard
 created: 2022-02-09
 updated: 2022-02-09
-requires: CAIP-2, CAIP-10
-supercedes: CAIP-4
+requires: CAIP-2
+supersedes: CAIP-4
 ---
 
-# Namespace for BIP122 chains
-
-This document describes the syntax and structure of the [BIP122][] namespace,
-which formalized a URI scheme for references on Bitcoin-based networks that
-conform to the convention, abstracting out specifics of block explorer
-interfaces. 
-
-## Context
-
-[BIP122][] is a draft specification from the Bitcoin improvement process from
-2015 which has achieved wide adoption. It defines a `blockchain://` URI scheme,
-although it has not, to date, been registered with IANA. Note: an IANA
-registration has been
-[proposed](https://www.iana.org/assignments/uri-schemes/prov/bitcoin) for
-`bitcoin://` URIs, based on the older, and less chain-agnostic [BIP21][].
-
-## CAIP-2
+# Context
 
 *For context, see the [CAIP-2][] specification.*
 
-### Rationale
+## Rationale
 
 The chain ID identifiers for BIP122 are specified in [BIP122's chain ID
 definition](https://github.com/bitcoin/bips/blob/master/bip-0122.mediawiki#definition-of-chain-id).
@@ -40,7 +24,7 @@ The syntax for BIP122 chain ID can be summarized as a 32-character prefix from
 the hash of the genesis block of a given chain, in lowercase hex
 representation.
 
-### Resolution Method
+## Resolution Method
 
 To query for a Chain ID to represent or checksum a BIP122 reference, make a
 JSON-RPC request to the blockchain node with method `getblockhash`, for example:
@@ -66,7 +50,7 @@ The response will return as a result value the hash for the block with height 0
 that should be sliced to its first 16 bytes (32 characters for base 16) to be
 compatible with the reference syntax defined above.
 
-### Test Cases
+## Test Cases
 
 This is a list of manually composed examples:
 
@@ -80,39 +64,6 @@ bip122:12a765e31ffd4059bada1e25190f6e98
 # Feathercoin (Litecoin fork)
 bip122:fdbe99b90c90bae7505796461471d89a
 ```
-
-## CAIP-10
-
-*For context, see the [CAIP-10][] specification.*
-
-### Rationale
-
-While Ethereum "accounts" were the unstated norm in the definition of
-[CAIP-10][], the "script hashes" addressing schemed defined by [BIP13][] map
-well enough to "account"-model blockchains that these can be described by a
-CAIP-10 reference.   
-
-### Syntax
-
-See [Specification section of BIP13](https://github.com/bitcoin/bips/blob/master/bip-0013.mediawiki#Specification).
-
-### Test Cases
-
-```
-# Bitcoin mainnet
-bip122:000000000019d6689c085ae165831e93:128Lkh3S7CkDTBZ8W7BbpsN3YYizJMp8p6
-
-# Litecoin
-bip122:12a765e31ffd4059bada1e25190f6e98:128Lkh3S7CkDTBZ8W7BbpsN3YYizJMp8p6
-```
-
-### Backwards Compatibility
-
-Previously, the legacy CAIP-10 schema was defined by appending as suffix the
-CAIP-2 chainId delimited by the at sign (@)
-
-#### Legacy example
-`128Lkh3S7CkDTBZ8W7BbpsN3YYizJMp8p6@bip122:000000000019d6689c085ae165831e93`
 
 ## References
 
