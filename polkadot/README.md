@@ -1,13 +1,6 @@
 ---
 namespace-identifier: polkadot
 title: Polkadot Namespace
-author: ["Pedro Gomes (@pedrouid)", "Joshua Mir (@joshua-mir)", "Shawn Tabrizi (@shawntabrizi)", "Juan Caballero (@bumblefudge)"]
-discussions-to: https://github.com/ChainAgnostic/CAIPs/issues/13
-status: Draft
-type: Standard
-created: 2020-04-01
-updated: 2020-04-02
-supersedes: CAIP-13
 ---
 
 # Polkadot Namespace
