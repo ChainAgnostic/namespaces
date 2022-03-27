@@ -6,7 +6,7 @@ discussions-to: ["https://github.com/ChainAgnostic/CAIPs/pull/36", "https://gitl
 status: Draft
 type: Standard
 created: 2020-12-12
-updated: 2020-12-12
+updated: 2022-03-27
 requires: CAIP-2
 supersedes: CAIP-26
 ---

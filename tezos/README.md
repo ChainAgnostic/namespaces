@@ -1,6 +1,12 @@
 ---
 namespace-identifier: tezos
 title: Blockchain Reference for the Tezos Namespace
+author: Stanly Johnson (@stanly-johnson)
+status: Draft
+type: Informational
+created: 2020-12-12
+updated: 2022-03-27
+replaces: CAIP-26
 ---
 
 # Namespace for Tezos Blockchains
