@@ -80,6 +80,7 @@ solana:8E9rvCKLFQia2Y35HXjjpWzj8weVo44K
 
 ## References
 
+[CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
 [Address Lookup Table Proposal]: https://docs.solana.com/proposals/transactions-v2
 [Account Types]: https://docs.solana.com/terminology#account
 [Address Expressions]: https://docs.solana.com/cli/transfer-tokens#receive-tokens
