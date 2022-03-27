@@ -5,10 +5,10 @@ author: Sebastian Montero (@sebastianmontero)
 discussions-to: https://github.com/ChainAgnostic/CAIPs/issues/32
 status: Draft
 type: Standard
-created: 2022-03-02
-updated: 2022-03-02
+created: 2020-11-30
+updated: 2022-03-27
 requires: ["CAIP-2", "CAIP-10"]
-supersedes: CAIP-7
+replaces: CAIP-7
 --- 
 
 # CAIP-10

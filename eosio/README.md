@@ -1,6 +1,11 @@
 ---
 namespace-identifier: eosio
 title: EOSIO Namespace
+status: Draft
+type: Informational
+created: 2020-11-30
+updated: 2022-03-27
+replaces: CAIP-7
 --- 
 
 # EOSIO Namespace
