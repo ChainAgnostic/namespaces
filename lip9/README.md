@@ -14,7 +14,7 @@ The namespace `lip9` refers to Lisk namespace as defined above.
 
 ## Governance
 
-The Lisk namespace is governed by the Lisk Improvement Proposal [LIP][] system.
+The Lisk namespace is governed by the Lisk Improvement Proposal [LIP] system.
 
 ## References
 
