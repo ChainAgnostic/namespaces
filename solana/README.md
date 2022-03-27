@@ -1,6 +1,13 @@
 ---
 namespace-identifier: solana
 title: Solana Namespace
+author: Antoine Herzog (@antoineherzog), Josh Hundley (@oJshua)
+discussions-to: https://github.com/ChainAgnostic/CAIPs/pull/60
+status: Draft
+type: Informational
+created: 2021-08-03
+updated: 2023-03-27
+replaces: CAIP-28
 ---
 
 # Namespace for Solana chains
