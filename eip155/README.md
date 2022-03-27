@@ -1,6 +1,12 @@
 ---
 namespace-identifier: eip155
 title: EIP155 Namespace, aka EVM Chains
+author: Simon Warta (@webmaster128), ligi <ligi@ligi.de>, Pedro Gomes (@pedrouid), Antoine Herzog (@antoineherzog), Pedro Gomes (@pedrouid), Joel Thorstensson (@oed)
+status: Draft
+type: Informational
+created: 2019-12-05
+updated: 2022-03-27
+replaces: ["CAIP-3", "CAIP-21", "CAIP-22"]
 ---
 
 # Namespace for EIP155 chains
