@@ -19,7 +19,7 @@ heirarchically organized into "Shards", "Realms", and Assets/Addresses.
 
 The prefix `hedera` designates the CAIP-conformant schemata of the Hedera namespace.
 
-## Hedera Improvement Process
+## Governance
 
 Note that the 3 CAIPs defined here have also been edited by their author into a
 Hedera Improvement Proposal, [HIP-30][], which has been accepted and published
