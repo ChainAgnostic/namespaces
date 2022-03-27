@@ -7,7 +7,6 @@ type: Informational
 created: 2019-12-05
 updated: 2020-01-16
 replaces: CAIP-6
-
 ---
 
 # LIP9 Namespace
