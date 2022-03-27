@@ -6,9 +6,9 @@ discussions-to: https://github.com/ChainAgnostic/CAIPs/issues/13
 status: Draft
 type: Standard
 created: 2020-04-01
-updated: 2020-04-02
+updated: 2022-03-27
 requires: ["CAIP-2", "CAIP-10"]
-supersedes: CAIP-13
+replaces: CAIP-13
 ---
 
 # CAIP-10

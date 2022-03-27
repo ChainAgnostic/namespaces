@@ -1,6 +1,12 @@
 ---
 namespace-identifier: polkadot
 title: Polkadot Namespace
+author: ["Pedro Gomes (@pedrouid)", "Joshua Mir (@joshua-mir)", "Shawn Tabrizi (@shawntabrizi)", "Juan Caballero (@bumblefudge)"]
+status: Draft
+type: Informational
+created: 2020-04-01
+updated: 2022-03-27
+replaces: CAIP-13
 ---
 
 # Polkadot Namespace
