@@ -14,11 +14,11 @@ The namespace `lip9` refers to Lisk namespace as defined above.
 
 ## Governance
 
-The Lisk namespace is governed by the Lisk Improvement Proposal [LIP] system.
+The Lisk namespace is governed by the Lisk Improvement Proposal [LIP][] system.
 
 ## References
 
-- [LIP-9] - The Lisk Improvement Proposal that defined chain IDs for making
+- [LIP-9][] - The Lisk Improvement Proposal that defined chain IDs for making
   transactions resistant to cross-chain and cross-fork replay.
  
 [LIP]: https://github.com/LiskHQ/lips/
