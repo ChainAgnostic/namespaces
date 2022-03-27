@@ -7,7 +7,8 @@ status: Draft
 type: Standard
 created: 2021-11-01
 updated: 2021-11-01
-requires: 2
+requires: CAIP-2
+supersedes: CAIP-75
 ---
 
 # CAIP-2

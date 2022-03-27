@@ -1,13 +1,14 @@
 ---
 namespace-identifier: hedera-caip10
 title: Hedera Namespace - Assets
-author: Danno Ferrin (@shemnon)
+author: Danno Ferrin (@shemnon), Juan Caballero (@bumblefudge)
 discussions-to: https://github.com/hashgraph/hedera-improvement-proposal/discussions/169
 status: Draft
 type: Standard
 created: 2021-11-01
 updated: 2021-11-01
-requires: 19, 75
+requires: CAIP-19
+supersedes: CAIP-75
 ---
 
 # CAIP-19
