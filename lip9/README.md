@@ -5,8 +5,8 @@ title: LIP9 Namespace, aka Lisk
 
 # LIP9 Namespace
 
-This document is about the details of the Lisk namespace as defined by LIP-9,
-including Lisk Mainnet and Testnet, forks and side chains.
+This document is about the details of the Lisk namespace as defined by
+[LIP-9][], including Lisk Mainnet and Testnet, forks and side chains.
 
 ## Syntax
 
