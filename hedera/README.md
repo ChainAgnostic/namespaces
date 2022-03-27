@@ -1,6 +1,12 @@
 ---
 namespace-identifier: hedera
 title: Hedera Namespace
+author: Danno Ferrin (@shemnon)
+status: Accepted
+type: Informational
+created: 2021-11-01
+updated: 2022-03-27
+replaces: CAIP-75
 ---
 
 # Namespace for Hedera chains

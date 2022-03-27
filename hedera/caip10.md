@@ -6,9 +6,9 @@ discussions-to: https://github.com/hashgraph/hedera-improvement-proposal/discuss
 status: Draft
 type: Standard
 created: 2021-11-01
-updated: 2021-11-01
+updated: 2022-03-27
 requires: ["CAIP-2", "CAIP-10"]
-supersedes: CAIP-75
+replaces: CAIP-75
 ---
 
 # CAIP-10
