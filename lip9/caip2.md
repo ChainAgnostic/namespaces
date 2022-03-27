@@ -1,6 +1,6 @@
 ---
 namespace-identifier: lip9-caip2
-title: LIP9 Namespace, aka Lisp - Chains
+title: LIP9 Namespace, aka Lisk - Chains
 author: Simon Warta (@webmaster128)
 discussions-to: https://github.com/ChainAgnostic/CAIPs/issues/7, https://github.com/ChainAgnostic/CAIPs/pull/1
 status: Draft
