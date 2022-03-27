@@ -1,6 +1,12 @@
 ---
 namespace-identifier: stellar
 title: Stellar Namespace 
+author: Gleb Pitsevich (@pitsevich)
+status: Draft
+type: Informational
+created: 2021-02-17
+updated: 2022-03-27
+replaces: CAIP-28
 ---
 
 # Namespace for Stellar Chains
