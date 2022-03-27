@@ -1,6 +1,12 @@
 ---
 namespace-identifier: fil
 title: Blockchain Reference for Filecoin Namespace
+author: Sergey Ukustov (@ukstv)
+status: Draft
+type: Informational
+created: 2020-08-26
+updated: 2022-03-27
+replaces: CAIP-23
 ---
 
 # Namespace for FileCoin Networks

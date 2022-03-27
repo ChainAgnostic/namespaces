@@ -6,8 +6,9 @@ discussions-to: https://github.com/ChainAgnostic/CAIPs/pull/23
 status: Draft
 type: Standard
 created: 2020-08-26
+updated: 2022-03-27
 requires: CAIP-2
-supersedes: CAIP-23
+replaces: CAIP-23
 ---
 
 # CAIP-2
