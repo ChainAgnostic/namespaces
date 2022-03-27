@@ -5,10 +5,10 @@ author: Simon Warta (@webmaster128), ligi <ligi@ligi.de>, Pedro Gomes (@pedrouid
 discussions-to: https://github.com/ChainAgnostic/namespaces/pulls/3
 status: Draft
 type: Standard
-created: 2022-02-09
-updated: 2022-02-09
+created: 2019-12-05
+updated: 2022-03-27
 requires: CAIP-2
-supersedes: CAIP-4
+replaces: CAIP-4
 ---
 
 # CAIP-2
