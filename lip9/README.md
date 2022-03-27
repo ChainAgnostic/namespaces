@@ -1,6 +1,6 @@
 ---
 namespace-identifier: lip9
-title: LIP9 Namespace, aka Lisp
+title: LIP9 Namespace, aka Lisk
 ---
 
 # LIP9 Namespace
