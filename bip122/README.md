@@ -3,7 +3,7 @@ namespace-identifier: bip122
 title: BIP122 Namespace
 author: Simon Warta (@webmaster128), ligi <ligi@ligi.de>, Pedro Gomes (@pedrouid)
 status: Draft
-type: Standard
+type: Informational
 created: 2019-12-05
 updated: 2022-03-27
 replaces: CAIP-4
