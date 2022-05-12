@@ -3,7 +3,7 @@ namespace-identifier: <same as name of folder>
 title: <{namespace common name} [, aka ecosystem name]>
 author: <["FirstName1 LastName1 (@GitHubUsername1)", "AnonHandle2 <foo2@bar.com>"]>
 status: Draft
-type: <Standard | Meta | Informational>
+type: Informational
 created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
 requires (*optional): <["CAIP-X", "CAIP-Y"]>
 replaces (*optional): <CAIP-Z>
