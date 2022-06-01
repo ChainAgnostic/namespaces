@@ -27,30 +27,14 @@ But both asset type can be identified by their "mint" account.
 
 ## Syntax
 
-After the CAIP-2 namespace+chainID, a slash defines an `asset_namespace` and an `asset_reference`. 
-- 
+After the CAIP-2 namespace+chainID, a slash defines an `asset_namespace` and an `asset_reference`. And since both fungible and non-fungible tokens can be identified using the mint account, we could use `spl-token-mint` as the namespace and the address of the mint account as the reference.
+
 
 ## Examples
 
 ```
 # One Solana Mainnet NFT
 solana:4sGjMW1sUnHzSxGspuhpqLDx6wiyjNtZ/spl-token-mint:{the-token-mint-account-address}
-```
-
-### Backwards Compatibility
-
-Not applicable
-
-## Test Cases
-
-This is a list of manually composed examples
-
-```
-# Solana Mainnet
-solana:4sGjMW1sUnHzSxGspuhpqLDx6wiyjNtZ
-
-# Solana Devnet
-solana:8E9rvCKLFQia2Y35HXjjpWzj8weVo44K
 ```
 
 ## References
