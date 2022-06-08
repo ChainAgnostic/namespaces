@@ -49,7 +49,7 @@ This is a list of manually composed examples
 stacks:1
 
 # Stacks testnet
-stacks:0
+stacks:2147483648
 ```
 
 ## References
