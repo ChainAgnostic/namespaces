@@ -2,7 +2,7 @@
 namespace-identifier: stacks-caip2
 title: Stacks Namespace - Chains
 author: Léo Pradel @pradel, Greg Ogunyanwo @gregogun
-discussions-to: TODO create stacks forum post and add link there
+discussions-to: https://forum.stacks.org/t/caip-2-and-caip-10-stacks-specification/13290
 status: Draft
 type: Standard
 created: 2022-06-07
