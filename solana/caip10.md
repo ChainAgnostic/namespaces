@@ -2,7 +2,7 @@
 namespace-identifier: solana-caip10
 title: Solana Namespace - Addresses
 author: Haardik (@haardikk21)
-discussions-to: TODO
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/26
 status: Draft
 type: Standard
 created: 2022-06-08
