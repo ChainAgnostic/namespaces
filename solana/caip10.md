@@ -24,6 +24,15 @@ The syntax of a Solana address matches the following regular expression:
 
 `[1-9A-HJ-NP-Za-km-z]{32,44}`
 
+## Chain IDs
+
+_For context, see the [CAIP-2][] specification._
+
+| Network Name | Chain ID                         |
+| ------------ | -------------------------------- |
+| Mainnet      | 4sGjMW1sUnHzSxGspuhpqLDx6wiyjNtZ |
+| Devnet       | 8E9rvCKLFQia2Y35HXjjpWzj8weVo44K |
+
 ## Test Cases
 
 ```
