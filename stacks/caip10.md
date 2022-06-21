@@ -20,9 +20,12 @@ uses the format "c32check" to address the "account" model.
 
 ## Syntax
 
-Address contains 2 fields: 1 byte version and 20 byte public key hash. Addresses are created
-by generating the RIPEMD-160 hash of the SHA256 of the public key. Valid CAIP-10
-`account_id`s in this namespace are represented as c32check-encoded addresses.
+Address contains 2 fields, 1 byte version and 20 byte hash of one of the following:
+- A single secp256k1 public key (either compressed or uncompressed)
+- A Bitcoin p2sh multisig script
+- A Bitcoin p2wpkh-p2sh script
+- A Bitcoin p2wsh-p2sh script
+Valid CAIP-10 `account_id`s in this namespace are represented as c32check-encoded addresses.
 
 A regular expression for validating the `account_id` can be defined as:
 ```
