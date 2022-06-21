@@ -18,6 +18,7 @@ requires: CAIP-2
 In CAIP-2 a general blockchain identification scheme is defined. This is the
 implementation of CAIP-2 for Stacks. The chain ID is used as a way to mitigate
 replay attacks on different Stacks chains, as it is included in the transaction encoding.
+Stacks mainnet runs on bitcoin mainnet and testnet runs on bitcoin testnet3 .
 
 ## Syntax
 
