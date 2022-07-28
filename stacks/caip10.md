@@ -45,7 +45,8 @@ stacks:2147483648:ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
 ## References
 
 - [SIP-005][]
-- [c32check documentation][]
+- [c32check][] documentation
+- [c32check typescript implementation][] on github
 
 [SIP-005]: https://github.com/stacksgov/sips/blob/main/sips/sip-005/sip-005-blocks-and-transactions.md
 [c32check documentation]: https://github.com/stacks-network/c32check#how-it-works
