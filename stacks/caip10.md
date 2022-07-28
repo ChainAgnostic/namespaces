@@ -29,7 +29,7 @@ Valid CAIP-10 `account_id`s in this namespace are represented as [c32check][]-en
 
 A regular expression for validating the `account_id` can be defined as:
 ```
-stacks:S[A-Z0-9]{39-40}
+stacks:S[A-Z0-9]{30-40}
 ```
 
 ## Test Cases
