@@ -20,7 +20,7 @@ uses the format "c32check" to address the "account" model.
 
 ## Syntax
 
-Address contains 2 fields, 1 byte version and 20 byte hash of one of the following:
+Address string concatenates 2 fields without whitespace or dividers: a 1-byte version prefix and a 20-byte hash of any one of the following:
 - A single secp256k1 public key (either compressed or uncompressed)
 - A Bitcoin p2sh multisig script
 - A Bitcoin p2wpkh-p2sh script
