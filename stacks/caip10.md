@@ -35,7 +35,7 @@ stacks:S[A-Z0-9]{40}
 ## Test Cases
 
 ```
-# Stacks mainnet
+# Stacks mainnet, p2pkh input = a46ff88886c2ef9762d970b4d2c63678835bd39d
 stacks:1:SP2J6ZY48GV1EZ5V2V5RB9MP66SW86PYKKNRV9EJ7
 
 # Stacks testnet
