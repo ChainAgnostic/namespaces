@@ -49,7 +49,8 @@ stacks:2147483648:ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
 - [c32check typescript implementation][] on github
 
 [SIP-005]: https://github.com/stacksgov/sips/blob/main/sips/sip-005/sip-005-blocks-and-transactions.md
-[c32check documentation]: https://github.com/stacks-network/c32check#how-it-works
+[c32check]: https://github.com/stacks-network/c32check#how-it-works
+[c32check typescript implementation]: https://github.com/stacks-network/c32check
 [CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md
 
 ## Copyright
