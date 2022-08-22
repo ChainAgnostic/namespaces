@@ -27,7 +27,12 @@ But both asset type can be identified by their "mint" account.
 
 ## Syntax
 
-After the CAIP-2 namespace+chainID, a slash defines an `asset_namespace` and an `asset_reference`. And since both fungible and non-fungible tokens can be identified using the mint account, we could use `token` as the namespace and the address of the mint account as the reference.
+After the CAIP-2 namespace+chainID, a slash defines an `asset_namespace` and an `asset_reference`. And since both fungible and non-fungible tokens can be identified using the mint account, we could use `token`, `nft` as the namespace and the address of the `mint` account as the reference.
+
+| Reference   | Equivalent to | See also            |
+| :---        | :----         | :---                |
+| token       | ERC20 Token   | [Metaplex](https://docs.metaplex.com/programs/token-metadata/token-standard) Fungible   |
+| nft         | ERC721        | [Metaplex](https://docs.metaplex.com/programs/token-metadata/token-standard) NonFungible|
 
 
 ## Examples
