@@ -42,12 +42,12 @@ ${statement}
 
 URI: ${uri}
 Version: ${version}
+Chain ID: ${chain-id}
 Nonce: ${nonce}
 Issued At: ${issued-at}
 Expiration Time: ${expiration-time}
 Not Before: ${not-before}
 Request ID: ${request-id}
-Chain ID: ${chain-id}
 Resources:
 - ${resources[0]}
 - ${resources[1]}
@@ -65,9 +65,9 @@ I accept the ServiceOrg Terms of Service: https://service.org/tos
 
 URI: https://service.org/login
 Version: 1
+Chain ID: 1
 Nonce: 32891757
 Issued At: 2021-09-30T16:25:24.000Z
-Chain ID: 1
 Resources:
 - ipfs://Qme7ss3ARVgxv6rXqVPiikMJ8u2NLgmgszg13pYrDKEoiu
 - https://example.com/my-web2-claim.json
@@ -76,7 +76,7 @@ Resources:
 which should then be converted into raw bytes (encoded as base64url for brevity).
 
 ```
-c2VydmljZS5vcmcgd2FudHMgeW91IHRvIHNpZ24gaW4gd2l0aCB5b3VyIFNvbGFuYSBhY2NvdW50OgpHd0FGNDV6amZ5R3pVYmQzaTNoWHh6R2V1Y2h6RVpYd3BSWUhaTTU5MTJGMQoKSSBhY2NlcHQgdGhlIFNlcnZpY2VPcmcgVGVybXMgb2YgU2VydmljZTogaHR0cHM6Ly9zZXJ2aWNlLm9yZy90b3MKClVSSTogaHR0cHM6Ly9zZXJ2aWNlLm9yZy9sb2dpbgpWZXJzaW9uOiAxCk5vbmNlOiAzMjg5MTc1NwpJc3N1ZWQgQXQ6IDIwMjEtMDktMzBUMTY6MjU6MjQuMDAwWgpDaGFpbiBJRDogMQpSZXNvdXJjZXM6Ci0gaXBmczovL1FtZTdzczNBUlZneHY2clhxVlBpaWtNSjh1Mk5MZ21nc3pnMTNwWXJES0VvaXUKLSBodHRwczovL2V4YW1wbGUuY29tL215LXdlYjItY2xhaW0uanNvbg
+c2VydmljZS5vcmcgd2FudHMgeW91IHRvIHNpZ24gaW4gd2l0aCB5b3VyIFNvbGFuYSBhY2NvdW50OgpHd0FGNDV6amZ5R3pVYmQzaTNoWHh6R2V1Y2h6RVpYd3BSWUhaTTU5MTJGMQoKSSBhY2NlcHQgdGhlIFNlcnZpY2VPcmcgVGVybXMgb2YgU2VydmljZTogaHR0cHM6Ly9zZXJ2aWNlLm9yZy90b3MKClVSSTogaHR0cHM6Ly9zZXJ2aWNlLm9yZy9sb2dpbgpWZXJzaW9uOiAxCkNoYWluIElEOiAxCk5vbmNlOiAzMjg5MTc1NwpJc3N1ZWQgQXQ6IDIwMjEtMDktMzBUMTY6MjU6MjQuMDAwWgpSZXNvdXJjZXM6Ci0gaXBmczovL1FtZTdzczNBUlZneHY2clhxVlBpaWtNSjh1Mk5MZ21nc3pnMTNwWXJES0VvaXUKLSBodHRwczovL2V4YW1wbGUuY29tL215LXdlYjItY2xhaW0uanNvbg
 ```
 
 Depending on the method used for signatures, this conversion may or may not happen automatically. For example, when using Phantom Wallet client-side, it performs the conversion automatically. However, if doing something server-side, you likely need to do this conversion yourself.
