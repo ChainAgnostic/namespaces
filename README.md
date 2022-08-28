@@ -1,6 +1,14 @@
 # Namespaces
 Chain Agnostic Namespaces (CANs) describe a blockchain ecosystem or set of ecosystems as a namespace, relying as much as possible on the [CAIP](https://github.com/ChainAgnostic/CAIPs) specifications to minimize the research needed to interact with assets, contracts, and accounts in that namespace.
 
+# How it works
+Each namespace implements one or more [CAIPs](https://github.com/ChainAgnostic/CAIPs). The most important CAIPs to consider for a namespace are:
+
+- [Blockchain ID](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md) - A unique way to represent individual blockchains, also gives the namespace its name
+- [Account ID](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md) - Unique representations of blockchain accounts (also used in [DID PKH](https://github.com/w3c-ccg/did-pkh/))
+- [Asset Type and Asset ID](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-19.md) - Uniquely refer to assets within the namespace
+- [SIWx](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-122.md) - Namespaces that support SIWx can be used with [CACAO](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-74.md)
+
 # Contributing
 
  1. Review [CAIP-92](https://github.com/ChainAgnostic/CAIPs/pull/92/files).
