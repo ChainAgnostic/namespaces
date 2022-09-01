@@ -57,7 +57,7 @@ The signature is encoded in Base64URL format. It must be decoded to an array of 
 
 ## References
 
-- [EIP-4361](https://eips.ethereum.org/EIPS/eip-4361): Sign-In with Arweave
+- [EIP-4361](https://eips.ethereum.org/EIPS/eip-4361)
 - [Arweave](https://github.com/ArweaveTeam/arweave-standards)
 - [Arweave Transaction Signing](https://docs.arweave.org/developers/server/http-api#transaction-signing)
 - [CAIP-2](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md)
