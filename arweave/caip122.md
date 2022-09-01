@@ -31,14 +31,24 @@ Arweave signatures use the RSA-PSS signing algorithm to sign data and verify sig
 
 The abstract data model must be converted into a string representation in an unambigious format. We use the format as defined in EIP-4361 as reference.
 
+An informal template of the full message is presented below. The field descriptions are provided in the order they must appear as follows:
+- `domain` is the RFC 3986 authority that is requesting the signing.
+- `address` is the Arweave address performing the signing.
+- `uri` is an RFC 3986 URI referring to the resource that is the subject of the signing (as in the subject of a claim).
+- `version` is the current version of the message, which MUST be 1 for this specification.
+- `type` of the signature to be generated, as defined in the namespaces for this CAIP.
+- `signature` is the result of concatenation and signing of the other field descriptions by the wallet.
+
+Each message field is separated by a line feed (LF).
+
 ```
-Domain: ${domain}
-Address: ${address}
-URI: ${uri}
-Version: ${version}
-Chain ID: ${chain-id}
-Signature: ${signature}
-Type: ${type}
+Domain: ${domain} LF
+Address: ${address} LF
+URI: ${uri} LF
+Version: ${version} LF
+Chain ID: ${chain-id} LF
+Type: ${type} LF
+Signature: ${signature} LF
 ```
 
 ### Signature Verification
