@@ -49,8 +49,8 @@ The signature is encoded in Base64URL format. It must be decoded to an array of 
 
 - [EIP-4361](https://eips.ethereum.org/EIPS/eip-4361): Sign-In with Arweave
 - [Arweave](https://github.com/ArweaveTeam/arweave-standards)
-- [CAIP-10](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md): Account ID Specification
-- [CAIP-2](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md): Blockchain ID Specification
+- [CAIP-2](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md)
+- [CAIP-10](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md)
 - [CAIP-122](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-122.md): Sign in With X 
 
 
