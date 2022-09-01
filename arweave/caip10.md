@@ -41,7 +41,7 @@ ar:1:kY9RAgTJEImkBpiKgVeXrsGV02T-D4dI3ZvSpnn7HSk
 - [Arweave Transaction Signing](https://docs.arweave.org/developers/server/http-api#transaction-signing)
 - [CAIP-2](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md)
 - [CAIP-10](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md)
-- [CAIP-122](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-122.md): Sign in With X 
+- [CAIP-122](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-122.md)
 
 
 
