@@ -22,7 +22,7 @@ The namespace "arweave" refers to the wider Arweave ecosystem.
 
 #### Reference Definition
 
-The reference relies on Arweave's current designation of addresses belonging to main networks by prefixing them with `1`.
+The reference relies on Arweave's current designation of addresses belonging to main network by prefixing them with `1`.
 
 
 ## Rationale

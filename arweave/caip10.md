@@ -22,7 +22,7 @@ Particularities of syntax for Arweave "accounts" have been specified.
 
 ## Syntax
 
-Arweave addresses have a normalization of lowercase letters, uppercase letters, numbers and `-`s.
+Arweave addresses have a normalization of lowercase letters, uppercase letters, numbers and `-`s. The addresses are encoded in base64Url format.
 
 ### Backwards Compatibility
 
@@ -32,7 +32,7 @@ Not applicable.
 
 ```
 # Arweave mainnet
-ar:1:kY9RAgTJEImkBpiKgVeXrsGV02T-D4dI3ZvSpnn7HSk
+arweave:1:kY9RAgTJEImkBpiKgVeXrsGV02T-D4dI3ZvSpnn7HSk
 ```
 
 ## References
