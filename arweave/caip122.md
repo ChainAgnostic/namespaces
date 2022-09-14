@@ -15,7 +15,7 @@ For context, see the [CAIP-122](CAIP-122) specification.
 
 ## Rationale
 
-On Arweave, [EIP-4361](EIP-4361) Sign-in with Arweave already exists, which was the inspiration for CAIP-122. This specification highlights how EIP-4361 conforms with CAIP-122.
+Arweave signatures are 512 byte arrays which are `Base64URL` encoded for transmission over HTTP. This specification provides the signing algorithm to use, the `type` of the signing algorithm to identify it, and a method for signature creation and verification as required by [CAIP-122](CAIP-122).
 
 ## Specification
 
@@ -34,21 +34,41 @@ The abstract data model must be converted into a string representation in an una
 An informal template of the full message is presented below. The field descriptions are provided in the order they must appear as follows:
 - `domain` is the RFC 3986 authority that is requesting the signing.
 - `address` is the Arweave address performing the signing.
+- `statement` (optional) is a human-readable ASCII assertion that the user will sign, and it must not contain '\n'.
 - `uri` is an RFC 3986 URI referring to the resource that is the subject of the signing (as in the subject of a claim).
 - `version` is the current version of the message, which MUST be 1 for this specification.
+- `chain-id` (optional) is the Arweave Chain ID to which the session is bound, and the network where Contract Accounts MUST be resolved.
+- `nonce` (optional) is a randomized token typically chosen by the relying party and used to prevent replay attacks, at least 8 alphanumeric characters.
+- `timestamp` (optional) is the unix time stamp of when the request was created.
+- `expiration-time` (optional) is the ISO 8601 datetime string that, if present, indicates when the signed authentication message is no longer valid.
+- `not-before` (optional) is the ISO 8601 datetime string that, if present, indicates when the signed authentication message will become valid.
+- `request-id` (optional) is an system-specific identifier that may be used to uniquely refer to the sign-in request.
+- `resources` (optional) is a list of information or references to information the user wishes to have resolved as part of authentication by the relying party. They are expressed as RFC 3986 URIs separated by "\n- " where \n is the byte 0x0a.
 - `type` of the signature to be generated, as defined in the namespaces for this CAIP.
 - `signature` is the result of concatenation and signing of the other field descriptions by the wallet.
 
-Each message field is separated by a line feed (LF).
-
 ```
-Domain: ${domain} LF
-Address: ${address} LF
-URI: ${uri} LF
-Version: ${version} LF
-Chain ID: ${chain-id} LF
-Type: ${type} LF
-Signature: ${signature} LF
+${domain} wants you to sign in with your Arweave account:
+${address}
+
+${statement}
+
+URI: ${uri}
+Version: ${version}
+Chain ID: ${chain-id}
+Nonce: ${nonce}
+Issued At: ${timestamp}
+Expiration Time: ${expiration-time}
+Not Before: ${not-before}
+Request ID: ${request-id}
+Resources:
+- ${resources[0]}
+- ${resources[1]}
+...
+- ${resources[n]}
+
+Type: ${type}
+Signature: ${signature}
 ```
 
 ### Signature Verification
