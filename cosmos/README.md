@@ -21,20 +21,20 @@ Communication Protocoal (IBC) to communicate and move assets between them along
 
 ## References
 
-- [ChainID tips][]: A useful thread on chainIDs on the Cosmos SDK github repo
-- [IOV Core TS][]: A reference implementation of the CAIP-2 section of this specification in the IOV Core SDK
-- [configuration objects][]: Tendermint core requires each chain have a unit
+- [ChainID tips][] : A useful thread on chainIDs on the Cosmos SDK github repo
+- [IOV Core TS][] : A reference implementation of the CAIP-2 section of this specification in the IOV Core SDK
+- [configuration objects][] : Tendermint core requires each chain have a unit
       genesis block and genesis block timestamp, and derives a chain ID
       (`chain_id` in their semantics) deterministically from those values; these
-- [IBC]: The Inter Blockchain Communication Protocol is used to enable bridges and multi-chain compatibility between Tendermint chains
-- [channels][]: The Inter-Blockchain Communication protocol establishes
+- [IBC][] : The Inter Blockchain Communication Protocol is used to enable bridges and multi-chain compatibility between Tendermint chains
+- [channels][] : The Inter-Blockchain Communication protocol establishes
       persistent "channels" between the clients of independent Cosmos-based
       blockchains; these can maintain state for assets across two chains like a
       bridged asset or smart contract.
-- [ICS]: The InterChain Standards are canonically maintained in this repo, and
+- [ICS][] : The InterChain Standards are canonically maintained in this repo, and
       cover all aspects of interop and addressing between/across Cosmos chains
       and networks; these are equivalent to BIPs, EIPs, and CAIPs.
-- [IBC#517]: A GitHub thread containing a concise explanation of `chain_id` validation/constraints across Cosmos contexts 
+- [IBC#517][] : A GitHub thread containing a concise explanation of `chain_id` validation/constraints across Cosmos contexts 
 
 [addresses][]: https://docs.cosmos.network/v0.42/basics/accounts.html
 [IBC#517]: https://github.com/cosmos/ibc/issues/517
