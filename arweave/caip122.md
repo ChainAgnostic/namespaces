@@ -71,7 +71,7 @@ Type: ${type}
 Signature: ${signature}
 ```
 
-The signature creation process on Arweave is done through the `arweave-js` library. The data model is JSON serialized to a string. This string is signed using the RSA-PSS algorithm through a manual call to the `sign()` method from the `arweave-js` library. The signature is returned as a Uint8Array of bytes which is then Base64Url encoded by calling `arweave.utils.bufferTob64Url()`.
+The signature creation process on Arweave is done through the `arweave-js` library. The message data model is expressed in string format. This string is signed using the RSA-PSS algorithm through a manual call to the `sign()` method from the `arweave-js` library. The signature is returned as a Uint8Array of bytes which is then Base64Url encoded by calling `arweave.utils.bufferTob64Url()`.
 
 ### Signature Verification
 
