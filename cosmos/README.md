@@ -36,7 +36,7 @@ Communication Protocoal (IBC) to communicate and move assets between them along
       and networks; these are equivalent to BIPs, EIPs, and CAIPs.
 - [IBC#517][] : A GitHub thread containing a concise explanation of `chain_id` validation/constraints across Cosmos contexts 
 
-[addresses][]: https://docs.cosmos.network/v0.42/basics/accounts.html
+[addresses]: https://docs.cosmos.network/v0.42/basics/accounts.html
 [IBC#517]: https://github.com/cosmos/ibc/issues/517
 [IBC]: https://github.com/cosmos/ibc-go/blob/main/docs/ibc/overview.md
 [ICS]: https://github.com/cosmos/ibc
