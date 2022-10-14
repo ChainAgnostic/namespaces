@@ -2,7 +2,7 @@
 namespace-identifier: eip155-caip122
 title: EVM Namespace - SIWx
 author: Haardik (@haardikk21)
-discussions-to: TBA
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/30
 status: Draft
 type: Standard
 created: 2022-08-19
