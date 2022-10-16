@@ -1,7 +1,7 @@
 ---
 namespace-identifier: eip155
 title: EIP155 Namespace, aka EVM Chains
-author: Simon Warta (@webmaster128), ligi <ligi@ligi.de>, Pedro Gomes (@pedrouid), Antoine Herzog (@antoineherzog), Pedro Gomes (@pedrouid), Joel Thorstensson (@oed)
+author: Simon Warta (@webmaster128), ligi <ligi@ligi.de>, Pedro Gomes (@pedrouid), Antoine Herzog (@antoineherzog), Joel Thorstensson (@oed)
 status: Draft
 type: Informational
 created: 2019-12-05
