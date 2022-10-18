@@ -1,5 +1,5 @@
 ---
-namespace-identifier: hedera-caip10
+namespace-identifier: hedera-caip152
 title: Hedera Namespace - Accounts
 author: Danno Ferrin (@shemnon)
 discussions-to: https://github.com/hashgraph/hedera-improvement-proposal/discussions/169
@@ -7,22 +7,22 @@ status: Draft
 type: Standard
 created: 2021-11-01
 updated: 2022-03-27
-requires: ["CAIP-2", "CAIP-10"]
+requires: ["CAIP-2", "CAIP-152"]
 replaces: CAIP-75
 ---
 
-# CAIP-10
+# CAIP-152
 
-*For context, see the [CAIP-10][] specification.*
+*For context, see the [CAIP-152][] specification.*
 
 ## Rationale
 
-In CAIP-10 a general account address scheme is defined. The definitions of
-Hedera Address do not fit neatly into that specification so an alternate address
-format is defined for Hedera.  Encoding a three-part Hedera account ID as a
-string is done by separating the three parts with `.`s; this future-proofs the
-implementation of realms and shards, although in today's usage, effectively all
-known addresses still begin with `0.0.`.
+In CAIP-10/152, a string-based general account address scheme is defined. The
+definitions of Hedera Address do not fit neatly into that specification so an
+alternate address format is defined for Hedera.  Encoding a three-part Hedera
+account ID as a string is done by separating the three parts with `.`s; this
+future-proofs the implementation of realms and shards, although in today's
+usage, effectively all known addresses still begin with `0.0.`. CAIP-152 extended CAIP-10 for implementations to be able to validate and handle the `.`s required to achieve a Hedera-style `account address` for CAIP-10.
 
 ### Syntax
 
@@ -42,11 +42,10 @@ hedera:[-a-zA-Z0-9]{5,32}:[0-9]{1,19}\.[0-9]{1,19}\.[0-9]{1,19}(\-[a-z]{5}){0,1}
 
 ### Semantics
 
-The `chain_id` is specified by
-the [CAIP-2](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md)
-which describes the blockchain id. The `account_address` is the realm, shard,
-and account id, where each is separated by a dot (`.`) and each number is a
-non-negative signed 64-bit integer. The default value for realm and shard are 0.
+The `chain_id` is specified by the [CAIP-2][] which describes the blockchain id.
+The `account_address` is the realm, shard, and account id, where each is
+separated by a dot (`.`) and each number is a non-negative signed 64-bit
+integer. The default value for realm and shard are 0.
 
 The optional checksum is described in
 [HIP-15](https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-15.md).
@@ -76,10 +75,9 @@ hedera:testnet:9223372036854775807.9223372036854775807.9223372036854775807
 
 ## Backwards Compatibility
 
-CAIP-10 currently limits `account_address` to alphanumerics in its regular
-expression definition. If that definition were to include the dot (`.`) and
-dash('-') then this definition would be a subset of that definition, including
-length restrictions in most reasonable cases. Since the checksum is optional in
+Note that many implementations do not yet support CAIP-152, but rather the more constrained CAIP-10. No mitigation is proposed at this time, and those implementations may not be able to validate or handle Hedera addresses which rely on `.`, or checksums which require `-`.
+
+Since the checksum is optional in
 pathological account numbering scenarios it may need to be dropped. It is not
 expected that we will see this event in normal usage.
 
@@ -92,9 +90,11 @@ expected that we will see this event in normal usage.
 - [HIP-30][]: CAIP Identifiers for the Hedera Network
 
 
-[CAIP-2]: https://github.com/chainAgnostic/CAIPS/caip-2.md
-[CAIP-10]: https://github.com/chainAgnostic/CAIPS/caip-10.md
-[CAIP-19]: https://github.com/chainAgnostic/CAIPS/caip-19.md
+[CAIP-2]: https://chainAgnostic.org/CAIPS/caip-19
+[CAIP-10]: https://chainAgnostic.org/CAIPS/caip-19
+[CAIP-19]: https://chainAgnostic.org/CAIPS/caip-19
+[CAIP-152]: https://chainAgnostic.org/CAIPS/caip-152
+[CAIP-153]: https://chainAgnostic.org/CAIPS/caip-153
 [HIP-15]: https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-15.md
 [HIP-30]: https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-30.md
 [Hedera Developer Documentation]: https://docs.hedera.com/guides/

@@ -33,9 +33,11 @@ a "legacy" addressing system for external consumption.
 - [HIP-30][]: CAIP Identifiers for the Hedera Network
 - [Hedera Developer Documentation](https://docs.hedera.com/guides/)
 
-[CAIP-2]: https://github.com/chainAgnostic/CAIPS/caip-2.md
-[CAIP-10]: https://github.com/chainAgnostic/CAIPS/caip-10.md
-[CAIP-19]: https://github.com/chainAgnostic/CAIPS/caip-19.md
+[CAIP-2]: https://chainAgnostic.org/CAIPS/caip-19
+[CAIP-10]: https://chainAgnostic.org/CAIPS/caip-19
+[CAIP-19]: https://chainAgnostic.org/CAIPS/caip-19
+[CAIP-152]: https://chainAgnostic.org/CAIPS/caip-152
+[CAIP-153]: https://chainAgnostic.org/CAIPS/caip-153
 [HIP-15]: https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-15.md
 [HIP-30]: https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-30.md
 [Hedera Developer Documentation]: https://docs.hedera.com/guides/
