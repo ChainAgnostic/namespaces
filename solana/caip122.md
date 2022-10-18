@@ -2,7 +2,7 @@
 namespace-identifier: solana-caip122
 title: Solana Namespace - SIWx
 author: Haardik (@haardikk21)
-discussions-to: TBA
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/28
 status: Draft
 type: Standard
 created: 2022-07-06
