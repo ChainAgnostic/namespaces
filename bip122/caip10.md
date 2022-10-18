@@ -7,7 +7,7 @@ status: Draft
 type: Standard
 created: 2019-12-05
 updated: 2022-03-27
-requires: [CAIP-2, CAIP-10]
+requires: ["CAIP-2", "CAIP-10"]
 replaces: CAIP-4
 ---
 
