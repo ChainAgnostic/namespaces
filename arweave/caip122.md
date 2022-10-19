@@ -25,7 +25,7 @@ Arweave wallets are RSA key pairs and use the private and public keys for signin
 
 ### Signature Type
 
-Arweave signatures use the RSA-PSS signing algorithm to sign data and verify signatures.
+Arweave signatures use the RSA-PSS signing algorithm to sign data and verify signatures. Hence, the type of the signature would be represented as `arweave:rsa-pss` in the cacao object.
 
 ### Signature Creation
 
