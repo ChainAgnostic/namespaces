@@ -25,6 +25,7 @@ Address string concatenates 2 fields without whitespace or dividers: a 1-byte ve
 - A Bitcoin p2sh multisig script
 - A Bitcoin p2wpkh-p2sh script
 - A Bitcoin p2wsh-p2sh script
+- A Bitcoin p2tr script
 
 Valid CAIP-10 `account_id`s in this namespace are represented as [c32check][]-encoded addresses. The addresses are always all-caps.
 
