@@ -1,6 +1,6 @@
 ---
 namespace-identifier: tezos
-title: Blockchain Reference for the Tezos Namespace
+title: Tezos Ecosystem
 author: Stanly Johnson (@stanly-johnson)
 status: Draft
 type: Informational

@@ -1,6 +1,6 @@
 ---
 namespace-identifier: eip155
-title: EIP155 Namespace, aka EVM Chains
+title: Ethereum Ecosystem (EIP155)
 author: Simon Warta (@webmaster128), ligi <ligi@ligi.de>, Pedro Gomes (@pedrouid), Antoine Herzog (@antoineherzog), Joel Thorstensson (@oed)
 status: Draft
 type: Informational

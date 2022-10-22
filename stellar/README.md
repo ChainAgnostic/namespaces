@@ -1,6 +1,6 @@
 ---
 namespace-identifier: stellar
-title: Stellar Namespace 
+title: Stellar Ecosystem 
 author: Gleb Pitsevich (@pitsevich)
 status: Draft
 type: Informational

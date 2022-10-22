@@ -1,6 +1,6 @@
 ---
 namespace-identifier: solana
-title: Solana Namespace
+title: Solana Ecosystem
 author: Antoine Herzog (@antoineherzog), Josh Hundley (@oJshua)
 discussions-to: https://github.com/ChainAgnostic/CAIPs/pull/60
 status: Draft
