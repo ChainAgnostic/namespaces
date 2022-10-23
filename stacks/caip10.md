@@ -6,7 +6,7 @@ discussions-to: https://forum.stacks.org/t/caip-2-and-caip-10-stacks-specificati
 status: Draft
 type: Standard
 created: 2022-06-07
-requires: "CAIP-10"
+requires: ["CAIP-10", "CAIP-2"]
 ---
 
 # CAIP-10
