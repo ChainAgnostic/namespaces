@@ -5,7 +5,6 @@ author: Léo Pradel @pradel, Greg Ogunyanwo @gregogun
 status: Draft
 type: Informational
 created: 2022-06-07
-requires (*optional): "CAIP-2", "CAIP-10"
 ---
 
 # Namespace for Stacks chains
