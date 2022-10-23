@@ -1,6 +1,6 @@
 ---
 namespace-identifier: cosmos
-title: Cosmos Namespace
+title: Cosmos Ecosystem
 ---
 
 # Namespace for Cosmos chains

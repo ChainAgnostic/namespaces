@@ -1,0 +1,10 @@
+{% assign caips=include.caips|split:"," %}
+{% for str in caips %}
+  {% if str contains "http" %}
+  <a href="{{- str | remove: "," | remove: "[" | remove: '"' | remove: "]" -}}">{{- str | remove: "," | remove: "[" | remove: '"' | remove: "]" -}}</a>{% if forloop.last == false %}, {% endif %}
+  {% elsif str contains "CAIP" %}
+    <a href="{{site.caips_linkbase}}{{- str | strip | remove: "," | downcase | remove: "[" | remove: '"' | remove: "]" -}}">{{- str | remove: "," | remove: "[" | remove: '"' | remove: "]" -}}</a>{% if forloop.last == false %}, {% endif %}
+  {% else %}
+    {{str|strip}}{% if forloop.last == false %}, {% endif %}
+  {% endif %}
+{% endfor %}

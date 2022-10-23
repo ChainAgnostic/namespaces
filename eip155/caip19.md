@@ -1,8 +1,8 @@
 ---
 namespace-identifier: eip155-caip19
 title: EIP155 Namespace, aka EVM Chains - Assets
-author: Simon Warta (@webmaster128), ligi <ligi@ligi.de>, Pedro Gomes (@pedrouid), Antoine Herzog (@antoineherzog), Pedro Gomes (@pedrouid), Joel Thorstensson (@oed)
-discussions-to: https://github.com/ChainAgnostic/namespaces/pulls/2
+author: Simon Warta (@webmaster128), ligi <ligi@ligi.de>, Pedro Gomes (@pedrouid), Antoine Herzog (@antoineherzog), Joel Thorstensson (@oed)
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/2
 status: Draft
 type: Standard
 created: 2019-12-05

@@ -1,0 +1,79 @@
+<style type="text/css">
+
+  </style>
+
+  {% assign allpages = site.pages | sort: "dir" %}
+  
+  {% assign namespaces = "" | split: ',' %}
+  {% assign namespaceTitles = "" | split: ',' %}
+  
+  {% for page in allpages | group: "dir" %} 
+    	{% if page.dir == "/" or page.dir == "/assets/" %}
+      {% elsif namespaces contains page.dir %}
+      {% else %}
+      {% assign namespaces = namespaces | push: page.dir %}
+      {% assign namespaceTitles = namespacesTitles | push: page.title %}
+      {% endif %}    
+  {% endfor %}
+
+  <table class="namespacetable">
+    <thead>
+      <tr>
+        <th class="caip" colspan="2">Context</th>
+        <th class="caip" colspan="4"><a href=https://chainagnostic.org>CAIP</a> profiles</th>
+      </tr>
+      <tr>
+        <th class="caip">Namespace</th>
+        <th class="caip">Readme</th>
+        <th class="caip">2</th>
+        <th class="caip">10</th>
+        <th class="caip">19</th>
+        <th class="caip">122</th>
+      </tr>
+
+  {% for dir in namespaces | sort: "dir" %} 
+    {% assign namespacetitle = "" %}
+    {% assign namespace = "" | split: ',' %}
+    {% for page in allpages | group: "dir" %} 
+      {% if dir == page.dir %}
+        {% if page.name == "README.md" %}
+          {% assign namespacetitle = page.title %}
+          {% endif %}
+        {% assign namespace = namespace | push: {{page.name}} %}
+      {% endif %}
+    {% endfor %}
+
+      <tr>
+      </tr>
+      <tr>
+        <td width="50%">
+          {{- namespacetitle -}} 
+        </td>
+        <td>
+          {% if namespace contains "README.md" %}
+            <a href="{{- dir -}}README">X</a>
+          {% endif %}
+        </td>
+        <td>
+          {% if namespace contains "caip2.md" %}
+            <a href="{{- dir -}}caip2">X</a>
+          {% endif %}
+        </td>
+        <td>
+          {% if namespace contains "caip10.md" %}
+            <a href="{{- dir -}}caip10">X</a>
+          {% endif %}
+        </td>
+        <td>
+          {% if namespace contains "caip19.md" %}
+            <a href="{{- dir -}}caip19">X</a>
+          {% endif %}
+        </td>
+        <td>
+          {% if namespace contains "caip122.md" %}
+            <a href="{{- dir -}}caip122">X</a>
+          {% endif %}
+        </td>
+      </tr>
+  {% endfor %}
+   </table>

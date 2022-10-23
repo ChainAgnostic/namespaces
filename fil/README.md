@@ -1,6 +1,6 @@
 ---
 namespace-identifier: fil
-title: Blockchain Reference for Filecoin Namespace
+title: Filecoin Ecosystem
 author: Sergey Ukustov (@ukstv)
 status: Draft
 type: Informational
