@@ -1,6 +1,6 @@
 ---
 namespace-identifier: bip122
-title: Blockchain-based Networks (BIP122)
+title: Bitcoin-based Networks (BIP122)
 author: Simon Warta (@webmaster128), ligi <ligi@ligi.de>, Pedro Gomes (@pedrouid)
 status: Draft
 type: Informational
