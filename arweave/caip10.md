@@ -1,7 +1,7 @@
 ---
 namespace-identifier: arweave-caip10
 title: Arweave Namespace - Addresses
-author: Rohit Pathare (@ropats16), Phil Billingsby (@pbillingsby)
+author: Rohit Pathare (@ropats16), Phil Billingsby (@pbillingsby), Dan MacDonald (@DanMacDonald)
 discussions-to:
 status: Draft
 type: Standard
@@ -32,12 +32,13 @@ Not applicable.
 
 ```
 # Arweave mainnet
-arweave:1:kY9RAgTJEImkBpiKgVeXrsGV02T-D4dI3ZvSpnn7HSk
+arweave:7wIU7KolICAjClMl:kY9RAgTJEImkBpiKgVeXrsGV02T-D4dI3ZvSpnn7HSk
 ```
 
 ## References
 
 - [Arweave](https://github.com/ArweaveTeam/arweave-standards)
+- [Hash of Genesis Block](https://viewblock.io/arweave/block/0)
 - [CAIP-2](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md)
 - [CAIP-10](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md)
 - [CAIP-122](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-122.md)

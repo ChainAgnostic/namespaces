@@ -1,7 +1,7 @@
 ---
 namespace-identifier: arweave-caip2
 title: Arweave Namespace - Chains
-author: Rohit Pathare (@ropats16), Phil Billingsby (@pbillingsby)
+author: Rohit Pathare (@ropats16), Phil Billingsby (@pbillingsby), Dan MacDonald (@DanMacDonald)
 discussions-to:
 status: Draft
 type: Standard
@@ -22,7 +22,7 @@ The namespace "arweave" refers to the wider Arweave ecosystem.
 
 #### Reference Definition
 
-The reference relies on Arweave's current designation of addresses belonging to main network by prefixing them with `1`.
+The reference relies on Arweave's current designation of addresses belonging to main network by prefixing them with `7wIU7KolICAjClMl` which is the reprresentation of the [hash of the genesis block](https://viewblock.io/arweave/block/0) truncated to the first 16 characters.
 
 
 ## Rationale
@@ -39,12 +39,13 @@ This is a manually composed example.
 
 ```
 # Arweave Mainnet
-arweave:1
+arweave:7wIU7KolICAjClMl
 ```
 
 ## References
 
 - [Arweave](https://github.com/ArweaveTeam/arweave-standards)
+- [Hash of Genesis Block](https://viewblock.io/arweave/block/0)
 - [CAIP-2](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md)
 - [CAIP-10](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md)
 - [CAIP-122](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-122.md)
