@@ -16,15 +16,18 @@
       {% endif %}    
   {% endfor %}
 
+  <div>
+    Chain Agnostic Namespaces offer an informative context and profiles for various <a href="https://chainagnostic.org/">Chain Agnostic Improvement Proposals</a> ("CAIPs") for a given blockchain environment, serving as a reference for cross-chain and cross-ecosystem development.  For more information on the Chain Agnostic Standards Alliance that edits these standards, see our <a href="https://github.com/chainagnostic/casa/">homepage on github</a><br><br>
+  </div>
+  
   <table class="namespacetable">
     <thead>
       <tr>
-        <th class="caip" colspan="2">Context</th>
+        <th class="caip">Namespace</th>
         <th class="caip" colspan="4"><a href=https://chainagnostic.org>CAIP</a> profiles</th>
       </tr>
       <tr>
-        <th class="caip">Namespace</th>
-        <th class="caip">Readme</th>
+        <th class="caip">Informative Context</th>
         <th class="caip">2</th>
         <th class="caip">10</th>
         <th class="caip">19</th>
@@ -47,11 +50,10 @@
       </tr>
       <tr>
         <td width="50%">
-          {{- namespacetitle -}} 
-        </td>
-        <td>
           {% if namespace contains "README.md" %}
-            <a href="{{- dir -}}README">X</a>
+            <a href="{{- dir -}}README">{{- namespacetitle -}}</a>
+          {% else %}
+            {{ dir }}
           {% endif %}
         </td>
         <td>
