@@ -39,7 +39,7 @@ This is a manually composed example.
 
 ```
 # Arweave Mainnet
-arweave:7wIU7KolICAjClMl
+arweave:7wIU
 ```
 
 ## References
