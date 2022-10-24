@@ -32,7 +32,7 @@ Not applicable.
 
 ```
 # Arweave mainnet
-arweave:7wIU7KolICAjClMl:kY9RAgTJEImkBpiKgVeXrsGV02T-D4dI3ZvSpnn7HSk
+arweave:7wIU:kY9RAgTJEImkBpiKgVeXrsGV02T-D4dI3ZvSpnn7HSk
 ```
 
 ## References

@@ -22,7 +22,7 @@ The namespace "arweave" refers to the wider Arweave ecosystem.
 
 #### Reference Definition
 
-The reference relies on Arweave's current designation of addresses belonging to main network by prefixing them with `7wIU7KolICAjClMl` which is the reprresentation of the [hash of the genesis block](https://viewblock.io/arweave/block/0) truncated to the first 16 characters.
+The reference relies on Arweave's current designation of addresses belonging to main network by prefixing them with `7wIU` which is the representation of the [hash of the genesis block](https://viewblock.io/arweave/block/0) truncated to the first 16 characters.
 
 
 ## Rationale
