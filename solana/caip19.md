@@ -16,18 +16,17 @@ requires: ["CAIP-2", "CAIP-10", "CAIP-19", "CAIP-30"]
 
 ## Rationale
 
-On solana, all contracts are stateless and state is instead represented using "accounts". More specifically, all fungible and non-fungible tokens are using the same instance of token contracts and for each token:
+On Solana, all contracts are stateless and state is instead represented using "accounts". More specifically, all fungible and non-fungible tokens use the same instance of token contracts and for each token:
 
 - 1 single global "mint" account instance is used for the global data like "total supply".
-- each token account represent an account balance belong to a certain address.
+- each token account represents an account balance belonging to a given address.
 
-And the difference between fungible token and non-fungible token is that non-fungible token mint has a total supply of 1 and zero decimal place.
-But both asset type can be identified by their "mint" account. 
+The only difference between fungible tokens and non-fungible tokens is that non-fungible token mints have a total supply of 1 and zero decimal place. Both asset type can be identified by their "mint" account. 
 
 
 ## Syntax
 
-After the CAIP-2 namespace+chainID, a slash defines an `asset_namespace` and an `asset_reference`. And since both fungible and non-fungible tokens can be identified using the mint account, we could use `token`, `nft` as the namespace and the address of the `mint` account as the reference.
+After the [CAIP-2][] (namespace+chainID), a slash defines an `asset_namespace` and an `asset_reference`. Since both fungible and non-fungible tokens can be identified using the mint account, we use `token` (fungible) and `nft` (non-fungible) as the asset namespaces and the address of the `mint` account as the reference in both.
 
 | Reference   | Equivalent to | See also            |
 | :---        | :----         | :---                |
@@ -45,7 +44,7 @@ solana:4sGjMW1sUnHzSxGspuhpqLDx6wiyjNtZ/token:Fz6LxeUg5qjesYX3BdmtTwyyzBtMxk644X
 solana:4sGjMW1sUnHzSxGspuhpqLDx6wiyjNtZ/token:EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
 ```
 
-## References
+## Links
 
 [Address Lookup Table Proposal]: https://docs.solana.com/proposals/transactions-v2
 [Account Types]: https://docs.solana.com/terminology#account
