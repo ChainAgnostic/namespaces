@@ -1,6 +1,6 @@
 ---
 namespace-identifier: arweave
-title: Blockchain Reference for Arweave Namespace
+title: Arweave Namespace
 author: Rohit Pathare (@ropats16), Phil Billingsby (@pbillingsby)
 status: Draft
 type: Informational
