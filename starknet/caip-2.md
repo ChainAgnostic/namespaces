@@ -20,8 +20,7 @@ supersedes: CAIP-5
 The namespace `starknet` refers to the StarkNet Layer 2 on Ethereum.
 
 StarkNet currently represents its chains with string identifiers such as 
-`SN_MAIN` and `SN_GOERLI`. They also have field element representations which
-are not worth discussing in this specification.
+`SN_MAIN` and `SN_GOERLI`. Internally, these strings are expressed as `field element` integers (according to a transformation documented in the system's [core documentation][Transaction structure]), but using the case-sensitive root string identifiers simplifies interoperability by sidestepping type system interoperability around integers.
 
 ### Resolution Method
 
