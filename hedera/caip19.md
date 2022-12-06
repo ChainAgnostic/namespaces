@@ -68,7 +68,10 @@ hedera:mainnet/token:0.0.278981
 
 # Non-Fungible Tokens
 
-In CAIP-19 a general asset identification scheme is defined. CAIP-153 extended this sane scheme to include a broader characterset, enabling the `.`-concatenated shard/realm prefixes before addresses which are standard in Hedera. This describes the
+In CAIP-19 a general asset identification scheme is defined. CAIP-153 extended
+this sane scheme to include a broader characterset, enabling the
+`.`-concatenated shard/realm prefixes before addresses which are standard in
+Hedera. This describes the
 implementation of [CAIP-19][] for `token` in representing non-fungible tokens, which are
 addressed in the same way as accounts are addressed in the [Hedera CAIP-10
 specification](caip10.md), i.e., `{shard}.{realm}.{address}`. 
@@ -122,15 +125,22 @@ hedera:mainnet/nft:0.0.55492/12
 [CAIP-2]: https://chainAgnostic.org/CAIPS/caip-2
 [CAIP-10]: https://chainAgnostic.org/CAIPS/caip-10
 [CAIP-19]: https://chainAgnostic.org/CAIPS/caip-19
-[HIP-10]: https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-10.md
-[HIP-15]: https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-15.md
-[HIP-17]: https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-17.md
-[HIP-18]: https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-18.md
-[HIP-30]: https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-30.md
+[HIP-10]:
+    https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-10.md
+[HIP-15]:
+    https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-15.md
+[HIP-17]:
+    https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-17.md
+[HIP-18]:
+    https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-18.md
+[HIP-30]:
+    https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-30.md
 [Hedera Developer Documentation]: https://docs.hedera.com/guides/
-[Native Account Syntax]: https://docs.hedera.com/guides/core-concepts/accounts#account-id
+[Native Account Syntax]:
+    https://docs.hedera.com/guides/core-concepts/accounts#account-id
 [Hedera Token Service SDK Docs]: https://docs.hedera.com/guides/docs/sdks/tokens
-[ERC20 & ERC721 Compatibility]: https://docs.hedera.com/guides/core-concepts/smart-contracts/supported-erc-token-standards
+[ERC20 & ERC721 Compatibility]:
+    https://docs.hedera.com/guides/core-concepts/smart-contracts/supported-erc-token-standards
 
 ## Copyright
 
