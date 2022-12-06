@@ -1,5 +1,5 @@
 ---
-namespace-identifier: hedera-caip153
+namespace-identifier: hedera-caip19
 title: Hedera Namespace - Assets
 author: Danno Ferrin (@shemnon), Juan Caballero (@bumblefudge)
 discussions-to: https://github.com/hashgraph/hedera-improvement-proposal/discussions/169
@@ -7,15 +7,16 @@ status: Draft
 type: Standard
 created: 2021-11-01
 updated: 2022-03-27
-requires: CAIP-153
+requires: ["CAIP-2", "CAIP-19"]
 replaces: CAIP-75
 ---
 
-# CAIP-153
+# CAIP-19
 
-This specification defines a CAIP-153 scheme for both fungible and non-fungible
-tokenized assets in the Hedera ecosystem (an extension of CAIP-19 that allows
-for Hedera address' required additional characters).  The the [Hedera Token
+*For context, see the [CAIP-19][] specification.*
+
+This specification defines a [CAIP-19][] scheme for both fungible and
+non-fungible tokenized assets in the Hedera ecosystem.  The [Hedera Token
 Service][] is used in slightly different ways for both. When interacting with
 these two types of Hedera token, Solidity contracts can interact with most (but
 not all!) functions defined by the ERC20 and ERC721; for a list, see the current
@@ -27,9 +28,10 @@ address; see [HIP-17][], [HIP-10][], and [HIP-18][] respectively.
 
 # Fungible Tokens
 
-In CAIP-19 a general asset identification scheme is defined. CAIP-153 extended this sane scheme to include a broader characterset, enabling the `.`-concatenated shard/realm prefixes before addresses which are standard in Hedera. This is the
-implementation of [CAIP-153][] for `token` in representing fungible tokens, which are addressed in the same way as accounts are addressed in the [Hedera CAIP-152
-specification](caip152.md), i.e., `{shard}.{realm}.{address}`.
+In CAIP-19 a general asset identification scheme is defined. This is the
+implementation of [CAIP-19][] for `token` in representing fungible tokens, which
+are addressed in the same way as accounts are addressed in the [Hedera CAIP-10
+specification](caip10.md), i.e., `{shard}.{realm}.{address}`.
 
 ## Semantics
 
@@ -67,9 +69,9 @@ hedera:mainnet/token:0.0.278981
 # Non-Fungible Tokens
 
 In CAIP-19 a general asset identification scheme is defined. CAIP-153 extended this sane scheme to include a broader characterset, enabling the `.`-concatenated shard/realm prefixes before addresses which are standard in Hedera. This describes the
-implementation of [CAIP-153][] for `token` in representing non-fungible tokens, which are
-addressed in the same way as accounts are addressed in the [Hedera CAIP-152
-specification](caip152.md), i.e., `{shard}.{realm}.{address}`. 
+implementation of [CAIP-19][] for `token` in representing non-fungible tokens, which are
+addressed in the same way as accounts are addressed in the [Hedera CAIP-10
+specification](caip10.md), i.e., `{shard}.{realm}.{address}`. 
 
 ## Semantics
 
@@ -81,7 +83,7 @@ references HTS non-fungible tokens in the `hedera` namespace (see CAIP-75).
 #### Asset Reference Definition
 
 The Asset reference format is the tokenID in the specific hashgraph (see the
-[Hedera CAIP-152 specification](caip152.md) for semantics).
+[Hedera CAIP-10 specification](caip10.md) for semantics).
 
 #### Token ID Definition
 
@@ -117,11 +119,9 @@ hedera:mainnet/nft:0.0.55492/12
 - [HIP-18][]: Custom Token Fees
 - [HIP-30]: CAIP Identifiers for the Hedera Network
 
-[CAIP-2]: https://chainAgnostic.org/CAIPS/caip-19
-[CAIP-10]: https://chainAgnostic.org/CAIPS/caip-19
+[CAIP-2]: https://chainAgnostic.org/CAIPS/caip-2
+[CAIP-10]: https://chainAgnostic.org/CAIPS/caip-10
 [CAIP-19]: https://chainAgnostic.org/CAIPS/caip-19
-[CAIP-152]: https://chainAgnostic.org/CAIPS/caip-152
-[CAIP-153]: https://chainAgnostic.org/CAIPS/caip-153
 [HIP-10]: https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-10.md
 [HIP-15]: https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-15.md
 [HIP-17]: https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-17.md
