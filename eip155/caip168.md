@@ -42,9 +42,9 @@ Example 1
 4) Determine that the transaction has been included in a valid block on the blockchain referenced by the `chainId`. Number of block confirmations for acceptance is up to an implementation. 
 
 
-### `f(32bytes)` Transaction Type Verification
+### `f(bytes32)` Transaction Type Verification
 
-This section describes transaction verification when a timestamp anchor proof references a `chainId` in the `eip155` namespace and `txType` is `f(32bytes)`. Type `f(32bytes)` refers to a transaction which makes a function call on a contract with the function signature including a single 32 bytes argument. The 32 byte argument is the merkle root CID. A CID is more than 32bytes, and a partial CID is used to allow the argument to be efficiently packed in the transaction. Function name or contract does not matter, and is up to an implementation. 
+This section describes transaction verification when a timestamp anchor proof references a `chainId` in the `eip155` namespace and `txType` is `f(bytes32)`. Type `f(bytes32)` refers to a transaction which makes a function call on a contract with the function signature including a single 32 bytes argument. The 32 byte argument is the merkle root CID. A CID is more than bytes32, and a partial CID is used to allow the argument to be efficiently packed in the transaction. Function name or contract does not matter, and is up to an implementation. 
 
 Example 2
 ```tsx
@@ -52,19 +52,20 @@ Example 2
   root: CID(bafyreiaxdhr5jbabn7enmbb5wpmnm3dwpncbqjcnoneoj22f3sii5vfg74)
   chainID: "eip155:1"
   txHash: CID(bagiacgzah24drzou2jlkixpblbgbg6nxfrasoklzttzoht5hixhxz3rlncyq)
-  txType: 'f(32bytes)'
+  txType: 'f(bytes32)'
 }
 ```
 **Verification Steps**
 
-1) Resolve blockchain transaction payload by `txHash` CID and `chainId`. CID is expected to be DAG-ETH encoded block. 
+1) Resolve blockchain transaction payload by `txHash` CID and `chainId`. CID is expected to be dag-eth encoded block. 
 2) Get the `data` paramater of the transaction payload, it is expected to be a hex encoded 64 byte string.
-3) The first 32 bytes are the function signature and can be discarded, the next 32 bytes is the first argument of the function, which is expected to be a 32 byte hex encoded partial CID.
-4) The partial CID is a CID with the first two bytes removed, the first byte being the multibase is not needed in byte format, and the second byte being the CID version is not inlcuded, it is assumed to be CID V1. Verify that the `root` CID of the timestamp anchor proof is equivalent to the transaction partial CID. Equivalence should be checked using a CIDs library, and bytes can be compared. If they are not equivalent, an error MUST be raised. 
+3) The first 4 bytes are the function signature and can be discarded, the next 32 bytes is the first argument of the function, which is expected to be a 32 byte hex encoded partial CID.
+4) The partial CID is the multihash portion of the original CID. It does not include the multibase, the CID version or the IPLD codec. It is assumed that the IPLD codec is dag-cbor. Verify that the `root` CID of the timestamp anchor proof is equivalent to the transaction partial CID. Equivalence should be checked using a CIDs library, multihash portions encoded in bytes can be compared. If they are not equivalent, an error MUST be raised. 
 5) Determine that the transaction has been included in a valid block on the blockchain referenced by the `chainId`. Number of block confirmations for acceptance is up to an implementation. 
 
 
 ## References
 
 - [CAIP-168](CAIP-168): IPLD Timestamp Proof
-
+- [Multiformats CID](https://github.com/multiformats/cid)
+- [DAG-ETH](https://ipld.io/specs/codecs/dag-eth/)
