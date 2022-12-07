@@ -1,8 +1,8 @@
 ---
 namespace-identifier: eip155-caip168
 title: EVM Namespace - IPLD Timestamp Proof
-author: Zach Ferland (@zachferland)
-discussions-to: <-->
+author: Zach Ferland (@zachferland), Joel Thorstensson (@oed)
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/42
 status: Draft
 type: Standard
 created: 2022-12-1
