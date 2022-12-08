@@ -100,7 +100,8 @@ implementation.  Use of a root CID encoded in [DAG-CBOR][] is recommended.
    IPLD codec is dag-cbor. Verify that the first 32bytes of the `root` CID of
    the timestamp anchor proof is equivalent to the 32-byte partial CID extracted
    from the transaction data. Equivalence should be checked using a CIDs
-   library, which can compare oprtions of multihashes encoded in bytes. If the two partial multihashes are not equivalent, verification MUST fail.
+   library, which can compare oprtions of multihashes encoded in bytes. If the
+   two partial multihashes are not equivalent, verification MUST fail.
 5) Determine that the transaction has been included in a valid block on the
    blockchain referenced by the `chainId`. Number of block confirmations for
    acceptance is up to an implementation. 
