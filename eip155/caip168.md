@@ -97,11 +97,11 @@ implementation.  Use of a root CID encoded in [DAG-CBOR][] is recommended.
    work?](https://github.com/multiformats/cid#how-does-it-work) in the
    [Multiformats CID][] specification for context). It does not include the
    multibase, the CID version or the IPLD codec segments. It is assumed that the
-   IPLD codec is dag-cbor. Verify that the first 32bytes of the `root` CID of
-   the timestamp anchor proof is equivalent to the 32-byte partial CID extracted
+   IPLD codec is dag-cbor. Verify that the multihash portion of the `root` CID of
+   the timestamp proof is equivalent to the multihash extracted
    from the transaction data. Equivalence should be checked using a CIDs
-   library, which can compare oprtions of multihashes encoded in bytes. If the
-   two partial multihashes are not equivalent, verification MUST fail.
+   library, which can compare multihash portions encoded in bytes. If the
+   two multihashes are not equivalent, verification MUST fail.
 5) Determine that the transaction has been included in a valid block on the
    blockchain referenced by the `chainId`. Number of block confirmations for
    acceptance is up to an implementation. 
