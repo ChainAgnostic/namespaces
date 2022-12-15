@@ -6,7 +6,7 @@ discussions-to: TBA
 status: Draft
 type: Standard
 created: 2022-12-06
-updated: 2022-12-06
+updated: 2022-12-15
 requires: ["CAIP-2", "CAIP-10"]
 ---
 
@@ -16,7 +16,7 @@ _For context, see the [CAIP-10][] specification._
 
 ## Rationale
 
-Tezos account is linked to a manager, which owns the public key. The hash of the public key outputs an address. Tezos supports the use of multiple public-key signature schemes, so the address prefix starts with `tz1` (Ed25519 curve), `tz2` (Secp256k1 curve), or `tz3` (P256 curve).
+Tezos supports the use of multiple public-key signature schemes, so the address prefix starts with `tz1` (Ed25519 curve), `tz2` (Secp256k1 curve), or `tz3` (P256 curve). The account address is the hash of the public key.
 
 ## Syntax
 
@@ -46,9 +46,12 @@ tezos:NetXm8tYqnMWky1:tz3gN8NTLNLJg5KRsUU47NHNVHbdhcFXjjaB
 
 ## References
 
-[Tezos Smart Contract](https://opentezos.com/tezos-basics/smart-contracts#general-definition-of-a-tezos-smart-contract)
+[CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/8fdb5bfd1bdf15c9daf8aacfbcc423533764dfe9/CAIPs/caip-10.md
 [CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
-[CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md
+
+- [Tezos Smart Contract](https://opentezos.com/tezos-basics/smart-contracts#general-definition-of-a-tezos-smart-contract): General definition of a Tezos smart contract
+- [CAIP-2](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md): Blockchain ID Specification
+- [CAIP-10](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md): Account ID Specification
 
 ## Rights
 
