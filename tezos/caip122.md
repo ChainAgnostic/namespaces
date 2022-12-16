@@ -22,7 +22,7 @@ Tezos supports three types of keys, `tz1` for Ed25519 keys, `tz2` for Secp256k1 
 
 ### Signing Algorithm
 
-In Tezos, Ed25519 (`tz1`) is the most commonly used signing algorithm. Tezos uses the base58 with differnt prefixes to encode the public key, private key and signature. For Ed25519, the prefixes are `edpk`, `edsk` and `edsig`. For Secp256k1, the prefixes are `sppk`, `spsk` and `spsig`. For P256, the prefixes are `p2pk`, `p2sk` and `p2sig`.
+In Tezos, Ed25519 (`tz1`) is the most commonly used signing algorithm. Tezos uses the base58 with different prefixes to encode the public key, private key and signature. For Ed25519, the prefixes are `edpk`, `edsk` and `edsig`. For Secp256k1, the prefixes are `sppk`, `spsk` and `spsig`. For P256, the prefixes are `p2pk`, `p2sk` and `p2sig`.
 
 ### Signature Type
 
