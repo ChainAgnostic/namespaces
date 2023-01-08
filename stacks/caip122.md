@@ -61,3 +61,8 @@ With the signature and public key, the message can be verified using the same al
 [EIP-4361]: https://eips.ethereum.org/EIPS/eip-4361
 [CAIP-122]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-122.md
 [SIP-018]: https://github.com/stacksgov/sips/pull/57
+
+- [EIP-4361](https://eips.ethereum.org/EIPS/eip-4361): Sign-In with Ethereum
+- [CAIP-10](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md): Account ID Specification
+- [CAIP-2](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md): Blockchain ID Specification
+- [CAIP-122](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-122.md): Sign in With X Specification
