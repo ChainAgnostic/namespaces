@@ -93,7 +93,7 @@ solana:4uhcVJyU9pJkvQyS88uRDiswHXSCkY3zQaw
 [Account Types]: https://docs.solana.com/terminology#account
 [Address Expressions]: https://docs.solana.com/cli/transfer-tokens#receive-tokens
 [Cluster]: https://docs.solana.com/clusters
-[RPC Endpoints]: https://docs.solana.com/cluster/rpc-endpoints
+[RPC Endpoints]: https://docs.solana.com/cluster/rpc-endpoints 
 
 ## Copyright
 
