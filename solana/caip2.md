@@ -62,7 +62,7 @@ request to the [RPC Endpoints][] of a blockchain node with method
 
 The response will return as a value for the result a 44-character
 Base-58-encoded hash for the block with height 0 that should be truncated to its
-first 32 characters to be CAIP-30 compatible.
+first 32 characters to be [CAIP-2][] compatible.
 
 ### Backwards Compatibility
 
