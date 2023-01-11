@@ -2,7 +2,6 @@
 namespace-identifier: algorand-caip2
 title: Algorand Namespace - Chains
 author: Jason Paulos (@jasonpaulos)
-discussions-to:
 status: Draft
 type: Standard
 created: 2023-01-11
