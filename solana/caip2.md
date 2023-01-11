@@ -61,8 +61,8 @@ request to the [RPC Endpoints][] of a blockchain node with method
 ```
 
 The response will return as a value for the result a 44-character
-Base-58-encoded hash for the block with height 0 that should be truncated to its
-first 32 characters to be [CAIP-2][] compatible.
+[Base58btc][]-encoded hash for the block with height 0 that should be truncated to
+its first 32 characters to be [CAIP-2][] compatible.
 
 ### Backwards Compatibility
 
@@ -87,6 +87,8 @@ solana:4uhcVJyU9pJkvQyS88uRDiswHXSCkY3zQaw
 ## References
 
 - [RPC Endpoints][] - RPC reference in Solana official documentation
+- [Solana core][] rust crate on crates.io
+- [Base58btc][] encoding "alphabet" (i.e. character-set)
 
 [CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
 [Address Lookup Table Proposal]: https://docs.solana.com/proposals/transactions-v2
@@ -94,6 +96,9 @@ solana:4uhcVJyU9pJkvQyS88uRDiswHXSCkY3zQaw
 [Address Expressions]: https://docs.solana.com/cli/transfer-tokens#receive-tokens
 [Cluster]: https://docs.solana.com/clusters
 [RPC Endpoints]: https://docs.solana.com/cluster/rpc-endpoints
+[Solana core]: https://crates.io/crates/solana-program/
+[base58btc]: https://en.bitcoin.it/wiki/Base58Check_encoding#Base58_symbol_chart
+
 
 ## Copyright
 
