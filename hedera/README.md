@@ -30,8 +30,8 @@ a "legacy" addressing system for external consumption.
 
 ## References
 
-- [HIP-30][]: CAIP Identifiers for the Hedera Network
-- [Hedera Developer Documentation](https://docs.hedera.com/guides/)
+- [HIP-30][] - CAIP Identifiers for the Hedera Network
+- [Hedera Developer Documentation][]
 
 [CAIP-2]: https://chainAgnostic.org/CAIPS/caip-19
 [CAIP-10]: https://chainAgnostic.org/CAIPS/caip-19

@@ -90,8 +90,8 @@ standard JSON-RPC apis at this time.
 
 ## References
 
-- [HIP-30][]: CAIP Identifiers for the Hedera Network
-- [Hedera Developer Documentation](https://docs.hedera.com/guides/)
+- [HIP-30][] - CAIP Identifiers for the Hedera Network
+- [Hedera Developer Documentation][]
 
 [CAIP-2]: https://github.com/chainAgnostic/CAIPS/caip-2.md
 [CAIP-10]: https://github.com/chainAgnostic/CAIPS/caip-10.md

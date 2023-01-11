@@ -115,32 +115,25 @@ hedera:mainnet/nft:0.0.55492/12
 
 ## Links
 
-- [Hedera Token Service SDK Docs][]
-- [ERC20 & ERC721 Compatibility][]: Note the "Not Supported" section for each contract!
-- [HIP-10][]: Token Metadata JSON Schema (for referencing from deployed NFT memo fields)
-- [HIP-17][]: NFT specification
-- [HIP-18][]: Custom Token Fees
-- [HIP-30]: CAIP Identifiers for the Hedera Network
+- [Hedera Token Service SDK Docs][] 
+- [ERC20 & ERC721 Compatibility][] - Note the "Not Supported" section for each contract
+- [HIP-10][] - Token Metadata JSON Schema (for referencing from deployed NFT memo fields)
+- [HIP-17][] - NFT specification
+- [HIP-18][] - Custom Token Fees
+- [HIP-30][] - CAIP Identifiers for the Hedera Network
 
 [CAIP-2]: https://chainAgnostic.org/CAIPS/caip-2
 [CAIP-10]: https://chainAgnostic.org/CAIPS/caip-10
 [CAIP-19]: https://chainAgnostic.org/CAIPS/caip-19
-[HIP-10]:
-    https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-10.md
-[HIP-15]:
-    https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-15.md
-[HIP-17]:
-    https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-17.md
-[HIP-18]:
-    https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-18.md
-[HIP-30]:
-    https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-30.md
+[HIP-10]: https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-10.md
+[HIP-15]: https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-15.md
+[HIP-17]: https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-17.md
+[HIP-18]: https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-18.md
+[HIP-30]: https://github.com/hashgraph/hedera-improvement-proposal/blob/master/HIP/hip-30.md
 [Hedera Developer Documentation]: https://docs.hedera.com/guides/
-[Native Account Syntax]:
-    https://docs.hedera.com/guides/core-concepts/accounts#account-id
+[Native Account Syntax]: https://docs.hedera.com/guides/core-concepts/accounts#account-id
 [Hedera Token Service SDK Docs]: https://docs.hedera.com/guides/docs/sdks/tokens
-[ERC20 & ERC721 Compatibility]:
-    https://docs.hedera.com/guides/core-concepts/smart-contracts/supported-erc-token-standards
+[ERC20 & ERC721 Compatibility]: https://docs.hedera.com/guides/core-concepts/smart-contracts/supported-erc-token-standards
 
 ## Copyright
 
