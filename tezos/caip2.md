@@ -24,11 +24,13 @@ namespace.
 
 ## Syntax
 
-Blockchains in the "tezos" namespace are identified by their chain ID derived deterministically from a short, prefixed Blake-2B hash of their genesis block. 
+Blockchains in the "tezos" namespace are identified by their chain ID derived
+deterministically from a short, prefixed Blake-2B hash of their genesis block. 
 
 ### Reference Definition
 
-The method for calculating the hash of a given chain's genesis block (for use as a CAIP-2 chain ID) is as follows:
+The method for calculating the hash of a given chain's genesis block (for use as
+a CAIP-2 chain ID) is as follows:
 
 ```
 tezosB58CheckEncode('Net',
