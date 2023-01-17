@@ -14,11 +14,13 @@ replaces: CAIP-28
 
 ## Introduction
 
-This document describes the syntax and structure of the namespace for StarkNet..
+This document describes the syntax and structure of the namespace for StarkNet.
 
 ## Syntax
 
 The namespace "starknet" refers to the StarkNet Layer 2 chain on Ethereum.
+
+[Cairo field elements][] are one of the more novel aspects of Cairo's [Type system][], although future interfaces may not require any special knowledge or handling of field elements. ([More on field elements][].)
 
 ## References
 
