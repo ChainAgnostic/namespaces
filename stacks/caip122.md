@@ -63,17 +63,17 @@ Resources:
 
 As in other secp256k1 systems, the public key from which an address is derived
 can be recovered by smart contracts or elsewhere from a signature and the
-signing address, via the [ECRecover][] pattern.  With the signature and public
-key, the message can be verified using the same algorithm as for signature
-creation. The message needs to be hashed with SHA256 before being used as an
-input for verification.
+signing address, via the Stacks equivalent of the [ECRecover][] pattern.  With
+the signature and public key, the message can be verified using the same
+algorithm as for signature creation. The message needs to be hashed with SHA256
+before being used as an input for verification.
 
 ## References
 
 [EIP-4361]: https://eips.ethereum.org/EIPS/eip-4361
 [CAIP-122]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-122.md
 [SIP-018]: https://github.com/stacksgov/sips/pull/57
-[ECRecover]: https://github.com/davidmichaelakers/ecrecover
+[ECRecover]: https://docs.stacks.co/docs/write-smart-contracts/clarity-language/language-functions#secp256k1-recover
 
 - [EIP-4361](https://eips.ethereum.org/EIPS/eip-4361): Sign-In with Ethereum
 - [CAIP-10](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md): Account ID Specification
