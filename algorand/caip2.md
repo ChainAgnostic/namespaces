@@ -14,7 +14,8 @@ requires: CAIP-2
 
 ## Abstract
 
-In CAIP-2 a general blockchain identification scheme is defined. This is the implementation of CAIP-2 for Algorand network.
+In CAIP-2 a general blockchain identification scheme is defined. This is the
+implementation of CAIP-2 for Algorand network.
 
 ### Algorand Namespace
 
@@ -22,21 +23,32 @@ The namespace "algorand" refers to the wider Algorand ecosystem.
 
 ## Rationale
 
-Algorand consists of multiple networks: a production network (MainNet), a testing network (TestNet), a network where new features are trialed (BetaNet), and many more, including private networks used for development. Each network has a unique genesis hash that can be used to identify it.
+Algorand consists of multiple networks: a production network (MainNet), a
+testing network (TestNet), a network where new features are trialed (BetaNet),
+and many more, including private networks used for development. Each network has
+a unique genesis hash that can be used to identify it.
 
-An identifier for an Algorand chain consists of the namespace prefix "algorand:" followed by a truncated form of the chain's genesis hash.
+An identifier for an Algorand chain consists of the namespace prefix "algorand:"
+followed by a truncated form of the chain's genesis hash.
 
 ## Syntax
 
-Due to length and character limitations of CAIP-2 reference identifiers (references must adhere to `[-_a-zA-Z0-9]{1,32}`), the commonly referenced standard base64-encoded genesis hash of an Algorand chain cannot be used directly as a reference.
+Due to length and character limitations of CAIP-2 reference identifiers
+(references must adhere to `[-_a-zA-Z0-9]{1,32}`), the commonly referenced
+standard base64-encoded genesis hash of an Algorand chain cannot be used
+directly as a reference.
 
 Instead, two changes must be made:
-1. The genesis hash must be encoded with a URL-safe base64 alphabet (i.e. the characters `+` and `/` must be replaced with `-` and `_`, respectively).
+1. The genesis hash must be encoded with a URL-safe base64 alphabet (i.e. the
+   characters `+` and `/` must be replaced with `-` and `_`, respectively).
 2. Only the first 32 characters of the URL-safe base64-encoding will be used.
 
 ### Resolution Method
 
-To resolve the blockchain reference for an Algorand chain, a GET request can be made to an Algorand node on the path `/v2/transactions/params`. This will return a JSON object with the the key `genesis-hash`, whose value is the base64-encoded genesis hash of the current chain.
+To resolve the blockchain reference for an Algorand chain, a GET request can be
+made to an Algorand node on the path `/v2/transactions/params`. This will return
+a JSON object with the the key `genesis-hash`, whose value is the base64-encoded
+genesis hash of the current chain.
 
 For example:
 
@@ -55,7 +67,8 @@ curl -H "X-Algo-API-Token:${YOUR_AUTH_TOKEN}" "https://example.algorand.node/v2/
 }
 ```
 
-Note that the `genesis-hash` value returned must be re-encoded with the URL-safe base64 alphabet, and a 32 byte prefix must be taken from this to serve as the CAIP-2 chain reference.
+Note that the `genesis-hash` value returned must be re-encoded with the URL-safe
+base64 alphabet, and it will be substringed to the first 32 characters.
 
 For example, this Node.js code transforms the above response into a CAIP-2 identifier:
 
