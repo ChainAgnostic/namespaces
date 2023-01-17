@@ -19,8 +19,12 @@ supersedes: CAIP-5
 
 The namespace `starknet` refers to the StarkNet Layer 2 on Ethereum.
 
-StarkNet currently represents its chains with string identifiers such as 
-`SN_MAIN` and `SN_GOERLI`. Internally, these strings are encoded as field elements (according to a transformation documented in the system's [core documentation][Transaction structure]), but using the case-sensitive root string identifiers simplifies interoperability by sidestepping type system interoperability around integers.
+StarkNet currently represents its chains with string identifiers such as
+`SN_MAIN` and `SN_GOERLI`. Internally, these strings are encoded as field
+elements (according to a transformation documented in the system's [core
+documentation][Transaction structure]), but using the case-sensitive root string
+identifiers simplifies interoperability by sidestepping type system
+interoperability around integers.
 
 ### Resolution Method
 
@@ -40,7 +44,7 @@ chain_id = bytes.fromhex(hex_chain_id[2:]).decode()   # "SN_GOERLI"
 ```
 
 The response will return a base-16-encoded field element that should be converted to
-a string to format a StarkNet-compatible reference.
+a string to express a StarkNet-compatible reference.
 
 ## Test Cases
 
@@ -57,7 +61,7 @@ starknet:SN_GOERLI
 ## References
 
 - [Transaction structure][]: StarkNet's documentation on chainIDs used in transaction.
-- [Making requests][]: Infura's documentation on how to call their Ethereum-like RPC endpoints.
+- [Making requests][]: Infura's documentation on how to call their Ethereum-style RPC endpoints for StarkNet.
 
 [Transaction structure]: https://docs.starknet.io/documentation/develop/Blocks/transactions/#chain-id
 [Making requests]: https://docs.infura.io/infura/networks/starknet/make-requests
