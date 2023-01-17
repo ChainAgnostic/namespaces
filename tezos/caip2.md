@@ -37,6 +37,10 @@ tezosB58CheckEncode('Net',
             size = 32)))
 ```
 
+Note that in the [Base58 Function in Reference Implementation][], the BTC-58
+alphabet is the default, but `ripple` and `flickr` are also present as
+alternatives; for the purposes of the genesis block hash, assume BTC alphabet.
+
 ### Backwards Compatibility
 
 Not applicable
@@ -55,14 +59,18 @@ tezos:NetXm8tYqnMWky1
 
 ## References
 
-- [Tezos Address types][]: Important context on the Tezos system of addresses and key representations.
-- [Tezos RPC Interface][]: Important context on communicating with Tezos nodes over RPC.
-- [Implementation](https://gitlab.com/tezos/tezos/blob/e7612c5ffa46570cdcc612f7bcead771edc24283/src/lib_crypto/chain_id.ml)
+- [Tezos Address types][] - Important context on the Tezos system of addresses and key representations.
+- [Tezos RPC Interface][] - Important context on communicating with Tezos nodes over RPC.
+- [Chain_ID Reference Implementation][]
+- [Base58 Function in Reference Implementation][] - Note support for additional Base58 alphabets 
 
 [Tezos RPC Interface]: https://tezos.gitlab.io/introduction/howtouse.html#rpc-interface
 [Tezos Address types]: https://tezos.gitlab.io/introduction/howtouse.html#implicit-accounts-and-smart-contracts
+[Chain_ID Reference Implementation]: https://gitlab.com/tezos/tezos/blob/e7612c5ffa46570cdcc612f7bcead771edc24283/src/lib_crypto/chain_id.ml
+[Base58 Function in Reference Implementation]: https://github.com/LedgerHQ/TzScan/blob/9f02015d872014c2b114e600f9212b00c6b281b3/src/common/blake2b.ml#L91
 [CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
 [CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md
+[Base58]: https://datatracker.ietf.org/doc/html/draft-msporny-base58-03
 
 ## Rights
 
