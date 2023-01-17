@@ -15,10 +15,11 @@ requires: CAIP-2
 
 ## Rationale
 
-In CAIP-2 a general blockchain identification scheme is defined. This is the
+In [CAIP-2][] a general blockchain identification scheme is defined. This is the
 implementation of CAIP-2 for Stacks. The chain ID is used as a way to mitigate
-replay attacks on different Stacks chains, as it is included in the transaction encoding.
-Stacks mainnet runs on bitcoin mainnet and testnet runs on bitcoin testnet3.
+replay attacks on different Stacks chains, as it is included in the transaction
+encoding. Stacks mainnet runs on bitcoin mainnet and testnet runs on bitcoin
+testnet3.
 
 ## Syntax
 
@@ -55,8 +56,8 @@ stacks:2147483648
 
 ## References
 
-- [SIP-005][]
-- [API documentation][]
+- [SIP-005][] - Blocks and Transactions
+- [API documentation][] - Core API info
 
 [SIP-005][https://github.com/stacksgov/sips/blob/main/sips/sip-005/sip-005-blocks-and-transactions.md]
 [API documentation][https://hirosystems.github.io/stacks-blockchain-api/#operation/get_core_api_info]
