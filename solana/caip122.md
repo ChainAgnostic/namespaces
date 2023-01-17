@@ -32,7 +32,7 @@ We propose using the signature type `solana:ed25519` to refer to the chain and a
 
 The abstract data model must be converted into a string representation in an unambigious format, and then the string converted to a byte array to be signed over.
 
-We propose the following string format, inspired from [EIP-4361](EIP-4361).
+We propose the following string format, inspired by [EIP-4361](EIP-4361).
 
 ```
 ${domain} wants you to sign in with your Solana account:
