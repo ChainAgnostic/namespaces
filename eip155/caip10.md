@@ -71,6 +71,7 @@ eip155:137:0x0495766CD136138FC492DD499B8DC87A92D6685B
 [CAIP-21]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-21.md
 [CAIP-22]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-22.md
 [EIP155]: https://eips.ethereum.org/EIPS/eip-155
+[EIP55]: https://eips.ethereum.org/EIPS/eip-55
 [ERC20]: https://eips.ethereum.org/EIPS/eip-20
 [ERC721]: https://eips.ethereum.org/EIPS/eip-721
 

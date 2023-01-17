@@ -26,7 +26,8 @@ these addresses always have a leading zero.
 Like on Ethereum, StarkNet addresses begin with `0x` followed by 64 hexadecimal characters
 representing the zero-padded address number, totaling 66 characters.
 
-It's recommended to checksum the address using capitalization like on Ethereum.
+It's recommended to checksum the address using capitalization according to
+[EIP55][], as is common elsewhere on EVM systems.
 
 ## Test Cases
 
@@ -54,6 +55,7 @@ starknet:SN_GOERLI:0x02DdfB499765c064eaC5039E3841AA5f382E73B598097a40073BD8B4817
 [CAIP-19]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-19.md
 [CAIP-21]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-21.md
 [CAIP-22]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-22.md
+[EIP55]: https://eips.ethereum.org/EIPS/eip-55
 
 ## Rights
 
