@@ -40,6 +40,7 @@ The syntax of waves addresses:
 - [Waves Documentation](https://docs.waves.tech)
 - [Waves Developer Portal](https://dev.waves.tech)
 - [Waves Address Documentation Page](https://docs.waves.tech/en/blockchain/account/address)
+- [CAIP-2]()
 
 ## Copyright
 
