@@ -26,6 +26,31 @@ namespace:   waves
 reference:   integer in the range [-128..127]
 ```
 
+### Resolution method
+
+There is no in-protocol resolution method at present. But there is a solution for some cases where it might be needed.
+
+To resolve a blockchain reference for the Waves namespace, make a GET HTTP request `/addresses` to the blockchain node, for example: https://nodes.wavesnodes.com/addresses \
+Thus, the node will return in response an array of its public blockchain addresses, for example:
+
+```json
+[
+  "3PEZTcehyMdtDC1YpnvPHyr4Jw3vL85ofR7",
+  "3PJn91ico9ro78H2FBmwfpkxLnDyeyPAMnx"
+]
+```
+
+Decode any of them as Base58 string and take the second byte from the resulting array, for example (in pseudocode):
+
+```java
+byte getChainId(String address) {
+    byte[] decodedAddress = decodeBase58(address);
+    return decodedAddress[1];
+}
+```
+
+This byte is the chain ID of the blockchain where this node is running.
+
 ## Rationale
 
 The chain ID is specified as a one-byte signed integer.
@@ -57,7 +82,7 @@ waves:84
 # Waves Stagenet
 waves:83
 
-# Waves custom net launched with the private node Docker image https://hub.docker.com/r/wavesplatform/waves-private-node
+# Waves custom net used in the [private node Docker image](https://hub.docker.com/r/wavesplatform/waves-private-node)
 waves:82
 ```
 
