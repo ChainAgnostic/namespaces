@@ -57,14 +57,12 @@ This is a list of manually composed examples
 
 ```
 # edeXa testnet
-edeXa:1995
+eip155:1995
 ```
-
 ## References
 
 - [EIP155][]: Ethereum Improvement Proposal specifying generation and validation of ChainIDs
 - [edeXa RPC][]: https://chainlist.org/chain/1995
-
 
 ## Rights
 
