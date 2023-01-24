@@ -54,14 +54,14 @@ the message with value and updated its balance.
 
 ## Test Cases
 ```
-Get information about balance by wallet address in DEVNET.
-curl 'https://devnet-sandbox.evercloud.dev/graphql'
+Get information about balance by wallet address in MAINNET.
+curl 'https://dapp01.itgold.io/graphql'
 -H 'Accept-Encoding: gzip, deflate, br'
 -H 'Content-Type: application/json'
 -H 'Accept: application/json'
 -H 'Connection: keep-alive'
 -H 'DNT: 1'
--H 'Origin: https://devnet-sandbox.evercloud.dev'
+-H 'Origin: https://dapp01.itgold.io'
 --data-binary
     '{"query":"query
         {\n blockchain
