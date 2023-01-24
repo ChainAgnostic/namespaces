@@ -1,7 +1,7 @@
 ---
 namespace-identifier: everscale-caip2
 title: EVERSCALE namespace
-author:
+author: Lev Antropov(@levantropov), Vitaly Gritsay(@vvismaster)
 discussions-to:
 status: Draft
 type: Standard
