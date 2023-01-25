@@ -30,13 +30,13 @@ reference:   integer in the range [-128..127]
 
 There is no in-protocol resolution method at present. But there is a solution for some cases where it might be needed.
 
-To resolve a blockchain reference for the Waves namespace, make a GET HTTP request `/addresses` to the blockchain node, for example: https://nodes.wavesnodes.com/addresses \
+To resolve a blockchain reference for the Waves namespace, make a GET HTTP request `/addresses` to the blockchain node, for example: https://nodes-testnet.wavesnodes.com/addresses \
 Thus, the node will return in response an array of its public blockchain addresses, for example:
 
 ```json
 [
-  "3PEZTcehyMdtDC1YpnvPHyr4Jw3vL85ofR7",
-  "3PJn91ico9ro78H2FBmwfpkxLnDyeyPAMnx"
+  "3NA4UdyFVv7v1J6UgGe4moyHm2fambavqvm",
+  "3MvbutkV3xapQVUcGBGWCongwfdH8LKTm8w"
 ]
 ```
 

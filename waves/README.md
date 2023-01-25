@@ -5,7 +5,7 @@ author: Maxim Smolyakov (@msmolyakov), Yury Sidorov (@darksyd94)
 status: Draft
 type: Informational
 created: 2023-01-19
-requires: ["CAIP-2"]
+requires: ["CAIP-2", "CAIP-10", "CAIP-19"]
 ---
 
 # Namespace for Waves Blockchains

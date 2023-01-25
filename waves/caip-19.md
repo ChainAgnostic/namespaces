@@ -1,6 +1,6 @@
 ---
-caip: 2
-title: Waves Blockchain ID Specification
+namespace-identifier: waves-caip19
+title: Waves Namespace - Assets
 author: Maxim Smolyakov (@msmolyakov), Yury Sidorov (@darksyd94)
 discussions-to:
 status: Draft
@@ -9,30 +9,31 @@ created: 2023-01-19
 ---
 
 ## Rationale
-Any account that has enough native token(Waves) to pay a fee can issue its own token. The new token is immediately available.
 
-In Waves token can be enabled sponsorship, that is, allow all users to pay a fee in this token for numbers of transactions.
+Any account can issue its own token. The new token is immediately available.
 
-A token issued on another blockchain cannot be used directly on the Waves blockchain. A new token representing the original one can be issued on the Waves blockchain, and a gateway that pegs the two tokens 1:1 can be deployed.
+ID format of fungible and non-fungible tokens is the same.
+
+Process of issuing is also the same. The only difference is that NFTs must have specific values for certain properties.
 
 ## Specification of Asset ID
 
-In Waves blockchain Asset is equal to transaction ID, that issued this asset. That right for non-fungible and fungible tokens.
+Asset ID is a 32 byte array encoded as Base58 string. It's usually equal to ID of the transaction that issued this asset (except when the token is issued using a dApp contract, but in this case the Asset ID format is always the same). This is true for both fungible and non-fungible tokens.
 
 ## Examples
 
-| Network name | Asset ID                            |
-|--------------|-------------------------------------|
-| Mainnet      | DG2xFkPdDwKUoBkzGAhQtLpSGzfXLiCYPEzeKH2Ad24p |
-| Testnet      | DjU9JHRZfNVG22XU518hANGBRL5J12KhAihtkWnZKLNp |
+```
+# Mainnet
+DG2xFkPdDwKUoBkzGAhQtLpSGzfXLiCYPEzeKH2Ad24p
+
+# Testnet
+2HAJrwa8q4SxBx9cHYaBTQdBjdk5wwqdof7ccpAx2uhZ
+```
 
 ## Links
 
-- [Official website](https://waves.tech)
-- [Waves Documentation](https://docs.waves.tech)
-- [Waves Developer Portal](https://dev.waves.tech)
-- [Waves Asset Documentation Page](https://docs.waves.tech/en/blockchain/token)
-- [CAIP-2]()
+- [Token](https://docs.waves.tech/en/blockchain/token)
+- [Token ID](https://docs.waves.tech/en/blockchain/token/token-id)
 
 ## Copyright
 

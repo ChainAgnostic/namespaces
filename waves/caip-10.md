@@ -1,47 +1,70 @@
 ---
-caip: 2
-title: Waves Blockchain ID Specification
+namespace-identifier: waves-caip10
+title: Waves Namespace - Addresses
 author: Maxim Smolyakov (@msmolyakov), Yury Sidorov (@darksyd94)
-discussions-to:
+discussions-to: 
 status: Draft
 type: Standard
 created: 2023-01-19
+requires: ["CAIP-2", "CAIP-10"]
 ---
 
-## CAIP-10
+# CAIP-10
 
-For context, see the [CAIP-10][] specification.
+*For context, see the [CAIP-10][] specification.*
 
 ## Rationale
 
-Waves addresses are 26 byte array and in UIs the address is displayed as base58 encoded string.
+Waves "account" has a public key that is the same for any Waves blockchain.
+
+But Waves "address" is 26 byte array derived from public key and represented as Base58 encoded string.
+
+Waves "address" can change depending on chain ID. It prevents unintentional transfers on other Waves blockchains. Address also contains checksum, which protects against typos and copying errors of the address.
 
 ## Syntax
 
-The syntax of waves addresses:
+The syntax of Waves addresses:
 
-| Field order number | Field                   | Field type     | Field size in bytes | Comments                                                                                                                                                                             |
-|--------------------|-------------------------|----------------|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1                  | Entity type             | Byte           | 1                   | Value must be 1                                                                                                                                                                      |
-| 2                  | Chain ID                | Byte           | 1                   | For context, see the [CAIP-2][] specification.  87 — for Mainnet 84 — for Testnet 83 — for Stagenet                                                                                  |
-| 3                  | Account public key hash | Array of bytes | 20                  | First 20 bytes of the result of the Keccak256 hashing function. Here publicKey is the array of bytes of the account public key                                                       |
-| 4                  | Checksum                | Array of bytes | 4                   | First 4 bytes of the result of the Keccak256 hashing function.  Here data is the array of bytes of three fields put together: 1. Entity type  2. Chain ID 3. Account public key hash |
+```
+caip10-like address:    namespace + ":" + address
+namespace:              waves
+address:                Waves address represented as Base58 encoded string
+```
+
+Waves address is byte array of `Entity type + Chain ID + Account public key hash + Checksum`, where:
+1. `Entity type` — always 1-byte integer with value `1`
+2. `Chain ID` — 1-byte integer of current blockchain ID
+3. `Account public key hash` — first 20 bytes of the result of `keccak256(publicKey)` hashing function
+4. `Checksum` — first 4 bytes of the result of `keccak256(Entity type + Chain ID + Account public key hash)` hashing function
+
+### Resolution method
+
+To derive an address from public key, make a GET HTTP request `/addresses/publicKey/{publicKey}` to the blockchain node, for example: https://nodes-testnet.wavesnodes.com/addresses/publicKey/7Y5rWP1aB1iGkDer8cS9TasAv1HpvCMZiZ2C9KLema6 \
+Thus, the node will return in response an address of the account with the public key for the current blockchain, for example:
+
+```json
+{
+    "address": "3NBNV8hiq8DTVF7UmzFLSUwud3h3pKZkVB3"
+}
+```
 
 ## Test Cases
 
-| Network name | Address                             |
-|--------------|-------------------------------------|
-| Mainnet      | 3PGC6BSrwRkuGAUj12WjWQTTPhK7cnbFQZR |
-| Testnet      | 3MvbutkV3xapQVUcGBGWCongwfdH8LKTm8w |
+```
+# Public Key:
+# 7Y5rWP1aB1iGkDer8cS9TasAv1HpvCMZiZ2C9KLema6
+
+# Waves Mainnet
+waves:3PPPJ62chFkr7hQu34WLPwKiywCpeSbfap7
+
+# Waves Testnet
+waves:3NBNV8hiq8DTVF7UmzFLSUwud3h3pKZkVB3
+```
 
 ## Links
 
-- [Official website](https://waves.tech)
-- [Waves Documentation](https://docs.waves.tech)
-- [Waves Developer Portal](https://dev.waves.tech)
-- [Waves Address Documentation Page](https://docs.waves.tech/en/blockchain/account/address)
-- [CAIP-2]()
+- [About addresses in Waves Documentation](https://docs.waves.tech/en/blockchain/account/address)
 
 ## Copyright
 
-Copyright and related rights waived via CC0.
+Copyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
