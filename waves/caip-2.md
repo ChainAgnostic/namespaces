@@ -23,7 +23,7 @@ Chain ID format is a signed integer in decimal representation. The signed intege
 ```
 chain_id:    namespace + ":" + reference
 namespace:   waves
-reference:   integer in the range [-128..127]
+reference:   integer in the range [-128..127]. If the value is shorter than 3 characters, then must be padded with leading zeros to 3 characters
 ```
 
 ### Resolution method
@@ -82,8 +82,11 @@ waves:084
 # Waves Stagenet
 waves:083
 
-# Waves custom net used in the [private node Docker image](https://hub.docker.com/r/wavesplatform/waves-private-node)
+# Waves custom network used in the [private node Docker image](https://hub.docker.com/r/wavesplatform/waves-private-node)
 waves:082
+
+# Waves custom network with negative Chain ID
+waves:-07:3NBNV8hiq8DTVF7UmzFLSUwud3h3pKZkVB3
 ```
 
 ## Links
