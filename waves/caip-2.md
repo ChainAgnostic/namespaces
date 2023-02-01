@@ -74,16 +74,16 @@ This is a list of manually composed examples
 
 ```
 # Waves Mainnet
-waves:87
+waves:087
 
 # Waves Testnet
-waves:84
+waves:084
 
 # Waves Stagenet
-waves:83
+waves:083
 
 # Waves custom net used in the [private node Docker image](https://hub.docker.com/r/wavesplatform/waves-private-node)
-waves:82
+waves:082
 ```
 
 ## Links
