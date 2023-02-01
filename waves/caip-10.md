@@ -26,8 +26,9 @@ Waves "address" can change depending on chain ID. It prevents unintentional tran
 The syntax of Waves addresses:
 
 ```
-caip10-like address:    namespace + ":" + address
+caip10-like address:    namespace + ":" chainId + ":" + address
 namespace:              waves
+chain Id:               [-128..127] value. If the value is shorter than 3 characters, then must be padded with leading zeros to 3 characters
 address:                Waves address represented as Base58 encoded string
 ```
 
@@ -55,10 +56,13 @@ Thus, the node will return in response an address of the account with the public
 # 7Y5rWP1aB1iGkDer8cS9TasAv1HpvCMZiZ2C9KLema6
 
 # Waves Mainnet
-waves:3PPPJ62chFkr7hQu34WLPwKiywCpeSbfap7
+waves:087:3PPPJ62chFkr7hQu34WLPwKiywCpeSbfap7
 
 # Waves Testnet
-waves:3NBNV8hiq8DTVF7UmzFLSUwud3h3pKZkVB3
+waves:084:3NBNV8hiq8DTVF7UmzFLSUwud3h3pKZkVB3
+
+# Waves custom network with negative Chain ID
+waves:-07:3NBNV8hiq8DTVF7UmzFLSUwud3h3pKZkVB3
 ```
 
 ## Links
