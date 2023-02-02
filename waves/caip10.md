@@ -73,7 +73,7 @@ waves:087:3PPPJ62chFkr7hQu34WLPwKiywCpeSbfap7
 waves:084:3NBNV8hiq8DTVF7UmzFLSUwud3h3pKZkVB3
 
 # Waves custom network (-7)
-waves:-07:3NBNV8hiq8DTVF7UmzFLSUwud3h3pKZkVB3
+waves:-07:4Wa91bcuNGyv4BdV52UJ2VdpRtvZTd4BZfm
 ```
 
 ## Links
