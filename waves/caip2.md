@@ -2,10 +2,11 @@
 caip: 2
 title: Waves Blockchain ID Specification
 author: Maxim Smolyakov (@msmolyakov), Yury Sidorov (@darksyd94)
-discussions-to: 
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/49
 status: Draft
 type: Standard
 created: 2023-01-19
+requires: CAIP-2
 ---
 
 ## Abstract
