@@ -2,6 +2,7 @@
 namespace-identifier: waves
 title: Waves Ecosystem
 author: Maxim Smolyakov (@msmolyakov), Yury Sidorov (@darksyd94)
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/49
 status: Draft
 type: Informational
 created: 2023-01-19

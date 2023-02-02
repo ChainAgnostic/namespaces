@@ -2,7 +2,7 @@
 namespace-identifier: waves-caip10
 title: Waves Namespace - Addresses
 author: Maxim Smolyakov (@msmolyakov), Yury Sidorov (@darksyd94)
-discussions-to: 
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/49
 status: Draft
 type: Standard
 created: 2023-01-19

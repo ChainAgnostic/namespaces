@@ -2,10 +2,11 @@
 namespace-identifier: waves-caip19
 title: Waves Namespace - Assets
 author: Maxim Smolyakov (@msmolyakov), Yury Sidorov (@darksyd94)
-discussions-to:
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/49
 status: Draft
 type: Standard
 created: 2023-01-19
+requires: ["CAIP-2", "CAIP-19"]
 ---
 
 ## Rationale
