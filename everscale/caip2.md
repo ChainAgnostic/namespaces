@@ -2,7 +2,7 @@
 namespace-identifier: everscale-caip2
 title: EVERSCALE namespace
 author: Lev Antropov(@levantropov), Vitaly Gritsay(@vvismaster)
-discussions-to:
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/52/
 status: Draft
 type: Standard
 created: 23.01.23
