@@ -17,8 +17,10 @@ replaces: CAIP-13
 
 ## Rationale
 
-The namespace is called "polkadot" to refer to Polkadot-like "parachains,"
-parallel and independent Layer 1s coordinated by the Polkadot relay chains.
+The namespace is called "polkadot" to encompass all chains in the polkadot
+ecosystem, allowing actors and entities to be addressable from core Polkadot
+"relay" chains, indepedent "solo" chains, and L2-like "parachains" coordinated
+by the Polkadot relay chains. 
 
 The rationale behind the use of block hash from the genesis block stems from its
 usage in the Polkadot architecture in network and consensus.
@@ -85,6 +87,7 @@ polkadot:37e1f8125397a98630013a4dff89b54c
 - [Polkadot address explainer][]: A quick overview of how network-specific,
       self-describing addresses can derive from the same private key
 - [Polkadot subscan tool][]: A tool for transforming addresses according to SS58 across polkadot networks
+- 
 
 [Polkadot address explainer]: https://www.quora.com/How-do-different-wallet-addresses-work-on-Polkadot-and-Kusama
 [Polkadot identity system]: https://wiki.polkadot.network/docs/learn-identity
