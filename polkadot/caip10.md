@@ -17,20 +17,21 @@ replaces: CAIP-13
 
 ## Rationale
 
-Polkadot addresses can be expressed a number of ways, but the default form is a
-base58 [multiaddress][] with a human-readable prefix of one or more characters.
-The specification defining these across the entire Polkadot namespace is
-[SS58][]; this specification summarizes the calculation of an address as
-`base58encode ( concat ( <address-type>, <address>, <checksum> ) )`, where
-`<address-type>` is a prefix registered in the [SS58 registry][] and where
-`<checksum>` options are constrained by targeted output-length.
+Polkadot wallets can be expressed a number of ways, but the canonical expression
+in polkadot development is a base58 [multiaddress][] with a human-readable
+prefix of one or more characters. The specification defining these across the
+entire Polkadot namespace is [SS58][]; this specification summarizes the
+calculation of an address as `base58encode ( concat ( <address-type>, <address>,
+<checksum> ) )`, where `<address-type>` is a prefix registered in the [SS58
+registry][] and where `<checksum>` options are constrained by targeted
+output-length.
 
 While the above describes a given keypair as generating many addresses per
 network, a 47-character multiaddress is the default expression, unique per
 chain.  Note that a single private key will thus produce different
-multiaddresses on each chain where it is used, so de-duplicating accounts in a
-multi-Polkadot context requires implementing full support for advanced SS58
-functions.
+multiaddresses on each chain where it is used, so de-duplicating Polkadot
+accounts in a multi-chain context may require implementing full support for
+advanced SS58 functions.
 
 As the default multi-address was used to express individual addresses in
 CAIP-10, other possible expressions are out of scope of this specification.
