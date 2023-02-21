@@ -14,7 +14,20 @@ replaces: CAIP-13
 ## Introduction
 
 These documents defines the syntax and canonical references of the CASA URI schemes
-for the Polkadot namespace.
+for the Polkadot namespace. 
+
+It is important for developers new to the ecosystem to know that unlike other
+namespaces, the exact execution environment, RPC methods, block sizes and other
+core features of a blockchain vary widely in a very layered and modular
+architecture based on "pallets" (Rust crates that extend the virtual machine and
+consensus). This creates an environment for complex "cross-chain" development
+between polkadots chains that may have shared security or common resources via
+coordination chains but also may not. Within the framework of the
+Cross-Consensus Messaging [XCM][], cross-chain interactions are enabled but a
+polkadot-wide meta-chain data model; moving beyond the "relative addressing" of
+earlier forms of the Polkadot-wide `Multilocation` type, addressing in the
+"absolute mode" introduced by XCM v3 is the starting point for CASA-style
+addressing. 
 
 ## References
 
@@ -25,6 +38,7 @@ for the Polkadot namespace.
 - [Polkadot address explainer][]: A quick overview of how network-specific,
       self-describing addresses can derive from the same private key
 - [Polkadot subscan tool][]: A tool for transforming addresses according to SS58 across polkadot networks
+- [XCM]: Cross Consensus Messaging defies an addressing network across 
 
 [Polkadot address explainer]: https://www.quora.com/How-do-different-wallet-addresses-work-on-Polkadot-and-Kusama
 [Polkadot identity system]: https://wiki.polkadot.network/docs/learn-identity
