@@ -1,12 +1,12 @@
 ---
 namespace-identifier: polkadot-caip10
 title: Polkadot Namespace - Addresses
-author: ["Pedro Gomes (@pedrouid)", "Joshua Mir (@joshua-mir)", "Shawn Tabrizi (@shawntabrizi)", "Juan Caballero (@bumblefudge)"]
+author: ["Pedro Gomes (@pedrouid)", "Joshua Mir (@joshua-mir)", "Shawn Tabrizi (@shawntabrizi)", "Juan Caballero (@bumblefudge)", "Antonio Antonino (@ntn-x2)"]
 discussions-to: https://github.com/ChainAgnostic/CAIPs/issues/13
 status: Draft
 type: Standard
 created: 2020-04-01
-updated: 2022-03-27
+updated: 2023-02-22
 requires: ["CAIP-2", "CAIP-10"]
 replaces: CAIP-13
 ---
@@ -17,33 +17,18 @@ replaces: CAIP-13
 
 ## Rationale
 
-Polkadot wallets can be expressed a number of ways, but the canonical expression
-in polkadot development is a base58 [multiaddress][] with a human-readable
-prefix of one or more characters. The specification defining these across the
-entire Polkadot namespace is [SS58][]; this specification summarizes the
-calculation of an address as `base58encode ( concat ( <address-type>, <address>,
-<checksum> ) )`, where `<address-type>` is a prefix registered in the [SS58
-registry][] and where `<checksum>` options are constrained by targeted
-output-length.
+Polkadot addresses can be expressed in a number of ways, but the canonical expression in Polkadot development is a Base58 [multiaddress][] with a human-readable prefix of one or more characters.
+The specification defining these across the entire Polkadot namespace is [SS58][]; this specification summarizes the calculation of an address as `base58encode ( concat ( <address-type>, <address>, <checksum> ) )`, where `<address-type>` is a prefix registered in the [SS58 registry][] and where `<checksum>` options are constrained by targeted output-length.
 
-While the above describes a given keypair as generating many addresses per
-network, a 47-character multiaddress is the default expression, unique per
-chain.  Note that a single private key will thus produce different
-multiaddresses on each chain where it is used, so de-duplicating Polkadot
-accounts in a multi-chain context may require implementing full support for
-advanced SS58 functions.
+While the above describes a given keypair as generating many addresses per network, a 47-character multiaddress is the default expression, unique per chain.
+Note that a single private key will thus produce different multiaddresses on each chain where it is used, so de-duplicating Polkadot accounts in a multi-chain context may require implementing full support for advanced SS58 functions.
 
-As the default multi-address was used to express individual addresses in
-CAIP-10, other possible expressions are out of scope of this specification.
-Similarly, recovery of chain ID from account type or validation of addresses
-using the included checksum are out of scope, although both are specified in
-[SS58][].
+As the default multi-address was used to express individual addresses in CAIP-10, other possible expressions are out of scope of this specification.
+Similarly, recovery of chain ID from account type or validation of addresses using the included checksum are out of scope, although both are specified in [SS58][].
 
 ## Syntax
 
-As the default/standard expression of an address in Polkadot is a 47-character
-base58 string, the following regular expression can be used for validating
-addresses:
+As the default/standard expression of an address in Polkadot is a 47-character base58 string, the following regular expression can be used for validating addresses:
 
 ```
 [1-9A-HJ-NP-Za-km-z]{47}
@@ -51,7 +36,7 @@ addresses:
 
 ## Test Cases
 
-This is a list of examples composed using the [polkadot.subscan tool][]:
+This is a list of examples composed using the [Polkadot subscan tool][]:
 
 ```
 # Kusama
@@ -61,16 +46,19 @@ polkadot:b0a8d493285c2df73290dfb7e61f870f:CpjsLDC1JFyrhm3ftC9Gs4QoyrkHKhZKtK7YqG
 //one address in multiple network-specific expressions, taken from the [Polkadot address explainer][]:
 
 # Underlying Public Key:
-0x54a0lf789elcflcf69da4010f7001dfaea8e4166656f332ebb5b38ec85704811
+0xf52c9c6ef25e069f81a82afad18aefe7e033f069ed1f8d402d5a3f3d243c4e68
 
-# Kusama (coordination chain; address-type prefix 0)
-polkadot:b0a8d493285c2df73290dfb7e61f870f:EVH78gP5ATklKjHonVpxM8c1W6rWPKn5cAS14fXn4Ry5NxK
+# Kusama (relaychain; address-type prefix 2)
+polkadot:b0a8d493285c2df73290dfb7e61f870f:J7nW4HZAUVqgJhbW83GGHJFNoKZAmFcMt9Q16rTc2Vn4Hny
 
 # Edgeware (address-type prefix 7)
-polkadot:742a2ca70c2fda6cee4f8df98d64c4c6:jRaQ6PPzcqNnckcLStwqrTjEvpKnJUP2Jw65Ut36LQQUycd
+polkadot:742a2ca70c2fda6cee4f8df98d64c4c6:o45o1za5vsUTbiv2nSP9ndNcE32SgQDJav45X4xvJUDTkw6
 
 # Kulupu (address-type prefix 16)
-polkadot:37e1f8125397a98630013a4dff89b54c:2dWWj2G2TEhvC9PnVEpAExrZ4J6yGx94imvGcdfkG2ko1u6x
+polkadot:37e1f8125397a98630013a4dff89b54c:2h927wsCYYk1s8N6BaMbYu2CRbKfwL4u13uEcfrg5zpbztW9
+
+# KILT Spiritnet (address-type prefix 38)
+polkadot:411f057b9107718c9624d6aa4a3f23c1:4tTXomn4zwz1JRGJ7Hi7risYeGU99MvM9k689i1JGouLBxUX
 ```
 
 ## References
@@ -82,25 +70,15 @@ polkadot:37e1f8125397a98630013a4dff89b54c:2dWWj2G2TEhvC9PnVEpAExrZ4J6yGx94imvGcd
 - [Polkadot address explainer][]: A quick overview of how network-specific,
       self-describing addresses can derive from the same private key
 - [Polkadot subscan tool][]: A tool for transforming addresses according to SS58 across polkadot networks
+- 
 
-[Polkadot address explainer]: https://www.quora.com/How-do-different-wallet-addresses-work-on-Polkadot-and-Kusama
+[Polkadot address explainer]: https://wiki.polkadot.network/docs/learn-account-advanced
 [Polkadot identity system]: https://wiki.polkadot.network/docs/learn-identity
 [Polkadot public RPC endpoints]: https://wiki.polkadot.network/docs/maintain-endpoints
 [Polkadot documentation]: https://wiki.polkadot.network/
 [Polkadot subscan tool]: https://polkadot.subscan.io/tools/ss58_transform?
-[Polkadot-ENS tutorial]: https://wiki.polkadot.network/docs/ens
-[SS58]: https://docs.substrate.io/v3/advanced/ss58/
-[SS58 registry]: https://github.com/paritytech/ss58-registry/blob/main/ss58-registry.json
-[multiaddress]: https://github.com/multiformats/multiaddr#specification
 [CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
 [CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md
-[CAIP-19]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-19.md
-[CAIP-21]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-21.md
-[CAIP-22]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-22.md
-[EIP155]: https://eips.ethereum.org/EIPS/eip-155
-[ERC20]: https://eips.ethereum.org/EIPS/eip-20
-[ERC721]: https://eips.ethereum.org/EIPS/eip-721
-
 ## Copyright
 
 Copyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
