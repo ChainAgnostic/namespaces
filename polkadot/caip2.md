@@ -1,7 +1,7 @@
 ---
 namespace-identifier: polkadot-caip2
 title: Polkadot Namespace - Chains
-author: ["Pedro Gomes (@pedrouid)", "Joshua Mir (@joshua-mir)", "Shawn Tabrizi (@shawntabrizi)", "Juan Caballero (@bumblefudge)"]
+author: [ "Pedro Gomes (@pedrouid)" , "Joshua Mir (@joshua-mir)" , "Shawn Tabrizi (@shawntabrizi)" , "Juan Caballero (@bumblefudge)" ]
 discussions-to: https://github.com/ChainAgnostic/CAIPs/issues/13
 status: Draft
 type: Standard
