@@ -2,6 +2,7 @@
 namespace-identifier: xrpl
 title: XRP Ledger Namespace
 author: Anton Dalgren (@antondalgren)
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/57/
 status: Draft
 type: Informational
 created: 2023-02-23

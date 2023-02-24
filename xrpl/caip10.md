@@ -2,6 +2,7 @@
 namespace-identifier: xrpl-caip10
 title: XRP Ledger Namespace - Addresses
 author: Anton Dalgren (@antondalgren)
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/57/
 status: Draft
 type: Standard
 created: 2023-02-23
