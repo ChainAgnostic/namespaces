@@ -15,21 +15,29 @@ requires: ["CAIP-2"]
 
 ## Rationale
 
-The namespace `xrpl` refers to the XRP Ledger ecosystem, including its alternative testing and development networks.
+The namespace `xrpl` refers to the XRP Ledger ecosystem, including its
+alternative testing and development networks.
 
-The XRP Ledger ecosystem consists of several different blockchains. There is one production network called `livenet` where all business on the XRP Ledger takes place, a testing network called `testnet` for stable releases and a development network called `devnet` for beta releases. There are also some preview networks for particularly large network changes. The networks are identified by a numerical `network_id`.
+The XRP Ledger ecosystem consists of several different blockchains. There is one
+production network called `livenet` where all business on the XRP Ledger takes
+place, a testing network called `testnet` for stable releases and a development
+network called `devnet` for beta releases. There are also some preview networks
+for particularly large network changes. The networks are identified by a
+numerical `network_id`.
 
-An identifier for an XRPL chain consists of the `xrpl` namespace prefix followed by the chains `network_id`; `xrpl:network_id`.
-
+An identifier for an XRPL chain consists of the `xrpl` namespace prefix followed
+by the chain's unique `network_id`, an unsigned integer, i.e.
+`xrpl:{network_id}`.
 
 ## Syntax
 
-A network id in the XRP Ledger ecosystem is defined as an unsigned integer ranging from 0 to 4294967295.
-
+A network id in the XRP Ledger ecosystem is defined as an unsigned integer
+ranging from 0 to 4294967295.
 
 ### Resolution Method
 
-To resolve a network reference for a XRPL network, POST a RPC request to the XRPL node with endpoint `/` for example:
+To resolve a network reference for a XRPL network, POST a RPC request to the
+XRPL node with endpoint `/` for example:
 
 ```jsonc
 // Request
@@ -73,7 +81,8 @@ curl --location --request POST "https://xrplcluster.com/" \
 ```
 The response will return a JSON object which will include server information.
 
-The network reference can be retrieved from the field `response.info.network_id` in the response of the `server_info` RPC request.
+The network reference can be retrieved from the field `response.info.network_id`
+in the response of the `server_info` RPC request.
 
 ### Backwards Compatibility
 
@@ -99,15 +108,20 @@ xrpl:25
 
 ## References
 
-- [XRPL Networks](https://xrpl.org/parallel-networks.html) - Description of the different XRPL networks.
-- [XRPL Public Nodes](https://xrpl.org/public-servers.html) - Public nodes for the different XRPL networks.
-- [XRPL Server Info Request](https://xrpl.org/server_info.html) -
-  RPC request to get the network_id.
-- [XRPL Documentation](https://xrpl.org/docs.html)
-- [XRPL Network ID](https://github.com/XRPLF/rippled/blob/8f514937a41eba90d98fb99daf938925527f0c44/cfg/rippled-example.cfg#L818-L820) - The definition of the network_id value.
-- [CAIP-2]
+- [XRPL Documentation][]
+- [XRPL Networks][] - Description of the different XRPL networks.
+- [XRPL Public Nodes][] - Public nodes for the different XRPL networks.
+- [XRPL Server Info Request][] - RPC request to get the `network_id`.
+- [XRPL Network ID][] - The definition of the `network_id` value.
+- [CAIP-2][]
 
 [CAIP-2]: https://chainAgnostic.org/CAIPS/caip-2
+[XRPL Documentation]: https://xrpl.org/docs.html
+[XRPL Networks]: https://xrpl.org/parallel-networks.html 
+[XRPL Network ID]: https://github.com/XRPLF/rippled/blob/8f514937a41eba90d98fb99daf938925527f0c44/cfg/rippled-example.cfg#L818-L820
+[XRPL Public Nodes]: https://xrpl.org/public-servers.html 
+[XRPL Server Info Request]: https://xrpl.org/server_info.html
+
 
 ## Copyright
 
