@@ -2,7 +2,7 @@
 namespace-identifier: everscale
 title: Everscale Ecosystem
 author: Lev Antropov(@levantropov), Vitaly Gritsay(@vvismaster)
-discussions-to: https://github.com/ChainAgnostic/CAIPs/pull/60
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/52/
 status: Draft
 type: Informational
 created: 2023-01-23
