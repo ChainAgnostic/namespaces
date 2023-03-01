@@ -40,17 +40,15 @@ everscale:devnet
 ```
 
 ### Resolution Mechanics
-A transaction is the result of a contract execution.
+In theory, anyone can support their app to access the everscale API.
+You need to know in advance what type of network
+(mainnet, devnet) a certain dapp supports.
 
-In general, a transaction is generated with one incoming message (external or internal) and can generate several outcoming messages (external or internal) as a result.
+For example, for devnet - https://devnet.evercloud.io/projectID/graphql,
+for mainnet - https://dapp02.itgold.io
 
-The transaction can be successful or aborted.
-
-For example, a simple value transfer consists of 2 transactions
-— Sender's transaction which generated
-an internal message with a value transfer,
-and Recipient's transaction where it received
-the message with value and updated its balance.
+Currently, there are two providers
+of the networks endpoints - itgold.io and evercloud.dev
 
 ## Test Cases
 ```
