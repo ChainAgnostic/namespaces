@@ -32,6 +32,7 @@ _For context, see the [CAIP-2][] specification._
 | ------------ | -------------------------------- |
 | Mainnet      | 5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp |
 | Devnet       | EtWTRABZaYq6iMfeYKouRu166VU2xqa1 |
+| Testnet      | 4uhcVJyU9pJkvQyS88uRDiswHXSCkY3z |
 
 ## Test Cases
 
@@ -41,6 +42,9 @@ solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp:7S3P4HxJpyyigGzodYwHtCxZyUQe9JiBMHyRWXAr
 
 # Solana Devnet
 solana:EtWTRABZaYq6iMfeYKouRu166VU2xqa1:DYw8jCTfwHNRJhhmFcbXvVDTqWMEVFBX6ZKUmG5CNSKK
+
+# Solana Testnet
+solana:4uhcVJyU9pJkvQyS88uRDiswHXSCkY3z:6LmSRCiu3z6NCSpF19oz1pHXkYkN4jWbj9K1nVELpDkT
 ```
 
 ## References
