@@ -46,8 +46,12 @@ base58 string, the following regular expression can be used for validating
 addresses:
 
 ```
-[1-9A-HJ-NP-Za-km-z]{47}
+[1-9A-HJ-NP-Za-km-z]{0,47}
 ```
+
+### Cross-Namespace  Compatibility
+
+In conformance with CAIP-10, a `chainID` can be explicitly specified for closer equivalence to other CAIP-10 applications in other namespaces.  However, `chainID` is derivable from any valid address using [SS58][], so a special case of addresses for which the encoding context does not have available (i.e. has not yet derived) the `chainID` from an address, or where the consuming software/party is expecting to derive it regardless, is proposed.  In these cases, the literal `ss58` can be used in the place of a `chainID`.
 
 ## Test Cases
 
@@ -65,12 +69,15 @@ polkadot:b0a8d493285c2df73290dfb7e61f870f:CpjsLDC1JFyrhm3ftC9Gs4QoyrkHKhZKtK7YqG
 
 # Kusama (coordination chain; address-type prefix 0)
 polkadot:b0a8d493285c2df73290dfb7e61f870f:EVH78gP5ATklKjHonVpxM8c1W6rWPKn5cAS14fXn4Ry5NxK
+polkadot:ss58:EVH78gP5ATklKjHonVpxM8c1W6rWPKn5cAS14fXn4Ry5NxK
 
 # Edgeware (address-type prefix 7)
 polkadot:742a2ca70c2fda6cee4f8df98d64c4c6:jRaQ6PPzcqNnckcLStwqrTjEvpKnJUP2Jw65Ut36LQQUycd
+polkadot:ss58:jRaQ6PPzcqNnckcLStwqrTjEvpKnJUP2Jw65Ut36LQQUycd
 
 # Kulupu (address-type prefix 16)
-polkadot:37e1f8125397a98630013a4dff89b54c:2dWWj2G2TEhvC9PnVEpAExrZ4J6yGx94imvGcdfkG2ko1u6x
+polkadot:742a2ca70c2fda6cee4f8df98d64c4c6:jRaQ6PPzcqNnckcLStwqrTjEvpKnJUP2Jw65Ut36LQQUycd
+polkadot:ss58:jRaQ6PPzcqNnckcLStwqrTjEvpKnJUP2Jw65Ut36LQQUycd
 ```
 
 ## References
