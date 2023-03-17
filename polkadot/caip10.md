@@ -42,6 +42,7 @@ Nevertheless, if a regex were to be used, it should match on addresses that are 
 
 This is a list of example addresses generated from the same public key, composed using the [Subscan address converter][]; the 1-byte SS58 prefix is given in decimal for clarity, as listed in the SS58 registry:
 
+```
 # Public key (in HEX format)
 0xd6a3105d6768e956e9e5d41050ac29843f98561410d3a47f9dd5b3b227ab8746
 
