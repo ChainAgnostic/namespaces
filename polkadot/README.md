@@ -30,7 +30,7 @@ Because with the release of XCM v3 `MultiLocation`s have been updated to always 
 
 - [Polkadot documentation][]: Homepage for ecosystem-wide developer documentation
 - [Polkadot public RPC endpoints][]: for dev/testing purposes
-- [XCM]: Cross Consensus Messaging defies an addressing network across 
+- [XCM][]: Cross Consensus Messaging defies an addressing network across 
 
 [polkadot-consensus]: https://wiki.polkadot.network/docs/learn-consensus
 [Polkadot documentation]: https://wiki.polkadot.network/
