@@ -17,7 +17,7 @@ replaces: CAIP-13
 
 ## Rationale
 
-The namespace is called "polkadot" to encompass all chains that implement the [Polkadot Host protocol][polkadot-protocol], allowing actors and entities that belong to a relaychain, independent "solo" chain, and L1-like "parachain" to be addressable.
+The namespace is called "polkadot" to encompass all chains that implement the [Polkadot Host protocol][polkadot-protocol], allowing actors and entities that belong to a relay chain, independent "solo" chain, and L1-like "parachain" to be addressable.
 
 The rationale behind the use of block hash from the genesis block stems from its usage in the Polkadot architecture in network and consensus.
 
@@ -30,7 +30,11 @@ As CAIP-2 references for this namespace are 32-byte hashes in lowercase HEX, the
 
 ### Resolution Method
 
-To resolve a blockchain reference for the Polkadot namespace, make a JSON-RPC request to the blockchain node with method `chain_getBlockHash`, for example:
+There is no index or registry that maps genesis hashes to networks, and defining such a mechanism for doing so is out of the scope for this specification.
+This specification assumes that consumers of this class of CAIP-2 identifiers are able to properly resolve them to the appropriate network.
+This specification then defines how to verify that a given RPC node, reachable via a regular URL, belongs to a given Polkadot network.
+
+Given the URL of a Polkadot network RPC node, make a JSON-RPC request to the node with method `chain_getBlockHash`, for example:
 
 ```jsonc
 // Request
@@ -48,9 +52,8 @@ To resolve a blockchain reference for the Polkadot namespace, make a JSON-RPC re
   "result": "0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3"
 }
 ```
-The response will return as a value for the result a hash for the block with height 0 that should be sliced to its first 16 bytes (32 characters for base 16) to be CAIP-2/CAIP-10 compatible.
-
-How the address for an RPC node for a given Polkadot-based network is retrieved is out of scope of this document.
+The response will return as a value for the result a hash for the block with height 0 (i.e., genesis block).
+The leading `0x` and the last 32 characters will need to be trimmed, such that the resulting string is a 32-character HEX string (i.e., 16 bytes) that represents the CAIP-2 identifier for the Polkadot network the RPC node is part of.
 
 ### Backwards Compatibility
 
@@ -61,34 +64,33 @@ Not applicable
 This is a list of manually composed examples
 
 ```
-# Kusama
+# Polkadot relay chain
+polkadot:91b171bb158e2d3848fa23a9f1c25182
+
+# Kusama relay chain
 polkadot:b0a8d493285c2df73290dfb7e61f870f
 
-# KILT Spiritnet
-polkadot:411f057b9107718c9624d6aa4a3f23c1
+# KILT Spiritnet parachain on Polkadot
+polkadot:a0453819cbf8b4df9423a5cd601f546c
 
-# Edgeware
-polkadot:742a2ca70c2fda6cee4f8df98d64c4c6
+# Karura parachain on Kusama
+polkadot:baf5aabe40646d11f0ee8abbdc64f4a4
 
-# Kulupu
-polkadot:37e1f8125397a98630013a4dff89b54c
+# Crust Network solo chain
+polkadot:8b404e7ed8789d813982b9cb4c8b664c
 ```
 
 ## References
 
 - [Polkadot documentation][]: Homepage for ecosystem-wide developer documentation
 - [Polkadot public RPC endpoints][]: for dev/testing purposes
-- [Polkadot identity system][]: Introduction to on-chain identity registrars 
-- [Polkadot address explainer][]: A quick overview of how network-specific, self-describing addresses can derive from the same private key
 - [Polkadot subscan tool][]: A tool for transforming addresses according to [SS58][] across polkadot networks
 
-[polkadot-protocol]: https://wiki.polkadot.network/docs/learn-polkadot-host
-[Polkadot address explainer]: https://wiki.polkadot.network/docs/learn-account-advanced
-[Polkadot identity system]: https://wiki.polkadot.network/docs/learn-identity
-[Polkadot public RPC endpoints]: https://wiki.polkadot.network/docs/maintain-endpoints
-[Polkadot documentation]: https://wiki.polkadot.network/
-[Polkadot subscan tool]: https://polkadot.subscan.io/tools/ss58_transform?
 [CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
+[polkadot-protocol]: https://wiki.polkadot.network/docs/learn-polkadot-host
+[Polkadot documentation]: https://wiki.polkadot.network/
+[Polkadot public RPC endpoints]: https://wiki.polkadot.network/docs/maintain-endpoints
+[Polkadot subscan tool]: https://polkadot.subscan.io/tools/ss58_transform?
 
 ## Copyright
 
