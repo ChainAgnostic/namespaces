@@ -1,6 +1,6 @@
 ---
-namespace-identifier: everscale
-title: Everscale Ecosystem
+namespace-identifier: TVM
+title: TVM Ecosystem
 author: Lev Antropov(@levantropov), Vitaly Gritsay(@vvismaster)
 discussions-to: https://github.com/ChainAgnostic/namespaces/pull/52/
 status: Draft
@@ -10,44 +10,20 @@ updated:
 replaces:
 ---
 
-# Namespace for Everscale chains
-The namespace for `Everscale` is based on the official name
-of the chain and is the basis for all features
-within it.
+This document describes the syntax and structure of the TVM namespace for chains using the TON Virtual Machine.
+Currently, TVM is used by such networks as: Everscale, TON, Venom, Gosh.
 
-## Rationale
-
-At the moment, blockchain consists of 2 workchains.
-One of them (-1), a so-called masterchain,
-is needed for service contracts and validator contracts,
-another one (0) is for simple users.
-
-However, by reference networks of basic Everscale
-is meaning: mainnet and devnet.
-
-```
-everscale:mainnet
-everscale:devnet
-```
-## Governance
-The Everscale network is governed by decentralized autonomous organization(DAO).
-
-Ever DAO is currently the main decision-making body
-used as a tool to create proposals on the Everscale network.
-It sets up development directions for the entire ecosystem
-and makes strategic decisions on the products.
-Thus, holders of EVER, Everscale's native coin,
-get the opportunity to participate in decision-making
-on the development of the project.
-
+# Namespace for TVM chains
+Networks using TVM do not have a single, commonly accepted standard for identifying chains, so chains will be named according to their generally accepted names. The naming principle is described in CAIP-2.
 
 
 ## References
 
-* [Basics of Everscale Blockchain](https://docs.everscale.network/arch/basics)
-* [What is Ever OS](https://docs.everscale.network/arch/ever-os)
-* [Account(addresses)](https://docs.everscale.network/arch/accounts)
-* [Fungible Token(TIP-3)](https://docs.everscale.network/standard/TIP-3)
+* [Everscale Blockchain](https://docs.everscale.network/)
+* [Everscale Standards](https://docs.everscale.network/standard)
+* [TON Blockchain](https://ton.org/docs)
+* [Venom Blockchain](https://venom.foundation/)
+* [Gosh Blockchain](https://gosh.sh/)
 
 
 ## Copyright

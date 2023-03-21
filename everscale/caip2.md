@@ -1,6 +1,6 @@
 ---
-namespace-identifier: everscale-caip2
-title: EVERSCALE namespace
+namespace-identifier: tvm-caip2
+title: TVM namespace
 author: Lev Antropov(@levantropov), Vitaly Gritsay(@vvismaster)
 discussions-to: https://github.com/ChainAgnostic/namespaces/pull/52/
 status: Draft
@@ -15,66 +15,95 @@ replaces (*optional):
 *For context, see the [CAIP-2](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-X.md) specification.*
 
 ## Rationale
-`Mainnet` - main network of Everscale.
+Networks using TVM do not have a single, commonly accepted standard for identifying chains, so chains will be named according to their generally accepted names.
 
-`Devnet` - Evercloud Developer Network runs
-the latest stable version of Everscale Blockchain.
-The goal of Evercloud Devnet is to provide
-stable development environment for application developers.
+Based on the above, the syntax for constructing a namespace is a conditional arrangement, necessary rather for third-party projects (for example, WalletConnect, etc).
 
-`Testnet(FLD)` - early network feature testing.
+```
+The name of the chain is built according to the following rule:
+tvm:<network_name>_<chain_name>
 
-However, the names of these networks
-are not used inside queries, they are only names.
-To work in a certain network, you only need
-to apply for the appropriate route(network endpoint).
+network_name: blockchain network name, for example: `everscale` or `ton`
+chain_name: common chain name, eg 'mainnet'
+
 
 ## Semantics and Syntax
-Based on the above, the syntax for constructing
-a namespace is a conditional arrangement,
-necessary rather for third-party projects
-(for example, WalletConnect, etc).
+### Everscale
+The names of the chains will be as follows
 ```
-everscale:mainnet
-everscale:devnet
+tvm:everscale_mainnet
+tvm:everscale_devnet
 ```
+#### Resolution Mechanics on Everscale
+You can check which network the dApp is running on by sending a request (https://dapp01.itgold.io/graphql):
 
-### Resolution Mechanics
-In theory, anyone can support their app to access the everscale API.
-You need to know in advance what type of network
-(mainnet, devnet) a certain dapp supports.
+// Request
+query{
+  blocks(
+    limit: 1
+  ){
+    global_id
+  }
+}
 
-For example, for devnet - https://devnet.evercloud.io/projectID/graphql,
-for mainnet - https://dapp02.itgold.io
+// Responce
+{
+  "data": {
+    "blocks": [
+      {
+        "global_id": 42
+      }
+    ]
+  }
+}
 
-Currently, there are two providers
-of the networks endpoints - itgold.io and evercloud.dev
+Where 42 is the Everscale Mainnet Global ID
+
+
+### TON
+The names of the chains will be as follows
+```
+tvm:ton_mainnet
+tvm:ton_devnet
+```
+#### Resolution Mechanics on TON
+You can check which network the dApp is running on by sending a request (https://dton.io/graphql):
+
+// Request
+{
+  blocks(page: 0, page_size: 1) {
+    global_id
+  }
+}
+
+// Responce
+{
+  "data": {
+    "blocks": [
+      {
+        "global_id": -239
+      }
+    ]
+  }
+}
+
+Where -239 is the TON Mainnet Global ID
 
 ## Test Cases
 ```
-Get information about balance by wallet address in MAINNET.
-curl 'https://dapp01.itgold.io/graphql'
--H 'Accept-Encoding: gzip, deflate, br'
--H 'Content-Type: application/json'
--H 'Accept: application/json'
--H 'Connection: keep-alive'
--H 'DNT: 1'
--H 'Origin: https://dapp01.itgold.io'
---data-binary
-    '{"query":"query
-        {\n blockchain
-            {\n account(address: \"0:b38d96bceaa156c07f22b5596c2374b87e26cc53b1b6d7df43401d671bdea708\")
-                {\n info{\n balance\n }\n }
-            \n}
-        \n}"
-    }'
---compressed
+This is a list of manually composed examples
+
+# Everscale mainnet (global id = 42)
+tvm:everscale_mainnet
+
+# TON mainnet (global id = -239)
+tvm:ton_mainnet
 ```
 ## References
-* [Evercloud](https://docs.evercloud.dev/products/evercloud/get-started) -
-starting communication with blockchain Everscale.
-* [Tools](https://docs.everscale.network/develop/tools/overview) -
-tools that help to work with Everscale blockchain.
-* [SDK](https://docs.everos.dev/ever-sdk/) - Core Client Library built on the EVER OS GraphQL API for Everscale DApp development.
+* [Everscale Blockchain](https://docs.everscale.network)
+* [Everscale GraphQL](https://dapp01.itgold.io/graphql)
+* [TON Blockchain](https://ton.org)
+* [TON GraphQL](https://dton.io/graphql)
+
 ## Copyright
 Copyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
