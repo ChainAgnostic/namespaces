@@ -1,13 +1,21 @@
 ---
-namespace-identifier: tvm-caip2
-title: TVM namespace
+namespace-identifier: TVM
+
+title: TVM Ecosystem
+
 author: Lev Antropov(@levantropov), Vitaly Gritsay(@vvismaster)
+
 discussions-to: https://github.com/ChainAgnostic/namespaces/pull/52/
+
 status: Draft
-type: Standard
-created: 23.01.23
-requires (*optional):
-replaces (*optional):
+
+type: Informational
+
+created: 2023-01-23
+
+updated:
+
+replaces:
 ---
 
 # CAIP-2
@@ -25,7 +33,7 @@ tvm:<network_name>_<chain_name>
 
 network_name: blockchain network name, for example: `everscale` or `ton`
 chain_name: common chain name, eg 'mainnet'
-
+```
 
 ## Semantics and Syntax
 ### Everscale
@@ -37,6 +45,7 @@ tvm:everscale_devnet
 #### Resolution Mechanics on Everscale
 You can check which network the dApp is running on by sending a request (https://dapp01.itgold.io/graphql):
 
+```
 // Request
 query{
   blocks(
@@ -58,7 +67,7 @@ query{
 }
 
 Where 42 is the Everscale Mainnet Global ID
-
+```
 
 ### TON
 The names of the chains will be as follows
@@ -68,7 +77,7 @@ tvm:ton_devnet
 ```
 #### Resolution Mechanics on TON
 You can check which network the dApp is running on by sending a request (https://dton.io/graphql):
-
+```
 // Request
 {
   blocks(page: 0, page_size: 1) {
@@ -88,7 +97,7 @@ You can check which network the dApp is running on by sending a request (https:/
 }
 
 Where -239 is the TON Mainnet Global ID
-
+```
 ## Test Cases
 ```
 This is a list of manually composed examples
