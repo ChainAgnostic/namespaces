@@ -1,21 +1,12 @@
 ---
 namespace-identifier: TVM
-
 title: TVM Ecosystem
-
 author: Lev Antropov(@levantropov), Vitaly Gritsay(@vvismaster)
-
 discussions-to: https://github.com/ChainAgnostic/namespaces/pull/52/
-
 status: Draft
-
 type: Informational
-
-created: 2023-01-23
-
-updated:
-
-replaces:
+created: 2023-03-22
+updated: 2023-03-22
 ---
 
 # CAIP-2
@@ -23,29 +14,39 @@ replaces:
 *For context, see the [CAIP-2](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-X.md) specification.*
 
 ## Rationale
-Networks using TVM do not have a single, commonly accepted standard for identifying chains, so chains will be named according to their generally accepted names.
 
-Based on the above, the syntax for constructing a namespace is a conditional arrangement, necessary rather for third-party projects (for example, WalletConnect, etc).
+Networks using TVM do not have a single, commonly accepted standard for
+identifying chains with human-readable strings, but the core node runtime
+identifies chains by an integer between -2147483648 and 2147483648 (2^31). This
+integer is present in each block of each chain, in the property `global_id`.
+
+At time of writing there is not a central registry for avoiding `global_id`
+conflicts or for mapping `global_id`'s to public endpoints; instead,
+implementers should seek chain and node information each chain's documentation
+(see links section below for examples). 
 
 ```
 The name of the chain is built according to the following rule:
-tvm:<network_name>_<chain_name>
-
-network_name: blockchain network name, for example: `everscale` or `ton`
-chain_name: common chain name, eg 'mainnet'
+tvm:<global_id>
 ```
 
-## Semantics and Syntax
-### Everscale
-The names of the chains will be as follows
-```
-tvm:everscale_mainnet
-tvm:everscale_devnet
-```
-#### Resolution Mechanics on Everscale
-You can check which network the dApp is running on by sending a request (https://dapp01.itgold.io/graphql):
+## Syntax
+
+Since `global_id`s can only be integers between -2147483648 and 2147483648, they
+are easy to validate numerically. A simple regular expression for validating as
+a string so would be:
+`[-]?[0-9]{1-10}`
+
+### Resolution Mechanics
+
+You can confirm which chain a given node is running by sending a GraphQL request
+to a node on that network, requesting only the "global_id" property of any
+block.  See, for example:
 
 ```
+// Using the GraphQL endpoint of Everscale mainnet:
+// https://dapp01.itgold.io/graphql 
+
 // Request
 query{
   blocks(
@@ -55,7 +56,7 @@ query{
   }
 }
 
-// Responce
+// Response
 {
   "data": {
     "blocks": [
@@ -66,18 +67,9 @@ query{
   }
 }
 
-Where 42 is the Everscale Mainnet Global ID
-```
+// Using the GraphQL endpoint of TON mainnet:
+// https://dton.io/graphql
 
-### TON
-The names of the chains will be as follows
-```
-tvm:ton_mainnet
-tvm:ton_devnet
-```
-#### Resolution Mechanics on TON
-You can check which network the dApp is running on by sending a request (https://dton.io/graphql):
-```
 // Request
 {
   blocks(page: 0, page_size: 1) {
@@ -95,19 +87,20 @@ You can check which network the dApp is running on by sending a request (https:/
     ]
   }
 }
-
-Where -239 is the TON Mainnet Global ID
 ```
+
 ## Test Cases
-```
-This is a list of manually composed examples
 
+This is a list of manually composed examples:
+
+```
 # Everscale mainnet (global id = 42)
-tvm:everscale_mainnet
+tvm:42
 
 # TON mainnet (global id = -239)
-tvm:ton_mainnet
+tvm:-239
 ```
+
 ## References
 * [Everscale Blockchain](https://docs.everscale.network)
 * [Everscale GraphQL](https://dapp01.itgold.io/graphql)
