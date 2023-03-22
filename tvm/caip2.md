@@ -19,11 +19,13 @@ Networks using TVM do not have a single, commonly accepted standard for
 identifying chains with human-readable strings, but the core node runtime
 identifies chains by an integer between -2147483648 and 2147483648 (2^31). This
 integer is present in each block of each chain, in the property `global_id`.
+These work well as `chain_id` values for composing [CAIP-2][] and other
+chain-id-qualified CASA schemes.
 
 At time of writing there is not a central registry for avoiding `global_id`
-conflicts or for mapping `global_id`'s to public endpoints; instead,
-implementers should seek chain and node information each chain's documentation
-(see links section below for examples). 
+conflicts or for mapping `global_id`s to public endpoints; instead, implementers
+should seek chain and node information each chain's documentation (see links
+section below for examples). 
 
 ```
 The name of the chain is built according to the following rule:
