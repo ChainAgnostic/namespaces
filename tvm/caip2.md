@@ -24,7 +24,7 @@ chain-id-qualified CASA schemes.
 
 At time of writing there is not a central registry for avoiding `global_id`
 conflicts or for mapping `global_id`s to public endpoints; instead, implementers
-should seek chain and node information each chain's documentation (see links
+should seek chain and node information in each chain's documentation (see links
 section below for examples). 
 
 ```
