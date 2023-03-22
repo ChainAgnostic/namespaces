@@ -46,7 +46,7 @@ to a node on that network, requesting only the "global_id" property of any
 block.  See, for example:
 
 ```
-// Using the GraphQL endpoint of Everscale mainnet:
+// Using the GraphQL endpoint of Everscale mainnet (42):
 // https://dapp01.itgold.io/graphql 
 
 // Request
@@ -69,7 +69,7 @@ query{
   }
 }
 
-// Using the GraphQL endpoint of TON mainnet:
+// Using the GraphQL endpoint of TON mainnet (-239):
 // https://dton.io/graphql
 
 // Request
@@ -79,7 +79,7 @@ query{
   }
 }
 
-// Responce
+// Response
 {
   "data": {
     "blocks": [
