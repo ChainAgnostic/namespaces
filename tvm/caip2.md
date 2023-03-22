@@ -11,7 +11,7 @@ updated: 2023-03-22
 
 # CAIP-2
 
-*For context, see the [CAIP-2](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-X.md) specification.*
+*For context, see the [CAIP-2][] specification.*
 
 ## Rationale
 
@@ -106,6 +106,8 @@ tvm:-239
 * [Everscale GraphQL](https://dapp01.itgold.io/graphql)
 * [TON Blockchain](https://ton.org)
 * [TON GraphQL](https://dton.io/graphql)
+
+[CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
 
 ## Copyright
 Copyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
