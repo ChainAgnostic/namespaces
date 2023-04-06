@@ -80,7 +80,7 @@ solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp
 solana:EtWTRABZaYq6iMfeYKouRu166VU2xqa1
 
 # Solana Testnet
-solana:4uhcVJyU9pJkvQyS88uRDiswHXSCkY3zQaw
+solana:4uhcVJyU9pJkvQyS88uRDiswHXSCkY3z
 
 ```
 
@@ -98,7 +98,6 @@ solana:4uhcVJyU9pJkvQyS88uRDiswHXSCkY3zQaw
 [RPC Endpoints]: https://docs.solana.com/cluster/rpc-endpoints
 [Solana core]: https://crates.io/crates/solana-program/
 [base58btc]: https://en.bitcoin.it/wiki/Base58Check_encoding#Base58_symbol_chart
-
 
 ## Copyright
 

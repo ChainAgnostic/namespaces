@@ -30,17 +30,21 @@ _For context, see the [CAIP-2][] specification._
 
 | Network Name | Chain ID                         |
 | ------------ | -------------------------------- |
-| Mainnet      | 4sGjMW1sUnHzSxGspuhpqLDx6wiyjNtZ |
-| Devnet       | 8E9rvCKLFQia2Y35HXjjpWzj8weVo44K |
+| Mainnet      | 5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp |
+| Devnet       | EtWTRABZaYq6iMfeYKouRu166VU2xqa1 |
+| Testnet      | 4uhcVJyU9pJkvQyS88uRDiswHXSCkY3z |
 
 ## Test Cases
 
 ```
 # Solana Mainnet
-solana:4sGjMW1sUnHzSxGspuhpqLDx6wiyjNtZ:7S3P4HxJpyyigGzodYwHtCxZyUQe9JiBMHyRWXArAaKv
+solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp:7S3P4HxJpyyigGzodYwHtCxZyUQe9JiBMHyRWXArAaKv
 
 # Solana Devnet
-solana:8E9rvCKLFQia2Y35HXjjpWzj8weVo44K:DYw8jCTfwHNRJhhmFcbXvVDTqWMEVFBX6ZKUmG5CNSKK
+solana:EtWTRABZaYq6iMfeYKouRu166VU2xqa1:DYw8jCTfwHNRJhhmFcbXvVDTqWMEVFBX6ZKUmG5CNSKK
+
+# Solana Testnet
+solana:4uhcVJyU9pJkvQyS88uRDiswHXSCkY3z:6LmSRCiu3z6NCSpF19oz1pHXkYkN4jWbj9K1nVELpDkT
 ```
 
 ## References
