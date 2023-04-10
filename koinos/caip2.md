@@ -62,7 +62,7 @@ curl -d '{"jsonrpc":"2.0", "method":"chain.get_chain_id", "params":{}, "id":0}' 
 
 Note that the `chain_id` value returned must be substringed to the first 32 characters.
 
-For example, this Node.js code transforms the above response into a CAIP-2 identifier:
+For example, this JavaScript code transforms the above response into a CAIP-2 identifier:
 
 ```javascript
 // For the Koinos mainnet
