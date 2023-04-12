@@ -10,11 +10,11 @@ requires: CAIP-2
 
 # CAIP-2
 
-*For context, see the [CAIP-2](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md) specification.*
+*For context, see the [CAIP-2][] specification.*
 
 ## Abstract
 
-In CAIP-2 a general blockchain identification scheme is defined. This is the
+In [CAIP-2][], a general blockchain identification scheme is defined. This is the
 implementation of CAIP-2 for networks that are based on the Koinos Blockchain Framework.
 
 ### Koinos Namespace
@@ -24,8 +24,7 @@ The namespace "koinos" refers to the wider Koinos Blockchain Framework ecosystem
 ## Rationale
 
 Koinos consists of multiple networks: a production network (Mainnet) and a
-testing network (TestNet). Each network has
-a unique chain id that can be used to identify it.
+testing network (TestNet). Each network has a unique chain id that can be used to identify it.
 
 An identifier for a Koinos chain consists of the namespace prefix "koinos:"
 followed by a truncated form of the chain id.
@@ -81,12 +80,10 @@ Not applicable.
 ## Test Cases
 
 ```
-# Koinos Mainnet has the chain id
-EiBZK_GGVP0H_fXVAM3j6EAuz3-B-l3ejxRSewi7qIBfSA==
+# Koinos Mainnet (chain id= EiBZK_GGVP0H_fXVAM3j6EAuz3-B-l3ejxRSewi7qIBfSA== )
 koinos:EiBZK_GGVP0H_fXVAM3j6EAuz3-B-l3e
 
-# Koinos Harbinger (Testnet) has the chain id
-EiAAKqFi-puoXnuJTdn7qBGGJa8yd-dcS2P0ciODe4wupQ==
+# Koinos Harbinger (Testnet; chain id= EiAAKqFi-puoXnuJTdn7qBGGJa8yd-dcS2P0ciODe4wupQ== )
 koinos:EiAAKqFi-puoXnuJTdn7qBGGJa8yd-dc
 ```
 
@@ -94,7 +91,9 @@ koinos:EiAAKqFi-puoXnuJTdn7qBGGJa8yd-dc
 
 - [Koinos documentation](https://docs.koinos.io/)
 - [Koinos JSON-RPC](https://docs.koinos.io/rpc/json-rpc.html)
-- [CAIP-2](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md)
+- [CAIP-2][]
+
+[CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
 
 ## Rights
 
