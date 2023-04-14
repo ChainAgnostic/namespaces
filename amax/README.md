@@ -19,9 +19,9 @@ CASA-style URIs.
 
 - [Official website](https://amax.network)
 - [AMAX Documentation](https://docs.amax.network/en/latest/API/AMAX-RPC/)
-- [Standard Account Name][]: Canonical definition of account name constraints
-- [Account and Permissions][](https://developers.eos.io/welcome/v2.1/introduction-to-eosio/core_concepts)
+- [Account and Permissions][]: (https://developers.eos.io/welcome/v2.1/introduction-to-eosio/core_concepts)
 - [Developer Portal](https://developers.eos.io/welcome/v2.1/welcome-to-eosio/index)
+- [Standard Account Name][]: Canonical definition of account name constraints
 
 - [Mainnet](https://expnode.amaxscan.io/v1/chain/get_info)
 - [Testnet](https://test-chain.ambt.art/v1/chain/get_info)
