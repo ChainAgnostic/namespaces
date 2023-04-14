@@ -56,9 +56,9 @@ amax:208dacab3cd2e181c86841613cf05d9c
 
 - [Official website](https://amax.network)
 - [AMAX Documentation](https://docs.amax.network/en/latest/API/AMAX-RPC/)
-- [AMAX Developer Portal](https://armonia.gitbook.io/amax-dao-dev/v/chinese-1/)
 - [Standard Account Name][]: Canonical definition of account name constraints
 - [Chain ID][]: A github PR discussion detailing some key design decisions around `chain_id`
+- [Developer Portal](https://developers.eos.io/welcome/v2.1/welcome-to-eosio/index)
 
 [Transactions Protocol]: https://docs.amax.network/en/latest/API/AMAX-RPC/#wallet_sign_trx
 [get_info]: https://docs.amax.network/en/latest/API/AMAX-RPC/#get_info

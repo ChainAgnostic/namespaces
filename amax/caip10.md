@@ -49,18 +49,20 @@ Not applicable or unknown.
 This is a list of manually composed examples:
 
 ```
-amax:aca376f206b8fc25a6ed44dbdc66547c:bumblefudge1
-amax:e70aaab8997e1dfce58fbfac80cbbb8f:a..........a
-amax:4667b205c6838ef70ff7988f6e8257e8:a1234567890z
-amax:1eaa0824707c8c16bd25145493bf062a:casa2022.biz
+amax:2403d6f602a87977f898aa3c62c79a76:armoniaadmin
+amax:208dacab3cd2e181c86841613cf05d9c:solotestacct
 
 ```
 
 ## References
 
+
+
+- [Official website](https://amax.network)
+- [AMAX Documentation](https://docs.amax.network/en/latest/API/AMAX-RPC/)
 - [Standard Account Name][]: Canonical definition of account name constraints
-- [EOSIO][]: Overview of developer documentation, starting from core [and unique] concepts
-- [EOSIO/eos#3425][]: A github PR discussion detailing some key design decisions around `chain_id`
+- [Chain ID][]: A github PR discussion detailing some key design decisions around `chain_id`
+- [Developer Portal](https://developers.eos.io/welcome/v2.1/welcome-to-eosio/index)
 
 [Transactions Protocol]: https://docs.amax.network/en/latest/API/AMAX-RPC/#wallet_sign_trx
 [get_info]: https://docs.amax.network/en/latest/API/AMAX-RPC/#get_info
@@ -69,7 +71,6 @@ amax:1eaa0824707c8c16bd25145493bf062a:casa2022.biz
 [Chain ID]: https://github.com/EOSIO/eos/pull/3425
 [Standard Account Name]: https://developers.eos.io/welcome/v2.1/glossary/index/#standard-account-name
 [Account and Permissions]: https://developers.eos.io/welcome/v2.1/introduction-to-eosio/core_concepts
-[permissions]: https://developers.eos.io/welcome/latest/protocol-guides/accounts_and_permissions
 [CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
 [CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md
 
