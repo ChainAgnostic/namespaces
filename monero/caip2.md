@@ -98,7 +98,7 @@ monero:a3fd635dd5cb55700317783469ba749b
 ## Additional Considerations
 
 Private testnet (also known as **regtest** or **fakechain**) has the same genesis block hash as Monero mainnet.
-To avoid conflicts, implementers should use chain ID `monero:00000000000000000000000000000000` to identify this chain.
+To avoid conflicts, implementers should use chain ID `monero:00000000000000000000000000000000` to identify this chain, as above, and implementers are advised to take care in disambiguating this special case in their code.
 
 ## References
 
