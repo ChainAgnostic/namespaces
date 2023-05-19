@@ -11,7 +11,7 @@ Each namespace implements one or more [CAIPs](https://github.com/ChainAgnostic/C
 
 # Contributing
 
- 1. Review [CAIP-92](https://github.com/ChainAgnostic/CAIPs/pull/92/files).
+ 1. Review [CAIP-104](https://chainagnostic.org/CAIPs/caip-104).
  2. Fork the repository.
  3. Add your CAIP to your fork of the repository. There [will soon be] a template CAN here.
  4. Submit a Pull Request to Chain Agnostics's [`namespaces` repository](https://github.com/ChainAgnostic/namespaces).
