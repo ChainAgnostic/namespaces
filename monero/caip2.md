@@ -91,7 +91,8 @@ monero:76ee3cc98646292206cd3e86f74d88b4
 # Monero testnet 
 monero:48ca7cd3c8de5b6a4d53d2861fbdaedc
 
-# Monero Private testnet (special case)
+# Monero Private testnet (special case; see below)
+
 monero:00000000000000000000000000000000
 # Wownero mainnet
 monero:a3fd635dd5cb55700317783469ba749b
