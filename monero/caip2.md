@@ -88,9 +88,11 @@ monero:418015bb9ae982a1975da7d79277c270
 # Monero stagenet
 monero:76ee3cc98646292206cd3e86f74d88b4
 
-# Monero testnet
+# Monero testnet 
 monero:48ca7cd3c8de5b6a4d53d2861fbdaedc
 
+# Monero Private testnet (special case)
+monero:00000000000000000000000000000000
 # Wownero mainnet
 monero:a3fd635dd5cb55700317783469ba749b
 ```
