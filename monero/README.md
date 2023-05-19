@@ -18,9 +18,9 @@ The namespace "monero" refers to the Monero blockchain, its forks and testnets.
 
 ## References
 
-- [Website][]
+- [Community, End-user, and Developer Onboarding Website][communitysite]
 
-[Website]: https://www.getmonero.org/
+[communitysite]: https://www.getmonero.org/
 
 ## Copyright
 
