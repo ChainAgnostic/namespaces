@@ -2,6 +2,7 @@
 namespace-identifier: reef-caip2
 title: Reef Namespace - Chains
 author: Boo 0x (@boo-0x)
+discussions-to: https://github.com/ChainAgnostic/namespaces/issues/74
 status: Draft
 type: Standard
 created: 2023-06-30
