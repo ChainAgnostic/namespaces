@@ -54,14 +54,23 @@ for block 0 can be inspected. The block record will contain a previous block
 hash. The previous block hash for block height 0 will contain the genesis
 challenge for the blockchain.
 
-Using a Chia blockchain explorer API like [Spacescan] can simplify the task of
-inspecting block records.
+Using a Chia blockchain explorer API like [Spacescan], or [FireAcademy's] Node as a Service API can simplify the task of
+inspecting block records. Note: [FireAcademy] requires an API key which can be created with a free account.
 
 Examples requesting the block record for height 0:
 
 ```
-# Request for mainnet ('xch' currency symbol)
+# Request for mainnet ('xch' currency symbol) using Spacescan
 $ curl 'https://api2.spacescan.io/1/xch/block/height/0' | jq '.data.foliage.prev_block_hash'
+
+OR
+
+# Request for mainnet using FireAcademy
+$ curl -X POST \
+       -H "Content-Type: application/json" \
+       https://kraken.fireacademy.io/[api-key]/leaflet/get_block_record_by_height \
+       -d '{"height": 0}' \
+  | jq '.block_record.prev_hash'
 ```
 
 ```
@@ -70,8 +79,17 @@ $ curl 'https://api2.spacescan.io/1/xch/block/height/0' | jq '.data.foliage.prev
 ```
 
 ```
-# Request for testnet10 ('txch' currency symbol)
+# Request for testnet10 ('txch' currency symbol) using Spacescan
 $ curl 'https://api2.spacescan.io/1/txch10/block/height/0' | jq '.data.foliage.prev_block_hash'
+
+OR
+
+# Request for testnet10 using FireAcademy
+$ curl -X POST \
+       -H "Content-Type: application/json" \
+       https://kraken.fireacademy.io/[api-key]/leaflet-testnet10/get_block_record_by_height \
+       -d '{"height": 0}' \
+  | jq '.block_record.prev_hash'
 ```
 
 ```
@@ -89,14 +107,14 @@ Example:
 
 ```
 # Request
-$ curl -X POST
-       --insecure
-       --cert ~/.chia/mainnet/config/ssl/full_node/private_full_node.crt
-       --key ~/.chia/mainnet/config/ssl/full_node/private_full_node.key
-       -H "Accept: application/json"
-       -H "Content-Type: application/json"
-       https://localhost:8555/get_block_record_by_height
-       -d '{"height":0}'
+$ curl -X POST \
+       --insecure \
+       --cert ~/.chia/mainnet/config/ssl/full_node/private_full_node.crt \
+       --key ~/.chia/mainnet/config/ssl/full_node/private_full_node.key \
+       -H "Accept: application/json" \
+       -H "Content-Type: application/json" \
+       https://localhost:8555/get_block_record_by_height \
+       -d '{"height":0}' \
   | jq '.block_record.prev_hash'
 ```
 
@@ -141,6 +159,8 @@ chia:ae83525ba8d1dd3f09b277de18ca3e43
 [Chia Installation Instructions]: https://docs.chia.net/installation
 [Full Node RPC Endpoints]: https://docs.chia.net/full-node-rpc
 [Spacescan]: https://spacescan.io
+[FireAcademy]: https://fireacademy.io/
+[FireAcademy's]: https://fireacademy.io/
 
 ## Copyright
 
