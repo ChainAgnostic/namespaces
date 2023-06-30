@@ -2,6 +2,7 @@
 namespace-identifier: reef
 title: Reef Namespace
 author: Boo 0x (@boo-0x)
+discussions-to: https://github.com/ChainAgnostic/namespaces/issues/74
 status: Draft
 type: Informational
 created: 2023-06-29
