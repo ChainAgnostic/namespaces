@@ -15,7 +15,7 @@ requires: ["CAIP-2", "CAIP-10"]
 
 ## Rationale
 
-Algorand addresses are canonically represented as 58-character long strings, written in all-upper-case. They are independent of the network in which they are used. Addresses are derived from a base32-encoding of a 32-byte key followed by a 4-byte checksum. The base32 padding (`=`) is dropped.
+Algorand addresses are canonically represented as 58-character long strings, written in all-upper-case. Account addresses are independent of the network in which they are used, and should be prefixed by the chainID of mainnet when stored in CAIP-10 format unless another chainID is significant in context (i.e. in a chainID-specific transaction). Addresses are derived from a base32-encoding of a 32-byte key followed by a 4-byte checksum. The base32 padding (`=`) is dropped.
 
 Algorand accounts, smart contracts, and logic signatures all share the same address format. They differ in how the 32-byte key is computed:
 
