@@ -49,7 +49,7 @@ For example:
 
 ```jsonc
 // Request
-curl -H "https://mainnet.vechain.org/blocks/0"
+curl "https://mainnet.vechain.org/blocks/0"
 
 // Response (formatted)
 {
