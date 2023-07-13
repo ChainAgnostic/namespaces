@@ -26,7 +26,11 @@ chain address prefixed by CAIP-2 information.
 
 ## Syntax
 
-After the CAIP-2 namespace+chainID, a slash defines an `asset_namespace` and an `asset_reference`. 
+After the CAIP-2 namespace+chainID, a slash defines an `asset_namespace` and an
+`asset_reference`. `Assets_namespace` MUST refer to an asset type defined by an
+[Ethereum Improvement Proposal][EIP] of category ERC and status Final; the
+syntax is simply `erc` prepended to the final EIP number of the published
+document defining it, without a hyphen.
 - In the case of ERC20 tokens, the namespace is `erc20` and the address of the
   smart contract is the reference. 
 - In the case of ERC721 tokens, the namespace is `erc721` and the address of the
