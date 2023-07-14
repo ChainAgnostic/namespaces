@@ -85,6 +85,7 @@ eip155:1/erc721:0x5180db8f5c931aae63c74266b211f580155ecac8/4663
 [CAIP-19]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-19.md
 [CAIP-21]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-21.md
 [CAIP-22]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-22.md
+[EIP]: https://eips.ethereum.org/EIPS/eip-1
 [EIP155]: https://eips.ethereum.org/EIPS/eip-155
 [ERC20]: https://eips.ethereum.org/EIPS/eip-20
 [ERC721]: https://eips.ethereum.org/EIPS/eip-721
