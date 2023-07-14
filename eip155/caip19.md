@@ -13,9 +13,9 @@ replaces: ["CAIP-21", "CAIP-22"]
 
 # CAIP-19
 
-*For context, see the [CAIP-19][] specification.*
+_For context, see the [CAIP-19][] specification._
 
-## Rationale 
+## Rationale
 
 In the Ethereum space, most assets are either a unique on-chain token referenced
 by its address, often called a "native token" ([erc20][] tokens being the most
@@ -27,15 +27,30 @@ chain address prefixed by CAIP-2 information.
 ## Syntax
 
 After the CAIP-2 namespace+chainID, a slash defines an `asset_namespace` and an
-`asset_reference`. `Assets_namespace` MUST refer to an asset type defined by an
+`asset_reference`. `asset_namespace` MUST refer to an asset type defined by an
 [Ethereum Improvement Proposal][EIP] of category ERC and status Final; the
 syntax is simply `erc` prepended to the final EIP number of the published
 document defining it, without a hyphen.
+
 - In the case of ERC20 tokens, the namespace is `erc20` and the address of the
-  smart contract is the reference. 
+  smart contract is the reference.
 - In the case of ERC721 tokens, the namespace is `erc721` and the address of the
   smart contract is the reference, with an optional additional identifier for
   the specific token separated from the reference by a "/"
+
+## RegEx
+
+The RegEx validation strings are as follows:
+
+```
+asset_id: asset_type + "/" token_id
+asset_type: chain_id + "/" + asset_namespace + ":" + asset_reference
+chain_id: namespace + Blockchain ID as defined in [CAIP-2](./caip2.md)
+
+asset_namespace: erc[a-z0-9]{2,5}
+asset_reference: 0x[a-fA-F0-9]{40}
+token_id: [\d]{1,78}
+```
 
 ## Examples
 
@@ -60,7 +75,7 @@ eip155:1/erc721:0x5180db8f5c931aae63c74266b211f580155ecac8/4663
 
 - [EIP155][]: Ethereum Improvement Proposal specifying generation and validation of ChainIDs
 - [ethereum-lists/chains][]: An open registry for eip155 network operators to claim a
-      unique chainID and self-publish RPC/node information for them.
+  unique chainID and self-publish RPC/node information for them.
 - [ERC20][]: Basic [aka Fungible] Token Standard
 - [ERC721][]: Non-Fungible Token Standard
 
@@ -73,7 +88,6 @@ eip155:1/erc721:0x5180db8f5c931aae63c74266b211f580155ecac8/4663
 [EIP155]: https://eips.ethereum.org/EIPS/eip-155
 [ERC20]: https://eips.ethereum.org/EIPS/eip-20
 [ERC721]: https://eips.ethereum.org/EIPS/eip-721
-
 
 ## Rights
 
