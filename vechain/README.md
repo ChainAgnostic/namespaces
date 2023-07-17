@@ -1,12 +1,12 @@
 ---
 namespace-identifier: vechain
 title: Vechain Based Networks
-author: Darren Kelly (@darrenvechain))
+author: Darren Kelly (@darrenvechain)
 status: Draft
 type: Informational
 created: 2023-07-10
 updated: 2023-07-10
-requires: ["CAIP-2"]
+requires: ["CAIP-2", "CAIP-10"]
 ---
 
 # Namespace for VechainThor chains
