@@ -12,7 +12,8 @@ created: 2023-06-29
 
 ## Introduction
 
-Reef is a modular layer 1 blockchain for DeFi, NFTs and gaming. It is built with Substrate, has EVM support and uses Nominated Proof of Stake consensus.
+Reef is a modular layer 1 blockchain for DeFi, NFTs and gaming. It is built with Substrate modules, has EVM support and uses Nominated Proof of Stake consensus. 
+Despite some tooling in common (such as [SS58][]-based per-chain addresses), direct interaction with Polkadot nodes, contracts, or wallets according to the standards of the Polkadot namespace is not currently possible.
 
 ## Syntax
 
