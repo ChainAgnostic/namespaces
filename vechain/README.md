@@ -20,8 +20,8 @@ The namespace "vechain" refers to the VechainThor open-source blockchain platfor
 
 ## References
 
-- [VechainThor Resources](https://www.vechain.org/vechainthor/)
 - [VeChain Developer Portal](https://docs.vechain.org/)
+- [VeChain Developer Portal Self-Test Resources](https://docs.vechain.org/development-resources)
 - [CAIP-2](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md)
 
 ## Copyright

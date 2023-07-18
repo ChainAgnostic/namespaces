@@ -15,7 +15,11 @@ requires: ["CAIP-2", "CAIP-10"]
 
 ## Rationale
 
+VechainThor uses Secp256k1 for transaction signing. The account addresses are derived by taking the Keccak-256 hash of the public key and representing it as a hexadecimal number. The last 20 bytes of the Keccak-256 hash are used to generate the address.
+
 VechainThor addresses are hex-encoded strings with a length of 42 characters, prefixed with `0x`.
+
+Private keys used for other EVM compatible chains will produce the same account address.
 
 ## Syntax
 
@@ -49,7 +53,8 @@ vechain:87721b09ed2e15997f466536b20bb127:0x0000000000000000000000000000456E65726
 
 ## References
 
-- [Vechain Developer Documentation](https://docs.vechain.org/)
+- [VeChain Developer Portal](https://docs.vechain.org/)
+- [VeChain Developer Portal Self-Test Resources](https://docs.vechain.org/development-resources)
 
 ## Copyright
 
