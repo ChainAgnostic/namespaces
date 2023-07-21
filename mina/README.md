@@ -1,6 +1,6 @@
 ---
 namespace-identifier: mina
-title: Mina Namespce
+title: Mina Namespace
 author: Mina Foundation
 status: Draft
 type: Informational
