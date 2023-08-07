@@ -78,7 +78,7 @@ eip155:28945486
 - [ERC20][]: Basic [aka Fungible] Token Standard
 - [ERC721][]: Non-Fungible Token Standard
 
-[Chainid.network]: https://github.com/ethereum-lists/chains
+[ethereum-lists/chains]: https://github.com/ethereum-lists/chains
 [CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
 [CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md
 [CAIP-19]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-19.md
