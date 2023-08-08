@@ -18,12 +18,12 @@ The `ccd` namespace refers to networks and other objects within the Concordium b
 
 ## References
 
-- [Concordium-docs][] - Concordium Developer Documentation.
-- [Concordium-grpc][] - Interacting with a Concordium node: Description of the Concordium GRPC API.
+- [Concordium Developer Documentation][]
+- [Concordium gRPC][] - Interacting with a Concordium node: Description of the Concordium gRPC API.
 - [Concordium CAIP-2][] - Concordium network identifiers.
 
-[Concordium-docs]: https://developer.concordium.software/en/mainnet/index.html
-[Concordium-grpc]: http://developer.concordium.software/concordium-grpc-api/
+[Concordium Developer Documentation]: https://developer.concordium.software/en/mainnet/index.html
+[Concordium gRPC]: http://developer.concordium.software/concordium-grpc-api/
 [Concordium CAIP-2]: caip2
 
 ## Copyright

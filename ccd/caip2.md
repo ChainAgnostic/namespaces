@@ -2,7 +2,7 @@
 namespace-identifier: ccd-caip2
 title: Concordium - Networks
 author: "Concordium development team <developers@concordium.com>"
-discussions-to: ""
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/83
 status: Draft
 type: Standard
 created: 2023-04-01
@@ -118,10 +118,10 @@ ccd:4221332d34e1694168c2a0c0b3fd0f27
 
 ## References
 
-- [Documentation][] - Concordium Developer Documentation
+- [Concordium Developer Documentation][]
 - [Concordium gRPC][] - Interacting with a Concordium node: Description of the Concordium gRPC API.
 
-[Documentation]: https://developer.concordium.software/en/mainnet/index.html
+[Concordium Developer Documentation]: https://developer.concordium.software/en/mainnet/index.html
 [Concordium gRPC]: http://developer.concordium.software/concordium-grpc-api/
 
 
