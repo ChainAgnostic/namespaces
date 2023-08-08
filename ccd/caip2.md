@@ -46,8 +46,9 @@ Concordium's network ID is a hash of its genesis block in the `hex` encoding tru
 ### Resolution Mechanics
 
 A hash of the genesis block can be obtained using the gRPC interface of a Concordium node (see [Concordium gRPC][]).
+The [GetConsensusInfo][] command provides data for constructing a network identifier.
 
-The request using a CLI tool `concordium-client` looks as follows:
+The request using a CLI tool [concordium-client][] looks as follows:
 
 ```
 concordium-client raw GetConsensusInfo
@@ -123,7 +124,8 @@ ccd:4221332d34e1694168c2a0c0b3fd0f27
 
 [Concordium Developer Documentation]: https://developer.concordium.software/en/mainnet/index.html
 [Concordium gRPC]: http://developer.concordium.software/concordium-grpc-api/
-
+[concordium-client]: https://developer.concordium.software/en/mainnet/net/references/concordium-client.html
+[GetConsensusInfo]:https://developer.concordium.software/concordium-grpc-api/#concordium.v2.ConsensusInfo
 
 [CAIP-2]: ccd/caip2
 
