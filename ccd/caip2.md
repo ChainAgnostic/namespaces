@@ -39,7 +39,7 @@ expression for validation as well, as some consumers or toolmakers may want to
 support this CAIP without a deep understanding of any specifications, devdocs,
 or improvement proposals on which this specification depends. -->
 
-Concordium's network ID is a hash of its genesis block in the `hex` encoding truncated to the first 32 bytes.
+Concordium's network ID is a hash of its genesis block in the `hex` encoding truncated to the first 32 characters.
 
 <!-- TODO: add some details, e.g. something like pseudocode `truncate(SHA512(block_data), 32)` -->
 
@@ -90,7 +90,7 @@ Example response for the `testnet` node:
 }
 ```
 
-Truncating the value of the `genesisBlock` attribute to the first 32 bytes gives `4221332d34e1694168c2a0c0b3fd0f27`
+Truncating the value of the `genesisBlock` attribute to the first 32 characters gives `4221332d34e1694168c2a0c0b3fd0f27`
 
 <!-- Many blockchain systems allow for transactions, asset-states, etc. to be
 validated against the chain they are targeting or depending to to avoid replay
@@ -122,10 +122,10 @@ ccd:4221332d34e1694168c2a0c0b3fd0f27
 - [Concordium gRPC][] - Interacting with a Concordium node: Description of the Concordium gRPC API.
 
 [Documentation]: https://developer.concordium.software/en/mainnet/index.html
-[Concordium gRPC]: https://github.com/Concordium/concordium-grpc-api
+[Concordium gRPC]: http://developer.concordium.software/concordium-grpc-api/
 
 
-[CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
+[CAIP-2]: ccd/caip2
 
 ## Copyright
 Copyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
