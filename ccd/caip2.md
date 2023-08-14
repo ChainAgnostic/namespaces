@@ -15,7 +15,6 @@ created: 2023-04-01
  request to submit your EIP, please use an abbreviated title in the 
  filename, `caipX.md`, all lowercase, no `-` between the CAIP and its 
  number.-->
-This is the suggested template for new CAIPs.
 
 # CAIP-2
 
@@ -24,7 +23,7 @@ This is the suggested template for new CAIPs.
 <!-- Provide a simplified and layman-accessible explanation of the CAIP.-->
 
 This CAIP defines an identification schema for Concordium networks.
-The Concordium networks are identified by `ccd` namespace followed by the hash of the network's genesis block.
+The Concordium networks are identified by the `ccd` namespace prefix, followed by a truncated hash of the given network's genesis block.
 
 ## Rationale
 <!--A short (~200 word) description of the technical issue being addressed.-->
@@ -39,14 +38,14 @@ expression for validation as well, as some consumers or toolmakers may want to
 support this CAIP without a deep understanding of any specifications, devdocs,
 or improvement proposals on which this specification depends. -->
 
-Concordium's network ID is a hash of its genesis block in the `hex` encoding truncated to the first 32 characters.
+Concordium's network ID is a hash of its genesis block in hexadecimal encoding, truncated to the first 32 characters.
 
 <!-- TODO: add some details, e.g. something like pseudocode `truncate(SHA512(block_data), 32)` -->
 
 ### Resolution Mechanics
 
 A hash of the genesis block can be obtained using the gRPC interface of a Concordium node (see [Concordium gRPC][]).
-The [GetConsensusInfo][] command provides data for constructing a network identifier.
+The [GetConsensusInfo][] command provides data which includes the hash of that network's genesis block, which can be truncated to serve as the network identifier.
 
 The request using a CLI tool [concordium-client][] looks as follows:
 
