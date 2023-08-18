@@ -21,5 +21,6 @@ It is greatly appreciated if you can render your PR locally to check the Jekyll 
 
 ## References
 
+[CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
 [CAIP-104]: https://ChainAgnostic.org/CAIPs/caip-104
 [namespaces]: https://namespaces.chainagnostic.org/
