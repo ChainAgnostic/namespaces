@@ -5,7 +5,7 @@ They consist of a 1 high-level "README.md" file to contextualize the ecosystem, 
 Each "CAIP profile" defines the namespace's syntax, semantics, and context for that CAIP (i.e., it's address format, actor model, asset addressing model, etc.).
 The intended audience of both the general "README.md" and each profile is a developer familiar with the CAIP being profiled but not familiar with the ecosystem being described, so the best namespaces provide all the links and entry-level explanations of the context needed for developers to build wallet and/or dapp interfaces that interact with assets, contracts, and accounts of a given namespace.
 
-The namespaces are best read on the [namespaces][] "docs" website rather than in github. To contribute see the [Contributing file](./contributing)
+The namespaces are best read on the [namespaces][] "docs" website rather than in github. To contribute see the [Contributing file](./CONTRIBUTING.md).
 
 ## How it works
 Each namespace implements one or more [CAIPs](https://github.com/ChainAgnostic/CAIPs). The most important CAIPs to consider for a namespace are:

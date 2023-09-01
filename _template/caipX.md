@@ -10,10 +10,10 @@ requires (*optional): <["CAIP-X", "CAIP-Y"]>
 replaces (*optional): <CAIP-Z>
 ---
 
-<!--You can leave these HTML comments in your merged EIP and delete the 
+<!--You can leave these HTML comments in your merged CAIP and delete the 
  visible duplicate text guides, they will not appear and may be helpful to 
- refer to if you edit it again. This is the suggested template for new EIPs.
- Note that an EIP number will be assigned by an editor. When opening a pull
+ refer to if you edit it again. This is the suggested template for new CAIPs.
+ Note that an CAIP number will be assigned by an editor. When opening a pull
  request to submit your EIP, please use an abbreviated title in the 
  filename, `caipX.md`, all lowercase, no `-` between the CAIP and its 
  number.-->
