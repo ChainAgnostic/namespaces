@@ -15,11 +15,14 @@ requires: ["CAIP-10"]
 
 ## Rationale
 
-CAIP-10 defines a way to identify an account in a blockchain. Monero chains use UTXO model and [Monero addresses][] are functionally similar to accounts in other namespaces.
+CAIP-10 defines a pattern for identifying an account in a blockchain. 
+Monero chains use UTXO model and [Monero addresses][] are functionally similar to accounts in other namespaces.
 
 ## Semantics
 
-Monero has several types of addresses: [standard address](https://monerodocs.org/public-address/standard-address/), [subaddress](https://monerodocs.org/public-address/subaddress/) and [integrated address](https://monerodocs.org/public-address/integrated-address/). Any address contains network and address type identifiers, public spend key, public view key, a checksum, and may contain additional data depending on the address type. [base58-monero][] encoding is used to encode address into a string.
+Monero has several types of addresses: [standard address](https://monerodocs.org/public-address/standard-address/), [subaddress](https://monerodocs.org/public-address/subaddress/) and [integrated address](https://monerodocs.org/public-address/integrated-address/). 
+Any address contains network and address type identifiers, public spend key, public view key, a checksum, and may contain additional data depending on the address type. 
+[Base58-monero][base58-monero] encoding is used to encode the address into a string.
 
 CAIP-10 "accounts" should not be confused with [Monero accounts][], which are used in Monero wallets for grouping related addresses and transactions.
 
@@ -29,7 +32,7 @@ Monero CAIP-10 account ID is a case-sensitive string in the form:
 
 ```
 account_id:        chain_id + ":" + address
-chain_id:          See Monero CAIP-2
+chain_id:          See Monero CAIP-2 profile
 address:           [a-zA-Z0-9]{95,106}
 ```
 
@@ -52,18 +55,21 @@ monero:00000000000000000000000000000000:86MD1PNx3vmKUQjLvxNnmUfGQoHXAg8x56Nq97Kr
 
 ## Additional Considerations
 
-In the future new types of Monero addresses will be introduced. They will likely be longer and may exceed the 128 character limit set in [CAIP-10][] specification.
+In the future new types of Monero addresses will be introduced. 
+They will likely be longer and may exceed the 128 character limit set in [CAIP-10][] specification.
 
 ## References
 
-- [CAIP-10][]
-- [Monero addresses][]
+- [Address documentation][Monero Addresses] from Monero core developer documentation
+- [Account documentation][Monero Accounts] from Monero core developer documentation
 
 [CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md
 [Monero addresses]: https://www.getmonero.org/resources/moneropedia/address.html
 [Monero accounts]: https://www.getmonero.org/resources/moneropedia/account.html
 [base58-monero]: https://monerodocs.org/cryptography/base58/
 [Monero CAIP-2]: https://github.com/ChainAgnostic/namespaces/blob/main/monero/caip2.md
+[base58btc]: https://datatracker.ietf.org/doc/html/draft-msporny-base58-02
+[base58btc-alphabet]: https://datatracker.ietf.org/doc/html/draft-msporny-base58-02#section-21
 
 ## Copyright
 
