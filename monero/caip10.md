@@ -22,7 +22,7 @@ Monero chains use UTXO model and [Monero addresses][] are functionally similar t
 
 Monero has several types of addresses: [standard address](https://monerodocs.org/public-address/standard-address/), [subaddress](https://monerodocs.org/public-address/subaddress/) and [integrated address](https://monerodocs.org/public-address/integrated-address/). 
 Any address contains network and address type identifiers, public spend key, public view key, a checksum, and may contain additional data depending on the address type. 
-[Base58-monero][base58-monero] encoding is used to encode the address into a string.
+Note that the [Base58-monero][base58-monero] encoding algorithm is used to encode the address from a byte array into a string; it uses the same alphabet as [base58btc][] but should not be decoded using [base58btc][] libraries due to the additional padding step to normalize string length.
 
 CAIP-10 "accounts" should not be confused with [Monero accounts][], which are used in Monero wallets for grouping related addresses and transactions.
 
