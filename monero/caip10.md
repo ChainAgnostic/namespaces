@@ -60,8 +60,8 @@ They will likely be longer and may exceed the 128 character limit set in [CAIP-1
 
 ## References
 
-- [Address documentation][Monero Addresses] from Monero core developer documentation
-- [Account documentation][Monero Accounts] from Monero core developer documentation
+- [Address documentation][Monero Addresses] from Monero documentation
+- [Account documentation][Monero Accounts] from Monero documentation
 
 [CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md
 [Monero addresses]: https://www.getmonero.org/resources/moneropedia/address.html
