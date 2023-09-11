@@ -2,7 +2,7 @@
 namespace-identifier: mvx-caip2
 title: MultiversX Namespace - Chains
 author: MultiversX Team <contact@multiversx.com>
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/87
+discussions-to: https://github.com/ChainAgnostic/namespaces/issues/89
 status: Draft
 type: Standard
 created: 2023-09-11

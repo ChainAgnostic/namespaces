@@ -2,7 +2,7 @@
 namespace-identifier: mvx
 title: MultiversX Namespace
 author: MultiversX Team <contact@multiversx.com>
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/87
+discussions-to: https://github.com/ChainAgnostic/namespaces/issues/89
 status: Draft
 type: Informational
 created: 2023-09-11
