@@ -38,7 +38,7 @@ After the [CAIP-2][] (namespace+chainID), a slash defines an `asset_namespace` a
 
 ```
 # One Solana Mainnet NFT：Pesky Penguins #398
-solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp/token:Fz6LxeUg5qjesYX3BdmtTwyyzBtMxk644XiTqU5W3w9w
+solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp/nft:Fz6LxeUg5qjesYX3BdmtTwyyzBtMxk644XiTqU5W3w9w
 
 # Solana Mainnet USDC
 solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp/token:EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
