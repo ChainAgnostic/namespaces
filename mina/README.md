@@ -4,7 +4,7 @@ title: Mina Namespace
 author: Mina Foundation
 status: Draft
 type: Informational
-created: 2023-07-20
+created: 2023-09-15
 requires: ["CAIP-2"]
 ---
 

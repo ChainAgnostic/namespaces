@@ -5,7 +5,7 @@ author: Mina Foundation
 discussions-to: 
 status: Draft
 type: Standard
-created: 2023-07-20
+created: 2023-09-15
 requires: CAIP-2
 ---
 
@@ -50,6 +50,27 @@ See [Test Cases](#test-cases).
 
 ### Resolution Method
 
+Use a graphQL query to obtain the identifier:
+
+```
+query MyQuery {
+  networkID
+}
+```
+
+The response will be:
+
+```
+{
+  "data": {
+    "networkID": "mina:mainnet"
+  }
+}
+```
+
+Use the value provided in the `networkID` field.
+
+Click here for more information on the [Mina GraphQL API](https://docs.minaprotocol.com/node-developers/graphql-api)
 
 
 ## Backwards Compatibility
