@@ -2,7 +2,7 @@
 namespace-identifier: mina-caip2
 title: Mina Namespace - Chains
 author: Mina Foundation
-discussions-to: 
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/91
 status: Draft
 type: Standard
 created: 2023-09-15
