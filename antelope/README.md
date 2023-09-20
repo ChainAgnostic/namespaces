@@ -5,7 +5,6 @@ author: Aaron Caswell (@porkchop)
 status: Draft
 type: Informational
 created: 2023-09-19
-requires: ["CAIP-2"]
 ---
 
 # Namespace for Antelope Blockchains
