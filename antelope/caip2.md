@@ -115,6 +115,66 @@ antelope:1064487b3cd1a897ce03ae5b6a865651
 # WAX Testnet
 // /v1/chain/get_info --> chain_id=f16b1833c747c43682f4386fca9cbb327929334a762755ebec17f6f23c9b8a12
 antelope:f16b1833c747c43682f4386fca9cbb32
+
+# Telos Mainnet
+// /v1/chain/get_info --> chain_id=4667b205c6838ef70ff7988f6e8257e8be0e1284a2f59699054a018f743b1d11
+antelope:4667b205c6838ef70ff7988f6e8257e8
+
+# Telos Testnet
+// /v1/chain/get_info --> chain_id=1eaa0824707c8c16bd25145493bf062aecddfeb56c736f6ba6397f3195f33c9f
+antelope:1eaa0824707c8c16bd25145493bf062a
+
+# ORE Mainnet
+// /v1/chain/get_info --> chain_id=7900eaca71d5b213d3e1e15d54d98ad235a7a5b8166361be78e672edeeb2b47a
+antelope:7900eaca71d5b213d3e1e15d54d98ad2
+
+# INSTAR Mainnet
+// /v1/chain/get_info --> chain_id=b042025541e25a472bffde2d62edd457b7e70cee943412b1ea0f044f88591664
+antelope:b042025541e25a472bffde2d62edd457
+
+# Proton Mainnet
+// /v1/chain/get_info --> chain_id=384da888112027f0321850a169f737c33e53b388aad48b5adace4bab97f437e0
+antelope:384da888112027f0321850a169f737c3
+
+# Proton Testnet
+// /v1/chain/get_info --> chain_id=71ee83bcf52142d61019d95f9cc5427ba6a0d7ff8accd9e2088ae2abeaf3d3dd
+antelope:71ee83bcf52142d61019d95f9cc5427b
+
+# FIO Mainnet
+// /v1/chain/get_info --> chain_id=21dcae42c0182200e93f954a074011f9048a7624c6fe81d3c9541a614a88bd1c
+antelope:21dcae42c0182200e93f954a074011f9
+
+# FIO Testnet
+// /v1/chain/get_info --> chain_id=b20901380af44ef59c5918439a1f9a41d83669020319a80574b804a5f95cbd7e
+antelope:b20901380af44ef59c5918439a1f9a41
+
+# Ultra Mainnet
+// /v1/chain/get_info --> chain_id=a9c481dfbc7d9506dc7e87e9a137c931b0a9303f64fd7a1d08b8230133920097
+antelope:a9c481dfbc7d9506dc7e87e9a137c931
+
+# Ultra Testnet
+// /v1/chain/get_info --> chain_id=7fc56be645bb76ab9d747b53089f132dcb7681db06f0852cfa03eaf6f7ac80e9
+antelope:7fc56be645bb76ab9d747b53089f132d
+
+# Kylin Testnet
+// /v1/chain/get_info --> chain_id=5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191
+antelope:5fff1dae8dc8e2fc4d5b23b2c7665c97
+
+# UX Mainnet
+// /v1/chain/get_info --> chain_id=8fc6dce7942189f842170de953932b1f66693ad3788f766e777b6f9d22335c02
+antelope:8fc6dce7942189f842170de953932b1f
+
+# UX Testnet
+// /v1/chain/get_info --> chain_id=5002d6813ffe275d9471a7e3a301eab91c36e8017f9664b8431fbf0e812a0b04
+antelope:5002d6813ffe275d9471a7e3a301eab9
+
+# Libre Mainnet
+// /v1/chain/get_info --> chain_id=38b1d7815474d0c60683ecbea321d723e83f5da6ae5f1c1f9fecc69d9ba96465
+antelope:38b1d7815474d0c60683ecbea321d723
+
+# Libre Testnet
+// /v1/chain/get_info --> chain_id=b64646740308df2ee06c6b72f34c0f7fa066d940e831f752db2006fcc2b78dee
+antelope:b64646740308df2ee06c6b72f34c0f7f
 ```
 
 ## References
