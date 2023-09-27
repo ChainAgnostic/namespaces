@@ -12,7 +12,7 @@ requires: ["CAIP-10"]
 # CAIP-10
 
 *For context, see the [CAIP-10][] specification.*
-CAIP-10 defines an pattern for identifying addresses in a cryptographic system as heirarchical URIs.
+
 ## Rationale
 
 CAIP-10 defines a pattern for identifying an account in a blockchain. 
