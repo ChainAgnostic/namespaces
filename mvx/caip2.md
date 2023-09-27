@@ -16,7 +16,7 @@ _For context, see the [CAIP-2][] specification._
 ## Abstract
 
 In CAIP-2 a general blockchain identification scheme is defined. This is the
-implementation of CAIP-2 for the MultiversX network.
+profile of CAIP-2 specific to the MultiversX network.
 
 ### MultiversX Namespace
 
@@ -30,11 +30,11 @@ and a testing network (Testnet).
 ## Syntax
 
 An identifier for an MultiversX chain consists of the namespace prefix "mvx:"
-followed by the chain's Id.
+followed by the appropriate `chainId` corresponding to that chain.
 
 ### Reference Definition
 
-The reference on the MultiversX chain is the equivalent of the MultiversX chainId:
+The reference for each MultiversX chain is identical to its native representation in the MultiversX ecosystem:
 `1` for `Mainnet`, `D` for `Devnet`, `T` for `Testnet`
 
 ### Resolution Method

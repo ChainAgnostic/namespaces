@@ -6,7 +6,6 @@ discussions-to: https://github.com/ChainAgnostic/namespaces/issues/89
 status: Draft
 type: Informational
 created: 2023-09-11
-requires: ["CAIP-2"]
 ---
 
 # Namespace for MultiversX Blockchains

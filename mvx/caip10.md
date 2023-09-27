@@ -20,7 +20,7 @@ The human-readable-part of the bech32 addresses is "erd" which means that the Mu
 
 The MultiversX network defines the address of an account as the bech32 representation of the public key of its corresponding pair of keys (the secret key remains known only to the user that owns the key pair). The public key is 32 bytes in length (64 hex characters), while the address (bech32) is 62 characters long.
 
-On MultiversX, Smart Contracts and only Smart Contracts have their hex (raw) addresses prefixed with 8 zero bytes (meaning that their bech32 address will begin with `erd1qqqqqqqqqqqq` )
+On MultiversX, deployed Smart Contracts (and only deployed Smart Contracts) have their hex (raw) addresses prefixed with 8 zero bytes (meaning that their bech32 address will begin with `erd1qqqqqqqqqqqq` )
 
 ## Syntax
 
@@ -34,9 +34,11 @@ address:                bech32 formatted MultiversX address (erd1...)
 ## Test Cases
 
 ```
-MultiversX Mainnet
+#Wallet address on MultiversX Mainnet
 mvx:1:erd1uapegx64zk6yxa9kxd2ujskkykdnvzlla47uawh7sh0rhwx6y60sv68me9
-mvx:1:erd1qqqqqqqqqqqqqpgqhe8t5jewej70zupmh44jurgn29psua5l2jps3ntjj3 ( Smart Contract )
+
+#Deployed Smart Contract on MultiversX Mainnet
+mvx:1:erd1qqqqqqqqqqqqqpgqhe8t5jewej70zupmh44jurgn29psua5l2jps3ntjj3 
 
 MultiversX Devnet
 mvx:D:erd1devnet6uy8xjusvusfy3q83qadfhwrtty5fwa8ceh9cl60q2p6ysra7aaa
