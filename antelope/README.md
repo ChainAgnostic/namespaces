@@ -1,6 +1,6 @@
 ---
 namespace-identifier: antelope
-title: Antelope Namespace
+title: Antelope (formerly known as EOSIO) Namespace
 author: Aaron Caswell (@porkchop)
 status: Draft
 type: Informational
@@ -10,7 +10,7 @@ created: 2023-09-19
 # Namespace for Antelope Blockchains
 
 This document defines the applicability of CAIP schemes to the blockchains of
-the Antelope ecosystem.
+the Antelope ecosystem, which include EOS, Telos, WAX and more.
 
 ## Syntax
 
