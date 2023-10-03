@@ -35,9 +35,11 @@ address:                bech32-formatted MultiversX address (erd1...)
 ## Test Cases
 
 ```
-MultiversX Mainnet
+#Wallet address on MultiversX Mainnet
 mvx:1:erd1uapegx64zk6yxa9kxd2ujskkykdnvzlla47uawh7sh0rhwx6y60sv68me9
-mvx:1:erd1qqqqqqqqqqqqqpgqhe8t5jewej70zupmh44jurgn29psua5l2jps3ntjj3 ( Smart Contract )
+
+#Deployed Smart Contract on MultiversX Mainnet
+mvx:1:erd1qqqqqqqqqqqqqpgqhe8t5jewej70zupmh44jurgn29psua5l2jps3ntjj3 
 
 MultiversX Devnet
 mvx:D:erd1devnet6uy8xjusvusfy3q83qadfhwrtty5fwa8ceh9cl60q2p6ysra7aaa
