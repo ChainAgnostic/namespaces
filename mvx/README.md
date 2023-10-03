@@ -19,11 +19,21 @@ The namespace `mvx` refers to the MultiversX open-source blockchain platform.
 
 ## References
 
-- [MultiversX Docs](https://docs.multiversx.com/)
-- [MultiversX Specifications](https://github.com/multiversx/mx-specs)
-- [Integrators Guide](https://docs.multiversx.com/integrators/overview)
-- [CAIP-2](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md)
-- [CAIP-10](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md)
+
+- [MultiversX Documentation][MultiversX Docs]
+- [MultiversX Specifications][]
+- [MultiversX governance][] 
+- [Integrators Guide][]
+
+[MultiversX governance]: https://agora.multiversx.com/c/governance/9
+[MultiversX Docs]: https://docs.multiversx.com/
+[MultiversX Specifications]: https://github.com/multiversx/mx-specs
+[MultiversX Constants]: https://docs.multiversx.com/developers/constants
+[MultiversX REST API]: https://docs.multiversx.com/sdk-and-tools/rest-api
+[Integrators Guide]: https://docs.multiversx.com/integrators/overview
+[BIP_0173]: https://en.bitcoin.it/wiki/BIP_0173
+[CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
+[CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md
 
 ## Rights
 
