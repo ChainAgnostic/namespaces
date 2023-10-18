@@ -27,7 +27,7 @@ Mina consists of multiple networks: a production network `mainnet`, a testing ne
 
 An identifier for a Mina chain consists of the namespace prefix "mina:" followed by human readable reference identifying each network. These identifiers may be extended to include codenames and prefixed to include the type of network. These names are separated by "-". 
 
-The type of network will be:
+The type of network may be:
 - devnet, indicating a stable copy of the network used for developer testing.
 - testnet, indicating a less stable copy of the network where new features can be deployed and tested. 
 
@@ -35,7 +35,7 @@ The names chosen above are taken from the signature schema's for each blockchain
 
 ## Syntax
 
-The blockchain namespace and blockchain identifiers will be in lowercase.
+The blockchain namespace and blockchain identifiers will be in lowercase [a-z] and contain no whitespaces and have a miximum length of 30 characters.
 
 The human readable identifier for a network may be one of the following strings:
 
@@ -44,7 +44,16 @@ The human readable identifier for a network may be one of the following strings:
 - `devnet` 
 - `berkeley`
 
-The human readable identifiers above may be composed to add description using `-` as a separator.
+The human readable identifiers above may be concatenated to describe different networks by using `-` as a separator.
+
+A regular expression for validating the above or any other theoretically
+possible Mina network identifier string (that fits under the CAIP-20 limit of
+32 characters) can be defined as:
+
+```
+^mina:[a-z]{1,12}?(-[a-z]{1,12})?$
+```
+
 
 See [Test Cases](#test-cases).
 
