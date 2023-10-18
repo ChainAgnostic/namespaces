@@ -19,11 +19,14 @@ The namespace "mina" refers to the Mina blockchain, its forks, devnets and testn
 
 ## References
 
-- [CAIP-2] https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
-- [Mina Protocol Website] https://minaprotocol.com/
-- [Mina Protocol Developer Documentation] https://docs.minaprotocol.com/
-- [Mina Rosetta Implementation] https://docs.minaprotocol.com/node-operators/rosetta
+- [Mina Protocol Website][]
+- [Mina Protocol Developer Documentation][]
+- [Mina Rosetta Implementation][] 
 
+[CAIP-2]: https://ChainAgnostic.org/CAIPs/caip-2
+[Mina Protocol Website]: https://minaprotocol.com/
+[Mina Protocol Developer Documentation]: https://docs.minaprotocol.com/
+[Mina Rosetta Implementation]: https://docs.minaprotocol.com/node-operators/rosetta
 
 ## Copyright
 

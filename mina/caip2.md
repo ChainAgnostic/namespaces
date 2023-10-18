@@ -23,9 +23,11 @@ The namespace "mina" refers to the wider Mina ecosystem.
 
 ## Rationale
 
-Mina consists of multiple networks: a production network `mainnet`, a testing network `testnet` and networks where new features are trialed. Networks trialing new features are identified by a codename, for example `berkeley`. 
+Mina consists of multiple networks: a production network `mainnet`, a testing network `testnet` and networks where new features are trialed. 
+Networks trialing new features are identified by a codename, for example `berkeley`. 
 
-An identifier for a Mina chain consists of the namespace prefix "mina:" followed by human readable reference identifying each network. These identifiers may be extended to include codenames and prefixed to include the type of network. These names are separated by "-". 
+An identifier for a Mina chain consists of the namespace prefix "mina:" followed by human readable reference identifying each network. 
+These identifiers may be extended to include codenames and prefixed to include the type of network. These names are separated by "-". 
 
 The type of network may be:
 - devnet, indicating a stable copy of the network used for developer testing.
@@ -44,22 +46,19 @@ The human readable identifier for a network may be one of the following strings:
 - `devnet` 
 - `berkeley`
 
-The human readable identifiers above may be concatenated to describe different networks by using `-` as a separator.
+Note that new human readable identifiers may be created for new networks by concatenating existing ones using `-` as a separator, i.e. `berkeley-testnet`. 
 
-A regular expression for validating the above or any other theoretically
-possible Mina network identifier string (that fits under the CAIP-20 limit of
-32 characters) can be defined as:
+A regular expression for validating the above or any other theoretically possible Mina network identifier string (that fits under the CAIP-20 limit of 32 characters) can be defined as:
 
 ```
 ^mina:[a-z]{1,12}?(-[a-z]{1,12})?$
 ```
 
-
 See [Test Cases](#test-cases).
 
 ### Resolution Method
 
-Use a graphQL query to obtain the identifier:
+Use a graphQL query to obtain the identifier after connecting to a network:
 
 ```
 query MyQuery {
@@ -79,8 +78,7 @@ The response will be:
 
 Use the value provided in the `networkID` field.
 
-Click here for more information on the [Mina GraphQL API](https://docs.minaprotocol.com/node-developers/graphql-api)
-
+Click here for more information on the [Mina GraphQL API][].
 
 ## Backwards Compatibility
 
@@ -113,11 +111,16 @@ mina:testnet-berkeley
 
 ## References
 
-- [CAIP-2] https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
-- [Mina Protocol Website] https://minaprotocol.com/
-- [Mina Protocol Developer Documentation] https://docs.minaprotocol.com/
-- [Mina Rosetta Implementation] https://docs.minaprotocol.com/node-operators/rosetta
+- [Mina Protocol Website][]
+- [Mina Protocol Developer Documentation][]
+- [Mina GraphQL API][] documentation
+- [Mina Rosetta Implementation][] 
 
+[CAIP-2]: https://ChainAgnostic.org/CAIPs/caip-2
+[Mina GraphQL API]: https://docs.minaprotocol.com/node-developers/graphql-api
+[Mina Protocol Website]: https://minaprotocol.com/
+[Mina Protocol Developer Documentation]: https://docs.minaprotocol.com/
+[Mina Rosetta Implementation]: https://docs.minaprotocol.com/node-operators/rosetta
 
 ## Rights
 
