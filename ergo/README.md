@@ -6,7 +6,7 @@ discussions-to: https://github.com/ChainAgnostic/namespaces/pull/...
 status: Draft
 type: Informational
 created: 2023-11-02
-requires: ["CAIP-2",.....]
+requires: ["CAIP-2", "CAIP-10"]
 ---
 
 # Namespace for Ergo Blockchains
