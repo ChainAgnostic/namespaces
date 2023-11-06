@@ -30,6 +30,16 @@ Correspondingly, a message needs to be serialized to bytes prior to signing it w
 
 We propose using the signature type `xrpl:secp256k1` and `xrpl:ed25519` to refer to the chain and algorithm used uniquely.
 
+### Signature Meta
+
+We propose that the signature meta contains the public key of the signer. This is to allow for the requester to verify that the signature belongs to the specified public key. The requester is also responsible for verifying that the public key that was used to sign the message is properly associated with the address in the payload.
+
+```
+type SignatureMeta struct {
+  SigningPubKey String
+}
+```
+
 ### Signature Creation
 
 The abstract data model must be canonicalized to a string representation in an unambigious format, and then the string serialized to the proper binary format mentioned [above](#signing-algorithm) to be signed over with the proper algorithm. 
