@@ -41,7 +41,8 @@ reference:   8-bit unsigned integer in which lower 4 bits are zeros
 ```
 
 ### Resolution method
-...TODO...
+
+One can resolve chain ID decoding Ergo [Address].
 
 ## Rationale
 
