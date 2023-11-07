@@ -2,7 +2,7 @@
 namespace-identifier: ergo-caip19
 title: Ergo Namespace - Assets
 author:  Yuriy Gagarin (@gagarin55)
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/..
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/98
 status: Draft
 type: Standard
 created: 2023-11-04

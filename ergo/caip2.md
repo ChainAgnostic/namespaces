@@ -2,7 +2,7 @@
 caip: 2
 title: Ergo Blockchain ID Specification
 author: Yuriy Gagarin (@gagarin55)
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/..
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/98
 status: Draft
 type: Standard
 created: 2023-11-02
