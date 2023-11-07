@@ -2,11 +2,11 @@
 namespace-identifier: ergo
 title: Ergo Ecosystem
 author: Yuriy Gagarin (@gagarin55)
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/...
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/98
 status: Draft
 type: Informational
 created: 2023-11-02
-requires: ["CAIP-2", "CAIP-10"]
+requires: ["CAIP-2", "CAIP-10", "CAIP-19"]
 ---
 
 # Namespace for Ergo Blockchains
