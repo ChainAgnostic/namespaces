@@ -54,13 +54,13 @@ address:                Ergo address represented as a [Base58btc][]-encoded stri
 
 ```
 # Namespace-wide Public Key:
-# [TODO]
+# 0x0202f2b96aa59e6f37fc978883f78e54fd319fa37dcf971d8e69f9e9225376bcf1
 
 # P2PK Address on Ergo Mainnet (0)
-ergo:0:[TODO]
+ergo:0:9eYMpbGgBf42bCcnB2nG3wQdqPzpCCw5eB1YaWUUen9uCaW3wwm
 
 # P2PK Address on Ergo Testnet (16)
-ergo:16:[TODO]
+ergo:16:3WvdWQMfUeKFcsQudPM4zqTCcncSAtYZgi96Vr3zLJqYQVn2qmaw
 ```
 
 ## Links
