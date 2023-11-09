@@ -20,7 +20,7 @@ replaces (*optional): <CAIP-2>
 
 # CAIP-2
 
-*For context, see the [CAIP-2][https://github.com/ChainAgnostic/CAIPs/blob/main/CAIPs/caip-2.md] specification.*
+*For context, see the [CAIP-2][] specification.*
 
 ## Rationale
 
