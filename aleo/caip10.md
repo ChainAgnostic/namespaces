@@ -19,7 +19,7 @@ requires (*optional): <["CAIP-10"]>
 
 # CAIP-10
 
-*For context, see the [CAIP-10][https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md`] specification.*
+*For context, see the [CAIP-10][] specification.*
 <!--"If you can't explain it simply, you don't understand it well enough." Provide a simplified and layman-accessible explanation of the CAIP.-->
 
 ## Rationale
