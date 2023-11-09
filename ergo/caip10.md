@@ -6,6 +6,7 @@ discussions-to: https://github.com/ChainAgnostic/namespaces/pull/98
 status: Draft
 type: Standard
 created: 2023-11-02
+updated: 2023-11-09
 requires: ["CAIP-2", "CAIP-10"]
 ---
 
@@ -15,21 +16,29 @@ requires: ["CAIP-2", "CAIP-10"]
 
 ## Rationale
 
-Ergo "address" can change depending on chain ID. This prevents unintentional
+Ergo "address" can change depending on Network type. This prevents unintentional
 transfers across Ergo blockchains.
+
+
+Constructing an address:
+
+- **Prefix byte** = `network type + address type`
+(for example, P2S script on the testnet starts with 0x13 before Base58)
+- **checksum** = `leftmost_4_bytes (blake2b256 (prefix byte || content bytes))`
+- **address** = `prefix byte || content bytes || checksum`
+
+Network type is 8-bit unsigned integer in which lower 4 bits are zeros.
+
+Possible values:
+* Mainnet - 0 (in hex `0x00`)
+* Testnet - 16 (in hex `0x10`)
+
 
 Address types are (semantics described below):
 
 * 0x01 - Pay-to-PublicKey(P2PK) address
 * 0x02 - Pay-to-Script-Hash(P2SH)
 * 0x03 - Pay-to-Script(P2S)
-
-Constructing an address:
-
-- **Prefix byte** = `chain ID + address type`
-(for example, P2S script on the testnet starts with 0x13 before Base58)
-- **checksum** = `leftmost_4_bytes (blake2b256 (prefix byte || content bytes))`
-- **address** = `prefix byte || content bytes || checksum`
 
 For an address type, we form `content bytes` as follows:
 
@@ -44,7 +53,7 @@ The syntax of Ergo addresses:
 ```
 caip10-like address:    namespace + ":" chainId + ":" + address
 namespace:              ergo
-chain Id:               8-bit unsigned integer in which lower 4 bits are zeros 
+chain Id:               32-character prefix from the hash of the genesis block 
 address:                Ergo address represented as a [Base58btc][]-encoded string
 ```
 
@@ -56,11 +65,11 @@ address:                Ergo address represented as a [Base58btc][]-encoded stri
 # Namespace-wide Public Key:
 # 0x0202f2b96aa59e6f37fc978883f78e54fd319fa37dcf971d8e69f9e9225376bcf1
 
-# P2PK Address on Ergo Mainnet (0)
-ergo:0:9eYMpbGgBf42bCcnB2nG3wQdqPzpCCw5eB1YaWUUen9uCaW3wwm
+# P2PK Address on Ergo Mainnet
+ergo:b0244dfc267baca974a4caee06120321:9eYMpbGgBf42bCcnB2nG3wQdqPzpCCw5eB1YaWUUen9uCaW3wwm
 
-# P2PK Address on Ergo Testnet (16)
-ergo:16:3WvdWQMfUeKFcsQudPM4zqTCcncSAtYZgi96Vr3zLJqYQVn2qmaw
+# P2PK Address on Ergo Testnet
+ergo:e7553c9a716bb3983ac8b0c21689a1f3:3WvdWQMfUeKFcsQudPM4zqTCcncSAtYZgi96Vr3zLJqYQVn2qmaw
 ```
 
 ## Links
