@@ -26,7 +26,7 @@ replaces (*optional): <CAIP-2>
 
 The namespace `aleo` refers to the Aleo Network Layer 1 blockchain.
 
-Aleo consists of a single network: a testnet network (Testnet3).
+To date, Aleo consists of a single network: a testnet network (Testnet3).
 
 An identifier for a Aleo chain consists of the namespace prefix "aleo:"
 followed by the chain id.
