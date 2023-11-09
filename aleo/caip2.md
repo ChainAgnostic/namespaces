@@ -93,7 +93,8 @@ aleo:testnet3
 
 ## Additional Considerations (*OPTIONAL)
 
-Mainnet will release sometime at the end of 2023 / beginning of 2024. The API is subject to change.
+Mainnet will release sometime at the end of 2023 / beginning of 2024. 
+The API is subject to change and the example above (particularly other properties) may become inaccurate over time.
 
 ## References
 <!--Links to external resources that help understanding the CAIP better. This can e.g. be links to existing implementations.-->
