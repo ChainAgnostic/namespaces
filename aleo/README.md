@@ -15,7 +15,7 @@ This document defines the applicability of CAIP schemes to the networks of the A
 
 # Syntax
 
-The `aleo` namespace refers to networks and other objects within the Aleo Network blockchain ecosystem.
+The `aleo` namespace profiles CAIP scheme and behaviors for referring to networks and other objects within the Aleo Network blockchain ecosystem.
 
 # References
 
