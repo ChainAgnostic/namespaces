@@ -36,49 +36,6 @@ followed by the chain id.
 The Aleo chain ID is the name of the chain. e.g. `testnet3` or `mainnet` when mainnet is released. 
 regex: `/^(testnet3|mainnet)$/i`
 
-### Resolution Mechanics
-
-To obtain the genesis block hash, make a JSON-RPC request to the Aleo api.
-
-Request (aleo testnet3):
-
-```curl
-curl --request GET \
-  --url https://vm.aleo.org/api/testnet3/block/0 \
-```
-
-Response (aleo testnet3):
-
-```json
-{
-  "block_hash": "ab1cxu7kq6j8yva9nzq394jt90qnpeexsr0fdnqfdzgqrx4fn7czcyqknclrd",
-  "previous_hash": "ab1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq5g436j",
-  "header": {
-  "previous_state_root": "0field",
-    "transactions_root": "2421468861514346193702333205411662486965424378250484763660928941797390483657field",
-    "finalize_root": "2347499756727239097527357730627929185508370696360031054030113664724940109165field",
-    "ratifications_root": "2347499756727239097527357730627929185508370696360031054030113664724940109165field",
-    "coinbase_accumulator_point": "0field",
-    "metadata": {
-      "network": 3,
-      "round": 0,
-      "height": 0,
-      "total_supply_in_microcredits": 1500000000000000,
-      "cumulative_weight": 0,
-      "cumulative_proof_target": 0,
-      "coinbase_target": 4095,
-      "proof_target": 32,
-      "last_coinbase_target": 4095,
-      "last_coinbase_timestamp": 1680307200,
-      "timestamp": 1680307200
-    }
-  },
-  "transactions": [ ... ],
-  "ratifications": [],
-  "signature": "sign1t7lf502e0h23jtvls9lagepv5sfvgpxm7yvzwrfhgpqsyevkwqq7hcxuympx2w6c4pt3nvm929l74q96hx9ed57cyvvrdm7hqlt75qm7rawvssddfv078wthdpqynfu3jh5qeruups7t7vyls3jxccnypxa5z55an3zwd9em29wrjxmpyymwflclchtzhr62hwthyumkge2qgcd950p"
-}
-```
-
 ### Backwards Compatibility
 
 n/a
@@ -90,6 +47,9 @@ This is a manually composed example.
 ```env
 # Aleo Testnet3
 aleo:testnet3
+
+# Aleo mainnet
+aleo:mainnet
 ```
 
 ## Additional Considerations (*OPTIONAL)
