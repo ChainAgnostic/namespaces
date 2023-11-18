@@ -33,7 +33,8 @@ followed by the chain id.
 
 ## Syntax
 
-The Aleo chain ID is the name of the chain. e.g. `testnet3` or `mainnet` when mainnet is released.
+The Aleo chain ID is the name of the chain. e.g. `testnet3` or `mainnet` when mainnet is released. 
+regex: `/^(testnet3|mainnet)$/i`
 
 ### Resolution Mechanics
 
