@@ -6,7 +6,7 @@ discussions-to: <URL of PR, mailing list, etc>
 status: Draft
 type: Standard
 created: 2023-09-12
-requires (*optional): <["CAIP-10"]>
+requires: CAIP-10
 ---
 
 <!--You can leave these HTML comments in your merged CAIP and delete the 
