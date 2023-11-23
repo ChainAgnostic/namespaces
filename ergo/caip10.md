@@ -16,13 +16,13 @@ requires: ["CAIP-2", "CAIP-10"]
 
 ## Rationale
 
-Ergo "address" can change depending on Network type. 
+A given Ergo "address" changes completely depending on the network identifier segment.
+Different address types in the Ergo-specific UTXO model, like the network identifier used to encode the network on which the address can be dereferenced, can only be determined by decoding the string and inspecting the initial prefix byte.
 This prevents unintentional transfers across Ergo blockchains.
 
 Constructing an address:
 
-- **Prefix byte** = `network type + address type`
-(for example, P2S script on the testnet starts with 0x13 before Base58)
+- **Prefix byte** = `network identifier + address type discriminant`
 - **checksum** = `leftmost_4_bytes (blake2b256 (prefix byte || content bytes))`
 - **address** = `prefix byte || content bytes || checksum`
 
@@ -44,6 +44,8 @@ For an address type, we form `content bytes` as follows:
 - **P2PK** - serialized (compressed) public key
 - **P2SH** - first 192 bits of the Blake2b256 hash of serialized script bytes
 - **P2S** - serialized script
+
+The checksum is calculated after concatenating prefix byte to content bytes, and then postpended to form a full Ergo standard address notation.
 
 ## Syntax
 
