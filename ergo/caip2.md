@@ -12,9 +12,8 @@ updated: 2023-11-09
 
 ## Abstract
 
-In CAIP-2 a general blockchain identification scheme is defined. This is the
-implementation of CAIP-2 for Ergo network.
-
+In CAIP-2 a general blockchain identification scheme is defined. 
+This is the implementation of CAIP-2 for Ergo network.
 
 ## Specification
 

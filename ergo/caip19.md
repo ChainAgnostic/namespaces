@@ -14,18 +14,18 @@ requires: ["CAIP-2", "CAIP-19"]
 
 Ergo supports custom tokens as first-class citizens as outlined in [EIP-0004].
 
-A transaction can create tokens from thin air in its outputs if the Asset ID matches the ID of the transaction's first input ([box]). Since the box identifier is cryptographically unique, it's impossible to have a second asset with the same identifier. This rule also implies that only one new asset can be created per transaction.
+A transaction can create tokens from thin air in its outputs if the Asset ID matches the ID of the transaction's first input ([box]). 
+Since the box identifier is cryptographically unique, it's impossible to have a second asset with the same identifier. 
+This rule also implies that only one new asset can be created per transaction.
 
-The ID format for fungible (ERC20-equivalent) and non-fungible (ERC-721
-equivalent) tokens is the same.  The process for issuance of either is also the
-same. The only difference is that NFTs must have specific values for certain
-properties.
+The ID format for fungible (ERC20-equivalent) and non-fungible (ERC-721 equivalent) tokens is the same.
+The process for issuance of either is also the same.
+The only difference is that NFTs must have specific values for certain properties.
 
 ## Specification of Asset ID
 
-Asset ID is a 32 byte array encoded as a hex string. When
-issued, it is equal to the ID of the transaction's first input that issued this
-asset.
+Asset ID is a 32 byte array encoded as a hex string. 
+When issued, it is equal to the ID of the transaction's first input that issued this asset.
 
 ## Syntax
 

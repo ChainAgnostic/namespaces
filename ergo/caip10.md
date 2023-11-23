@@ -16,9 +16,8 @@ requires: ["CAIP-2", "CAIP-10"]
 
 ## Rationale
 
-Ergo "address" can change depending on Network type. This prevents unintentional
-transfers across Ergo blockchains.
-
+Ergo "address" can change depending on Network type. 
+This prevents unintentional transfers across Ergo blockchains.
 
 Constructing an address:
 
