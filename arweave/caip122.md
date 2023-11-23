@@ -71,7 +71,7 @@ Type: ${type}
 Signature: ${signature}
 ```
 
-The signature creation process on Arweave is done through the `arweave-js` library. The message data model is expressed in string format. This string is signed using the RSA-PSS algorithm through a manual call to the `sign()` method from the `arweave-js` library. The signature is returned as a Uint8Array of bytes which is then Base64Url encoded by calling `arweave.utils.bufferTob64Url()`. At time or writing, the only type of signature (and thus the only valid value for `signatureMeta.t`) is `arweaveSign`. 
+The signature creation process on Arweave is done through the `arweave-js` library. The message data model is expressed in string format. This string is signed using the RSA-PSS algorithm through a manual call to the `sign()` method from the `arweave-js` library. The signature is returned as a Uint8Array of bytes which is then Base64Url encoded by calling `arweave.utils.bufferTob64Url()`. At time or writing, the only type of signature (and thus the only valid value for `signatureMeta.t`) is `arweaveSign`, and where no signature type is explicitly set this should be the implicit value. 
 
 ### Signature Verification
 
