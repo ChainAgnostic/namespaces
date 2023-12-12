@@ -80,6 +80,7 @@ ergo:e7553c9a716bb3983ac8b0c21689a1f3:3WvdWQMfUeKFcsQudPM4zqTCcncSAtYZgi96Vr3zLJ
 
 [address format]: https://docs.ergoplatform.com/dev/wallet/address/address_types
 [base58btc]: https://en.bitcoin.it/wiki/Base58Check_encoding#Base58_symbol_chart
+[blake2b256]: https://datatracker.ietf.org/doc/html/rfc7693#section-4
 
 ## Copyright
 
