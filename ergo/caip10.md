@@ -44,7 +44,7 @@ For an address type, we form `content bytes` as follows:
 - **P2PK** - serialized (compressed) public key
 - **P2SH** - first 192 bits of the [Blake2b256][] hash of serialized script bytes
 - **P2S** - serialized script
-
+One the above has been constructed in binary, it is encoded according to the [Base58btc][] alphabet to be expressed as the `address` segment of a CAIP-10 string.
 The checksum is calculated after concatenating prefix byte to content bytes, and then postpended to form a full Ergo standard address notation.
 
 ## Syntax
