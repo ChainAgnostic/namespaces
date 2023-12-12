@@ -63,7 +63,7 @@ address:                Ergo address represented as a [Base58btc][]-encoded stri
 ## Test Cases
 
 ```
-# Namespace-wide Public Key:
+# Namespace-wide bare public key in standard expression, without prefixes
 # 0x0202f2b96aa59e6f37fc978883f78e54fd319fa37dcf971d8e69f9e9225376bcf1
 
 # P2PK Address on Ergo Mainnet
