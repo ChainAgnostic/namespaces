@@ -42,7 +42,7 @@ Address types are (semantics described below):
 For an address type, we form `content bytes` as follows:
 
 - **P2PK** - serialized (compressed) public key
-- **P2SH** - first 192 bits of the Blake2b256 hash of serialized script bytes
+- **P2SH** - first 192 bits of the [Blake2b256][] hash of serialized script bytes
 - **P2S** - serialized script
 
 The checksum is calculated after concatenating prefix byte to content bytes, and then postpended to form a full Ergo standard address notation.
