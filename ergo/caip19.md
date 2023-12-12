@@ -6,7 +6,7 @@ discussions-to: https://github.com/ChainAgnostic/namespaces/pull/98
 status: Draft
 type: Standard
 created: 2023-11-04
-updated: 2023-11-09
+updated: 2023-12-12
 requires: ["CAIP-2", "CAIP-19"]
 ---
 
@@ -20,7 +20,7 @@ This rule also implies that only one new asset can be created per transaction.
 
 The ID format for fungible (ERC20-equivalent) and non-fungible (ERC-721 equivalent) tokens is the same.
 The process for issuance of either is also the same.
-The only difference is that NFTs must have specific values for certain properties.
+The only difference is that NFTs must have specific values (see [EIP-0004]) for certain properties.
 
 ## Specification of Asset ID
 
@@ -54,7 +54,7 @@ ergo:e7553c9a716bb3983ac8b0c21689a1f3:0160b869f30a5424e59cb3453e8a726b81fe83761d
 - [Token][token] overview
 - [Ergo Box][box] overview
 - [About addresses in Ergo Documentation][address format]
-
+- [Ergo Assets standard][EIP-0004]
 [box]: https://docs.ergoplatform.com/dev/data-model/box/
 [token]: https://docs.ergoplatform.com/dev/data-model/box/tokens/
 [address format]: https://docs.ergoplatform.com/dev/wallet/address/address_types
