@@ -1,7 +1,7 @@
 ---
 namespace-identifier: aleo
 title: Aleo Network
-author: Jonathan Gonzalez (@jonandgon)
+author: Jonathan Gonzalez (@jonandgon, jonathan@puzzle.online)
 discussions-to: <URL of PR, mailing list, etc>
 status: Draft
 type: Standard
