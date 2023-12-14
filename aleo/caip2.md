@@ -33,8 +33,7 @@ followed by the chain id.
 
 ## Syntax
 
-The Aleo chain ID is the name of the chain. e.g. `testnet3` or `mainnet` when mainnet is released. 
-regex: `/^(testnet3|mainnet)$/i`
+The Aleo chain ID is the name of the chain. e.g. `3` for testnet3 or `0` for when mainnet is released. The chain id is a `u16` number ranging from 0 to 65535.
 
 ### Backwards Compatibility
 
@@ -46,15 +45,15 @@ This is a manually composed example.
 
 ```env
 # Aleo Testnet3
-aleo:testnet3
+aleo:3
 
 # Aleo mainnet
-aleo:mainnet
+aleo:0
 ```
 
 ## Additional Considerations (*OPTIONAL)
 
-Mainnet will release sometime at the end of 2023 / beginning of 2024. 
+Mainnet will release sometime Q1 2024. 
 The API is subject to change and the example above (particularly other properties) may become inaccurate over time.
 
 ## References
