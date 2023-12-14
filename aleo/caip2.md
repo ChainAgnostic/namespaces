@@ -39,6 +39,18 @@ The Aleo chain ID is the name of the chain. e.g. `3` for testnet3 or `0` for whe
 
 n/a
 
+### Resolution Method
+
+To resolve a reference for the Aleo namespace, get the latest block information from the chain you are interested in from an Aleo API node. An example using Javascript:
+
+```env
+fetch('https://api.explorer.aleo.org/v1/testnet3/latest/block')
+  .then(response => response.json())
+  .then(response => console.log(response.header.metadata.network))
+```
+
+will log `3`.
+
 ## Test Cases
 
 This is a manually composed example.
