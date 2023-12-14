@@ -1,7 +1,7 @@
 ---
 namespace-identifier: aleo-caip10
 title: Aleo Network - Namespace Accounts
-author: Jonathan Gonzalez (@jonandgon)
+author: Jonathan Gonzalez (@jonandgon, jonathan@puzzle.online)
 discussions-to: <URL of PR, mailing list, etc>
 status: Draft
 type: Standard
