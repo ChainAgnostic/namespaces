@@ -43,7 +43,10 @@ A regular expression for validating an Aleo address can be defined as:
 
 ```env
 # Aleo Testnet3
-aleo:testnet3:aleo1ml2xr6fawppd6uaf8gn95uy2fpqqg8gk74k0lu8na7uvayk64v8qu8hw5u
+aleo:3:aleo1ml2xr6fawppd6uaf8gn95uy2fpqqg8gk74k0lu8na7uvayk64v8qu8hw5u
+
+# Aleo Mainnet
+aleo:0:aleo1ml2xr6fawppd6uaf8gn95uy2fpqqg8gk74k0lu8na7uvayk64v8qu8hw5u
 ```
 
 ## Additional Considerations (*OPTIONAL)
