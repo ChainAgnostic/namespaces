@@ -28,12 +28,13 @@ The namespace `aleo` refers to the Aleo Network Layer 1 blockchain.
 
 To date, Aleo consists of a single network: a testnet network (Testnet3).
 
-An identifier for a Aleo chain consists of the namespace prefix "aleo:"
-followed by the chain id.
+An identifier for a Aleo chain consists of the namespace prefix "aleo:" followed by the chain id.
 
 ## Syntax
 
-The Aleo chain ID is the name of the chain. e.g. `3` for testnet3 or `0` for when mainnet is released. The chain id is a `u16` number ranging from 0 to 65535.
+The Aleo chain ID system maps between a human-readabe string (used to discriminate networks in the paths of [node endpoints][], for example) and an unsigned 16-bit binary integer, known colloquially as an "`u16` number", ranging from 0 to 65535 which is used internally.
+For example, at time or writing, the u16 number `3` maps to `testnet3` and `0` will map to `mainnet` once the latter has been released. 
+The canonical location of the mapping of u16 integers to network name strings is still to be determined by the community, but in the case of conflicts between the community documentation and this document, the former should be taken as canonical. 
 
 ### Backwards Compatibility
 
@@ -73,6 +74,7 @@ The API is subject to change and the example above (particularly other propertie
 - [Aleo Network Documentation][]: Developer docs for the Aleo Network.
 
 [Aleo Network Documentation]: https://developer.aleo.org
+[node endpoints]: https://developer.aleo.org/testnet/getting_started/overview/#query-the-network
 [CAIP-2]: https://chainAgnostic.org/CAIPS/caip-2
 
 ## Copyright
