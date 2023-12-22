@@ -54,6 +54,8 @@ A regular expression for validating the above or any other theoretically possibl
 ^mina:[a-z]{1,12}?(-[a-z]{1,12})?$
 ```
 
+At time of writing the current recognized identifiers are the ones listed above and no canonical human-readable or machine-readable mapping has yet been published. In future, the Mina official docs will link to such a mapping once one is published.
+
 See [Test Cases](#test-cases).
 
 ### Resolution Method
