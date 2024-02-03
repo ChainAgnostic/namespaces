@@ -22,7 +22,7 @@ It consists of the prefix `casper:` followed by the chainspec name of that netwo
 
 ### Resolution Method
 
-To resolve the chainspec name for a Casper network chain send an RPC request with method `info_get_status` to a Casper node in that network. The result object in the RPC response will contain the field `chainspec_name` with the chainspec name of that network.
+To resolve the [chainspec][] name for a given Casper network chain, send an RPC request with method `info_get_status` to a Casper node in that network. The result object in the RPC response will contain the property `chainspec_name` containing the [chainspec][] name corresponding to that network.
 
 For example:
 
