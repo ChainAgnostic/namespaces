@@ -60,6 +60,7 @@ For testing purposes, the Casper Association maintains the following RPC endpoin
 ## References
 
 - [Casper Docs site][]
+- [Casper Chain Specification][Chainspec]
 - [CAIP-2][]
 
 [CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
