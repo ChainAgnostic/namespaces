@@ -65,6 +65,7 @@ For testing purposes, the Casper Association maintains the following RPC endpoin
 
 [CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
 [Casper Docs site]: https://docs.casper.network/
+[Chainspec]: https://docs.casper.network/operators/setup-network/chain-spec/
 
 ## Copyright
 Copyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
