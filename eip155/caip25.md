@@ -1,0 +1,51 @@
+---
+namespace-identifier: eip155-caip25
+title: EIP155 Namespace, aka EVM Chains - JSON-RPC Provider Authorization
+author: Pedro Gomes (@pedrouid), Hassan Malik (@hmalik88), bumblefudge (@bumblefudge)
+discussions-to: 
+status: Draft
+type: Standard
+created: 2024-02-05
+updated: 2024-02-05
+requires: ["CAIP-25", "CAIP-211", "CAIP-217"]
+---
+
+# CAIP-25
+
+_For context, see the [CAIP-25][] specification._
+
+## Rationale
+
+In the Ethereum space, many networks interact in a given application or session, and as such it is necessary for applications and user-agents like wallets to negotiation and authorize interfaces dynamically and mutually.
+The [CAIP-25] negotiation allows for multiple [CAIP-217] authorization scopes to be negotiated together. 
+
+## Network-specific versus Namespace-wide Scopes
+
+Authorizing permissions and capabilities to each network separately (i.e., in its own [CAIP-217] authorization object) is recommended in most use-cases, so that over the session and across sessions, each network can granularly gain or attenuate permissions and capabilities separately. 
+Conversely, an authorization object scoped to all of `eip155` can only add or substract individual networks from the `chains` array, or add and substract capabilities to all enumerated networks in that array.
+
+It is also worth mentioning that if a network supports any capabilities NOT supported by other networks, they should never share an authorization object, as the semantics of [CAIP-217] interpret this as supporting EVERY capability lited on EVERY network listed.
+In such cases, not only is a separate authorization object recommended, but also an explicit [CAIP-211] declaration of the RPC authority where these network-specific capabilities are specified;
+see the [caip211.md] profile for further guidance.
+
+## Examples
+
+TBD
+
+## References
+
+- [EIP155][]: Ethereum Improvement Proposal specifying generation and validation of ChainIDs
+
+[execution API]: https://github.com/ethereum/execution-apis?tab=readme-ov-file#execution-api-specification
+[CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
+[CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md
+[CAIP-19]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-19.md
+[CAIP-25]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-25.md
+[CAIP-211]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-211.md
+[CAIP-217]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-217.md
+[EIP]: https://eips.ethereum.org/EIPS/eip-1
+[EIP155]: https://eips.ethereum.org/EIPS/eip-155
+
+## Rights
+
+Copyright and related rights waived via CC0.
