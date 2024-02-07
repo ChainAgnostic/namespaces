@@ -28,6 +28,11 @@ It is also worth mentioning that if a network supports any capabilities NOT supp
 In such cases, not only is a separate authorization object recommended, but also an explicit [CAIP-211] declaration of the RPC authority where these network-specific capabilities are specified;
 see the [caip211.md] profile for further guidance.
 
+## Session Properties
+
+No namespace-wide or network-specific session properties have yet been proposed for standardization.
+When crafting such properties for contextual/in-network usage, it is recommended to align one's semantics and syntax with the [EIP-6963] wallet provider interface for common properties across architectures.
+
 ## Examples
 
 TBD
