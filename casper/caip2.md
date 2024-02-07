@@ -1,7 +1,8 @@
 ---
 namespace-identifier: casper-caip2
 title: Casper Chains
-author: "FirstName1 LastName1 (@GitHubUsername1)", "David Hernando <david.hernando@make.services>"
+author: <["David Hernando <david.hernando@make.services>", "Adrian Wrona <adrian@casper.network>"]>
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/100
 status: Draft
 type: Standard
 created: 2024-01-12
