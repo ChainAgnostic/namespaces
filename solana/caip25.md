@@ -59,7 +59,7 @@ TBD
 [Transaction Version Declaration]: https://solana.com/docs/core/transactions/versions#current-transaction-versions
 [Transaction Version Refimpl]: https://github.com/anza-xyz/wallet-standard/blob/2c354cf07daa1d440ba9631fcefc5c00b07aa9dd/packages/core/features/src/signTransaction.ts#L31
 [State Commitment Declaration]: https://solana.com/docs/rpc#configuring-state-commitment
-[State Commitment Refimpl]: https://github.com/anza-xyz/wallet-standard/blob/2c354cf07daa1d440ba9631fcefc5c00b07aa9dd/packages/core/features/src/signTransaction.ts#L660
+[State Commitment Refimpl]: https://github.com/anza-xyz/wallet-standard/blob/2c354cf07daa1d440ba9631fcefc5c00b07aa9dd/packages/core/features/src/signTransaction.ts#L66
 [CAIP-25]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-25.md
 [CAIP-217]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-217.md
 [EIP155]: https://eips.ethereum.org/EIPS/eip-155
