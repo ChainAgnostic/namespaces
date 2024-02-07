@@ -1,8 +1,8 @@
 ---
 namespace-identifier: casper-caip10
 title: Casper - Addresses
-author: "FirstName1 LastName1 (@GitHubUsername1)", "David Hernando <david.hernando@make.services>"
-discussions-to: <URL of PR, mailing list, etc>
+author: <["David Hernando <david.hernando@make.services>", "Adrian Wrona <adrian@casper.network>"]>
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/100
 status: Draft
 type: Standard
 created: 2024-01-12
