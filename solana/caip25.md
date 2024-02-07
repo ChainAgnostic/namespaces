@@ -1,7 +1,7 @@
 ---
 namespace-identifier: solana-caip25
 title: Solana Namespace - JSON-RPC Provider Authorization
-author: Jon Wong (@jnwng), Glitch (@glitch) bumblefudge (@bumblefudge)
+author: Jon Wong (@jnwng), Glitch (@glitch-txs) bumblefudge (@bumblefudge)
 discussions-to: https://github.com/anza-xyz/wallet-adapter/issues/807
 status: Draft
 type: Standard
