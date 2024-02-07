@@ -30,12 +30,12 @@ Multi-chain use-cases incorporating non-Solana chains should use distinct [CAIP-
 Wallet capabilities in the [Wallet Standard] model are declared upfront at time of connection and persisted as read-only constants, so wallets are recommended to declare them explicitly in the `sessionProperties` object in a [CAIP-25] interaction for maximum interoperability and stability.
 Note that the `sessionProperties` object is shared across any and all namespaces in a given wallet<>application session, which may span multiple types of networks all declaring `sessionProperties`, so to avoid collisions the following properties names are recommended for easy mapping to the **case-sensitive** properties names in the [Wallet Standard]:
 
-|`sessionProperties` key in [CAIP-25] expression|[WalletAdapter] mapping|values|documentation|reference implementation|
+|`sessionProperties` key in [CAIP-25] expression|[Wallet Adapter] mapping|values|documentation|reference implementation|
 |---|---|---|---|---|
 |`SolanaTransactionVersion`|`SolanaTransactionVersion`|`0` or `legacy` (default)|[solana.com][Transaction Version Declaration]|[github.com][Transaction Version Refimpl]|
 |`SolanaTransactionCommitment`|`SolanaTransactionCommitment`|`finalized` (default), `confirmed`, `processed`|[solana.com][State Commitment Declaration]|[github.com][State Commitment Refimpl]|
 
-As these properties are mandatory and required for stability in [Wallet Standard] connections, [CAIP-25] providers MAY inject defaults for all of the above based on prior knowledge or out-of-date registries.
+As these properties are mandatory and required for stability in [Wallet Standard] connections, [CAIP-25] providers MAY inject defaults if any of the above are not set explicitly by a wallet.
 For this reason, wallets are RECOMMENDED to set them explicitly even if not requested by their counterparty to avoid inaccurate values being injected.
 
 ## Examples
