@@ -21,7 +21,9 @@ For the most part, progressive [CAIP-25] negotiation and iteration is possible o
 
 ## Network-specific versus Namespace-wide Scopes
 
-Few use-cases incorporating multiple Solana-compatible networks require granular permissions or capability declarations per-chain, so a Solana-wide [CAIP-217] authorization scope (keyed to the entire `solana` namespace rather than to a specific chain), with identical permissions and capabilities across one or more chains, is recommended in most cases.
+Few use-cases incorporating multiple Solana-compatible networks require granular permissions or capability declarations per-chain, so a Solana-wide [CAIP-217] authorization scope (keyed to the entire `solana` namespace rather than to a specific chain), with permissions and capabilities set and with only one member at a time in the `chains` array, is recommended in most cases.
+
+Implementers wishing to conform to the Solana [Wallet Standard][] should note that the `WalletAdapterNetwork` enum variable is set to only one network at a time, and thus are recommended to map only one `chains` member at a time to this standard interface.
 
 ## Multi-Chain Considerations
 
