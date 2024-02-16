@@ -24,18 +24,24 @@ The [CAIP-25] negotiation allows for multiple [CAIP-217] authorization scopes to
 Authorizing permissions and capabilities to each network separately (i.e., in its own [CAIP-217] authorization object) is recommended in most use-cases, so that over the session and across sessions, each network can granularly gain or attenuate permissions and capabilities separately. 
 Conversely, an authorization object scoped to all of `eip155` can only add or substract individual networks from the `chains` array, or add and substract capabilities to all enumerated networks in that array.
 
-It is also worth mentioning that if a network supports any capabilities NOT supported by other networks, they should never share an authorization object, as the semantics of [CAIP-217] interpret this as supporting EVERY capability lited on EVERY network listed.
-In such cases, not only is a separate authorization object recommended, but also an explicit [CAIP-211] declaration of the RPC authority where these network-specific capabilities are specified;
-see the [caip211.md] profile for further guidance.
+It is also worth mentioning that if a network supports any capabilities NOT supported by other networks, they should never share an authorization object, as the semantics of [CAIP-217] interpret this as supporting EVERY capability listed on EVERY network listed.
+In such cases, not only is a separate authorization object recommended, but an explicit [CAIP-211] declaration of the RPC authority where these network-specific capabilities are specified is also recommended;
+see the [eip155/caip211.md](./caip211.md) profile for further guidance on using `method` and `notification` definitions not universal to the eip155 namespace.
+
+## RPC Authorities
 
 ## Session Properties
 
 No namespace-wide or network-specific session properties have yet been proposed for standardization.
-When crafting such properties for contextual/in-network usage, it is recommended to align one's semantics and syntax with the [EIP-6963] wallet provider interface for common properties across architectures.
+When crafting such properties for contextual/in-network usage, it is recommended to align one's semantics and syntax (including case-sensitive style guides for property names!) with the [EIP-6963] wallet provider interface for common properties across architectures.
+
+<!--
 
 ## Examples
 
 TBD
+
+-->
 
 ## References
 
