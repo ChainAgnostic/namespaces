@@ -24,7 +24,7 @@ The [CAIP-25] negotiation allows for multiple [CAIP-217] authorization scopes to
 Authorizing permissions and capabilities to each network separately (i.e., in its own [CAIP-217] authorization object) is recommended in most use-cases, so that over the session and across sessions, each network can granularly gain or attenuate permissions and capabilities separately. 
 Conversely, an authorization object scoped to all of `eip155` can only add or substract individual networks from the `chains` array, or add and substract capabilities to all enumerated networks in that array.
 
-It is also worth mentioning that if a network supports any capabilities NOT supported by other networks, they should never share an authorization object, as the semantics of [CAIP-217] interpret this as supporting EVERY capability lited on EVERY network listed.
+It is also worth mentioning that if a network supports any capabilities NOT supported by other networks, they should never share an authorization object, as the semantics of [CAIP-217] interpret this as supporting EVERY capability listed on EVERY network listed.
 In such cases, not only is a separate authorization object recommended, but also an explicit [CAIP-211] declaration of the RPC authority where these network-specific capabilities are specified;
 see the [caip211.md] profile for further guidance.
 
