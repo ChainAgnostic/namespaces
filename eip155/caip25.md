@@ -25,10 +25,9 @@ Authorizing permissions and capabilities to each network separately (i.e., in it
 Conversely, an authorization object scoped to all of `eip155` can only add or substract individual networks from the `chains` array, or add and substract capabilities to all enumerated networks in that array.
 
 It is also worth mentioning that if a network supports any capabilities NOT supported by other networks, they should never share an authorization object, as the semantics of [CAIP-217] interpret this as supporting EVERY capability listed on EVERY network listed.
+
 In such cases, not only is a separate authorization object recommended, but an explicit [CAIP-211] declaration of the RPC authority where these network-specific capabilities are specified is also recommended;
 see the [eip155/caip211.md](./caip211.md) profile for further guidance on using `method` and `notification` definitions not universal to the eip155 namespace.
-
-## RPC Authorities
 
 ## Session Properties
 
