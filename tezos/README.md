@@ -24,8 +24,8 @@ _For context, see the [CAIP-2][] specification and in particular the `tezos-caip
 
 | Network Name | Chain ID                         |
 | ------------ | -------------------------------- |
-| Mainnet      | NetXdQprcVkpaWU                  |
-| Ghostnet     | NetXnHfVqm9iesp                  |
+| Mainnet      | tezos:NetXdQprcVkpaWU                  |
+| Ghostnet     | tezos:NetXnHfVqm9iesp                  |
 
 ## References
 
