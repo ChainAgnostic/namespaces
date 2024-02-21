@@ -19,7 +19,7 @@ _For context, see the [CAIP-10][] specification._
 Tezos supports the use of multiple public-key signature schemes, so the display
 address is prefixed with `tz1` ([Ed25519][] curve), `tz2` ([Secp256k1][] curve), or
 `tz3` ([NIST P256][] curve). After the prefix, the rest of the account address is a
-[base58][] hash of each key's public key.
+[Base58 Check Encoded Blake2B Hash][] of each key's public key.
 
 ## Syntax
 
@@ -34,8 +34,8 @@ _For context, see the [CAIP-2][] specification and in particular the `tezos-caip
 
 | Network Name | Chain ID                         |
 | ------------ | -------------------------------- |
-| Mainnet      | tezos:NetXdQprcVkpaWU                  |
-| Ghostnet     | tezos:NetXnHfVqm9iesp                  |
+| Mainnet      | tezos:NetXdQprcVkpaWU            |
+| Ghostnet     | tezos:NetXnHfVqm9iesp            |
 
 ## Test Cases
 
@@ -69,6 +69,7 @@ tezos:NetXnHfVqm9iesp:tz3btDQsDkqq2G7eBdrrLqetaAfLVw6BnPez
 [Ed25519]: https://ed25519.cr.yp.to/
 [Secp256k1]: https://en.bitcoin.it/wiki/Secp256k1
 [NIST P256]: https://csrc.nist.gov/csrc/media/events/workshop-on-elliptic-curve-cryptography-standards/documents/papers/session6-adalier-mehmet.pdf
+[Base58 Check Encoded Blake2B Hash]: https://gitlab.com/tezos/tezos/-/blob/5bb8fd589cc8777f44c795b71acf3e0a5dcac06f/src/lib_crypto/blake2B.ml
 
 ## Rights
 
