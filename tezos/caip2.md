@@ -68,7 +68,7 @@ tezos:NetXnHfVqm9iesp
 - [Tezos Block Explorer][] - Can be used to investigate block hashs on Mainnet and Ghostnet.
 - [Chain ID Reference Implementation][] - Octez implementation for Tezos.
 - [Octez][] - Main implementation for the Tezos standard.
-- [Base58 Function Reference Implementation][] - Octez reference implementation.
+- [Base58 Check Encoded Blake2B Hash][] - Octez reference implementation.
 - [Taquito Typescript Library][] - Available Base58 functions in Typescript for Tezos.
 
 [CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
@@ -77,7 +77,7 @@ tezos:NetXnHfVqm9iesp
 [Tezos Block Explorer]: https://tzstats.com/
 [Chain ID Reference Implementation]: https://gitlab.com/tezos/tezos/-/blob/5bb8fd589cc8777f44c795b71acf3e0a5dcac06f/src/lib_crypto/chain_id.ml
 [Octez]: https://research-development.nomadic-labs.com/announcing-octez.html
-[Base58 Function Reference Implementation]: https://gitlab.com/tezos/tezos/-/blob/5bb8fd589cc8777f44c795b71acf3e0a5dcac06f/src/lib_crypto/blake2B.ml
+[Base58 Check Encoded Blake2B Hash]: https://gitlab.com/tezos/tezos/-/blob/5bb8fd589cc8777f44c795b71acf3e0a5dcac06f/src/lib_crypto/blake2B.ml
 [Taquito Typescript Library]: https://tezostaquito.io/typedoc/functions/_taquito_utils.b58decode#b58decode
 [CAIP-10]: https://chainagnostic.org/CAIPs/caip-10
 [Tezos test network infrastructure]: https://teztnets.com/
