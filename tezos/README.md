@@ -1,11 +1,11 @@
 ---
 namespace-identifier: tezos
-title: Tezos Ecosystem
-author: Stanly Johnson (@stanly-johnson)
+title: Tezos Namespace
+author: Stanly Johnson (@stanly-johnson), Carlo van Driesten (@jdsika)
 status: Draft
 type: Informational
 created: 2020-12-12
-updated: 2022-03-27
+updated: 2024-02-20
 replaces: CAIP-26
 ---
 
@@ -16,18 +16,33 @@ the Tezos ecosystem.
 
 ## Syntax
 
-The namespace "tezos" refers to the Tezos open-source blockchain platform.
+The namespace "tezos" refers to the Tezos open-source blockchain protocol in general. The main implementation is called [Octez][]. The [Tezos test network infrastructure][] provides an overview of the different chains maintained by the community. The Tezos Mainnet can be determined through the genesis block hash: `BLockGenesisGenesisGenesisGenesisGenesisf79b5d1CoW2`.
+
+### Chain IDs
+
+_For context, see the [CAIP-2][] specification and in particular the `tezos-caip2` profile thereof._
+
+| Network Name | Chain ID                         |
+| ------------ | -------------------------------- |
+| Mainnet      | NetXdQprcVkpaWU                  |
+| Ghostnet     | NetXnHfVqm9iesp                  |
 
 ## References
 
-- [Tezos Address types][]: Important context on the Tezos system of addresses and key representations.
-- [Tezos RPC Interface][]: Important context on communicating with Tezos nodes over RPC.
-- [Implementation](https://gitlab.com/tezos/tezos/blob/e7612c5ffa46570cdcc612f7bcead771edc24283/src/lib_crypto/chain_id.ml)
+- [Tezos Website][] - Official project website.
+- [Octez][] - Main implementation for the Tezos standard.
+- [Octez Documentation][] - How to get started with Tezos.
+- [Tezos Foundation][] - Non-profit organization supporting Tezos ecosystem development.
+- [CAIP-2][] - Blockchain Chain ID Specification.
+- [tzstats.com Tezos Mainnet Genesis Block][] - A Tezos block explorer and the Tezos Mainnet Genesis Block.
 
-[Tezos RPC Interface]: https://tezos.gitlab.io/introduction/howtouse.html#rpc-interface
-[Tezos Address types]: https://tezos.gitlab.io/introduction/howtouse.html#implicit-accounts-and-smart-contracts
-[CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
-[CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md
+[Tezos Website]: https://tezos.com/
+[Octez]: https://research-development.nomadic-labs.com/announcing-octez.html
+[Octez Documentation]: https://tezos.gitlab.io/
+[Tezos Foundation]: https://tezos.foundation/
+[Tezos test network infrastructure]: https://teztnets.com/
+[CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
+[tzstats.com Tezos Mainnet Genesis Block]: https://tzstats.com/0
 
 ## Rights
 

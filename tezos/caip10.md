@@ -1,12 +1,12 @@
 ---
 namespace-identifier: tezos-caip10
-title: Tezos Namespace - Addresses
-author: Qibing Li (@QibingLee)
+title: Tezos Namespace - Account ID Specification
+author: Qibing Li (@QibingLee), Carlo van Driesten (@jdsika)
 discussions-to: https://github.com/ChainAgnostic/namespaces/pull/40
 status: Draft
 type: Standard
 created: 2022-12-06
-updated: 2023-01-17
+updated: 2024-02-20
 requires: ["CAIP-2", "CAIP-10"]
 ---
 
@@ -17,8 +17,8 @@ _For context, see the [CAIP-10][] specification._
 ## Rationale
 
 Tezos supports the use of multiple public-key signature schemes, so the display
-address is prefixed with `tz1` (Ed25519 curve), `tz2` (Secp256k1 curve), or
-`tz3` (P256 curve). After the prefix, the rest of the account address is a
+address is prefixed with `tz1` ([Ed25519][] curve), `tz2` ([Secp256k1][] curve), or
+`tz3` ([NIST P256][] curve). After the prefix, the rest of the account address is a
 [base58][] hash of each key's public key.
 
 ## Syntax
@@ -30,32 +30,45 @@ The syntax of a Tezos address matches the following regular expression (note the
 
 ## Chain IDs
 
-_For context, see the [CAIP-2][] specification or the `tezos-caip2` profile thereof._
+_For context, see the [CAIP-2][] specification and in particular the `tezos-caip2` profile thereof._
 
 | Network Name | Chain ID                         |
 | ------------ | -------------------------------- |
-| Mainnet      | NetXdQprcVkpaWU |
-| Delphinet    | NetXm8tYqnMWky1 |
+| Mainnet      | NetXdQprcVkpaWU                  |
+| Ghostnet     | NetXnHfVqm9iesp                  |
 
 ## Test Cases
 
-```
-# Tezos Mainnet
-tezos:NetXdQprcVkpaWU:tz1MVqWiyfMbSESTaGEPxFjDWdM9zSXy1hcg
+The Tezos namespace, the chain ID and the [Tezos Address Types][] allow the construction of the [CAIP-10][] compliant `Account ID`:
 
-# Tezos DelphiNet (Current active testnet)
-tezos:NetXm8tYqnMWky1:tz3gN8NTLNLJg5KRsUU47NHNVHbdhcFXjjaB
+```bash
+# Tezos Mainnet
+# Genesis block hash: BLockGenesisGenesisGenesisGenesisGenesisf79b5d1CoW2
+tezos:NetXdQprcVkpaWU:tz1MJx9vhaNRSimcuXPK2rW4fLccQnDAnVKJ
+
+# Tezos Ghostnet (Long-running test network)
+# Genesis block hash: BLockGenesisGenesisGenesisGenesisGenesis1db77eJNeJ9
+tezos:NetXnHfVqm9iesp:tz3btDQsDkqq2G7eBdrrLqetaAfLVw6BnPez
 ```
 
 ## References
 
-- [Tezos Smart Contract](https://opentezos.com/tezos-basics/smart-contracts#general-definition-of-a-tezos-smart-contract): General definition of a Tezos smart contract
-- [CAIP-2](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md): Blockchain ID Specification
-- [CAIP-10](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md): Account ID Specification
+- [Tezos Address Types][] - Important context on the Tezos system of addresses and key representations.
+- [Tezos Smart Contract][]: General definition of a Tezos smart contract.
+- [CAIP-2][]: Blockchain ID Specification.
+- [CAIP-10][]: Account ID Specification.
+- [Ed25519][] - Ed25519: high-speed high-security signatures.
+- [Secp256k1][] - Elliptic curve used in Bitcoin's public-key cryptography.
+- [NIST P256][] - One of the most used elliptic curves including native support in some mobile devices.
 
-[CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/8fdb5bfd1bdf15c9daf8aacfbcc423533764dfe9/CAIPs/caip-10.md
-[CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
+[Tezos Address Types]: https://tezos.gitlab.io/introduction/howtouse.html#implicit-accounts-and-smart-contracts
+[Tezos Smart Contract]: https://opentezos.com/tezos-basics/smart-contracts#general-definition-of-a-tezos-smart-contract
+[CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
+[CAIP-10]: https://chainagnostic.org/CAIPs/caip-10
 [Base58]: https://datatracker.ietf.org/doc/html/draft-msporny-base58-03
+[Ed25519]: https://ed25519.cr.yp.to/
+[Secp256k1]: https://en.bitcoin.it/wiki/Secp256k1
+[NIST P256]: https://csrc.nist.gov/csrc/media/events/workshop-on-elliptic-curve-cryptography-standards/documents/papers/session6-adalier-mehmet.pdf
 
 ## Rights
 
