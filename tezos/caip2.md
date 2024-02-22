@@ -26,7 +26,7 @@ Blockchains in the "tezos" namespace are identified by their chain ID derived de
 
 ### Reference Definition
 
-The method for calculating the hash of a given chain's genesis block (for use as a CAIP-2 chain ID) is as follows from the [Base58 Function Reference Implementation][]:
+The method for calculating the hash of a given chain's genesis block (for use as a CAIP-2 chain ID) is as follows from the [Base58 Check Encoded Blake2B Hash][] reference implementation:
 
 ```ocaml
 tezosB58CheckEncode('Net',
@@ -34,6 +34,20 @@ tezosB58CheckEncode('Net',
     blake2b(msg = tezosB58CheckDecode('B', genesisBlockHash),
             size = 32)))
 ```
+
+### Chain ID alias
+
+The Tezos community recognizes the different chains according to human readable names, the so called [Networks][]. The Octez RPC allows you to connect to three predefined networks:
+
+```bash
+# mainnet (this is the default)
+# sandbox
+# ghostnet
+
+> ./octez-node run --data-dir ~/tezos-ghostnet --network ghostnet
+```
+
+There is currently no algorithm to connect the `chain ID` to the `network` as it is determined by social consensus what is considered the `tezos:mainnet`. 
 
 ### Backwards Compatibility
 
@@ -60,6 +74,12 @@ tezos:NetXdQprcVkpaWU
 # Genesis block hash: BLockGenesisGenesisGenesisGenesisGenesis1db77eJNeJ9
 tezos:NetXnHfVqm9iesp
 ```
+The following table includes the chain ID aliases through their human readable network names:
+
+| Alias          | Chain ID                         |
+| -------------- | -------------------------------- |
+| tezos:mainnet  | tezos:NetXdQprcVkpaWU            |
+| tezos:ghostnet | tezos:NetXnHfVqm9iesp            |
 
 ## References
 
@@ -74,6 +94,7 @@ tezos:NetXnHfVqm9iesp
 [CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
 [Tezos Address Types]: https://tezos.gitlab.io/introduction/howtouse.html#implicit-accounts-and-smart-contracts
 [Tezos RPC Interface]: https://tezos.gitlab.io/introduction/howtouse.html#rpc-interface
+[Networks]: http://tezos.gitlab.io/user/multinetwork.html?highlight=network%20name#test-networks
 [Tezos Block Explorer]: https://tzstats.com/
 [Chain ID Reference Implementation]: https://gitlab.com/tezos/tezos/-/blob/5bb8fd589cc8777f44c795b71acf3e0a5dcac06f/src/lib_crypto/chain_id.ml
 [Octez]: https://research-development.nomadic-labs.com/announcing-octez.html
