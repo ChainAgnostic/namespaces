@@ -32,10 +32,10 @@ The syntax of a Tezos address matches the following regular expression (note the
 
 _For context, see the [CAIP-2][] specification and in particular the `tezos-caip2` profile thereof._
 
-| Network Name | Chain ID                         |
-| ------------ | -------------------------------- |
-| Mainnet      | tezos:NetXdQprcVkpaWU            |
-| Ghostnet     | tezos:NetXnHfVqm9iesp            |
+| Alias          | Chain ID                         |
+| -------------- | -------------------------------- |
+| tezos:mainnet  | tezos:NetXdQprcVkpaWU            |
+| tezos:ghostnet | tezos:NetXnHfVqm9iesp            |
 
 ## Test Cases
 
