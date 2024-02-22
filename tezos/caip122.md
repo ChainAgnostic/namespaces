@@ -1,7 +1,7 @@
 ---
 namespace-identifier: tezos-caip122
 title: Tezos Namespace - Sign in With X (SIWx)
-author: Qibing Li (@QibingLee), Carlo van Driesten (@jdsika)
+author: Carlo van Driesten (@jdsika)
 discussions-to: TBA
 status: Draft
 type: Standard
