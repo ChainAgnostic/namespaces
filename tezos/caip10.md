@@ -1,7 +1,7 @@
 ---
 namespace-identifier: tezos-caip10
 title: Tezos Namespace - Account ID Specification
-author: Qibing Li (@QibingLee), Carlo van Driesten (@jdsika)
+author: Carlo van Driesten (@jdsika)
 discussions-to: https://github.com/ChainAgnostic/namespaces/pull/40
 status: Draft
 type: Standard
