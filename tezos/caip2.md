@@ -6,7 +6,7 @@ discussions-to: ["https://github.com/ChainAgnostic/CAIPs/pull/36", "https://gitl
 status: Draft
 type: Standard
 created: 2020-12-12
-updated: 2024-02-20
+updated: 2024-02-28
 requires: CAIP-2
 supersedes: CAIP-26
 ---
@@ -22,7 +22,7 @@ In CAIP-2 a general blockchain identification scheme is defined. This is the imp
 
 ## Syntax
 
-Blockchains in the "tezos" namespace are identified by their chain ID derived deterministically from a short, prefixed Blake-2B hash of their `genesis-block-hash`.
+Blockchains in the `tezos` namespace are identified by their chain ID derived deterministically from a short, prefixed Blake-2B hash of their `genesis-block-hash`.
 
 ### Reference Definition
 
@@ -47,11 +47,15 @@ The Tezos community recognizes the different chains according to human readable 
 > ./octez-node run --data-dir ~/tezos-ghostnet --network ghostnet
 ```
 
-There is currently no algorithm to connect the `chain ID` to the `network` as it is determined by social consensus what is considered the `tezos:mainnet`. 
+There is currently no algorithm to connect the `chain ID` to the `network` as it is part of the Octez reference implementation of Tezos. In general it is determined by social consensus what chain ID is considered as `tezos:mainnet`.
 
 ### Backwards Compatibility
 
 Not applicable.
+
+## Integrity guarantees for the chain ID
+
+The third chapter of the [Tezos Position Paper][] is dedicated to the analysis of potential threats leading to a user connecting to the Tezos network for the first time and not ending up on the `tezos:mainnet`. One of the main features of the technology is the [On-Chain Governance][] including its consensus mechanism based on [Proof-of-Stake][]. In combination with periodical checkpoints - which are created by institutions like e.g. a [Tezos Block Explorer][] or others based on social consensus - and statistical analysis of the chain using TAPOS "transactions as proof of stake" it is considered safe to assume to be connected to the mainnet regarding most given threat models. The current mainnet is running without a security breach since the `30th of June 2018` with enough incentive to attack its security mechanisms indicating the validity of the statement above.
 
 ## Test Cases
 
@@ -74,6 +78,7 @@ tezos:NetXdQprcVkpaWU
 # Genesis block hash: BLockGenesisGenesisGenesisGenesisGenesis1db77eJNeJ9
 tezos:NetXnHfVqm9iesp
 ```
+
 The following table includes the chain ID aliases through their human readable network names:
 
 | Alias          | Chain ID                         |
@@ -90,6 +95,8 @@ The following table includes the chain ID aliases through their human readable n
 - [Octez][] - Main implementation for the Tezos standard.
 - [Base58 Check Encoded Blake2B Hash][] - Octez reference implementation.
 - [Taquito Typescript Library][] - Available Base58 functions in Typescript for Tezos.
+- [Tezos Position Paper][] - Reference regarding mitigations in section 3.2.
+- [On-Chain Governance][] - Tezos website with details about the on-chain governance system.
 
 [CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
 [Tezos Address Types]: https://tezos.gitlab.io/introduction/howtouse.html#implicit-accounts-and-smart-contracts
@@ -102,6 +109,9 @@ The following table includes the chain ID aliases through their human readable n
 [Taquito Typescript Library]: https://tezostaquito.io/typedoc/functions/_taquito_utils.b58decode#b58decode
 [CAIP-10]: https://chainagnostic.org/CAIPs/caip-10
 [Tezos test network infrastructure]: https://teztnets.com/
+[Tezos Position Paper]: https://tezos.com/position-paper.pdf
+[On-Chain Governance]: https://tezos.com/governance
+[Proof-of-Stake]: http://tezos.gitlab.io/active/proof_of_stake.html
 
 ## Rights
 
