@@ -16,7 +16,7 @@ the Tezos ecosystem.
 
 ## Syntax
 
-The namespace "tezos" refers to the Tezos open-source blockchain protocol in general. The main implementation is called [Octez][]. The [Tezos test network infrastructure][] provides an overview of the different chains maintained by the community. The Tezos Mainnet can be determined through the genesis block hash: `BLockGenesisGenesisGenesisGenesisGenesisf79b5d1CoW2`.
+The namespace `tezos` refers to the Tezos open-source blockchain protocol in general. The main implementation is called [Octez][]. The [Tezos test network infrastructure][] provides an overview of the different chains maintained by the community. The Tezos Mainnet can be determined through the genesis block hash: `BLockGenesisGenesisGenesisGenesisGenesisf79b5d1CoW2`.
 
 ### Chain IDs
 
