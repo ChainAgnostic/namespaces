@@ -11,8 +11,7 @@ replaces: CAIP-26
 
 # Namespace for Tezos Blockchains
 
-This document defines the applicability of CAIP schemes to the blockchains of
-the Tezos ecosystem.
+This document defines the applicability of CAIP schemes to the blockchains of the Tezos ecosystem according to the *Namespace Reference Purpose and Guidelines* of [CAIP-104][].
 
 ## Syntax
 
@@ -20,7 +19,7 @@ The namespace `tezos` refers to the Tezos open-source blockchain protocol in gen
 
 ### Chain IDs
 
-_For context, see the [CAIP-2][] specification and in particular the `tezos-caip2` profile thereof._
+*For context, see the [CAIP-2][] specification and in particular the `tezos-caip2` profile thereof.*
 
 | Alias          | Chain ID                         |
 | -------------- | -------------------------------- |
@@ -36,6 +35,7 @@ _For context, see the [CAIP-2][] specification and in particular the `tezos-caip
 - [CAIP-2][] - Blockchain Chain ID Specification.
 - [tzstats.com Tezos Mainnet Genesis Block][] - A Tezos block explorer and the Tezos Mainnet Genesis Block.
 
+[CAIP-104]: https://chainagnostic.org/CAIPs/caip-104
 [Tezos Website]: https://tezos.com/
 [Octez]: https://research-development.nomadic-labs.com/announcing-octez.html
 [Octez Documentation]: https://tezos.gitlab.io/
