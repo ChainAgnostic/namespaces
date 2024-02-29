@@ -13,9 +13,22 @@ requires: ["CAIP-2", "CAIP-10", "CAIP-122"]
 
 *For context, see the [CAIP-122][] specification.*
 
+This [CAIP-104][] namespace that enables SIWX for `tezos` provides:
+
+1. a signing algorithm, or a finite set of these, where multiple different signing interfaces might be used,
+2. a `type` string(s) that designates each signing algorithm, for inclusion in the `signatureMeta.t` value of each signed response
+3. a procedure for creating a signing input from the data model specified in this document for each signing algorithm
+
+The signing algorithm covers:
+
+1. how to sign the signing input,
+2. how to verify the signature.
+
+A reference implementation can be found in the [SIWT library][].
+
 ## Rationale
 
-Tezos supports three address types with respective key prefixes, `tz1` for [Ed25519][] keys, `tz2` for [Secp256k1][] keys, `tz3` for [NIST P256][] keys, and `tz4` for BLS12-381 keys from the [BLS family][] specified in [CAIP-10][] and the respective `tezos-caip10` specification. This specification provides the signing algorithm to use, the `type` of the signing algorithm to identify it, and a method for signature creation and verification as required by [CAIP-122][]. A reference implementation can be found in the [SIWT library][].
+Tezos supports three address types with respective key prefixes, `tz1` for [Ed25519][] keys, `tz2` for [Secp256k1][] keys, `tz3` for [NIST P256][] keys, and `tz4` for BLS12-381 keys from the [BLS family][] specified in [CAIP-10][] and the respective `tezos-caip10` specification. This specification provides the signing algorithm to use, the `type` of the signing algorithm to identify it, and a method for signature creation and verification as required by [CAIP-122][].
 
 ## Specification
 
@@ -100,10 +113,14 @@ Here:
 
 Tezos signatures and public keys are base58 encoded with prefixes. Once these have been removed, we can use standard signature verification methods. Note that the signature and the signing public key should be sent together to verifiers, because there is no solution to recover the public key from `tz1`, `tz2`, `tz3`, or `tz4` signatures.
 
+## Examples
+
+
 ## References
 
 - [CAIP-2][] - Chain ID Specification.
 - [CAIP-10][] - Account ID Specification.
+- [CAIP-104][] - CAIP namespace definition.
 - [CAIP-122][] - Sign in With X (SIWx).
 - [EIP-4361][] - Sign-In with Ethereum.
 - [RFC 3339][]: Date and Time on the Internet: Timestamps.
@@ -118,6 +135,7 @@ Tezos signatures and public keys are base58 encoded with prefixes. Once these ha
 
 [CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
 [CAIP-10]: https://chainagnostic.org/CAIPs/caip-10
+[CAIP-104]: https://chainagnostic.org/CAIPs/caip-104
 [CAIP-122]: https://chainagnostic.org/CAIPs/caip-122
 [EIP-4361]: https://eips.ethereum.org/EIPS/eip-4361
 [RFC 3339]: https://datatracker.ietf.org/doc/html/rfc3339#section-5.6
