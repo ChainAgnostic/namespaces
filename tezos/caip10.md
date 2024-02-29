@@ -16,7 +16,7 @@ requires: ["CAIP-2", "CAIP-10"]
 
 ## Rationale
 
-Tezos supports the use of multiple public-key signature schemes, so the display address is prefixed with `tz1` ([Ed25519][] curve), `tz2` ([Secp256k1][] curve), `tz3` ([NIST P256][] curve), or `tz4` (BLS12-381 curve from the [BLS Familiy][]) referenced in the [Tezos address types glossary][]. After the prefix, the rest of the account address is a [Base58 Check Encoded Blake2B Hash][] of each key's public key.
+Tezos supports the use of multiple public-key signature schemes, so the display address is prefixed with `tz1` ([Ed25519][] curve), `tz2` ([Secp256k1][] curve), `tz3` ([NIST P256][] curve), or `tz4` (BLS12-381 curve from the [BLS family][]) referenced in the [Tezos address types glossary][]. After the prefix, the rest of the account address is a [Base58 Check Encoded Blake2B Hash][] of each key's public key.
 
 ## Syntax
 
@@ -51,12 +51,12 @@ tezos:NetXnHfVqm9iesp:tz3btDQsDkqq2G7eBdrrLqetaAfLVw6BnPez
 
 - [Tezos address types][] - Important context on the Tezos system of addresses and key representations.
 - [Tezos Smart Contract][]: General definition of a Tezos smart contract.
-- [CAIP-2][]: Blockchain ID Specification.
+- [CAIP-2][]: Chain ID Specification.
 - [CAIP-10][]: Account ID Specification.
 - [Ed25519][] - Ed25519: high-speed high-security signatures.
 - [Secp256k1][] - Elliptic curve used in Bitcoin's public-key cryptography.
 - [NIST P256][] - One of the most used elliptic curves including native support in some mobile devices.
-- [BLS Familiy][] - BLS12-381 is a pairing-friendly elliptic curve construction from the BLS family, with embedding degree 12.
+- [BLS family][] - BLS12-381 is a pairing-friendly elliptic curve construction from the BLS family, with embedding degree 12.
 
 [Tezos address types]: https://tezos.gitlab.io/introduction/howtouse.html#implicit-accounts-and-smart-contracts
 [Tezos address types glossary]: https://tezos.gitlab.io/active/glossary.html#implicit-account
@@ -67,7 +67,7 @@ tezos:NetXnHfVqm9iesp:tz3btDQsDkqq2G7eBdrrLqetaAfLVw6BnPez
 [Ed25519]: https://ed25519.cr.yp.to/
 [Secp256k1]: https://en.bitcoin.it/wiki/Secp256k1
 [NIST P256]: https://csrc.nist.gov/csrc/media/events/workshop-on-elliptic-curve-cryptography-standards/documents/papers/session6-adalier-mehmet.pdf
-[BLS Family]: https://eprint.iacr.org/2002/088
+[BLS family]: https://eprint.iacr.org/2002/088
 [Base58 Check Encoded Blake2B Hash]: https://gitlab.com/tezos/tezos/-/blob/5bb8fd589cc8777f44c795b71acf3e0a5dcac06f/src/lib_crypto/blake2B.ml
 
 ## Rights

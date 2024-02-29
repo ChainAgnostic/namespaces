@@ -47,7 +47,7 @@ The Tezos community recognizes the different chains according to human readable 
 > ./octez-node run --data-dir ~/tezos-ghostnet --network ghostnet
 ```
 
-There is currently no algorithm to connect the `chain ID` to the `network` as it is part of the Octez reference implementation of Tezos. In general it is determined by social consensus what chain ID is considered as `tezos:mainnet`.
+There is currently no algorithm to connect the `chain ID` to the `network` as it is part of the Octez reference implementation of Tezos. In general it is determined by social consensus what chain ID is considered as `tezos:mainnet`. It is RECOMMENDED to use a separate chain registry to map an alias to the chain ID.
 
 ### Backwards Compatibility
 
