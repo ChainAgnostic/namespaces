@@ -42,8 +42,8 @@ over.
 The proposed string representation format, adapted from [EIP-4361][], should be as such:
 
 ```text
-${domain} wants you to sign in with your ${namespace(address)} account:
-${account_address(address)}
+${domain} wants you to sign in with your ${namespace(account_id)} account:
+${account_address(account_id)}
 
 ${statement}
 
@@ -54,7 +54,7 @@ Issued At: ${issued-at}
 Expiration Time: ${expiration-time}
 Not Before: ${not-before}
 Request ID: ${request-id}
-Chain ID: ${chain_id(address)}
+Chain ID: ${chain_id(account_id)}
 Resources:
 - ${resources[0]}
 - ${resources[1]}
