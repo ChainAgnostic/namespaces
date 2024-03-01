@@ -82,7 +82,7 @@ The proposed string representation format, adapted from [EIP-4361][], should be 
 
 ```text
 ${domain} wants you to sign in with your ${namespace(account-id)} account:
-${address(account-id)}
+${account_address(account-id)}
 
 ${statement}
 
@@ -104,7 +104,7 @@ Resources:
 Here:
 
 - The data model in [CAIP-122][] defines the attribute `address` which is here correctly replaced by the [CAIP-10][] term `account-id`,
-- `address(account-id)` is the `pkh` segment of a [CAIP-10][] `account-id`,
+- `account_address(account-id)` is the `pkh` segment of a [CAIP-10][] `account-id`,
 - `chain_id(account-id)` is the `chain_id` segment of the `account-id` defined in [CAIP-2][],
 - `namespace(account-id)` is the `namespace` segment of `account-id` of the data model represented by a human-readable name of the ecosystem the user can recognize which is here `tezos`.
 - A wallet provider MAY use an alias for the `chain_id` like `mainnet` as defined in [CAIP-2][] if the user experience is enhanced. It is RECOMMENDED to use a separate chain registry to map an alias to the chain ID.
