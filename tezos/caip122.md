@@ -101,9 +101,13 @@ Here:
 - `namespace(account-id)` is the `namespace` segment of `account-id` of the data model represented by a human-readable name of the ecosystem the user can recognize which is here `tezos`.
 - A wallet provider MAY use an alias for the `chain_id` like `mainnet` as defined in [CAIP-2][] if the user experience is enhanced. It is RECOMMENDED to use a separate chain registry to map an alias to the chain ID.
 
-#### Example
+### Signature Verification
 
-```
+Tezos signatures and public keys are base58 encoded with prefixes. Once these have been removed, we can use standard signature verification methods. Note that the signature and the signing public key should be sent together to verifiers, because there is no solution to recover the public key from `tz1`, `tz2`, `tz3`, or `tz4` signatures. The public key can either be received through the connection with the wallet using the  [Beacon SDK][] or by searching the [Reveal][] operation on-chain which reveals the public key of the sending manager as knowing this public key is indeed necessary to check the signature of future operations signed by this manager.
+
+## Examples
+
+```text
 service.org wants you to sign in with your Tezos account:
 tz1QpCttuR5qdQoo3FiT1cKwjqDhWUD21Vun
 
@@ -121,17 +125,9 @@ Resources:
 
 Raw bytes (encoded as base64url for brevity):
 
-```
+```bytes
 c2VydmljZS5vcmcgd2FudHMgeW91IHRvIHNpZ24gaW4gd2l0aCB5b3VyIFRlem9zIGFjY291bnQ6CnR6MVFwQ3R0dVI1cWRRb28zRmlUMWNLd2pxRGhXVUQyMVZ1bgoKSSBhY2NlcHQgdGhlIFNlcnZpY2VPcmcgVGVybXMgb2YgU2VydmljZTogaHR0cHM6Ly9zZXJ2aWNlLm9yZy90b3MKClVSSTogaHR0cHM6Ly9zZXJ2aWNlLm9yZy9sb2dpbgpWZXJzaW9uOiAxCk5vbmNlOiAzMjg5MTc1OApJc3N1ZWQgQXQ6IDIwMjQtMDMtMDVUMTY6MjU6MjRaCkNoYWluIElEOiBOZXRYZFFwcmNWa3BhV1UKUmVzb3VyY2VzOgotIGlwZnM6Ly9RbWU3c3MzQVJWZ3h2NnJYcVZQaWlrTUo4dTJOTGdtZ3N6ZzEzcFlyREtFb2l1Ci0gaHR0cHM6Ly9leGFtcGxlLmNvbS9teS13ZWIyLWNsYWltLmpzb24
 ```
-
-### Signature Verification
-
-Tezos signatures and public keys are base58 encoded with prefixes. Once these have been removed, we can use standard signature verification methods. Note that the signature and the signing public key should be sent together to verifiers, because there is no solution to recover the public key from `tz1`, `tz2`, `tz3`, or `tz4` signatures. The public key can either be received through the connection with the wallet using the  [Beacon SDK][] or by searching the [Reveal][] operation on-chain which reveals the public key of the sending manager as knowing this public key is indeed necessary to check the signature of future operations signed by this manager.
-
-## Examples
-
-**Create a valid example**
 
 ## References
 
