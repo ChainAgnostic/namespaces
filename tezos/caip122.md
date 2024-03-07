@@ -60,23 +60,15 @@ Here:
 
 ### Signing Algorithm
 
-In Tezos, Ed25519 (`tz1`) is the most commonly used signing algorithm. Tezos
-uses prefixed base58 hashes of key material and signatures, with distinct
-prefixes to encode the public key, private key and signatures. For Ed25519, the
-prefixes are `edpk`, `edsk` and `edsig`. For Secp256k1, the prefixes are `sppk`,
-`spsk` and `spsig`. For P256, the prefixes are `p2pk`, `p2sk` and `p2sig`.
+In Tezos, Ed25519 (`tz1`) is the most commonly used signing algorithm. Tezos uses prefixed [base58][] hashes of key material and signatures, with distinct prefixes to encode the public key, private key and signatures. For Ed25519, the prefixes are `edpk`, `edsk` and `edsig`. For Secp256k1, the prefixes are `sppk`, `spsk` and `spsig`. For P256, the prefixes are `p2pk`, `p2sk` and `p2sig`. For BLS12-381, the prefixes are `BLpk`, `BLsk` and `BLsig`.
 
 ### Signature Type
 
-We propose using any of the three signature types (`tezos:ed25519`,
-`tezos:secp256k1` and `tezos:p256`) to allow Tezos wallets to sign with `tz1`,
-`tz2` or `tz3` addresses for off-chain authentication purposes.
+We propose using any of the four signature types (`tezos:ed25519`, `tezos:secp256k1`, `tezos:p256` and `tezos:bls12-381`) to allow Tezos wallets to sign with `tz1`, `tz2`, `tz3`, or `tz4` addresses for off-chain authentication purposes.
 
 ### Signature Creation
 
-The abstract data model must be converted into a string representation in an
-unambigious format, and then the string converted to a byte array to be signed
-over.
+The abstract data model must be converted into a string representation in an unambigious format, and then the string converted to a byte array to be signed over.
 
 The proposed string representation format, adapted from [EIP-4361][], should be as such:
 
@@ -135,10 +127,11 @@ c2VydmljZS5vcmcgd2FudHMgeW91IHRvIHNpZ24gaW4gd2l0aCB5b3VyIFRlem9zIGFjY291bnQ6CnR6
 
 ### Signature Verification
 
-Tezos signatures and public keys are base58 encoded with prefixes. Once these have been removed, we can use standard signature verification methods. Note that the signature and the signing public key should be sent together to verifiers, because there is no solution to recover the public key from `tz1`, `tz2`, `tz3`, or `tz4` signatures.
+Tezos signatures and public keys are base58 encoded with prefixes. Once these have been removed, we can use standard signature verification methods. Note that the signature and the signing public key should be sent together to verifiers, because there is no solution to recover the public key from `tz1`, `tz2`, `tz3`, or `tz4` signatures. The public key can either be received through the connection with the wallet using the  [Beacon SDK][] or by searching the [Reveal][] operation on-chain which reveals the public key of the sending manager as knowing this public key is indeed necessary to check the signature of future operations signed by this manager.
 
 ## Examples
 
+**Create a valid example**
 
 ## References
 
@@ -154,8 +147,7 @@ Tezos signatures and public keys are base58 encoded with prefixes. Once these ha
 - [Secp256k1][] - Elliptic curve used in Bitcoin's public-key cryptography.
 - [NIST P256][] - One of the most used elliptic curves including native support in some mobile devices.
 - [BLS family][] - BLS12-381 is a pairing-friendly elliptic curve construction from the BLS family, with embedding degree 12.
-- [SIWT library][] - A reference implementation adhering to the CAIP specifications.
-
+- [Beacon SDK][] - Beacon is the implementation of the wallet interaction standard TZIP-10 which describes the connection of a dApp with a wallet.- [SIWT library][] - A reference implementation adhering to the CAIP specifications.
 
 [CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
 [CAIP-10]: https://chainagnostic.org/CAIPs/caip-10
@@ -169,6 +161,9 @@ Tezos signatures and public keys are base58 encoded with prefixes. Once these ha
 [Secp256k1]: https://en.bitcoin.it/wiki/Secp256k1
 [NIST P256]: https://csrc.nist.gov/csrc/media/events/workshop-on-elliptic-curve-cryptography-standards/documents/papers/session6-adalier-mehmet.pdf
 [BLS family]: https://eprint.iacr.org/2002/088
+[base58]: https://gitlab.com/tezos/tezos/-/blob/5bb8fd589cc8777f44c795b71acf3e0a5dcac06f/src/lib_crypto/base58.ml
+[Beacon SDK]: https://github.com/airgap-it/beacon-sdk
+[Reveal]: http://tezos.gitlab.io/paris/blocks_ops.html#manager-operations
 [SIWT library]: https://siwt.xyz/
 
 ## Rights

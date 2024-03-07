@@ -29,6 +29,7 @@ Blockchains in the `tezos` namespace are identified by their chain ID derived de
 The method for calculating the hash of a given chain's genesis block (for use as a CAIP-2 chain ID) is as follows from the [Base58 Check Encoded Blake2B Hash][] reference implementation:
 
 ```ocaml
+(* Net(15) *)
 tezosB58CheckEncode('Net',
   firstFourBytes(
     blake2b(msg = tezosB58CheckDecode('B', genesisBlockHash),
