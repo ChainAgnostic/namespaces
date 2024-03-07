@@ -23,17 +23,19 @@ The namespace "mina" refers to the wider Mina ecosystem.
 
 ## Rationale
 
-Mina consists of multiple networks: a production network `mainnet`, a testing network `testnet` and networks where new features are trialed. 
+Mina consists of multiple networks: a production network `mainnet`, a testing network matching the production network `devnet`, a testing network for new features `testnet` and networks where new features are trialed.
+
 Networks trialing new features are identified by a codename, for example `berkeley`. 
 
 An identifier for a Mina chain consists of the namespace prefix "mina:" followed by human readable reference identifying each network. 
 These identifiers may be extended to include codenames and prefixed to include the type of network. These names are separated by "-". 
 
 The type of network may be:
+- mainnet, the production network.
 - devnet, indicating a stable copy of the network used for developer testing.
 - testnet, indicating a less stable copy of the network where new features can be deployed and tested. 
 
-The names chosen above are taken from the signature schema's for each blockchain.
+The names chosen above are taken from the signature schema's for each blockchain and current network identifiers can be found in the documentation [here](https://docs2-git-major-upgrade-minadocs.vercel.app/node-operators)
 
 ## Syntax
 
