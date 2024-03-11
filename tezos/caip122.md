@@ -64,7 +64,7 @@ In Tezos, Ed25519 (`tz1`) is the most commonly used signing algorithm. Tezos use
 
 ### Signature Type
 
-We propose using any of the four signature types (`tezos:ed25519`, `tezos:secp256k1`, `tezos:p256` and `tezos:bls12-381`) to allow Tezos wallets to sign with `tz1`, `tz2`, `tz3`, or `tz4` addresses for off-chain authentication purposes.
+We propose using any of the four signature `types` (`tezos:ed25519`, `tezos:secp256k1`, `tezos:p256` and `tezos:bls12-381`) as `signatureMeta.t` to allow Tezos wallets to sign with `tz1`, `tz2`, `tz3`, or `tz4` addresses for off-chain authentication purposes.
 
 ### Signature Creation
 
