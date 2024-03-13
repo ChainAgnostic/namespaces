@@ -38,7 +38,8 @@ tezosB58CheckEncode('Net',
 
 ### Chain ID alias
 
-The Tezos community recognizes the different chains according to human readable names, which are called the "[Networks][]". The Octez RPC, for example, allows you to connect to three predefined networks:
+The Tezos community recognizes the different chains according to human readable names, which are called the "[Networks][]".
+The Octez RPC, for example, allows you to connect to three predefined networks by alias:
 
 ```bash
 # mainnet (default)
@@ -48,7 +49,9 @@ The Tezos community recognizes the different chains according to human readable 
 > ./octez-node run --data-dir ~/tezos-ghostnet --network ghostnet
 ```
 
-There is currently no algorithm to connect the `chain ID` to the `network` as it is part of the Octez reference implementation of Tezos. In general it is determined by social consensus what chain ID is considered as `tezos:mainnet`. It is RECOMMENDED to use a separate chain registry to map an alias to the chain ID.
+There is currently no algorithm to connecting `chain ID`s to `network`s in the Octez reference implementation of Tezos.
+In general, social consensus determines which chain ID is considered the "tezos mainnet".
+It is RECOMMENDED to use a separate chain registry to map an alias to the chain ID.
 
 ### Backwards Compatibility
 
