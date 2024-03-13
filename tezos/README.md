@@ -9,8 +9,6 @@ updated: 2024-02-20
 replaces: CAIP-26
 ---
 
-# Namespace for Tezos Blockchains
-
 This document defines the applicability of CAIP schemes to the blockchains of the Tezos ecosystem according to the *Namespace Reference Purpose and Guidelines* of [CAIP-104][].
 
 ## Syntax
