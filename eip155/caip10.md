@@ -21,6 +21,10 @@ While Ethereum "accounts" were the unstated norm in the definition of
 [CAIP-10][], there are still some particularities of the syntax that should be
 specified for the unfamiliar.  
 
+### Special case of EOA
+
+In order to enable decentralized applications to specify EOAs as an address, we propose using chainID 0. This would signify that it can live on multiple networks. In absence of this, addresses will be assigned to only one chain using CAIP-10 chainID syntax, an EOA would be required to be assigned multiple times for each chain. Specifying 0 as chainID for EOA, further enables EOAs to be designated as an EOA once, and be treated as an EOA on every applicable chain
+
 ## Syntax
 
 Ethereum addresses were, historically, case-insensitive and normalized to use
@@ -28,6 +32,17 @@ all-lowercase letters (`abcdef`) like most hexadecimal numeric types.  With the
 ratification of [EIP55][], however, a particular normalization of lowercase- and
 uppercase- `abcdefABCDEF` characters was invented as an efficient form of
 checksum. See [EIP55][] for specification.
+
+The chain ID will be used to represent blockchain except special case of 0 as chainID to represent EOA.
+
+The `chain_id` string will be ammended as follows:
+
+```
+chain_id:    namespace + ":" + eoa_flag + ":" + reference
+eoa_flag:    [0-9]{1,1}
+namespace:   [-a-z0-9]{3,8}
+reference:   [-_a-zA-Z0-9]{1,32}
+```
 
 ### Backwards Compatibility
 
@@ -42,6 +57,9 @@ accounts in this manner.
 ## Test Cases
 
 ```
+# EOA
+eip155:0:0x839395e20bbB182fa440d08F850E6c7A8f6F0780
+
 # Ethereum mainnet (valid/checksummed)
 eip155:1:0x22227A31dd842196A246d8f3b775998560eAa61d
 
@@ -55,6 +73,10 @@ eip155:137:0x0495766cD136138Fc492Dd499B8DC87A92D6685b
 eip155:137:0x0495766CD136138FC492DD499B8DC87A92D6685B
 
 ```
+
+## Security Concerns
+
+We should have users sign a message to prove they have an EOA (Greg to fill out more completely)
 
 ## References
 
