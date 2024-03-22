@@ -29,9 +29,9 @@ In order to enable decentralized applications to specify EOAs as an address, we 
 
 Ethereum addresses were, historically, case-insensitive and normalized to use
 all-lowercase letters (`abcdef`) like most hexadecimal numeric types.  With the
-ratification of [EIP55][], however, a particular normalization of lowercase- and
+ratification of [EIP-55][], however, a particular normalization of lowercase- and
 uppercase- `abcdefABCDEF` characters was invented as an efficient form of
-checksum. See [EIP55][] for specification.
+checksum. See [EIP-55][] for specification.
 
 The chain ID will be used to represent blockchain except special case of 0 as chainID to represent EOA.
 
@@ -80,11 +80,11 @@ We should have users sign a message to prove they have an EOA (Greg to fill out 
 
 ## References
 
-- [EIP155][]: Ethereum Improvement Proposal specifying generation and validation of ChainIDs
+- [EIP-155][]: Ethereum Improvement Proposal specifying generation and validation of ChainIDs
 - [ethereum-lists/chains][]: An open registry for eip155 network operators to claim a
       unique chainID and self-publish RPC/node information for them.
-- [ERC20][]: Basic [aka Fungible] Token Standard
-- [ERC721][]: Non-Fungible Token Standard
+- [ERC-20][]: Basic [aka Fungible] Token Standard
+- [ERC-721][]: Non-Fungible Token Standard
 
 [Chainid.network]: https://github.com/ethereum-lists/chains
 [CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
@@ -92,10 +92,10 @@ We should have users sign a message to prove they have an EOA (Greg to fill out 
 [CAIP-19]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-19.md
 [CAIP-21]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-21.md
 [CAIP-22]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-22.md
-[EIP155]: https://eips.ethereum.org/EIPS/eip-155
-[EIP55]: https://eips.ethereum.org/EIPS/eip-55
-[ERC20]: https://eips.ethereum.org/EIPS/eip-20
-[ERC721]: https://eips.ethereum.org/EIPS/eip-721
+[EIP-155]: https://eips.ethereum.org/EIPS/eip-155
+[EIP-55]: https://eips.ethereum.org/EIPS/eip-55
+[ERC-20]: https://eips.ethereum.org/EIPS/eip-20
+[ERC-721]: https://eips.ethereum.org/EIPS/eip-721
 
 
 ## Rights
