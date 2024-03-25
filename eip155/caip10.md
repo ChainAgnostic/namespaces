@@ -23,7 +23,12 @@ specified for the unfamiliar.
 
 ### Special case of EOA
 
-In order to enable decentralized applications to specify EOAs as an address, we propose using chainID 0. This would signify that it can live on multiple networks. In absence of this, addresses will be assigned to only one chain using CAIP-10 chainID syntax, an EOA would be required to be assigned multiple times for each chain. Specifying 0 as chainID for EOA, further enables EOAs to be designated as an EOA once, and be treated as an EOA on every applicable chain
+To express Ethereum account without reference to any specific [EIP-155][] chain ID, CAIP-10 identifiers can use the special `chainId` segment `0`.
+
+In the Ethereum account system, "externally owned accounts" (i.e. "offchain" wallets) are controlled by user agents and not by on-chain entities (i.e. deployed or deployable smart contract code). 
+The special chainId `0` SHOULD only be used for accounts that can be used in off-chain contexts, i.e. without the use of an Ethereum node.
+
+Note that a given address cannot be assumed to work on all current and future networks with an [EIP-155][] `chainId`, which may express or derive addresses differently for a given private key; a user account expressed with `chainId` segment of 0 is assumed to control the same account on `chainId` 1 and most ethereum chains, but MAY control a different account or additional accounts on networks that extend the account or addressing model of Ethereum, assume different key or hash derivations, etc.
 
 ## Syntax
 
