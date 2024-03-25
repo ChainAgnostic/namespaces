@@ -29,8 +29,8 @@ For how to compute a valid `chainId` segment or a list of examples, see [the CAI
 
 | Alias          | Chain ID                         |
 | -------------- | -------------------------------- |
-| tezos mainnet  | tezos:NetXdQprcVkpaWU            |
-| tezos ghostnet | tezos:NetXnHfVqm9iesp            |
+| tezos:mainnet  | tezos:NetXdQprcVkpaWU            |
+| tezos:ghostnet | tezos:NetXnHfVqm9iesp            |
 
 Tezos addresses are invariable across networks.
 
