@@ -38,17 +38,20 @@ tezosB58CheckEncode('Net',
 
 ### Chain ID alias
 
-The Tezos community recognizes the different chains according to human readable names, the so called [Networks][]. The Octez RPC allows you to connect to three predefined networks:
+The Tezos community recognizes the different chains according to human readable names, which are called the "[Networks][]".
+The Octez RPC, for example, allows you to connect to three predefined networks by alias:
 
 ```bash
-# mainnet (this is the default)
+# mainnet (default)
 # sandbox
 # ghostnet
 
 > ./octez-node run --data-dir ~/tezos-ghostnet --network ghostnet
 ```
 
-There is currently no algorithm to connect the `chain ID` to the `network` as it is part of the Octez reference implementation of Tezos. In general it is determined by social consensus what chain ID is considered as `tezos:mainnet`. It is RECOMMENDED to use a separate chain registry to map an alias to the chain ID.
+There is currently no algorithm to connecting `chain ID`s to `network`s in the Octez reference implementation of Tezos.
+In general, social consensus determines which chain ID is considered the "tezos mainnet".
+It is RECOMMENDED to use a separate chain registry to map an alias to the chain ID.
 
 ### Backwards Compatibility
 
@@ -56,11 +59,16 @@ Not applicable.
 
 ## Integrity guarantees for the chain ID
 
-The third chapter of the [Tezos Position Paper][] is dedicated to the analysis of potential threats leading to a user connecting to the Tezos network for the first time and not ending up on the `tezos:mainnet`. One of the main features of the technology is the [On-Chain Governance][] including its consensus mechanism based on [Proof-of-Stake][]. In combination with periodical checkpoints - which are created by institutions like e.g. a [Tezos Block Explorer][] or others based on social consensus - and statistical analysis of the chain using TAPOS "transactions as proof of stake" it is considered safe to assume to be connected to the mainnet regarding most given threat models. The current mainnet is running without a security breach since the `30th of June 2018` with enough incentive to attack its security mechanisms indicating the validity of the statement above.
+The third chapter of the [Tezos Position Paper][] is dedicated to the analysis of potential threats leading to a user connecting to the Tezos network for the first time and not ending up on the `tezos:mainnet`.
+One of the main features of the technology is the [On-Chain Governance][] including its consensus mechanism based on [Proof-of-Stake][]. 
+In combination with social consensus around periodic chain-state "checkpoints" used to bootstrap nodes and anchor shared ground-truth for, e.g. [Tezos Block Explorer][], a statistical analysis of the chain using TAPOS ("transactions as proof of stake") serves as guarantee of the integrity of the mainnet regarding these threat models. 
+The current mainnet has been running without a pertinent protocol-level security breach or consensus attack since the `30th of June 2018`.
 
 ## Test Cases
 
-This is a list of manually composed examples. See [Tezos test network infrastructure][] for available public chains. You can use the [Tezos RPC Interface][] to compute the chain id from a block hash as follows:
+This is a list of manually composed examples.
+See [Tezos test network infrastructure][] for available public chains.
+You can use the [Tezos RPC Interface][] to compute the chain id from a block hash as follows:
 
 ```bash
 # Tezos Ghostnet (Long-running test network)
@@ -84,8 +92,8 @@ The following table includes the chain ID aliases through their human readable n
 
 | Alias          | Chain ID                         |
 | -------------- | -------------------------------- |
-| tezos:mainnet  | tezos:NetXdQprcVkpaWU            |
-| tezos:ghostnet | tezos:NetXnHfVqm9iesp            |
+| tezos mainnet  | tezos:NetXdQprcVkpaWU            |
+| tezos ghostnet | tezos:NetXnHfVqm9iesp            |
 
 ## References
 

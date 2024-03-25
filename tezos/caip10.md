@@ -10,39 +10,40 @@ updated: 2024-02-28
 requires: ["CAIP-2", "CAIP-10"]
 ---
 
-# CAIP-10
-
 *For context, see the [CAIP-10][] specification.*
 
 ## Rationale
 
-Tezos supports the use of multiple public-key signature schemes, so the display address is prefixed with `tz1` ([Ed25519][] curve), `tz2` ([Secp256k1][] curve), `tz3` ([NIST P256][] curve), or `tz4` (BLS12-381 curve from the [BLS family][]) referenced in the [Tezos address types glossary][]. After the prefix, the rest of the account address is a [Base58 Check Encoded Blake2B Hash][] of each key's public key.
+Tezos supports the use of multiple public-key signature schemes; for this reason, a given account can have multiple addresses, each of which is prefixed with `tz1` ([Ed25519][] curve), `tz2` ([Secp256k1][] curve), `tz3` ([NIST P256][] curve), or `tz4` (BLS12-381 curve from the [BLS family][]) referenced in the [Tezos address types glossary][].
+After the prefix, the rest of the account address is a [Base58 Check Encoded Blake2B Hash][] of a public key of the type corresponding to the prefix.
 
 ## Syntax
 
-The syntax of a Tezos address matches the following regular expression (note the 58-character alphabet):
+The syntax of a Tezos address matches the following regular expression (note the [58-character alphabet][base58]):
 
-`(tz1|tz2|tz3|tz4) [1-9A-HJ-NP-Za-km-z]{33}`
+`(tz1|tz2|tz3|tz4)[1-9A-HJ-NP-Za-km-z]{33}`
 
 ## Chain IDs
 
-*For context, see the [CAIP-2][] specification and in particular the `tezos-caip2` profile thereof.*
+For how to compute a valid `chainId` segment or a list of examples, see [the CAIP-2 profile](./caip2.md).
 
 | Alias          | Chain ID                         |
 | -------------- | -------------------------------- |
-| tezos:mainnet  | tezos:NetXdQprcVkpaWU            |
-| tezos:ghostnet | tezos:NetXnHfVqm9iesp            |
+| tezos mainnet  | tezos:NetXdQprcVkpaWU            |
+| tezos ghostnet | tezos:NetXnHfVqm9iesp            |
+
+Tezos addresses are invariable across networks.
 
 ## Test Cases
 
-The Tezos namespace, the chain ID and the [Tezos address types][] allow the construction of the [CAIP-10][] compliant `Account ID`:
+Manually composed examples follow:
 
 ```bash
-# Tezos Mainnet
+# Ed25519-key address on Tezos Mainnet
 # Genesis block hash: BLockGenesisGenesisGenesisGenesisGenesisf79b5d1CoW2
 tezos:NetXdQprcVkpaWU:tz1MJx9vhaNRSimcuXPK2rW4fLccQnDAnVKJ
 
-# Tezos Ghostnet (Long-running test network)
+# NIST p256-key address on Tezos Ghostnet
 # Genesis block hash: BLockGenesisGenesisGenesisGenesisGenesis1db77eJNeJ9
 tezos:NetXnHfVqm9iesp:tz3btDQsDkqq2G7eBdrrLqetaAfLVw6BnPez
 ```
