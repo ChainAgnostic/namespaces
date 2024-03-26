@@ -79,7 +79,7 @@ eip155:137:0x0495766CD136138FC492DD499B8DC87A92D6685B
 
 ```
 
-## Security Concerns
+## Security Considerations
 
 We should have users sign a message to prove they have an EOA (Greg to fill out more completely)
 
