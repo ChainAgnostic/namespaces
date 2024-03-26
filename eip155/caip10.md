@@ -97,6 +97,9 @@ We should have users sign a message to prove they have an EOA (Greg to fill out 
 [CAIP-19]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-19.md
 [CAIP-21]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-21.md
 [CAIP-22]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-22.md
+[CAIP-122]: https://chainagnostic.org/CAIPs/caip-122
+[ERC-4361]: https://eips.ethereum.org/EIPS/eip-4361
+[EIP-1193]: https://eips.ethereum.org/EIPS/eip-1193
 [EIP-155]: https://eips.ethereum.org/EIPS/eip-155
 [EIP-55]: https://eips.ethereum.org/EIPS/eip-55
 [ERC-20]: https://eips.ethereum.org/EIPS/eip-20
