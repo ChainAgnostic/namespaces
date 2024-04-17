@@ -36,14 +36,61 @@ When crafting such properties for contextual/in-network usage, it is recommended
 
 Similarly, wherever possible, session properties should align closely with information passed as JSON objects by `wallet_` RPC methods, like capabilities or permissions. For example, the capability objects keyed to hexidecimal [EIP-155] `chainId`s defined as the expected return content of the `wallet_getCapabilities` method in [EIP-5792] should also be valid keyed the same way in `sessionProperties.capabilities`.
 
-<!--
-
 ## Examples
 
-TBD
+### Example Response
 
--->
-
+```json
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "sessionId": "0xdeadbeef",
+    "sessionScopes": {
+      "eip155": {
+        "chains": ["eip155:1", "eip155:137"],
+        "methods": ["eth_sendTransaction", "eth_signTransaction", "get_balance", "eth_sign", "personal_sign"]
+        "notifications": ["accountsChanged", "chainChanged"],
+        "accounts": ["eip155:1:0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb", "eip155:137:0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb"]
+      },
+      "eip155:10": {
+        "methods": ["get_balance"],
+        "notifications": ["accountsChanged", "chainChanged"],
+        "accounts:" []
+      },
+      "eip155:42161": {
+        "methods": ["personal_sign"],
+        "notifications": ["accountsChanged", "chainChanged"],
+        "accounts":["eip155:42161:0x0910e12C68d02B561a34569E1367c9AAb42bd810"]
+      },
+      "wallet": {
+        "methods": ["wallet_getPermissions", "wallet_switchEthereumChain", "wallet_getCapabilities"],
+        "notifications": []
+      },
+      "cosmos": {
+        ...
+      }
+    },      
+    "sessionProperties": {
+        "expiry": "2022-11-31T17:07:31+00:00"
+        "capabilities": {
+            "0x31": {
+                "paymasterService": {
+                    "supported": true
+                },
+                "sessionKeys": {
+                    "supported": true
+                }
+            },
+            "0x3432313631": {
+                "sessionKeys": {
+                    "supported": false
+                }              
+            }
+      }          
+    }
+  }
+}
 ## References
 
 - [EIP155][]: Ethereum Improvement Proposal specifying generation and validation of ChainIDs
