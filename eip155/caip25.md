@@ -38,6 +38,45 @@ Similarly, wherever possible, session properties should align closely with infor
 
 ## Examples
 
+### Example Request
+
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "provider_authorize",
+  "params": {
+    "requiredScopes": {
+      "eip155": {
+        "scopes": ["eip155:1", "eip155:137"],
+        "methods": ["eth_sendTransaction", "eth_signTransaction", "eth_sign", "get_balance", "personal_sign"],
+        "notifications": ["accountsChanged", "chainChanged"]
+      },
+      "eip155:10": {
+        "methods": ["get_balance"],
+        "notifications": ["accountsChanged", "chainChanged"]
+      },
+      "wallet": {
+        "methods": ["wallet_getPermissions", "wallet_switchEthereumChain", "wallet_creds_store", "wallet_creds_verify", "wallet_creds_issue", "wallet_creds_present", "wallet_getCapabilities"],
+        "notifications": []
+      },
+      "cosmos": {
+        ...
+      }
+    },
+    "optionalScopes":{
+      "eip155:42161": {
+        "methods": ["eth_sendTransaction", "eth_signTransaction", "get_balance", "personal_sign"],
+        "notifications": ["accountsChanged", "chainChanged"]
+    },
+    "sessionProperties": {
+      "expiry": "2022-12-24T17:07:31+00:00",
+      "caip154": {
+          "supported":"true"
+      }
+    }         
+  }
+}
+
 ### Example Response
 
 ```json
@@ -72,22 +111,23 @@ Similarly, wherever possible, session properties should align closely with infor
       }
     },      
     "sessionProperties": {
-        "expiry": "2022-11-31T17:07:31+00:00"
-        "capabilities": {
+      "capabilities": {
+          "0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb": {
             "0x31": {
-                "paymasterService": {
-                    "supported": true
-                },
-                "sessionKeys": {
-                    "supported": true
-                }
+              "paymasterService": {
+                 "supported": true
+               },
+               "sessionKeys": {
+                  "supported": true
+               }
             },
             "0x3432313631": {
-                "sessionKeys": {
-                    "supported": false
-                }              
+              "sessionKeys": {
+                "supported": false
+              }              
             }
-      }          
+          }
+       }   
     }
   }
 }
