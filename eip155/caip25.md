@@ -27,12 +27,14 @@ Conversely, an authorization object scoped to all of `eip155` can only add or su
 It is also worth mentioning that if a network supports any capabilities NOT supported by other networks, they should never share an authorization object, as the semantics of [CAIP-217] interpret this as supporting EVERY capability listed on EVERY network listed.
 
 In such cases, not only is a separate authorization object recommended, but an explicit [CAIP-211] declaration of the RPC authority where these network-specific capabilities are specified is also recommended;
-see the [eip155/caip211.md](./caip211.md) profile for further guidance on using `method` and `notification` definitions not universal to the eip155 namespace.
+see the [eip155/caip211.md](./caip211.md) profile for further guidance on using `method` and `notification` definitions which are not universal to the eip155 namespace.
 
 ## Session Properties
 
 No namespace-wide or network-specific session properties have yet been proposed for standardization.
-When crafting such properties for contextual/in-network usage, it is recommended to align one's semantics and syntax (including case-sensitive style guides for property names!) with the [EIP-6963] wallet provider interface for common properties across architectures.
+When crafting such properties for contextual/in-network usage, it is recommended to align one's semantics and syntax (including case-sensitive style guides for property names!) with the [EIP-6963] wallet provider interface (which extends the [EIP-1193] interface) for common properties across architectures, making sure to avoid any collisions.
+
+Similarly, wherever possible, session properties should align closely with information passed as JSON objects by `wallet_` RPC methods, like capabilities or permissions. For example, the capability objects keyed to hexidecimal [EIP-155] `chainId`s defined as the expected return content of the `wallet_getCapabilities` method in [EIP-5792] should also be valid keyed the same way in `sessionProperties.capabilities`.
 
 <!--
 
@@ -54,7 +56,10 @@ TBD
 [CAIP-211]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-211.md
 [CAIP-217]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-217.md
 [EIP]: https://eips.ethereum.org/EIPS/eip-1
-[EIP155]: https://eips.ethereum.org/EIPS/eip-155
+[EIP-155]: https://eips.ethereum.org/EIPS/eip-155
+[EIP-1193]: https://eips.ethereum.org/EIPS/eip-1193
+[EIP-5792]: https://eips.ethereum.org/EIPS/eip-5792
+[EIP-6963]: https://eips.ethereum.org/EIPS/eip-6963
 
 ## Rights
 
