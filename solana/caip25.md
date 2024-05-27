@@ -32,7 +32,7 @@ Also, consumers of the [Wallet Standard][] interface assume the `WalletAdapterNe
 ## Session Properties
 
 Wallet capabilities in the [Wallet Standard] model are declared upfront at time of connection and persisted as read-only constants, so wallets are recommended to declare them explicitly in the `sessionProperties` object in a [CAIP-25] interaction for maximum interoperability and stability.
-Note that the `sessionProperties` object is shared across any and all namespaces in a given wallet<>application session, which may span multiple types of networks all declaring `sessionProperties`, so to avoid collisions the following properties names are recommended for easy mapping to the **case-sensitive** properties names in the [Wallet Standard]:
+Note that the `sessionProperties` object is shared across any and all namespaces in a given wallet<>application session, which may span multiple types of networks all declaring `sessionProperties`, so to avoid collisions the following properties names are recommended for easily mapping to the **case-sensitive** properties names in the [Wallet Standard]:
 
 |`sessionProperties` key in [CAIP-25] expression|[Wallet Adapter] mapping|values|documentation|reference implementation|
 |---|---|---|---|---|
@@ -44,7 +44,31 @@ For this reason, wallets are RECOMMENDED to set them explicitly even if not requ
 
 ## Examples
 
-TBD
+Example CAIP-25 Request
+
+```json
+
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "provider_authorize",
+  "params": {
+    "optionalScopes": {
+      "eip155": { ... },
+      "solana": { ... }
+    },
+    "sessionProperties": {
+      "capabilities": { ... }
+      "eip155": { ... }
+      "solana": {
+        "SolanaTransactionVersion": "0",
+        "SolanaTransactionCommitment": "finalized"
+      }
+    }         
+  }
+}
+
+```
 
 ## References
 
