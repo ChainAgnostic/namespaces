@@ -1,7 +1,7 @@
 ---
 namespace-identifier: bip122-caip10
 title: BIP122 Namespace - Addresses
-author: Simon Warta (@webmaster128), ligi <ligi@ligi.de>, Pedro Gomes (@pedrouid), bumblefudge (@bumblefudge)
+author: Simon Warta (@webmaster128), ligi <ligi@ligi.de>, Pedro Gomes (@pedrouid), bumblefudge (@bumblefudge), RareData (@RareData)
 discussions-to: https://github.com/ChainAgnostic/namespaces/pulls/3
 status: Draft
 type: Standard
@@ -73,11 +73,11 @@ bip122:000000000019d6689c085ae165831e93:35PBEaofpUeH8VnnNSorM1QZsadrZoQp4N
 # Bitcoin mainnet, Native SegWit address (P2WPKH)
 bip122:000000000019d6689c085ae165831e93:bc1qwz2lhc40s8ty3l5jg3plpve3y3l82x9l42q7fk
 
-# Bitcoin testnet, Native SegWit address (P2WPKH)
-bip122:000000000933ea01ad0ee984209779ba:tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7
-
 # Bitcoin mainnet, Taproot address with Ordinals decorator
 bip122:000000000019d6689c085ae165831e93:bc1pmzfrwwndsqmk5yh69yjr5lfgfg4ev8c0tsc06e#ordinal
+
+# Bitcoin testnet, Native SegWit address (P2WPKH)
+bip122:000000000933ea01ad0ee984209779ba:tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7
 
 # Dogecoin mainnet, P2PKH address
 bip122:1a91e3dace36e2be3bf030a65679fe82:DBcZSePDaMMduBMLymWHXhkE5ArFEvkagU
