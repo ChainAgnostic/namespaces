@@ -53,7 +53,7 @@ By analogy to web standards, these are best designated with a matrix parameter (
 For example, some wallets segregate Ordinals from regular native-currency balance by receiving them in a dedicated address, to avoid an Ordinal being counted towards spendable balance, or being included unwittingly as an input to a regular (non-Ordinal) transaction.
 In this case, the matrix parameter `#ordinal` could be added to communicate to a counterparty that the preceding address has been specifically earmarked for receiving only Ordinal-marked Satoshis and not for general use.
 Conversely, Ordinal-aware wallets might mark the other side of this segregation by explicitly marking an address as a `#payment` address.
-A client unaware of this convention could, of course, ignore or drop these matrix parameters and treat both as addresses capable of payments, and developers are advised not to assume Ordinals-awareness in a given wallet just because it uses the [CAIP-10] standard or a CAIP-10-aware library.
+A client unaware of this convention could, of course, ignore or drop these matrix parameters and treat both as addresses capable of payments, and developers are advised not to assume Ordinals-awareness in a given wallet just because it uses the CAIP-10 standard or a CAIP-10-aware library.
 
 ### Backwards Compatibility
 
@@ -70,20 +70,26 @@ CAIP-2 chainId delimited by the at sign (@)
 # Bitcoin mainnet, P2SH address
 bip122:000000000019d6689c085ae165831e93:35PBEaofpUeH8VnnNSorM1QZsadrZoQp4N
 
-# Bitcoin testnet, Segwit address
+# Bitcoin mainnet, Native SegWit address (P2WPKH)
+bip122:000000000019d6689c085ae165831e93:bc1qwz2lhc40s8ty3l5jg3plpve3y3l82x9l42q7fk
+
+# Bitcoin testnet, Native SegWit address (P2WPKH)
 bip122:000000000933ea01ad0ee984209779ba:tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7
 
-# Bitcoin mainnet, Taproot address type (Ordinals Decorator)
+# Bitcoin mainnet, Taproot address with Ordinals decorator
 bip122:000000000019d6689c085ae165831e93:bc1pmzfrwwndsqmk5yh69yjr5lfgfg4ev8c0tsc06e#ordinal
 
-# Dogecoin, Legacy address
-bip122:1a91e3dace36e2be3bf030a65679fe82:AC8Q9Z4i4sXcbW7TV1jqrjG1JEWMdLyzcy
+# Dogecoin mainnet, P2PKH address
+bip122:1a91e3dace36e2be3bf030a65679fe82:DBcZSePDaMMduBMLymWHXhkE5ArFEvkagU
 
-# Dogecoin, Native Segwit address
-bip122:1a91e3dace36e2be3bf030a65679fe82:DLCDJhnh6aGotar6b182jpzbNEyXb3C361
+# Dogecoin testnet, P2PKH address
+bip122:bb0a78264637406b6360aad926284d54:nXprPppuYCyxrrW6eVh4koUz8kTFrAvGo8
 
-# Litecoin, Native SegWit 
+# Litecoin mainnet, Native SegWit address (P2WPKH)
 bip122:12a765e31ffd4059bada1e25190f6e98:ltc1q8c6fshw2dlwun7ekn9qwf37cu2rn755u9ym7p0
+
+# Litecoin testnet, Native SegWit address (P2WPKH)
+bip122:4966625a4b2851d9fdee139e56211a0d:tltc1qlustmw64lgd744h45n0t07wxnxw8pmv2sv07r9
 
 ```
 
