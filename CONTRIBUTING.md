@@ -28,11 +28,11 @@ To facilitate validation and multi-chain registries, you may choose to include (
 {
     "standard":"caip2",
     "validation":"[0-9]{1-32}",
-    "test cases" {
+    "test cases": [
         "Ethereum mainnet": "eip155:1",
         "Görli": "eip155:5",
         "Auxilium Network Mainnet": "eip155:28945486"
-    }
+    ]
 }
 ```
 
