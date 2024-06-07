@@ -1,6 +1,14 @@
 ---
 namespace-identifier: cosmos
 title: Cosmos Ecosystem
+author: Simon Warta (@webmaster128), bumblefudge (@bumblefudge)
+discussions-to: https://github.com/ChainAgnostic/CAIPs/issues/5, https://github.com/ChainAgnostic/CAIPs/issues/6, https://github.com/ChainAgnostic/CAIPs/pull/1
+status: Draft
+type: Standard
+created: 2022-03-01
+updated: 2022-03-26
+requires: CAIP-2
+supersedes: CAIP-5
 ---
 
 # Namespace for Cosmos chains
