@@ -1,7 +1,7 @@
 ---
 namespace-identifier: solana-caip25
 title: Solana Namespace - JSON-RPC Provider Authorization
-author: Jon Wong (@jnwng), Glitch (@glitch-txs) bumblefudge (@bumblefudge)
+author: Jon Wong (@jnwng), Glitch (@glitch-txs), bumblefudge (@bumblefudge)
 discussions-to: https://github.com/anza-xyz/wallet-adapter/issues/807
 status: Draft
 type: Standard
@@ -19,13 +19,13 @@ _For context, see the [CAIP-25][] specification._
 In the Solana ecosystem, standardization of the RPC provider interface has centered on the [Wallet Standard] and [Wallet Adapter] open-source tooling.
 For the most part, progressive [CAIP-25] negotiation and iteration is possible over a [Wallet Standard] connection, with the former inheriting the declaration of initial capabilities and permissions made in the latter as initial state for further negotation.
 
-## Network-specific versus Namespace-wide Scopes
+## Network-Specific versus Namespace-Wide Scopes
 
 Few use-cases incorporating multiple Solana-compatible networks require granular permissions or capability declarations per-chain, so a Solana-wide [CAIP-217] authorization scope (keyed to the entire `solana` namespace rather than to a specific chain), with permissions and capabilities set and with only one member at a time in the `chains` array, is recommended in most cases.
 
-## Multi-Chain Considerations
+## Multichain Considerations
 
-Developers addressing multi-chain use-cases incorporating non-Solana networks are RECOMMENDED to use distinct [CAIP-217] authorization objects per chain type, in cases where those [CAIP-25] capabilities and configurations can be deterministically mapped to [Wallet Standard Multichain Extensions] variables by a [CAIP-25] provider. 
+Developers addressing multichain use-cases incorporating non-Solana networks are RECOMMENDED to use distinct [CAIP-217] authorization objects per chain type, in cases where those [CAIP-25] capabilities and configurations can be deterministically mapped to [Wallet Standard Multichain Extensions] variables by a [CAIP-25] provider. 
 
 Also, consumers of the [Wallet Standard][] interface assume the `WalletAdapterNetwork` enum variable to be set to exactly one network at a time, so implementers are recommended to map only one `chains` member at a time to this standard interface, whether by ordering it by preference or by never allowing it to have more than one member at a time.
 
