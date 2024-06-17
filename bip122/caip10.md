@@ -48,7 +48,7 @@ For more precise validation, it is recommended to first detect the type from the
 ### Decorators
 
 In the Bitcoin development community, certain user experience conventions have arisen that can be opted into by applications and wallets, yet are, strictly speaking, not part of the bitcoin protocol and leave no on-chain artefacts in transaction history.
-By analogy to web standards, these are best designated with a matrix parameter (i.e., a `#parameter` suffix on the URI), which might be meaningful or useful to clients but are not native to the underlying URL protocol and are traditionally omitted when sent over the wire for resolution.
+By analogy to web standards, these are best designated with a fragment identifier (i.e., a `#parameter` suffix on the URI), which might be meaningful or useful to clients but are not native to the underlying URL protocol and are traditionally omitted when sent over the wire for resolution.
 
 For example, some wallets segregate Ordinals from regular native-currency balance by receiving them in a dedicated address, to avoid an Ordinal being counted towards spendable balance, or being included unwittingly as an input to a regular (non-Ordinal) transaction.
 In this case, the matrix parameter `#ordinal` could be added to communicate to a counterparty that the preceding address has been specifically earmarked for receiving only Ordinal-marked Satoshis and not for general use.
