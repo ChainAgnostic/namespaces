@@ -44,7 +44,7 @@ deterministically from the address.
 
 ## Syntax
 
-Alephium address represented as a Base58 encoded string
+Alephium address is represented as a Base58 encoded string.
 
 ## Test Cases
 
@@ -64,7 +64,10 @@ ibsc1yJLJxxVcsPfSDJoR3mzrasrZq2Rn63dFQGcDAYE
 
 ## References
 
+- [Alephium Documentation](https://docs.alephium.org/)
 - [base58btc](https://en.bitcoin.it/wiki/Base58Check_encoding#Base58_symbol_chart)
+
+[CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md
 
 ## Copyright
 

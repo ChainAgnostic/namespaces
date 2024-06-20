@@ -13,11 +13,11 @@ requires: ["CAIP-2", "CAIP-19"]
 ## Rationale
 
 Tokens are first class citizens on Alephium. Just like the native
-token "ALPH", all tokens on Alephium are managed by UTXOs, which is
+token `ALPH`, all tokens on Alephium are managed by UTXOs, which is
 battle tested for secure asset management.
 
 New tokens are deployed through the deployment of new contracts, with
-the token's id matching the id of the issuing contract. The process of
+token's id matching the id of the issuing contract. The process of
 token issuance is the same for both fungible and non-fungible tokens.
 
 ## Specification of token id

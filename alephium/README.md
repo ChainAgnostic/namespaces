@@ -22,10 +22,12 @@ transactions from one group to another. Alephium's mainnet currently
 has 4 groups and 16 blockchains, more groups and blockchains can be
 added to increase the throughput.
 
+Understanding these concepts is helpful for interoperability with
+other account-based or classic UTXO namespaces.
+
 ## Syntax
 
-The namespace "alephium" refers to the Alephium open-source blockchain
-platform.
+The namespace `alephium` refers to the Alephium blockchain platform.
 
 ## References
 

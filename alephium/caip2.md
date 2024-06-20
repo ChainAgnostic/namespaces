@@ -21,12 +21,12 @@ Alephium is a sharded blockchain that organizes addresses and states
 into distinct groups groups. The blockchain id includes both the
 network id and the group information.
 
-The Network id can be one of three values: "mainnet", "testnet" and
-"devnet". 
+The Network id can be one of three values: `mainnet`, `testnet` and
+`devnet`. 
 
 Currently, Alephium has 4 groups. The group component of the
-blockchain id can take one of five values: "0", "1", "2" and "3" which
-correspond to groups 0 through 3, and "-1" which represents any
+blockchain id can take one of five values: `0`, `1`, `2` and `3` which
+correspond to groups `0` through `3`, and `-1` which represents any
 group.
 
 ### Syntax
