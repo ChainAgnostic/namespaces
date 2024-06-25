@@ -2,7 +2,7 @@
 namespace-identifier: alephium
 title: Alephium Ecosystem
 author: Hongchao Liu (@h0ngcha0)
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/xxxx
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/117
 status: Draft
 type: Informational
 created: 2024-06-19

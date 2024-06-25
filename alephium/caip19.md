@@ -2,7 +2,7 @@
 namespace-identifier: alephium-caip19
 title: Alephium Namespace - Assets
 author: Hongchao Liu (@h0ngcha0)
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/xxxx
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/117
 status: Draft
 type: Standard
 created: 2024-06-20
