@@ -27,7 +27,7 @@ bytes blake2b hash encoded as a hex string.
 
 ## Syntax
 
-Alepihum token id represented as 32 byte array encoded as hex string.
+Alephium token id represented as 32 byte array encoded as hex string.
 
 ## Examples
 
