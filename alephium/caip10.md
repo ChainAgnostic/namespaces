@@ -44,7 +44,8 @@ deterministically from the address.
 
 ## Syntax
 
-Alephium address is represented as a Base58 encoded string.
+The native Alephium address encoding is a [Base58][]-encoded string of the type defined above.
+[CAIP-10][] simply uses an entire native address as the `account_address` component.
 
 ## Test Cases
 
