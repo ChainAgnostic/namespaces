@@ -42,6 +42,27 @@ Constructing an address:
 Each address on Alephium belongs to a group, which can be derived
 deterministically from the address.
 
+The algorithm for deriving group information from `P2PKH`, `P2MPKH`
+and `P2SH` address are similar:
+
+1. Take the relevant bytes from the address. For `P2PKH` and  `P2SH`
+   address, take the `content bytes` directly. For `P2MPKH` address,
+   take the part of the `content bytes` corresponding to the first
+   public key hash.
+2. Hash the relevant bytes from step 1 using the `djb2` hash algorithm
+   and perform a bitwise OR operation to the hashed value with `1`.
+3. Take the result from step 2, perform bitwise XOR operation on its
+   last 4 bytes to get an one byte integer.
+4. The group number is the remainder of this one byte integer dividing
+   the total number of groups, which is currently `4` on Alephium.
+
+For `P2C` address, group number is encoded directly as its last byte
+of its `content bytes`.
+
+A Typescript implementation of the logic to derive group information
+from address can be found
+[here](https://github.com/alephium/alephium-web3/blob/b4df0f2858778dec3767a9d23737b7995d3673cb/packages/web3/src/address/address.ts#L88-L104).
+
 ## Syntax
 
 The native Alephium address encoding is a [Base58][]-encoded string of the type defined above.
