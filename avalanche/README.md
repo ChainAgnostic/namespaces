@@ -2,7 +2,6 @@
 namespace-identifier: avax
 title: Avalanche Ecosystem
 author: Gergely Lovas (@gergelylovas)
-discussions-to: []
 status: Draft
 type: Informational
 created: 2024-07-16

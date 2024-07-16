@@ -2,7 +2,6 @@
 namespace-identifier: avax-caip2
 title: Avalanche Namespace - Chains
 author: Gergely Lovas (@gergelylovas)
-discussions-to: []
 status: Draft
 type: Standard
 created: 2024-07-16
