@@ -23,7 +23,8 @@ token issuance is the same for both fungible and non-fungible tokens.
 ## Specification of token id
 
 Token's id is the same as its issuing contract's id, which is a 32
-bytes blake2b hash encoded as a hex string.
+bytes blake2b hash encoded as a hex string. It is not specific to a
+network or a group.
 
 ## Syntax
 
@@ -32,7 +33,7 @@ Alephium token id represented as 32 byte array encoded as hex string.
 ## Examples
 
 ```
-383bc735a4de6722af80546ec9eeb3cff508f2f68e97da19489ce69f3e703200
+alephium:universal:383bc735a4de6722af80546ec9eeb3cff508f2f68e97da19489ce69f3e703200
 ```
 
 ## References

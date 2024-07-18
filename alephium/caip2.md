@@ -20,6 +20,19 @@ Alephium is a sharded blockchain that organizes addresses and states
 into distinct groups. The blockchain id includes both the network id
 and the group information.
 
+Each transaction has an origin and destination group. All transactions
+from by addressses in group `G1` to addresses in group `G2` will be
+included in chain `G1 -> G2`. If there are `G` groups on Alephium,
+there will be `G`*`G` chains inside of it. In Alephium, groups are
+like cities and chains are like roads connecting them.
+
+Both contract and address belong to a group. A contract deployed in
+one group can only be interacted with directly with an address from
+the same group. Therefore it is common for a dApp deployed in one
+group to request connection to an address within the same
+group. However a dApp deployed in all groups might request connection
+with an address from any group.
+
 The Network id can be one of three values: `mainnet`, `testnet` and
 `devnet`.
 
@@ -37,6 +50,9 @@ chain_id:    alephium + ":" + network_id + "/" + group
 network_id:  mainnet, testnet or devnet
 group:       0, 1, 2, 3 or -1
 ```
+
+For information that is not network or group specific, there is a
+special chain id `alephium:universal`.
 
 ## Test Cases
 
