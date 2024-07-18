@@ -72,16 +72,16 @@ The native Alephium address encoding is a [Base58][]-encoded string of the type 
 
 ```
 # P2PKH address
-15EM5rGtt7dPRZScE4Z9oL2EDfj84JnoSgq3NNgdcGFyu
+alephium:0_mainnet:15EM5rGtt7dPRZScE4Z9oL2EDfj84JnoSgq3NNgdcGFyu
 
 # P2MPKH address
-2jW1n2icPtc55Cdm8TF9FjGH681cWthsaZW3gaUFekFZepJoeyY3ZbY7y5SCtAjyCjLL24c4L2Vnfv3KDdAypCddfAY
+alephium:0_testnet:2jW1n2icPtc55Cdm8TF9FjGH681cWthsaZW3gaUFekFZepJoeyY3ZbY7y5SCtAjyCjLL24c4L2Vnfv3KDdAypCddfAY
 
 # P2C address
-w7oLoY2txEBb5nzubQqrcdYaiM8NcCL9kMYXY67YfnUo
+alephium:2_mainnet:26j4viXkBzJd5SaDtQzyGM6joqoECmajncT4QS3tmT9hb
 
 # P2SH address
-ibsc1yJLJxxVcsPfSDJoR3mzrasrZq2Rn63dFQGcDAYE
+alephium:0_testnet:ibsc1yJLJxxVcsPfSDJoR3mzrasrZq2Rn63dFQGcDAYE
 ```
 
 ## References
