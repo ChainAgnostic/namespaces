@@ -35,7 +35,7 @@ The type of network may be:
 - devnet, indicating a stable copy of the network used for developer testing.
 - testnet, indicating a less stable copy of the network where new features can be deployed and tested. 
 
-The names chosen above are taken from the signature schema's for each blockchain and current network identifiers can be found in the documentation [here](https://docs2-git-major-upgrade-minadocs.vercel.app/node-operators)
+The names chosen above are taken from the signature schema's for each blockchain and current network identifiers can be found in the documentation [here](https://docs.minaprotocol.com/node-operators)
 
 ## Syntax
 
