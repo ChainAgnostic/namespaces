@@ -18,7 +18,7 @@ In CAIP-2 a general blockchain identification scheme is defined. This is the
 implementation of CAIP-2 for the Avalanche Ecosystem. 
 Blockchains in the "avax" namespace are validated by their `blockchainID`. 
 The `blockchainID` in Avalanche refers to the [txID][] that created the 
-blockchain on the Avalanche P-Chain.
+blockchain on the Avalanche [P-Chain][Multichain Architecture].
 These blockchain IDs require transformations to be used as conformant CAIP-2
 references.
 
@@ -129,6 +129,9 @@ avax:8AJTpRj3SAqv1e80Mtl9em08LhvKEbkl
 - [Fuji Testnet][] - Fuji Testnet in Avalanche official documentation
 - [Info API][] - Info API reference in Avalanche official documentation
 - [txID][] - Create Chain TX reference in Avalanche official documentation
+- [Multichain Architecture][] - Overview of P-Chain, X-Chain, and C-Chain system
+
+[Multichain Architecture]: https://docs.avax.network/learn/avalanche/avalanche-platform
 
 [CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
 [Fuji Testnet]: https://docs.avax.network/learn/avalanche/fuji
