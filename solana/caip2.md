@@ -34,7 +34,7 @@ The definition for this namespace will use the `genesisHash` as an identifier
 for different Solana chains. The method for calculating the chain ID is as
 follows with pseudo-code:
 
-```
+```bash
 truncate(genesisHash, 32)
 ```
 
@@ -72,7 +72,7 @@ Not applicable
 
 This is a list of manually composed examples
 
-```
+```bash
 # Solana Mainnet
 solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp
 
@@ -91,9 +91,6 @@ solana:4uhcVJyU9pJkvQyS88uRDiswHXSCkY3z
 - [Base58btc][] encoding "alphabet" (i.e. character-set)
 
 [CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
-[Address Lookup Table Proposal]: https://docs.solana.com/proposals/transactions-v2
-[Account Types]: https://docs.solana.com/terminology#account
-[Address Expressions]: https://docs.solana.com/cli/transfer-tokens#receive-tokens
 [Cluster]: https://docs.solana.com/clusters
 [RPC Endpoints]: https://docs.solana.com/cluster/rpc-endpoints
 [Solana core]: https://crates.io/crates/solana-program/
