@@ -4,10 +4,8 @@ title: Wallet Namespace - RPC namespaces
 author: "Vandan Parikh (@vandan)", "Bumblefudge (@bumblefudge)"
 discussions-to: <URL of PR, mailing list, etc>
 status: Draft
-type: <Standard | Meta | Informational>
-created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
-requires (*optional): <["CAIP-X", "CAIP-Y"]>
-replaces (*optional): <CAIP-Z>
+type: Informational
+created: 2024-07-16
 ---
 
 *For context, see the [CAIP-2][] specification.*
