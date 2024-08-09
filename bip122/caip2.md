@@ -1,12 +1,12 @@
 ---
 namespace-identifier: bip122-caip2
 title: BIP122 Namespace - Chains
-author: Simon Warta (@webmaster128), ligi <ligi@ligi.de>, Pedro Gomes (@pedrouid)
+author: Simon Warta (@webmaster128), ligi <ligi@ligi.de>, Pedro Gomes (@pedrouid), RareData (@RareData)
 discussions-to: https://github.com/ChainAgnostic/namespaces/pulls/3
 status: Draft
 type: Standard
 created: 2019-12-05
-updated: 2022-03-27
+updated: 2024-08-09
 requires: CAIP-2
 replaces: CAIP-4
 ---
@@ -60,11 +60,20 @@ This is a list of manually composed examples:
 # Bitcoin mainnet (see [chain ID section of BIP122](https://github.com/bitcoin/bips/blob/master/bip-0122.mediawiki#definition-of-chain-id))
 bip122:000000000019d6689c085ae165831e93
 
-# Litecoin
+# Litecoin mainnet
 bip122:12a765e31ffd4059bada1e25190f6e98
 
-# Feathercoin (Litecoin fork)
-bip122:fdbe99b90c90bae7505796461471d89a
+# Dogecoin mainnet
+bip122:1a91e3dace36e2be3bf030a65679fe821
+
+# Bitcoin testnet
+bip122:000000000933ea01ad0ee984209779ba
+
+# Litecoin testnet
+bip122:4966625a4b2851d9fdee139e56211a0d
+
+# Dogecoin testnet
+bip122:bb0a78264637406b6360aad926284d54
 ```
 
 ## References
