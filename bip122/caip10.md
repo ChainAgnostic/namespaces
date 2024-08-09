@@ -45,16 +45,6 @@ Rough validation for other networks can be achieved by updating the prefixes in 
 
 For more precise validation, it is recommended to first detect the type from the prefix as mentioned above, then compute the type-specific checksum as specified in the corresponding Bitcoin Improvement Proposals linked above (taking into account that networks other than Bitcoin mainnet use different literals, affecting not just the prefixes but also the checksum algorithms).
 
-### Decorators
-
-In the Bitcoin development community, certain user experience conventions have arisen that can be opted into by applications and wallets, yet are, strictly speaking, not part of the bitcoin protocol and leave no on-chain artefacts in transaction history.
-By analogy to web standards, these are best designated with "fragment identifier" of the sort specified in the [URL standard][RFC-1738] (i.e., a `#parameter` suffix on the URI), which might be meaningful or useful to clients but are not native to the underlying URL protocol and are traditionally omitted when sent over the wire for resolution.
-
-For example, some wallets segregate Ordinals from regular native-currency balance by receiving them in a dedicated address, to avoid an Ordinal being counted towards spendable balance, or being included unwittingly as an input to a regular (non-Ordinal) transaction.
-In this case, the matrix parameter `#ordinal` could be added to communicate to a counterparty that the preceding address has been specifically earmarked for receiving only Ordinal-marked Satoshis and not for general use.
-Conversely, Ordinal-aware wallets might mark the other side of this segregation by explicitly marking an address as a `#payment` address.
-A client unaware of this convention could, of course, ignore or drop these matrix parameters and treat both as addresses capable of payments, and developers are advised not to assume Ordinals-awareness in a given wallet just because it uses the CAIP-10 standard or a CAIP-10-aware library.
-
 ### Backwards Compatibility
 
 Previously, the legacy CAIP-10 schema was defined by appending as suffix the
@@ -73,8 +63,8 @@ bip122:000000000019d6689c085ae165831e93:35PBEaofpUeH8VnnNSorM1QZsadrZoQp4N
 # Bitcoin mainnet, Native SegWit address (P2WPKH)
 bip122:000000000019d6689c085ae165831e93:bc1qwz2lhc40s8ty3l5jg3plpve3y3l82x9l42q7fk
 
-# Bitcoin mainnet, Taproot address with Ordinals decorator
-bip122:000000000019d6689c085ae165831e93:bc1pmzfrwwndsqmk5yh69yjr5lfgfg4ev8c0tsc06e#ordinal
+# Bitcoin mainnet, Taproot address
+bip122:000000000019d6689c085ae165831e93:bc1pmzfrwwndsqmk5yh69yjr5lfgfg4ev8c0tsc06e
 
 # Bitcoin testnet, Native SegWit address (P2WPKH)
 bip122:000000000933ea01ad0ee984209779ba:tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7
@@ -111,7 +101,6 @@ bip122:4966625a4b2851d9fdee139e56211a0d:tltc1qlustmw64lgd744h45n0t07wxnxw8pmv2sv
 [BIP350]: https://github.com/bitcoin/bips/blob/master/bip-0350.mediawiki
 [bitcoin whitepaper]: https://www.ussc.gov/sites/default/files/pdf/training/annual-national-training-seminar/2018/Emerging_Tech_Bitcoin_Crypto.pdf
 [CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md
-[RFC-1738]: https://www.rfc-editor.org/rfc/rfc1738
 
 ## Rights
 
