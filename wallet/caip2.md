@@ -1,7 +1,7 @@
 ---
 namespace-identifier: wallet-caip2
 title: Wallet Namespace - RPC namespaces
-author: ["Vandan Parikh (@vandan)", "Bumblefudge (@bumblefudge)"]
+author: "Vandan Parikh (@vandan)", "Bumblefudge (@bumblefudge)"
 discussions-to: <URL of PR, mailing list, etc>
 status: Draft
 type: <Standard | Meta | Informational>
