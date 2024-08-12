@@ -15,7 +15,9 @@ _For context, see the [CAIP-2][] specification._
 
 ## Rationale
 
-Conflux network(core space) consists of 2 networks: main network and testing network. The private network can also be created , Each network has a unique network ID that can be used to identify it.
+Conflux network(core space) consists of 2 networks: main network and testing network.
+Private networks can also be created.
+Each network has a unique network ID that can be used to identify it.
 
 ## Syntax
 
@@ -59,7 +61,7 @@ https://main.confluxrpc.com
 
 ```
 
-The response will return a JSON object which will include node status and the `networkId` defined value is the hex encoded network ID of the current chain.
+The response will return a JSON object which will include node status and the `networkId`, encoded in hexadecimal, of the current chain.
 
 ## Test Cases
 
