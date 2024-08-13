@@ -17,7 +17,9 @@ _For context, see the [CAIP-2][] specification._
 
 Conflux network(core space) consists of 2 networks: main network and testing network.
 Private networks can also be created.
-Each network has a unique network ID that can be used to identify it.
+
+The main network has a network ID of 1029, represented by `cfx`. The test network has a network ID of 1, represented by `cfxtest`. Private networks are represented by `net[network ID]`.
+
 
 ## Syntax
 
@@ -25,7 +27,7 @@ A network id in the Conflux core space is defined as an unsigned integer ranging
 
 ### Resolution Mechanics
 
-To resolve the a network reference for a conflux network, POST a JSON-RPC request to the RPC endpoint of the blockchain node with path / ,for example:
+To resolve the a network reference for a conflux network, POST a JSON-RPC request to the RPC endpoint of the blockchain node with path / for example:
 
 ```jsonc
 // request
@@ -67,13 +69,13 @@ The response will return a JSON object which will include node status and the `n
 
 ```
 # conflux mainnet
-conflux:1029
+conflux:cfx
 
 # conflux testnet
-conflux:1
+conflux:cfxtest
 
 # private network
-conflux:2024
+conflux:net2024
 
 ```
 
@@ -83,7 +85,7 @@ conflux:2024
 - [Conflux core space Docs][] The Conflux Core Space Docs
 - [Conflux core space RPC endpoint][] Public available Conflux Core Space network RPC endpoints
 
-[CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
+[CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
 [Conflux core space Docs]: https://doc.confluxnetwork.org/docs/core/Overview
 [Conflux core space RPC endpoint]: https://doc.confluxnetwork.org/docs/core/conflux_rpcs
 
