@@ -25,7 +25,7 @@ The hex address is a concatenation of a 4-bit type indicator and the rightmost 1
 The syntax of Conflux addresses:
 
 ```
-caip10-like address:    namespace + ":" networkId + ":" + address
+caip10-like address:    namespace + ":" + address
 namespace:              conflux
 address:                conflux address represented as a base32 encoded string
 ```
