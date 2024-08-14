@@ -21,7 +21,7 @@ into distinct groups. The blockchain id includes both the network id
 and the group information.
 
 Each transaction has an origin and destination group. All transactions
-from by addressses in group `G1` to addresses in group `G2` will be
+from by addresses in group `G1` to addresses in group `G2` will be
 included in chain `G1 -> G2`. If there are `G` groups on Alephium,
 there will be `G`*`G` chains inside of it. In Alephium, groups are
 like cities and chains are like roads connecting them.

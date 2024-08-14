@@ -17,7 +17,7 @@ blockchains of the Alephium ecosystem.
 Alephium uses the stateful UTXO model where assets are managed by
 UTXOs while contract states are managed using account-based
 model. Alephium is also a sharded blockchain, its state is divided
-into groups, with seperate chains responsible for processing
+into groups, with separate chains responsible for processing
 transactions from one group to another. Alephium's mainnet currently
 has 4 groups and 16 blockchains, more groups and blockchains can be
 added to increase the throughput.
