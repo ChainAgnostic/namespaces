@@ -57,15 +57,14 @@ compatible with the reference syntax defined above.
 This is a list of manually composed examples:
 
 ```
-# Bitcoin mainnet (see [chain ID section of BIP122](https://github.com/bitcoin/bips/blob/master/bip-0122.mediawiki#definition-of-chain-id))
+# Bitcoin mainnet (see https://github.com/bitcoin/bips/blob/master/bip-0122.mediawiki#definition-of-chain-id)
 bip122:000000000019d6689c085ae165831e93
+
+# Bitcoin Cash mainnet (forked from Bitcoin mainnet after block 478560, with "genesis" hash of 000000000000000000b15ad892af8f6aca4462d46d0b6e5884cadc033c8f257b)
+bip122:000000000000000000b15ad892af8f6a
 
 # Litecoin mainnet
 bip122:12a765e31ffd4059bada1e25190f6e98
-
-# Bitcoin Cash (forked from Bitcoin Mainnet after block 478560, with "genesis" hash of
-# 000000000000000000b15ad892af8f6aca4462d46d0b6e5884cadc033c8f257b )
-bip122:000000000000000000b15ad892af8f6a
 
 # Dogecoin mainnet
 bip122:1a91e3dace36e2be3bf030a65679fe821
