@@ -101,7 +101,7 @@ As the Ethereum namespace evolved, user-agents that connect to dapps through an 
 [ERC-4361]: https://eips.ethereum.org/EIPS/eip-4361
 [EIP-1193]: https://eips.ethereum.org/EIPS/eip-1193
 [EIP-155]: https://eips.ethereum.org/EIPS/eip-155
-[EIP-55]: https://eips.ethereum.org/EIPS/eip-55
+[ERC-55]: https://eips.ethereum.org/EIPS/eip-55
 [ERC-20]: https://eips.ethereum.org/EIPS/eip-20
 [ERC-721]: https://eips.ethereum.org/EIPS/eip-721
 [postel]: https://www.rfc-editor.org/rfc/rfc760#section-3.2
