@@ -6,7 +6,7 @@ discussions-to: https://github.com/ChainAgnostic/namespaces/pulls/3
 status: Draft
 type: Standard
 created: 2019-12-05
-updated: 2024-08-09
+updated: 2024-08-17
 requires: CAIP-2
 replaces: CAIP-4
 ---
@@ -60,8 +60,8 @@ This is a list of manually composed examples:
 # Bitcoin mainnet (see https://github.com/bitcoin/bips/blob/master/bip-0122.mediawiki#definition-of-chain-id)
 bip122:000000000019d6689c085ae165831e93
 
-# Bitcoin Cash mainnet (forked from Bitcoin mainnet after block 478560, with "genesis" hash of 000000000000000000b15ad892af8f6aca4462d46d0b6e5884cadc033c8f257b)
-bip122:000000000000000000b15ad892af8f6a
+# Bitcoin Cash mainnet (forked from Bitcoin mainnet, the first Bitcoin Cash block is 478559)
+bip122:000000000000000000651ef99cb9fcbe
 
 # Litecoin mainnet
 bip122:12a765e31ffd4059bada1e25190f6e98
