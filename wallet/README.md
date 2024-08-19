@@ -1,7 +1,7 @@
 ---
 namespace-identifier: wallet
 title: Wallet Namespace
-author: ["Vandan Parikh (@vandan)", "Bumblefudge (@bumblefudge)"]
+author: "Vandan Parikh (@vandan)", "Bumblefudge (@bumblefudge)"
 status: Draft
 type: Informational
 created: 2024-07-16

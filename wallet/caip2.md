@@ -2,7 +2,7 @@
 namespace-identifier: wallet-caip2
 title: Wallet Namespace - RPC namespaces
 author: "Vandan Parikh (@vandan)", "Bumblefudge (@bumblefudge)"
-discussions-to: <URL of PR, mailing list, etc>
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/119
 status: Draft
 type: Informational
 created: 2024-07-16
