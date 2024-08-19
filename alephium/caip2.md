@@ -47,7 +47,6 @@ The `chain_id` is a case-insensitive string in the form
 
 ```
 chain_id:    alephium + ":" + group + "_" + network_id
-chain_id:    alephium + ":" + network_id + "/" + group
 network_id:  mainnet, testnet or devnet
 group:       0, 1, 2, 3 or -1
 ```
