@@ -1,7 +1,8 @@
 ---
 namespace-identifier: wallet
 title: Wallet Namespace
-author: ["Vandan Parikh (@vandan)", "Bumblefudge (@bumblefudge)"]
+author: Vandan Parikh (@vandan), Bumblefudge (@bumblefudge)
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/119
 status: Draft
 type: Informational
 created: 2024-07-16
