@@ -22,10 +22,8 @@ Unique network IDs can be self-registered in the [ethereum-lists/chains][] regis
 
 ## Syntax
 
-For reference, The format of reference currently specified in EIP155 is an unsigned integer in decimal representation.
-Due to length restrictions of the reference field (32 characters), the largest supported `CHAIN_ID` at time of
-writing is `99999999999999999999999999999999`.
-
+For reference, The format of reference currently specified in EIP155 is an unsigned integer of type UINT256, which is 64 characters long in hexadecimal notation.
+That said, the longest `chainId` registered in the registry is 15 characters long, and compatibility with major wallets and common tooling in the Ethereum ecosystem is endangered when `chainId`s exceed 55 bits, so implementers are encouraged to observe the much shorter profile defined in [EIP-2294](https://ethereum-magicians.org/t/eip-2294-explicit-bound-to-chain-id/11090/14) in contexts where longer chainIds need to be supported.
 
 ### Resolution Method
 
