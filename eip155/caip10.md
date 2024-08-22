@@ -45,7 +45,7 @@ The `chain_id` string will be ammended as follows:
 ```
 chain_id:    namespace + ":" + network_id + ":" + reference
 namespace:   [-a-z0-9]{3,8}
-network_id:    [0-9]{1,19}
+network_id:    [0-9]{1,64}
 reference:   0x[a-fA-F0-9]{1,40}
 ```
 
