@@ -2,7 +2,7 @@
 namespace-identifier: conflux-caip2
 title: Conflux Namespace - Chains
 author: iosh (@iosh)
-discussions-to: <URL of PR, mailing list, etc>
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/124
 status: Draft
 type: Standard
 created: 2024-08-09
@@ -83,7 +83,7 @@ conflux:net2024
 
 - [CAIP-2][]
 - [Conflux core space Docs][] The Conflux Core Space Docs
-- [Conflux core space RPC endpoint][] Public available Conflux Core Space network RPC endpoints
+- [Conflux core space RPC endpoint][] Publicly available Conflux Core Space network RPC endpoints
 
 [CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
 [Conflux core space Docs]: https://doc.confluxnetwork.org/docs/core/Overview

@@ -23,8 +23,8 @@ The Conflux core space hex address is a concatenation of a 4-bit type indicator 
 There are currently three types of indicators:
 
 (0x)1: Represents the address of an EOA account.
-(0x)8: Represents the address of a contract
-(0x)0: Represents the address of an internal contract,
+(0x)8: Represents the address of a contract.
+(0x)0: Represents the address of an internal contract.
 
 Constructing an address:
 

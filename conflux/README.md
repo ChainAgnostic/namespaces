@@ -9,7 +9,7 @@ created: 2024-08-09
 
 # Namespace for Conflux Network blockchains
 
-This document defines the applicability of CAIP schemes to the blockchain of the Conflux network(core space) ecosystem.
+This document defines the applicability of CAIP schemes to the blockchain of the Conflux network (core space) ecosystem.
 
 ## Syntax
 
