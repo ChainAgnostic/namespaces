@@ -17,23 +17,17 @@ replaces: CAIP-3
 
 ## Rationale
 
-The chain ID defined in EIP155 is the most widely used chain identifier in the
-Ethereum ecosystem known to the authors. It optimizes for uniqueness and its
-usage for replay protection has helped it achieve wide adoption. Unique network
-IDs can be self-registered in the [ethereum-lists/chains][] registry.
+The chain ID defined in EIP155 is the most widely used chain identifier in the Ethereum ecosystem known to the authors. It optimizes for uniqueness and its usage for replay protection has helped it achieve wide adoption. 
+Unique network IDs can be self-registered in the [ethereum-lists/chains][] registry.
 
 ## Syntax
 
-For reference, The format of reference currently specified in EIP155 is an
-unsigned integer in decimal representation. Due to length restrictions of the
-reference field (32 characters), the largest supported `CHAIN_ID` at time of
-writing is `99999999999999999999999999999999`.
-
+For reference, The format of reference currently specified in EIP155 is an unsigned integer of type UINT256, which is 64 characters long in hexadecimal notation.
+That said, the longest `chainId` registered in the registry is 15 characters long, and compatibility with major wallets and common tooling in the Ethereum ecosystem is endangered when `chainId`s exceed 55 bits, so implementers are encouraged to observe the much shorter profile defined in [EIP-2294](https://ethereum-magicians.org/t/eip-2294-explicit-bound-to-chain-id/11090/14) in contexts where longer chainIds need to be supported.
 
 ### Resolution Method
 
-To resolve a blockchain reference for the EIP155 namespace, make a JSON-RPC
-request to a blockchain node with method `eth_chainId`, for example:
+To resolve a blockchain reference for the EIP155 namespace, make a JSON-RPC request to a blockchain node with method `eth_chainId`, for example:
 
 ```
 // Request
@@ -52,8 +46,7 @@ request to a blockchain node with method `eth_chainId`, for example:
 }
 ```
 
-The response will return a base-16-encoded integer that should be converted to
-base 10 to format an EIP155-compatible blockchain reference.
+The response will return a base-16-encoded integer that should be converted to base 10 to format an EIP155-compatible blockchain reference.
 
 ## Test Cases
 

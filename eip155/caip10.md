@@ -44,9 +44,9 @@ The `chain_id` string will be ammended as follows:
 
 ```
 chain_id:    namespace + ":" + network_id + ":" + reference
-network_id:    [0-9]{1,19}
 namespace:   [-a-z0-9]{3,8}
-reference:   0x[a-fA-F0-9]{1,32}
+network_id:    [0-9]{1,64}
+reference:   0x[a-fA-F0-9]{40}
 ```
 
 ### Backwards Compatibility
@@ -91,7 +91,7 @@ As the Ethereum namespace evolved, user-agents that connect to dapps through an 
 - [ERC-20][]: Basic [aka Fungible] Token Standard
 - [ERC-721][]: Non-Fungible Token Standard
 
-[Chainid.network]: https://github.com/ethereum-lists/chains
+[ethereum-lists/chains]: https://github.com/ethereum-lists/chains
 [CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
 [CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md
 [CAIP-19]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-19.md
