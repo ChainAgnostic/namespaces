@@ -33,7 +33,7 @@ Note that a given address cannot be assumed to work on all current and future ne
 ## Syntax
 
 Ethereum addresses were, historically, case-insensitive and normalized to use all-lowercase letters (`abcdef`) like most hexadecimal numeric types.
-With the ratification of [ERC-55][], however, a particular normalization of lowercase- and uppercase- `abcdefABCDEF` characters was invented as an efficient form of checksum.
+With the ratification of [EIP-55][], however, a particular normalization of lowercase- and uppercase- `abcdefABCDEF` characters was invented as an efficient form of checksum.
 Most implementations will still accept lowercase addresses but produce only checksum-case addresses, as many transaction-builders will validate not just against a regular expression but also against an EIP-55 checksum.
 Anywhere ["Postel's Law"][postel] can apply, implementers SHOULD produce checksum-case secure addresses (whether in CAIP-10 or native format), and SHOULD accept both checksum case and legacy lowercase addresses, except where the security concerns of the particular usecase outweigh interoperability.
 See [EIP-55][] for specification.
@@ -101,7 +101,7 @@ As the Ethereum namespace evolved, user-agents that connect to dapps through an 
 [ERC-4361]: https://eips.ethereum.org/EIPS/eip-4361
 [EIP-1193]: https://eips.ethereum.org/EIPS/eip-1193
 [EIP-155]: https://eips.ethereum.org/EIPS/eip-155
-[ERC-55]: https://eips.ethereum.org/EIPS/eip-55
+[EIP-55]: https://eips.ethereum.org/EIPS/eip-55
 [ERC-20]: https://eips.ethereum.org/EIPS/eip-20
 [ERC-721]: https://eips.ethereum.org/EIPS/eip-721
 [postel]: https://www.rfc-editor.org/rfc/rfc760#section-3.2
