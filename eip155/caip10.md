@@ -91,7 +91,7 @@ As the Ethereum namespace evolved, user-agents that connect to dapps through an 
 - [ERC-20][]: Basic [aka Fungible] Token Standard
 - [ERC-721][]: Non-Fungible Token Standard
 
-[Chainid.network]: https://github.com/ethereum-lists/chains
+[ethereum-lists/chains]: https://github.com/ethereum-lists/chains
 [CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
 [CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md
 [CAIP-19]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-19.md
