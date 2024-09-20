@@ -2,7 +2,7 @@
 namespace-identifier: aleo-caip2
 title: Aleo Network - Namespace Chains
 author: Jonathan Gonzalez (@jonandgon, jonathan@puzzle.online)
-discussions-to: <URL of PR, mailing list, etc>
+discussions-to: https://discord.com/invite/puzzlearcade
 status: Draft
 type: Standard
 created: 2023-09-12
@@ -26,14 +26,14 @@ replaces (*optional): <CAIP-2>
 
 The namespace `aleo` refers to the Aleo Network Layer 1 blockchain.
 
-To date, Aleo consists of a single network: a testnet network (Testnet3).
+To date, Aleo consists of a single network: a testnet network (Testnet).
 
 An identifier for a Aleo chain consists of the namespace prefix "aleo:" followed by the chain id.
 
 ## Syntax
 
 The Aleo chain ID system maps between a human-readabe string (used to discriminate networks in the paths of [node endpoints][], for example) and an unsigned 16-bit binary integer, known colloquially as an "`u16` number", ranging from 0 to 65535 which is used internally.
-For example, at time or writing, the u16 number `3` maps to `testnet3` and `0` will map to `mainnet` once the latter has been released. 
+For example, at time or writing, the u16 number `1` maps to `testnet` and `0` will map to `mainnet` once the latter has been released. 
 The canonical location of the mapping of u16 integers to network name strings is still to be determined by the community, but in the case of conflicts between the community documentation and this document, the former should be taken as canonical. 
 
 ### Backwards Compatibility
@@ -45,29 +45,28 @@ n/a
 To resolve a reference for the Aleo namespace, get the latest block information from the chain you are interested in from an Aleo API node. An example using Javascript:
 
 ```env
-fetch('https://api.explorer.aleo.org/v1/testnet3/latest/block')
+fetch('https://api.explorer.provable.com/v1/mainnet/latest/block')
   .then(response => response.json())
   .then(response => console.log(response.header.metadata.network))
 ```
 
-will log `3`.
+will log `0`.
 
 ## Test Cases
 
 This is a manually composed example.
 
 ```env
-# Aleo Testnet3
-aleo:3
+# Aleo Testnet
+aleo:1
 
-# Aleo mainnet
+# Aleo Mainnet
 aleo:0
 ```
 
 ## Additional Considerations (*OPTIONAL)
 
-Mainnet will release sometime Q1 2024. 
-The API is subject to change and the example above (particularly other properties) may become inaccurate over time.
+Testnet3 has been deprecated and shut down in favor of Testnet.
 
 ## References
 <!--Links to external resources that help understanding the CAIP better. This can e.g. be links to existing implementations.-->
