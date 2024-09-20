@@ -2,7 +2,7 @@
 namespace-identifier: aleo-caip10
 title: Aleo Network - Namespace Accounts
 author: Jonathan Gonzalez (@jonandgon, jonathan@puzzle.online)
-discussions-to: <URL of PR, mailing list, etc>
+discussions-to: https://discord.com/invite/puzzlearcade
 status: Draft
 type: Standard
 created: 2023-09-12
@@ -42,8 +42,8 @@ A regular expression for validating an Aleo address can be defined as:
 ## Test Cases
 
 ```env
-# Aleo Testnet3
-aleo:3:aleo1ml2xr6fawppd6uaf8gn95uy2fpqqg8gk74k0lu8na7uvayk64v8qu8hw5u
+# Aleo Testnet
+aleo:1:aleo1ml2xr6fawppd6uaf8gn95uy2fpqqg8gk74k0lu8na7uvayk64v8qu8hw5u
 
 # Aleo Mainnet
 aleo:0:aleo1ml2xr6fawppd6uaf8gn95uy2fpqqg8gk74k0lu8na7uvayk64v8qu8hw5u
@@ -51,9 +51,7 @@ aleo:0:aleo1ml2xr6fawppd6uaf8gn95uy2fpqqg8gk74k0lu8na7uvayk64v8qu8hw5u
 
 ## Additional Considerations (*OPTIONAL)
 
-Account addresses / keys are chain-agnostic.
-
-Mainnet will release sometime at the end of 2023 / beginning of 2024. The API is subject to change.
+Account addresses / keys are chain-agnostic. Signatures, however, are NOT chain agnostic. 
 
 ## References
 <!--Links to external resources that help understanding the CAIP better. This can e.g. be links to existing implementations.-->
