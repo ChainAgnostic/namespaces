@@ -2,7 +2,7 @@
 namespace-identifier: partisia-caip2
 title: Partisia Blockchain - Networks
 author: Partisia Blockchain Foundation
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/XX
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/130
 status: Draft
 type: Standard
 created: 2024-10-22
