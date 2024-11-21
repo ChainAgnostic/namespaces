@@ -38,8 +38,8 @@ chain id of the particular network.
 ## Syntax
 
 The chain id of Partisia Blockchain is a human-readable identifier of the particular chain. Due to
-the character limitations of CAIP-2 all characters that are not allowed in the specification (
-`[^a-zA-Z0-9]`) are replaced with `_`.
+the character limitations of CAIP-2, all characters that are not allowed in the CAIP-2 characterset (i.e.,
+`[^-_a-zA-Z0-9]`) are replaced with `_`.
 
 ### Resolution Mechanics
 
@@ -59,7 +59,7 @@ curl -s https://reader.partisiablockchain.com/blockchain/chainId
 }
 ```
 
-To convert this to a valid CAIP-2 identifier one need to replace any characters not allowed by the
+To convert this to a valid CAIP-2 identifier one need only replace any characters not allowed by the
 specification and prefix with the namespace.
 
 An example of the conversion using curl and jq:
