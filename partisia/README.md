@@ -5,7 +5,7 @@ author: Partisia Blockchain Foundation
 status: Draft
 type: Informational
 created: 2024-10-22
-requires: [ "CAIP-2" ]
+requires: CAIP-2
 ---
 
 # Namespace for Partisia Blockchains
