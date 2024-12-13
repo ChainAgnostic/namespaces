@@ -2,7 +2,7 @@
 namespace-identifier: aleo-caip2
 title: Aleo Network - Namespace Chains
 author: Jonathan Gonzalez (@jonandgon, jonathan@puzzle.online)
-discussions-to: https://discord.com/invite/puzzlearcade
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/129
 status: Draft
 type: Standard
 created: 2023-09-12
@@ -25,8 +25,6 @@ replaces (*optional): <CAIP-2>
 ## Rationale
 
 The namespace `aleo` refers to the Aleo Network Layer 1 blockchain.
-
-To date, Aleo consists of a single network: a testnet network (Testnet).
 
 An identifier for a Aleo chain consists of the namespace prefix "aleo:" followed by the chain id.
 
