@@ -33,7 +33,7 @@ An identifier for a Aleo chain consists of the namespace prefix "aleo:" followed
 ## Syntax
 
 The Aleo chain ID system maps between a human-readabe string (used to discriminate networks in the paths of [node endpoints][], for example) and an unsigned 16-bit binary integer, known colloquially as an "`u16` number", ranging from 0 to 65535 which is used internally.
-For example, at time or writing, the u16 number `1` maps to `testnet` and `0` will map to `mainnet` once the latter has been released. 
+For example, at time or writing, the u16 number `1` maps to `testnet` and `0` maps to `mainnet`. 
 The canonical location of the mapping of u16 integers to network name strings is still to be determined by the community, but in the case of conflicts between the community documentation and this document, the former should be taken as canonical. 
 
 ### Backwards Compatibility
