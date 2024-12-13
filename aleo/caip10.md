@@ -2,7 +2,7 @@
 namespace-identifier: aleo-caip10
 title: Aleo Network - Namespace Accounts
 author: Jonathan Gonzalez (@jonandgon, jonathan@puzzle.online)
-discussions-to: https://discord.com/invite/puzzlearcade
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/129
 status: Draft
 type: Standard
 created: 2023-09-12
