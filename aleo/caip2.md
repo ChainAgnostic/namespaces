@@ -64,7 +64,7 @@ aleo:3
 aleo:0
 ```
 
-## Additional Considerations (*OPTIONAL)
+## Additional Considerations
 
 Mainnet will release sometime Q1 2024. 
 The API is subject to change and the example above (particularly other properties) may become inaccurate over time.
