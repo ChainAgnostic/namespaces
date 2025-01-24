@@ -32,11 +32,11 @@ Note that a given address cannot be assumed to work on all current and future ne
 
 ## Syntax
 
-Ethereum addresses were, historically, case-insensitive and normalized to use
-all-lowercase letters (`abcdef`) like most hexadecimal numeric types.  With the
-ratification of [EIP-55][], however, a particular normalization of lowercase- and
-uppercase- `abcdefABCDEF` characters was invented as an efficient form of
-checksum. See [EIP-55][] for specification.
+Ethereum addresses were, historically, case-insensitive and normalized to use all-lowercase letters (`abcdef`) like most hexadecimal numeric types.
+With the ratification of [EIP-55][], however, a particular normalization of lowercase- and uppercase- `abcdefABCDEF` characters was invented as an efficient form of checksum.
+Most implementations will still accept lowercase addresses but produce only checksum-case addresses, as many transaction-builders will validate not just against a regular expression but also against an EIP-55 checksum.
+Anywhere ["Postel's Law"][postel] can apply, implementers SHOULD produce checksum-case secure addresses (whether in CAIP-10 or native format), and SHOULD accept both checksum case and legacy lowercase addresses, except where the security concerns of the particular usecase outweigh interoperability.
+See [EIP-55][] for specification.
 
 The chain ID will be used to represent blockchain except special case of 0 as chainID to represent EOA.
 
@@ -44,9 +44,9 @@ The `chain_id` string will be ammended as follows:
 
 ```
 chain_id:    namespace + ":" + network_id + ":" + reference
-network_id:    [0-9]{1,19}
 namespace:   [-a-z0-9]{3,8}
-reference:   0x[a-fA-F0-9]{1,32}
+network_id:    [0-9]{1,64}
+reference:   0x[a-fA-F0-9]{40}
 ```
 
 ### Backwards Compatibility
@@ -91,7 +91,7 @@ As the Ethereum namespace evolved, user-agents that connect to dapps through an 
 - [ERC-20][]: Basic [aka Fungible] Token Standard
 - [ERC-721][]: Non-Fungible Token Standard
 
-[Chainid.network]: https://github.com/ethereum-lists/chains
+[ethereum-lists/chains]: https://github.com/ethereum-lists/chains
 [CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
 [CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md
 [CAIP-19]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-19.md
@@ -104,7 +104,7 @@ As the Ethereum namespace evolved, user-agents that connect to dapps through an 
 [EIP-55]: https://eips.ethereum.org/EIPS/eip-55
 [ERC-20]: https://eips.ethereum.org/EIPS/eip-20
 [ERC-721]: https://eips.ethereum.org/EIPS/eip-721
-
+[postel]: https://www.rfc-editor.org/rfc/rfc760#section-3.2
 
 ## Rights
 

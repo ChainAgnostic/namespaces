@@ -13,7 +13,7 @@ supersedes: CAIP-5
 
 # CAIP-2
 
-*For context, see the [CAIP-2][] specification.*
+*For context, see the [CAIP-2] specification.*
 
 ## Rationale
 
@@ -22,7 +22,7 @@ Cosmos chains consist of the namespace prefix `cosmos:` and a reference.
 Each reference is a `chain_id` derived from a hash of the entire contents of the
 genesis file used to initiate (or re-initiate) a Tendermint blockchain. This
 file consists of a JSON object, and thus the `chain_id` is a unique, JSON-compatible
-unicode string. For an example, see the [configuration objects][] section of the
+unicode string. For an example, see the [configuration objects] section of the
 Tendermint core specification.  It can be referenced directly or by its hash
 according to an algorithm defined below.  All nodes of any given network also
 return the string when queried for basic configuration information, as described
@@ -49,7 +49,7 @@ this is standardized at the Tendermint protocol level, not the broader Cosmos
 SDK level or its IBC coordination protocol.
 
 For more context on mutable `chain_id`s and so-called "state-dumps" across
-blockheight-resetting protocol upgrades, see [IBC#517][] and [clients][].
+blockheight-resetting protocol upgrades, see [IBC#517] and [clients].
 Addresses and state survive across such `chain_id`-modifying events, but since
 transactions targeting an older `chain_id` will not be executed by an upgraded
 network, cross-chain implementers are recommended to proceed with caution and to
@@ -176,13 +176,13 @@ cosmos:hashed-843d2fc87f40eeb9
 
 ## References
 
-- [ChainID tips][]: A useful thread on chainIDs on the Cosmos SDK github repo
-- [IOV Core TS][]: A reference implementation of the CAIP-2 section of this specification in the IOV Core SDK
-- [configuration objects][]: Tendermint core requires each chain have a unit
+- [ChainID tips]: A useful thread on chainIDs on the Cosmos SDK github repo
+- [IOV Core TS]: A reference implementation of the CAIP-2 section of this specification in the IOV Core SDK
+- [configuration objects]: Tendermint core requires each chain have a unit
       genesis block and genesis block timestamp, and derives a chain ID
       (`chain_id` in their semantics) deterministically from those values; these
 - [IBC]: The Inter Blockchain Communication Protocol is used to enable bridges and multi-chain compatibility between Tendermint chains
-- [channels][]: The Inter-Blockchain Communication protocol establishes
+- [channels]: The Inter-Blockchain Communication protocol establishes
       persistent "channels" between the clients of independent Cosmos-based
       blockchains; these can maintain state for assets across two chains like a
       bridged asset or smart contract.
@@ -191,7 +191,7 @@ cosmos:hashed-843d2fc87f40eeb9
       and networks; these are equivalent to BIPs, EIPs, and CAIPs.
 - [IBC#517]: A GitHub thread containing a concise explanation of `chain_id` validation/constraints across Cosmos contexts 
 
-[addresses][]: https://docs.cosmos.network/v0.42/basics/accounts.html
+[addresses]: https://docs.cosmos.network/v0.42/basics/accounts.html
 [IBC#517]: https://github.com/cosmos/ibc/issues/517
 [IBC]: https://github.com/cosmos/ibc-go/blob/main/docs/ibc/overview.md
 [ICS]: https://github.com/cosmos/ibc
