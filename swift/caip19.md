@@ -24,8 +24,8 @@ The 3-letter codes are here capitalized, following the legacy convention.
 
 The template for validating these namespace is as follows:
 ```
-chain_id:    "swift:" + network_id + "/iso4217:" + currencycode
-network_id:  0 for off-network usage or TBD for specific SWIFT networks
+chain_id:       "swift:" + network_id + "/iso4217:" + currencycode
+network_id:     0 for off-network usage or TBD for specific SWIFT networks
 currencycode:   [A-Z]{3}
 ```
 
