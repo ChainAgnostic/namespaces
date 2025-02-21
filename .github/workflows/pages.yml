@@ -49,6 +49,10 @@ jobs:
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-artifact@v4
+        with:
+          name: "jekyll"
+          path: "${{ github.workspace }}/pages/"
+          retention-days: 1
 
   # Deployment job
   deploy:
