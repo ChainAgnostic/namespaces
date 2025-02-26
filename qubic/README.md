@@ -3,6 +3,7 @@ namespace-identifier: qubic
 title: Qubic Ecosystem
 author: Aleish (@aleishio)
 status: Draft
+discussions-to: https://github.com/ChainAgnostic/namespaces/issues/138
 type: Informational
 created: 2025-02-17
 ---
