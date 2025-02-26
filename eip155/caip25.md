@@ -40,6 +40,7 @@ Similarly, wherever possible, session properties should align closely with infor
 
 ### Example Request
 
+```json
 {
   "id": 1,
   "jsonrpc": "2.0",
@@ -76,6 +77,7 @@ Similarly, wherever possible, session properties should align closely with infor
     }         
   }
 }
+```
 
 ### Example Response
 
@@ -131,6 +133,8 @@ Similarly, wherever possible, session properties should align closely with infor
     }
   }
 }
+```
+
 ## References
 
 - [EIP155][]: Ethereum Improvement Proposal specifying generation and validation of ChainIDs
