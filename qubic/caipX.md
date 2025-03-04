@@ -30,16 +30,12 @@ The reference for the Qubic mainnet is defined as follows:
 
 - `qubic:mainnet`
 
-This designation ensures a clear and unambiguous reference to the Qubic mainnet.
-
 ### Testnet Consideration
 
 As of the creation date of this document, the Qubic blockchain operates solely on its mainnet.
 Should a testnet be introduced in the future, it will be assigned a distinct reference, such as:
 
 qubic:testnet
-
-This approach ensures clarity and separation between different network environments.
 
 ## Semantics
 
