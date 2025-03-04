@@ -17,7 +17,6 @@ It distinguishes itself by integrating Useful Proof of Work (UPoW), transforming
 
 Qubic employs a quorum-based system with 676 nodes, termed Computors, responsible for executing smart contracts and securing the network.
 A quorum of at least 451 Computors is required for consensus on major decisions, ensuring decentralized governance.
-The Arbitrator oversees AI training task assignments and dispute resolution without influencing smart contract execution or token distribution.
 
 ## References
 
