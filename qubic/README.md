@@ -13,15 +13,6 @@ created: 2025-02-17
 Qubic is a high-performance Layer 1 blockchain that offers instant finality, feeless transactions, and rapid smart contract execution.
 It distinguishes itself by integrating Useful Proof of Work (UPoW), transforming mining energy into artificial intelligence computations, thereby laying the groundwork for decentralized Artificial General Intelligence (AGI).
 
-## Rationale
-
-Traditional blockchain networks often grapple with issues like high transaction fees, delayed confirmations, and inefficient energy consumption.
-Qubic addresses these challenges through:
-
-- Feeless Transactions: Eliminating transaction fees to enable swift and cost-free transfers.
-- Instant Finality: Ensuring transaction confirmations and smart contract executions occur in less than a second.  ￼
-- Useful Proof of Work (UPoW): Repurposing mining energy for AI training tasks, enhancing energy efficiency and contributing to AI advancements.
-
 ## Governance
 
 Qubic employs a quorum-based system with 676 nodes, termed Computors, responsible for executing smart contracts and securing the network.
