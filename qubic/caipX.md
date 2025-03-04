@@ -15,7 +15,7 @@ This document is about the details of the Qubic network namespace and reference 
 
 ## Abstract
 
-In CAIP-2 a general blockchain identification scheme is defined.
+In [CAIP-2], a general blockchain identification scheme is defined.
 This is the implementation of CAIP-2 for Qubic network.
 
 ## Specification
@@ -61,7 +61,7 @@ To resolve and interact with the Qubic blockchain using this identifier, clients
 https://rpc.qubic.org
 
 This endpoint provides access to network statistics, smart contract interactions, and other blockchain-related data.
-Detailed API documentation is available at [Qubic RPC Documentation][1].
+Detailed API documentation is available at [Qubic RPC Documentation][RPC Docs].
 
 ## Backwards Compatibility
 
@@ -83,8 +83,10 @@ Future updates to the Qubic network, such as the introduction of additional netw
 
 ## References
 
-- [CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
-- [Qubic RPC Documentation][1]: https://qubic.github.io/integration/Partners/qubic-rpc-doc.html?urls.primaryName=Qubic%20RPC%20Archive%20Tree
+- [Qubic RPC Documentation][RPC Docs]
+
+[RPC Docs]: https://qubic.github.io/integration/Partners/qubic-rpc-doc.html?urls.primaryName=Qubic%20RPC%20Archive%20Tree
+[CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
 
 ## Copyright
 
