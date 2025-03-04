@@ -9,14 +9,15 @@ created: 2025-02-20
 requires: ["CAIP-2"]
 ---
 
-# CAIP-2: 
+# CAIP-2
 
 This document is about the details of the Qubic network namespace and reference for CAIP-2.
 
 ## Abstract
-In CAIP-2 a general blockchain identification scheme is defined. This is the
-implementation of CAIP-2 for Qubic network.
 
+In CAIP-2 a general blockchain identification scheme is defined.
+This is the
+implementation of CAIP-2 for Qubic network.
 
 ## Specification
 
@@ -34,7 +35,8 @@ This designation ensures a clear and unambiguous reference to the Qubic mainnet.
 
 ### Testnet Consideration
 
-As of the creation date of this document, the Qubic blockchain operates solely on its mainnet. Should a testnet be introduced in the future, it will be assigned a distinct reference, such as:
+As of the creation date of this document, the Qubic blockchain operates solely on its mainnet.
+Should a testnet be introduced in the future, it will be assigned a distinct reference, such as:
 
 qubic:testnet
 
@@ -59,11 +61,13 @@ To resolve and interact with the Qubic blockchain using this identifier, clients
 
 https://rpc.qubic.org
 
-This endpoint provides access to network statistics, smart contract interactions, and other blockchain-related data. Detailed API documentation is available at [Qubic RPC Documentation][1].
+This endpoint provides access to network statistics, smart contract interactions, and other blockchain-related data.
+Detailed API documentation is available at [Qubic RPC Documentation][1].
 
 ## Backwards Compatibility
 
-This is the initial definition of the Qubic namespace under the CAIP-2 standard. There are no previous versions or legacy identifiers associated with this specification.
+This is the initial definition of the Qubic namespace under the CAIP-2 standard. 
+There are no previous versions or legacy identifiers associated with this specification.
 
 ## Test Cases
 
