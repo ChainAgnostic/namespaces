@@ -16,8 +16,7 @@ This document is about the details of the Qubic network namespace and reference 
 ## Abstract
 
 In CAIP-2 a general blockchain identification scheme is defined.
-This is the
-implementation of CAIP-2 for Qubic network.
+This is the implementation of CAIP-2 for Qubic network.
 
 ## Specification
 
