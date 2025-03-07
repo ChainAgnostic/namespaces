@@ -15,8 +15,13 @@ It distinguishes itself by integrating Useful Proof of Work (UPoW), transforming
 
 ## Governance
 
-Qubic employs a quorum-based system with 676 nodes, termed Computors, responsible for executing smart contracts and securing the network.
-A quorum of at least 451 Computors is required for consensus on major decisions, ensuring decentralized governance.
+Qubic uses a quorum-based consensus system with 676 Computors (nodes) responsible for executing smart contracts, validating transactions, and securing the network. At least 451 Computors must agree to reach consensus, following a Byzantine Fault Tolerance (BFT) model that ensures resilience against malicious or faulty nodes.
+
+Governance applies specifically to changes in the node software and protocol, including updates to consensus rules, computation mechanisms, and economic adjustments. Governance does not directly cover RPC methods, addressability, or multichain compatibility, but protocol modifications may indirectly influence them.
+
+Proposed changes are discussed in the Computors-Operator channel on Discord, where Computors debate modifications before each epoch. An epoch occurs weekly, and approved changes are implemented at the start of the next epoch, ensuring structured and continuous updates to the network.
+
+Developers and Computors can follow governance discussions and decisions on Discord. You can find the invite link to Discord on the [Qubic Official Website][1].
 
 ## References
 
