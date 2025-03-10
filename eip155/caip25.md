@@ -78,7 +78,9 @@ See the example below, equivalent to the illustrative examples in [EIP-5792].
         "supported":"true"
       },
       "flow-control": {
-        "supported": "true"
+        "loose": [], 
+        "strict": [], 
+        "exoticThirdThing": [] //caller is requesting a configuration-set which the wallet will drop as unrecognized      
       }
     },
     "scopedProperties": {
@@ -134,7 +136,8 @@ See the example below, equivalent to the illustrative examples in [EIP-5792].
         "supported":"true"
       },
       "flow-control": {
-        "supported": "true"
+        "loose": ["halt", "continue"],
+        "strict": ["continue"]
       }
     },
     "scopedProperties": {
