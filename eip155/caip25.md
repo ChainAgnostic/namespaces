@@ -141,7 +141,7 @@ See the example below, equivalent to the illustrative examples in [EIP-5792].
       }
     },
     "scopedProperties": {
-      "84532": {
+      "eip155:84532": {
         "auxiliaryFunds": {
           "supported": false
         }
