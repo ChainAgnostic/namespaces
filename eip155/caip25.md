@@ -82,7 +82,9 @@ See the example below, equivalent to the illustrative examples in [EIP-5792].
         "strict": [], 
         "exoticThirdThing": [] //caller is requesting a configuration-set which the wallet will drop as unrecognized      
       },
-      "atomic": true
+      "atomic": {
+          "supported": true
+      }
     },
     "scopedProperties": {
       "eip155:8453": {
@@ -143,16 +145,22 @@ See the example below, equivalent to the illustrative examples in [EIP-5792].
     },
     "scopedProperties": {
       "eip155:1": {
-        "atomic": true
+        "atomic": {
+          "supported": true
+        }
       },
       "eip155:137": {
-        "atomic": true
+        "atomic": {
+          "supported": true
+        }
       },
       "eip155:84532": {
         "auxiliaryFunds": {
           "supported": false
         },
-        "atomic": false
+        "atomic": {
+          "supported": false
+        }
       }
 
     }
