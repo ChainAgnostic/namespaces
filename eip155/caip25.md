@@ -90,12 +90,14 @@ See the example below, equivalent to the illustrative examples in [EIP-5792].
         },
         "sessionKeys": {
           "supported": true
-        }
+        },
+        "atomic": true
       },
       "84532": {
         "auxiliaryFunds": {
           "supported": true
-        }
+        },
+        "atomic": false
       }
     }
   }
