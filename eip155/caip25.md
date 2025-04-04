@@ -144,7 +144,10 @@ See the example below, equivalent to the illustrative examples in [EIP-5792].
     "scopedProperties": {
       "eip155:1": {
         "atomic": true
-      }
+      },
+      "eip155:137": {
+        "atomic": true
+      },
       "eip155:84532": {
         "auxiliaryFunds": {
           "supported": false
