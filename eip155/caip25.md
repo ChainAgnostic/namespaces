@@ -74,6 +74,7 @@ See the example below, equivalent to the illustrative examples in [EIP-5792].
     },
     "sessionProperties": {
       "expiry": "2022-12-24T17:07:31+00:00",
+      //universal capabilities (across all eip155 chains and addresses) can sit at the top-level of sessionProperties
       "caip154": {
         "supported":"true"
       },
@@ -87,6 +88,7 @@ See the example below, equivalent to the illustrative examples in [EIP-5792].
       }
     },
     "scopedProperties": {
+      //chain-specific requests are made in scopedProperties per chain scope
       "eip155:8453": {
         "paymasterService": {
           "supported": true
@@ -123,7 +125,7 @@ See the example below, equivalent to the illustrative examples in [EIP-5792].
       "eip155:83532": {
         "methods": ["personal_sign"],
         "notifications": ["accountsChanged", "chainChanged"],
-        "accounts":["eip155:83532:0x0910e12C68d02B561a34569E1367c9AAb42bd810"]
+        "accounts":["eip155:83532:0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb", "eip155:83532:0x0910e12C68d02B561a34569E1367c9AAb42bd810"]
       },
       "wallet": {
         "methods": ["wallet_getPermissions", "wallet_switchEthereumChain", "wallet_getCapabilities"],
@@ -145,6 +147,7 @@ See the example below, equivalent to the illustrative examples in [EIP-5792].
     },
     "scopedProperties": {
       "eip155:1": {
+        //capabilities shared across all address in a namespace can be expressed at top-level
         "atomic": {
           "supported": true
         }
@@ -155,12 +158,16 @@ See the example below, equivalent to the illustrative examples in [EIP-5792].
         }
       },
       "eip155:84532": {
-        "auxiliaryFunds": {
-          "supported": false
-        },
-        "atomic": {
-          "supported": false
+        //address-specific capabilities namespaced by address
+        "eip155:83532:0x0910e12C68d02B561a34569E1367c9AAb42bd810": {
+          "auxiliaryFunds": {
+            "supported": false
+          },
+          "atomic": {
+            "supported": false
+          }
         }
+        //no need to respond with empty objects or declare implicit/default capabilities per-address, i.e. no empty capabilities object required for eip155:83532:0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb
       }
 
     }
