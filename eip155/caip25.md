@@ -35,8 +35,9 @@ No namespace-wide or network-specific session properties have yet been proposed 
 When crafting such properties for contextual/in-network usage, it is recommended to align one's semantics and syntax (including case-sensitive style guides for property names!) with the [EIP-6963] wallet provider interface (which extends the [EIP-1193] interface) for common properties across architectures, making sure to avoid any collisions.
 
 Similarly, wherever possible, session properties should align closely with information passed as JSON objects by `wallet_` RPC methods, like capabilities or permissions. 
-For example, the capability objects specified in [EIP-5792] get passed via the `wallet_getCapabilities` RPC method inside of partition objects keyed to the hexadecimal chainId when chain-specific, and inside of an object keyed `0x00` (following the chainId 0 convention; see the [`eip155`/caip2 profile](caip2)) when universal to the `eip155` namespace.
-Should an application request and a wallet choose to pre-declare at time of connection, both parties can put such objects in the appropriately-keyed `scopedProperties` partition for chain-specific capabilities and in the `sessionProperties` (unpartitioned) for `eip155`-wide capabilities.
+For example, the capability objects specified in [EIP-5792] get requested per-address via the `wallet_getCapabilities` RPC method, and the returned objects are partitioned by the hexadecimal chainId when chain-specific, and inside of an object keyed `0x00` (following the chainId 0 convention; see the [`eip155`/caip2 profile](caip2)) when universal to the `eip155` namespace.
+Should an application request these capabilities and a wallet choose to pre-declare at time of connection, both parties can put such objects in the appropriately-keyed `scopedProperties` partition for chain-specific capabilities and in the `sessionProperties` (unpartitioned) for `eip155`-wide capabilities;
+address-specific capabilities (or exceptions to override the capabilities of all other addresses in a given authorization scope) can be declared within address-keyed partitions.
 See the example below, equivalent to the illustrative examples in [EIP-5792].
 
 ## Examples
@@ -158,7 +159,10 @@ See the example below, equivalent to the illustrative examples in [EIP-5792].
         }
       },
       "eip155:84532": {
-        //address-specific capabilities namespaced by address
+        "atomic": {
+          "supported": true
+        },
+        //address-specific capabilities can be namespaced by address, and can include address-specific exceptions to scope-wide capabilities
         "eip155:83532:0x0910e12C68d02B561a34569E1367c9AAb42bd810": {
           "auxiliaryFunds": {
             "supported": false
