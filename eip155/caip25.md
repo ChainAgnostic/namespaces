@@ -85,7 +85,7 @@ See the example below, equivalent to the illustrative examples in [EIP-5792].
         "exoticThirdThing": [] //caller is requesting a configuration-set which the wallet will drop as unrecognized      
       },
       "atomic": {
-          "supported": true
+          "status": "supported"
       }
     },
     "scopedProperties": {
@@ -144,34 +144,34 @@ See the example below, equivalent to the illustrative examples in [EIP-5792].
       "flow-control": {
         "loose": ["halt", "continue"],
         "strict": ["continue"]
+      },
+      "atomic": {
+        "status":"ready"
       }
     },
     "scopedProperties": {
       "eip155:1": {
         //capabilities shared across all address in a namespace can be expressed at top-level
         "atomic": {
-          "supported": true
+          "status": "supported"
         }
       },
       "eip155:137": {
         "atomic": {
-          "supported": true
+          "status": "unsupported"
         }
       },
       "eip155:84532": {
-        "atomic": {
-          "supported": true
-        },
         //address-specific capabilities can be namespaced by address, and can include address-specific exceptions to scope-wide capabilities
         "eip155:83532:0x0910e12C68d02B561a34569E1367c9AAb42bd810": {
           "auxiliaryFunds": {
             "supported": false
           },
           "atomic": {
-            "supported": false
+            "status": "supported"
           }
         }
-        //no need to respond with empty objects or declare implicit/default capabilities per-address, i.e. no empty capabilities object required for eip155:83532:0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb
+        //no need to respond with empty objects or declare implicit/default capabilities per-address, i.e. no empty capabilities object required for eip155:83532:0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb to default to "ready"
       }
 
     }
