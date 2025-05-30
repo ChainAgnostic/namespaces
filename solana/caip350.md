@@ -26,11 +26,11 @@ The full base58btc-encoded genesis blockhash is used. This is larger than the CA
 
 ##### Text representation -> CAIP-2 conversion
 
-The leading 32 characters are used, and the rest discarded.
+The leading 32 characters are used, and the rest discarded, in a manner similar to what is specified on this namespace's CAIP-2 profile.
 
 ##### CAIP-2 - text representation conversion
 
-This transformation is not fully deterministic. It is assumed wallets and other software will be able to differentiate between chains with just the leading 32 base58btc-encoded characters, and use a lookup table of popular chains to complete the missing information to convert CAIP-2 identifiers to this standard.
+This transformation is not fully deterministic. It is assumed wallets and other software will be able to differentiate between chains with just the leading 32 base58btc-encoded characters, and use a lookup table of chains to complete the missing information to convert CAIP-2 identifiers to this standard.
 
 #### Binary representation
 
