@@ -1,6 +1,6 @@
 ---
 namespace-identifier: <CAIP-2 id>
-binary-key: <two bytes in RFC-4616 base16>
+binary-key: <two bytes in RFC-4616 base16 (no 0x-prefix)>
 title: <{namespace common name} [, aka ecosystem name]>
 discussions-to: <url of where to provide feedback of this spec>
 author: <["FirstName1 LastName1 (@GitHubUsername1)", "AnonHandle2 <foo2@bar.com>"]>
