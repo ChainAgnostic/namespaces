@@ -1,21 +1,32 @@
 ---
-namespace-identifier: <{name of folder}-caip{X}> where X = the CAIP being applied to this namespace 
-title: <{namespace common name} [, aka ecosystem name] - {common name for type of entity identified by Caip-X}>
+namespace-identifier: <{name of folder}-caip10>
+title: <{namespace common name} [, aka ecosystem name] - Account ID Specification>
 author: <["FirstName1 LastName1 (@GitHubUsername1)", "AnonHandle2 <foo2@bar.com>"]>
 discussions-to: <URL of PR, mailing list, etc>
 status: Draft
 type: Informational
 created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
-requires (*optional): <["CAIP-X", "CAIP-Y"]>
-replaces (*optional): <CAIP-Z>
+requires (*optional): CAIP-2, CAIP-10
 ---
 
-## Introduction
+<!--You can leave these HTML comments in your merged CAIP and delete the 
+ visible duplicate text guides, they will not appear and may be helpful to 
+ refer to if you edit it again. This is the suggested template for new CAIPs.
+ Note that an CAIP number will be assigned by an editor. When opening a pull
+ request to submit your EIP, please use an abbreviated title in the 
+ filename, `caipX.md`, all lowercase, no `-` between the CAIP and its 
+ number.-->
+
+# CAIP-10
+
+*For context, see the [CAIP-10][] specification.*
+
+## Introduction 
 
 <!--"If you can't explain it simply, you don't understand it well enough." 
-Provide a simplified and layman-accessible explanation of how CAIP X applies 
-to the relevant scheme used in this namespace (see other templates for a model).
-Caveats or mental model differences from equivalents in other namespaces 
+Provide a simplified and layman-accessible explanation of the identifier system 
+used in this namespace, i.e., the system for addressing actors and/or accounts.
+Caveats or mental model differences from other common ID systems 
 can be mentioned here upfront, but not implementation details like validation, 
 confirmation from a live connection.-->
 
@@ -25,20 +36,20 @@ confirmation from a live connection.-->
 
 <!-- Explain (and refer to/add links in the `## References` section) any inputs 
 or namespace-specific constructs needed to generate or interpret the valid 
-possible values of CAIP-X in this namespace. Assume your reader has already
-read any other CAIP profiles listed above in the "Requires" frontmatter field. -->
+possible values of a CAIP-10 in this namespace. Assume your reader has already
+read the CAIP-2 profile and understands how to form a valid CAIP-2 segment. -->
 
 ### Syntax
 
-<!-- Explain the actual algorithm or transformation needed to transform "inputs" 
-from the native development enviroment and context into a conformant and unique 
-CAIP-X token deterministically. Consider including (if applicable) a regular
+<!-- Explain the actual algorithm or transformation needed to transform inputs 
+(sometimes just a native address, other times additional context is needed) into
+a conformant and unique CAIP-10 deterministically.  Consider including a regular 
 expression for validation as well, as some consumers or toolmakers may want to
-support this CAIP-X scheme without a deep understanding of any specifications, 
+support this CAIP-10 scheme without a deep understanding of any specifications, 
 devdocs, or improvement proposals on which this specification depends. If there 
 are canonicalization guarantees, checksums, or other assumptions in the native
-format or protocol,  explain how they exist (or can be made to exist) in the 
-CAIP-X equivalent as well. -->
+format,  explain how they exist (or can be made to exist) in the CAIP-10 
+equivalent as well. -->
 
 ### Resolution Mechanics
 
@@ -53,14 +64,13 @@ validate the results, calculate checksums, persist session metadata or nonces,
 
 ## Rationale
 
-<!-- Explain here how the mapping or translation between native identifiers or 
-messages and CAIP-X identifiers or messages was arrived at, history and 
-pre-history, etc.-->
+<!-- Explain here how the mapping or translation between native identifiers and
+CAIP-10 identifiers was arrived at, history and pre-history, etc.-->
 
 ### Backwards Compatibility
 
 <!-- If earlier CAIPs or earlier stages in the governance of the namespace created
-legacy identifiers that break or extend the specification above, please add a
+legacy addresses that break or extend the specification above, please add a
 section for "Legacy" compatibility and an explanation of what contexts and/or
 what time-frames would require catching those cases.-->
 
