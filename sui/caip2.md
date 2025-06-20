@@ -15,7 +15,9 @@ _For context, see the [CAIP-2][] specification._
 
 ## Introduction
 
-The Sui namespace in CAIP-2 defines chain identifiers based on the **genesis checkpoint digest**, a cryptographically unique and immutable value derived from the first checkpoint of a Sui network. This ensures that identifiers are stable, verifiable, and unambiguous.
+The Sui namespace in CAIP-2 uses human-readable chain identifiers — such as `mainnet`, `testnet`, and `devnet` — to identify specific Sui networks. These identifiers are **stable**, **concise**, and **easy to communicate**, and can be resolved to a unique genesis checkpoint digest through a supported Sui RPC interface.
+
+This design provides both developer ergonomics and cryptographic assurance, allowing developers to work with simple names while still supporting verifiable chain identification.
 
 ## Specification
 
@@ -23,31 +25,31 @@ The Sui namespace in CAIP-2 defines chain identifiers based on the **genesis che
 
 A valid CAIP-2 identifier in the Sui namespace takes the form:
 
-```
-sui:<genesis_checkpoint_digest>
-```
+`sui:<network>`
 
-Where `<genesis_checkpoint_digest>` is the first 4 bytes (8 hex characters) of the network’s genesis checkpoint digest.
+Where `<network>` is one of the following reserved, stable identifiers:
+
+- `mainnet`
+- `testnet`
+- `devnet`
 
 ### Syntax
 
 #### Regular Expression
 
-```
-^sui:[0-9a-fA-F]{8}$
-```
+`^sui:(mainnet|testnet|devnet)$`
+
+Only these exact network identifiers are currently supported.
 
 #### Example
 
-```
-sui:35834a8a
-```
+`sui:mainnet`
 
 ### Resolution Mechanics
 
-To resolve a CAIP-2 chain identifier, clients query a trusted full node associated with the specified network. While the `suix_getChainIdentifier` JSON-RPC method is commonly used for this purpose, resolution is not limited to JSON-RPC. Other interfaces, such as GraphQL, may also support retrieving the corresponding genesis checkpoint digest.
+To resolve a CAIP-2 `sui:<network>` identifier into a unique chain identitier, clients typically query a trusted full node associated with the specified network. While the `suix_getChainIdentifier` JSON-RPC method is commonly used for this purpose, resolution is not limited to JSON-RPC. Other interfaces, such as GraphQL, may also support retrieving the corresponding genesis checkpoint digest.
 
-**Sample request:**
+**Sample request**
 
 ```json
 {
@@ -58,7 +60,7 @@ To resolve a CAIP-2 chain identifier, clients query a trusted full node associat
 }
 ```
 
-**Sample response:**
+**Sample response (for mainnet):**
 
 ```json
 {
@@ -68,15 +70,20 @@ To resolve a CAIP-2 chain identifier, clients query a trusted full node associat
 }
 ```
 
+The response returns the first four bytes of the genesis checkpoint digest for the network.
+
 ## Rationale
 
-This approach advocates for the exclusive use of unambiguous chain identifiers for identifying Sui chains in CAIP-2 format.
+This approach allows developers to use intuitive, readable CAIP-2 identifiers (e.g., `sui:mainnet`) while still achieving unambiguous and verifiable identification of the underlying chain through the genesis checkpoint digest.
 
-While human-readable identifiers like `sui:mainnet` or `sui:testnet` are intuitive, they are not stable over time. Networks like testnet and devnet may be reset by Sui maintainers, resulting in a new genesis state. When this happens, the associated digest changes, meaning the underlying chain is no longer the same, even if the CAIP-2 identifier remains unchanged.
+The separation of **stable identifiers** (e.g., `sui:testnet`) from the **unambiguous chain identifier** (e.g., the identifier returned by `suix_getChainIdentifier`) is particularly important because:
 
-Using the digest-based identifier directly avoids this ambiguity by ensuring all references point to a specific, verifiable chain instance. This eliminates reliance on potentially outdated or re-used labels and simplifies validation logic.
+- **`testnet` and `devnet` may be reset** by Sui maintainers, resulting in a new genesis state.
+- When this happens, the **genesis checkpoint digest changes**, meaning the underlying chain identifier is no longer the same.
+- If clients depended directly on the digest as the CAIP-2 identifier, each reset would break compatibility or require external coordination.
+- By resolving the digest dynamically via RPC, clients can ensure they’re talking to the correct chain, without needing to change the CAIP-2 identifier they rely on.
 
-By relying solely on unambiguous identifiers, we prioritize long-term compatibility, security, and correctness. This ensures that clients consistently interact with the intended chain, even as network environments evolve.
+This pattern balances human readability, forward compatibility, and security.
 
 ### Backwards Compatibility
 
@@ -86,27 +93,33 @@ There are no legacy identifiers or alternate forms for Sui chains.
 
 Below are manually composed examples:
 
-```
-# CAIP-2 Chain ID for Mainnet**
-sui:35834a8a
+#### Sui Mainnet
 
-# CAIP-2 Chain ID for Testnet**
-sui:4c78adac
+- **CAIP-2 Chain ID:** `sui:mainnet`
+- **Resolved Chain Identifier:** `35834a8a`
 
-# CAIP-2 Chain ID for Devnet**
-sui:aba3e445
-```
+#### Sui Testnet
+
+- **CAIP-2 Chain ID:** `sui:testnet`
+- **Resolved Chain Identifier:** `4c78adac` _(value depends on the current testnet)_
+
+#### Sui Devnet
+
+- **CAIP-2 Chain ID:** `sui:devnet`
+- **Resolved Chain Identifier:** `aba3e445` _(value depends on the current devnet)_
 
 ## References
 
 - [Sui Docs] - Developer documentation and concept overviews for building on Sui.
 - [Sui RPC] - Reference documentation for interacting with Sui networks via RPC.
 - [Sui GitHub] - Official GitHub repository for the Sui smart contract platform.
+- [Sui Network Info] - Information regarding Sui networks and their release schedules.
 - [CAIP-2] - Chain ID Specification.
 
 [Sui Docs]: https://docs.sui.io/
 [Sui RPC]: https://docs.sui.io/references/sui-api
 [Sui GitHub]: https://github.com/MystenLabs/sui
+[Sui Network Info]: https://sui.io/networkinfo
 [CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
 
 ## Copyright
