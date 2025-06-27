@@ -34,7 +34,11 @@ see the [eip155/caip211.md](./caip211.md) profile for further guidance on using 
 No namespace-wide or network-specific session properties have yet been proposed for standardization.
 When crafting such properties for contextual/in-network usage, it is recommended to align one's semantics and syntax (including case-sensitive style guides for property names!) with the [EIP-6963] wallet provider interface (which extends the [EIP-1193] interface) for common properties across architectures, making sure to avoid any collisions.
 
-Similarly, wherever possible, session properties should align closely with information passed as JSON objects by `wallet_` RPC methods, like capabilities or permissions. For example, the capability objects keyed to hexidecimal [EIP-155] `chainId`s defined as the expected return content of the `wallet_getCapabilities` method in [EIP-5792] should also be valid keyed the same way in `sessionProperties.capabilities`.
+Similarly, wherever possible, session properties should align closely with information passed as JSON objects by `wallet_` RPC methods, like capabilities or permissions. 
+For example, the capability objects specified in [EIP-5792] get requested per-address via the `wallet_getCapabilities` RPC method, and the returned objects are partitioned by the hexadecimal chainId when chain-specific, and inside of an object keyed `0x00` (following the chainId 0 convention; see the [`eip155`/caip2 profile](caip2)) when universal to the `eip155` namespace.
+Should an application request these capabilities and a wallet choose to pre-declare at time of connection, both parties can put such objects in the appropriately-keyed `scopedProperties` partition for chain-specific capabilities and in the `sessionProperties` (unpartitioned) for `eip155`-wide capabilities;
+address-specific capabilities (or exceptions to override the capabilities of all other addresses in a given authorization scope) can be declared within address-keyed partitions.
+See the example below, equivalent to the illustrative examples in [EIP-5792].
 
 ## Examples
 
@@ -52,7 +56,7 @@ Similarly, wherever possible, session properties should align closely with infor
         "methods": ["eth_sendTransaction", "eth_signTransaction", "eth_sign", "get_balance", "personal_sign"],
         "notifications": ["accountsChanged", "chainChanged"]
       },
-      "eip155:10": {
+      "eip155:8453": {
         "methods": ["get_balance"],
         "notifications": ["accountsChanged", "chainChanged"]
       },
@@ -65,16 +69,41 @@ Similarly, wherever possible, session properties should align closely with infor
       }
     },
     "optionalScopes":{
-      "eip155:42161": {
+      "eip155:84532": {
         "methods": ["eth_sendTransaction", "eth_signTransaction", "get_balance", "personal_sign"],
         "notifications": ["accountsChanged", "chainChanged"]
     },
     "sessionProperties": {
       "expiry": "2022-12-24T17:07:31+00:00",
+      //universal capabilities (across all eip155 chains and addresses) can sit at the top-level of sessionProperties
       "caip154": {
-          "supported":"true"
+        "supported":"true"
+      },
+      "flow-control": {
+        "loose": [], 
+        "strict": [], 
+        "exoticThirdThing": [] //caller is requesting a configuration-set which the wallet will drop as unrecognized      
+      },
+      "atomic": {
+          "status": "supported"
       }
-    }         
+    },
+    "scopedProperties": {
+      //chain-specific requests are made in scopedProperties per chain scope
+      "eip155:8453": {
+        "paymasterService": {
+          "supported": true
+        },
+        "sessionKeys": {
+          "supported": true
+        }
+      },
+      "eip155:84532": {
+        "auxiliaryFunds": {
+          "supported": true
+        }
+      }
+    }
   }
 }
 ```
@@ -94,15 +123,10 @@ Similarly, wherever possible, session properties should align closely with infor
         "notifications": ["accountsChanged", "chainChanged"],
         "accounts": ["eip155:1:0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb", "eip155:137:0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb"]
       },
-      "eip155:10": {
-        "methods": ["get_balance"],
-        "notifications": ["accountsChanged", "chainChanged"],
-        "accounts:" []
-      },
-      "eip155:42161": {
+      "eip155:83532": {
         "methods": ["personal_sign"],
         "notifications": ["accountsChanged", "chainChanged"],
-        "accounts":["eip155:42161:0x0910e12C68d02B561a34569E1367c9AAb42bd810"]
+        "accounts":["eip155:83532:0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb", "eip155:83532:0x0910e12C68d02B561a34569E1367c9AAb42bd810"]
       },
       "wallet": {
         "methods": ["wallet_getPermissions", "wallet_switchEthereumChain", "wallet_getCapabilities"],
@@ -113,23 +137,43 @@ Similarly, wherever possible, session properties should align closely with infor
       }
     },      
     "sessionProperties": {
-      "capabilities": {
-          "0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb": {
-            "0x31": {
-              "paymasterService": {
-                 "supported": true
-               },
-               "sessionKeys": {
-                  "supported": true
-               }
-            },
-            "0x3432313631": {
-              "sessionKeys": {
-                "supported": false
-              }              
-            }
+      "expiry": "2022-12-24T17:07:31+00:00",
+      "caip154": {
+        "supported":"true"
+      },
+      "flow-control": {
+        "loose": ["halt", "continue"],
+        "strict": ["continue"]
+      },
+      "atomic": {
+        "status":"ready"
+      }
+    },
+    "scopedProperties": {
+      "eip155:1": {
+        //capabilities shared across all address in a namespace can be expressed at top-level
+        "atomic": {
+          "status": "supported"
+        }
+      },
+      "eip155:137": {
+        "atomic": {
+          "status": "unsupported"
+        }
+      },
+      "eip155:84532": {
+        //address-specific capabilities can be namespaced by address, and can include address-specific exceptions to scope-wide capabilities
+        "eip155:83532:0x0910e12C68d02B561a34569E1367c9AAb42bd810": {
+          "auxiliaryFunds": {
+            "supported": false
+          },
+          "atomic": {
+            "status": "supported"
           }
-       }   
+        }
+        //no need to respond with empty objects or declare implicit/default capabilities per-address, i.e. no empty capabilities object required for eip155:83532:0xab16a96d359ec26a11e2c2b3d8f8b8942d5bfcdb to default to "ready"
+      }
+
     }
   }
 }
