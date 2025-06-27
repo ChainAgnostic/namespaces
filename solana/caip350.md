@@ -10,27 +10,28 @@ created: 2025-04-23
 requires: CAIP-2
 ---
 
+## Namespace Reference
+
 ChainType binary key: `0x0002`
-CAIP-2 namespace: `solana`
+[CAIP-104] namespace: `solana`
 
 ## Chain reference
 
-Solana networks are distinguished by its genesis blockhash, which is normally represented as 44 base58btc characters, corresponding to 32 bytes. We chose to use the blockhash in full, as opposed to CAIP-2, for consistency with `eip155` and to avoid the complexity of slicing base58btc-encoded text [^1].
-
-[^1]: CAIP-2 limits chain references to 32 characters, so the `solana` namespace instructs to only use the first 32 characters of the base58btc-encoded genesis blockhash.
-Truncating the base58btc-encoded representation instead of the binary data, however, means the binary representation will differ significantly from what the Solana node might store in its own memory. e.g while truncating the text yields a string representing a 23-byte long result, it does not correspond to simply slicing the first 23 bytes from the genesis blockhash.
+Solana networks are distinguished by their genesis blockhash, which is normally deserialized as 44 base58btc ASCII characters, corresponding to 32 bytes.
+We chose to use the blockhash in full, as opposed to using the [CAIP-2], for consistency with `eip155` and to avoid the complexity of slicing base58btc-encoded text [^1].
 
 ### Text representation
 
-The full base58btc-encoded genesis blockhash is used. This is larger than the CAIP-2 representation.
+The full base58btc-encoded genesis blockhash is used. This is larger than the [CAIP-2] representation.
 
 ##### Text representation -> CAIP-2 conversion
 
-The leading 32 characters are used, and the rest discarded, in a manner similar to what is specified on this namespace's CAIP-2 profile.
+The leading 32 characters are used, and the rest discarded, in a manner similar to what is specified on [this namespace's CAIP-2](caip2.md) profile.
 
 ##### CAIP-2 - text representation conversion
 
-This transformation is not fully deterministic. It is assumed wallets and other software will be able to differentiate between chains with just the leading 32 base58btc-encoded characters, and use a lookup table of chains to complete the missing information to convert CAIP-2 identifiers to this standard.
+This transformation is not fully deterministic.
+It is assumed wallets and other software will be able to differentiate between chains with just the leading 32 base58btc-encoded characters, and use a lookup table of chains to complete the missing information to convert [CAIP-2] identifiers to those defined in this standard.
 
 #### Binary representation
 
@@ -38,11 +39,11 @@ To obtain the binary representation from the base58btc-encoded genesis blockhash
 
 #### Text -> binary conversion
 
-Text should be base58btc decoded into raw bytes
+Text should be base58btc-decoded into raw bytes.
 
 #### Binary -> text conversion
 
-Raw bytes should be base58btc encoded into text
+Raw bytes should be base58btc encoded into text.
 
 #### Examples
 
@@ -56,23 +57,23 @@ Note that Solana Mainnet's blockhash is:
 
 ## Addresses
 
-Solana addresses are 32-byte public keys, usually shown to users as base58btc-encoded text
+Solana addresses are 32-byte public keys, conventionally displayed to users as base58btc-encoded text.
 
 ### Text representation
 
-base58btc-encoded text
+base58btc-encoded ASCII of the entire public key bytes.
 
 ##### Text representation -> customary text address formats conversion
 
-Used as-is
+No transformation.
 
 ##### customary text addresses -> text representation conversion
 
-Used as-is
+No transformation.
 
 #### Binary representation
 
-32-byte public key
+Entire 32-byte public key.
 
 #### Text -> binary conversion
 
@@ -90,4 +91,11 @@ base58btc encoding
 
 ### Extra considerations
 
-Wallets and other software are expected to be able to fetch the extra information needed to convert from CAIP-2 to this standard.
+Wallets and other software are expected to be able to fetch the extra information needed to convert from [CAIP-2] to produce the corresponding identifier defined by this standard.
+
+## References
+
+[^1]: CAIP-2 limits chain references to 32 characters, so the `solana` namespace instructs to only use the first 32 characters of the base58btc-encoded genesis blockhash. Truncating the base58btc-encoded representation instead of the binary data, however, means the binary representation will differ significantly from what the Solana node might store in its own memory. e.g while truncating the text yields a string representing a 23-byte long result, it does not correspond to simply slicing the first 23 bytes from the genesis blockhash.
+
+[CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
+[CAIP-104]: https://chainagnostic.org/CAIPs/caip-104
