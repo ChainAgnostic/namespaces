@@ -12,6 +12,11 @@ requires: <list of standards required to understand this one>
 
 ## Chain reference
 
+ChainType binary key: `0xXXXX`
+[CAIP-104] namespace: `XXXXX`
+
+<!-- check existing caip350 profiles on namespaces chainagnostic.org as well as open PRs for collisions with previously-registered binary keys -->
+
 ### Text representation
 
 <!-- a description of the format of chain namespace + reference intended for the text representation of ERC-7930 Interoperable Addresses -->
@@ -71,4 +76,4 @@ requires: <list of standards required to understand this one>
 
 ## Extra considerations
 
-<!-- Anything that is particular to this namespace and of interest to users, such as not being able to satisfy canonicity requirements -->
+<!-- Anything that is particular to this namespace and of interest to users, such as not being able to satisfy canonicity requirements or imminent expansions/revisions to the conventions of the ecosystem -->
