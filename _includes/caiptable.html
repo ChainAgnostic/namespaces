@@ -24,7 +24,7 @@
     <thead>
       <tr>
         <th class="caip">Namespace</th>
-        <th class="caip" colspan="5"><a href=https://chainagnostic.org>CAIP</a> profiles</th>
+        <th class="caip" colspan="6"><a href=https://chainagnostic.org>CAIP</a> profiles</th>
       </tr>
       <tr>
         <th class="caip">Informative Context</th>
@@ -33,6 +33,7 @@
         <th class="caip">19</th>
         <th class="caip">25</th>
         <th class="caip">122</th>
+        <th class="caip">350</th>
       </tr>
 
   {% for dir in namespaces | sort: "dir" %} 
@@ -80,6 +81,11 @@
         <td>
           {% if namespace contains "caip122.md" %}
             <a href="{{- dir -}}caip122">X</a>
+          {% endif %}
+        </td>
+        <td>
+          {% if namespace contains "caip350.md" %}
+            <a href="{{- dir -}}caip350">X</a>
           {% endif %}
         </td>
       </tr>
