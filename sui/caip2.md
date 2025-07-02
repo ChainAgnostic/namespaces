@@ -47,7 +47,7 @@ Only these exact network identifiers are currently supported.
 
 ### Resolution Mechanics
 
-To resolve a CAIP-2 `sui:<network>` identifier into a unique chain identitier, clients typically query a trusted full node associated with the specified network. While the `suix_getChainIdentifier` JSON-RPC method is commonly used for this purpose, resolution is not limited to JSON-RPC. Other interfaces, such as GraphQL, may also support retrieving the corresponding genesis checkpoint digest.
+To resolve a CAIP-2 `sui:<network>` identifier into a unique chain identitier, clients typically query a trusted full node associated with the specified network. While the `suix_getChainIdentifier` JSON-RPC method is commonly used for this purpose, resolution is not limited to JSON-RPC. Other node interfaces, such as GraphQL, may also support retrieving identifiers pertinent to locating records, such as a genesis checkpoint digest unique to each chain.
 
 **Sample request**
 
