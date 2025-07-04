@@ -21,7 +21,7 @@ This namespace ensures that cross-chain tools such as WalletConnect, DID methods
 
 Quai protocol upgrades and standards are driven by the Quai Foundation in coordination with the Quai developer community. Improvement proposals are documented via QIPs (Quai Improvement Proposals), with reference implementations and discussion led through the official GitHub repositories and Discord. Final decisions for protocol-level changes are currently stewarded by core contributors, with an aim toward more decentralized governance in future roadmap stages.
 
-All RPC compatibility, chain metadata, and transaction standards are maintained openly at [docs.qu.ai](https://docs.qu.ai) and the [QIPs github repository](https://github.com/quai-network/qips). Developers are encouraged to participate in network design and contribute implementations via the quais.js SDK and go-quai node software repositories.
+All RPC compatibility, chain metadata, and transaction standards are maintained openly at [docs.qu.ai][Quai Docs] and the [QIPs github repository][go-quia Github]. Developers are encouraged to participate in network design and contribute implementations via the quais.js SDK and go-quai node software repositories.
 
 ## References
 
