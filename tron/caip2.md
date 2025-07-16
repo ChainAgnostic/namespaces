@@ -29,7 +29,7 @@ In TRON, the RPC’s `eth_chainId` response is defined as the last four bytes of
 the genesis block hash. As a 32-bit value, it ranges from `0x00000000` through
 `0xFFFFFFFF`.
 
-A full TRON chain ID has the form:
+A full TRON CAIP-2 chain ID has the form:
 
 ```text
 tron:<decimal-chain-id>
@@ -37,8 +37,7 @@ tron:<decimal-chain-id>
 
 ## Resolution Mechanics
 
-To obtain the chain ID, send an `eth_chainId` JSON-RPC request to any TRON
-node:
+To obtain the chain ID, send an `eth_chainId` JSON-RPC request to a TRON node:
 
 ```json5
 // Request
@@ -58,13 +57,13 @@ node:
 ```
 
 The `result` field is a hexadecimal string. Convert it to a base-10 integer to
-construct the CAIP-2 reference:
+obtain the CAIP-2 reference:
 
 ```text
 0x2b6653dc → 728126428
 ```
 
-Thus, the Mainnet chain ID becomes:
+Thus, the Mainnet CAIP-2 chain ID becomes:
 
 ```text
 tron:728126428

@@ -1,11 +1,14 @@
 ---
 namespace-identifier: tron
 title: TRON Ecosystem
-author: ["Daniel Rocha (@danroc)"]
+author:
+  - Daniel Rocha (@danroc)
 status: Draft
 type: Informational
 created: 2025-07-15
-requires: ["CAIP-2", "CAIP-10"]
+requires:
+  - CAIP-2
+  - CAIP-10
 ---
 
 # Namespace for TRON chains
