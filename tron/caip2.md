@@ -40,7 +40,7 @@ tron:<decimal-chain-id>
 To obtain the chain ID, send an `eth_chainId` JSON-RPC request to any TRON
 node:
 
-```json
+```json5
 // Request
 {
   "id": 1,
