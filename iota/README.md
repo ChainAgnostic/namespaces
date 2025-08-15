@@ -9,34 +9,32 @@ created: 2025-07-28
 
 # Namespace for IOTA networks
 
-IOTA is a smart contract platform that uses a Move-based, object-centric data model and is optimized for
-parallel execution.
-Transactions in IOTA operate on objects rather than accounts, allowing independent operations to be executed
-in parallel without coordination.
-This enables high throughput while preserving safety and determinism.
+IOTA is a Move-based smart contract platform designed for high performance. Unlike traditional blockchains
+that use accounts and process transactions sequentially, IOTA uses an object-centric data model.
+This allows transactions to operate on individual objects, enabling them to be executed in parallel without
+needing to be coordinated. This architecture ensures high throughput while maintaining security and consistency.
 
-An IOTA network is maintained by a validator committee responsible for processing transactions,
-reaching consensus, and producing checkpoint digests — cryptographic summaries of network state at fixed
-intervals.
-These checkpoints serve as the canonical state and ensure consistency across nodes.
+The IOTA network is maintained by a committee of validators. These validators are responsible for processing
+transactions and creating checkpoint digests, which are cryptographic summaries of the network's state at regular
+intervals. These checkpoints are crucial because they serve as the official, canonical state of the network.
 
-Each network is uniquely identified by its genesis checkpoint digest — the cryptographic hash of the very
-first checkpoint, signed by the original validator set. This digest anchors the network’s identity in
-verifiable history and validator consensus.
+Each IOTA network has a unique identity, established by its genesis checkpoint digest. This is the cryptographic
+hash of the very first checkpoint, signed by the original validators. This digest acts as a verifiable anchor for
+the network’s identity.
 
 ## Rationale
 
-Because chain identity and state in IOTA revolve around checkpoints and objects rather than blocks 
-and accounts, standard CAIP identifiers (e.g., for chains, accounts, and assets) must be adapted accordingly.
+This distinct design - which focuses on checkpoints and objects instead of blocks and accounts - requires a special
+approach to integrate with standard cross-chain identifiers (CAIPs).
 
-This namespace defines how IOTA’s architecture maps to cross-chain standards to support consistent and
-interoperable multi-chain tooling.
+This new namespace provides the necessary framework to map IOTA's architecture to these standards, ensuring
+compatibility and interoperability with multi-chain tools.
 
 ## Governance
 
-IOTA protocol upgrades and standards are coordinated by the IOTA Foundation in collaboration with core
-contributors and the broader developer community. Changes are proposed through IIPs (IOTA Improvement
-Proposals), with open discussion and reference implementations maintained on GitHub.
+The IOTA Foundation coordinates protocol upgrades and standards by working with core contributors and the developer
+community. Proposed changes go through an open process called IOTA Improvement Proposals (IIPs), with discussions
+and reference implementations maintained on GitHub.
 
 ## References
 
