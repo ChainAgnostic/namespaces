@@ -27,14 +27,14 @@ the network’s identity.
 This distinct design - which focuses on checkpoints and objects instead of blocks and accounts - requires a special
 approach to integrate with standard cross-chain identifiers (CAIPs).
 
-This new namespace provides the necessary framework to map IOTA's architecture to these standards, ensuring
+This new namespace provides the necessary framework to map [IOTA's architecture][IOTA Docs] to these standards, ensuring
 compatibility and interoperability with multi-chain tools.
 
 ## Governance
 
 The IOTA Foundation coordinates protocol upgrades and standards by working with core contributors and the developer
-community. Proposed changes go through an open process called IOTA Improvement Proposals (IIPs), with discussions
-and reference implementations maintained on GitHub.
+community. Proposed changes go through an open process called [IOTA Improvement Proposals][IOTA IIPs] (IIPs), with discussions
+and reference implementations maintained on [GitHub][IOTA Github].
 
 ## References
 

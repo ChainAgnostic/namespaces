@@ -19,7 +19,7 @@ These identifiers are **stable**, **concise**, and **easy to communicate**, and 
 
 This design provides both developer ergonomics and cryptographic assurance, allowing developers to work with simple names while still supporting verifiable chain identification.
 
-When addressing unofficial IOTA networks genesis checkpoint digests can be used instead of the human-readable chain identifiers.
+When addressing unofficial IOTA networks, genesis checkpoint digests can be used instead of the human-readable aliases defined below.
 
 ## Specification
 
@@ -35,7 +35,7 @@ Where `<network>` is either one of the following reserved, stable identifiers:
 - `testnet`
 - `devnet`
 
-or the first 4 hex-encoded bytes of the genesis checkpoint digest- e.g. `6364aad5`.
+or the first 4 hex-encoded bytes of the genesis checkpoint digest (e.g. `6364aad5` for mainnet).
 
 ### Syntax
 
@@ -50,7 +50,7 @@ or the first 4 hex-encoded bytes of the genesis checkpoint digest- e.g. `6364aad
 
 ### Resolution Mechanics
 
-To resolve a CAIP-2 `iota:<network>` identifier into a unique chain identitier, clients typically query a trusted full node associated with the specified network.
+To resolve a CAIP-2 `iota:<network>` identifier to a unique chain identitier, clients typically query a trusted full node associated with the specified network.
 While the `iotax_getChainIdentifier` JSON-RPC method is commonly used for this purpose, resolution is not limited to JSON-RPC.
 Other node interfaces, such as GraphQL, may also support retrieving identifiers pertinent to locating records, such as a genesis checkpoint digest unique to each chain.
 
