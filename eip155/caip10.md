@@ -81,7 +81,7 @@ eip155:137:0x0495766CD136138FC492DD499B8DC87A92D6685B
 
 ## Security Considerations
 
-As the Ethereum namespace evolved, user-agents that connect to dapps through an [EIP-1193][] interface started to accrue "off-chain" use-cases such as authenticating control of an onchain account with an "off-chain" signature (i.e. a transaction signed by the wallet and verified by a dapp or website without either party submitting it to a node or running any on-chain functions). It is RECOMMENDED that wallets using the chainId of `0` be authenticated in a standardized and secure manner which produces verifiable receipts of the authenticaiton event, such as that documented in [ERC-4361][] and extended by [CAIP-122][].
+As the Ethereum namespace evolved, user-agents that connect to dapps through an [EIP-1193][] interface started to accrue "off-chain" use-cases such as authenticating control of an onchain account with an "off-chain" signature (i.e. a transaction signed by the wallet and verified by a dapp or website without either party submitting it to a node or running any on-chain functions). It is RECOMMENDED that wallets using the chainId of `0` be authenticated in a standardized and secure manner which produces verifiable receipts of the authentication event, such as that documented in [ERC-4361][] and extended by [CAIP-122][].
 
 ## References
 
