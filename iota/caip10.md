@@ -159,7 +159,7 @@ an object, but a key-derived address.
 CAIP-10 identifiers was arrived at, history and pre-history, etc.-->
 
 IOTA addresses are lowercase-hex encoded 32 bytes string, which in the case of key-pair derived addresses - i.e.
-traditional accounts - are computed by hashing with the `blake2b` algorithm a public key's bytes prepended by a
+traditional accounts - are computed by hashing with the `blake2b` algorithm a public key's bytes.  If the signature scheme to be computed with those bytes is anything other than `Ed25519`, the public key bytes have a sigil prepended **before** hashing.
 IOTA address currently supports pure Ed25519, Secp256k1, Secp256r1, and MultiSig with corresponding flag bytes of 0x00 (not prepended), 0x01, 0x02, and 0x03, respectively.
 
 As already mentioned above, all IOTA addresses can own assets and funds.
