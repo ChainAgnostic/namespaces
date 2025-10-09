@@ -83,7 +83,7 @@ validate the results, calculate checksums, persist session metadata or nonces,
  etc. -->
 
 Any Account ID, conforming to the aforementioned syntax is a valid IOTA Account ID,
-indipendently of whether it is already in use by a wallet or on-chain object.
+independently of whether it is already in use by a wallet or on-chain object.
 
 It is possible to check whether a given Account ID refers to a key-pair derived address,
 an object, or a smart contract package by invoking the `iota_getObject` JSON-RPC API.
