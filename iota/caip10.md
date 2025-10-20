@@ -82,7 +82,7 @@ section below if possible, as well as an explanation of any steps needed to
 validate the results, calculate checksums, persist session metadata or nonces,
  etc. -->
 
-Any Account ID, conforming to the aforementioned syntax is a valid IOTA Account ID,
+Any Account ID conforming to the aforementioned syntax is a valid IOTA Account ID,
 independently of whether it is already in use by a wallet or on-chain object.
 
 It is possible to check whether a given Account ID refers to a key-pair derived address,
