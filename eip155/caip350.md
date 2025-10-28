@@ -65,11 +65,11 @@ For text representation, the 20 bytes of EVM addresses should be hexadecimal-enc
 This standard deliberately does not define the text representation of EVM addresses if they are extended in the future, since it's not possible to know which human-readable representation will be more familiar to users in such hypothetical scenario.
 This profile should be amended in the future to reflect it in such a case.
 
-##### Text representation -> customary text address formats conversion
+##### Text representation -> native representation conversion
 
 See [EIP-55].
 
-##### Customary text addresses -> text representation conversion
+##### Native representation -> text representation conversion
 
 See [EIP-55].
 
@@ -90,13 +90,17 @@ Specified in [EIP-55].
 
 See [EIP-55].
 
+### Error handling
+
+### Implementation considerations
+
 ### Extra considerations
 
 Wallets and other software are expected to be able to fetch the extra information needed to convert from [CAIP-2] to this standard.
 
 ## References
 
-[^1]: This makes it possible to represent some chains using the full word as their chainid, which CAIP-2 does not support since the set of values representable with 32 `a-zA-Z0-9` characters has less than `type(uint256).max` elements. This is done in an effort to support chains whose ID is the output of `keccak256`, as proposed in [ERC-7785].
+[^1]: This makes it possible to represent some chains using the full word as their chainid, which CAIP-2 does not support since the set of values representable with 32 `a-zA-Z0-9` characters has less than `type(uint256).max` elements.
 [^2]: With EVM Object Format as a prerequisite, Address Space Expansion could be implemented. If that happens, expanded addresses may be represented in 32 bytes, but pre-expansion addresses must remain 20 bytes in order to preserve a consistent address.
 
 [CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
