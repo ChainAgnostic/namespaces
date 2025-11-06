@@ -15,14 +15,13 @@ requires: ["CAIP-2", "CAIP-10"]
 
 ## Rationale
 
-In CAIP-10, a string-based general account address scheme is defined. Stellar
-supports multiple address formats to accommodate different use cases:
+In [CAIP-10][], a string-based general account address scheme is defined.
+Stellar supports multiple address formats to accommodate different use cases:
 
 ### Classic Addresses (G-addresses)
 
-Classic Stellar addresses are Ed25519 public keys encoded using Stellar's strkey
-format (base32 encoding as defined in RFC 4648). A classic Stellar address has
-the following characteristics:
+Classic Stellar addresses are Ed25519 public keys encoded using Stellar's `strkey` format (base32 encoding as defined in [RFC 4648]).
+A classic Stellar address has the following characteristics:
 
 * It is exactly 56 characters long
 * It starts with the character `G`
@@ -33,9 +32,8 @@ the following characteristics:
 
 ### Muxed Accounts (M-addresses)
 
-Muxed accounts (introduced in Protocol 13, CAP-27) encode both a classic address
-and a 64-bit unsigned integer ID into a single string. A muxed account address
-has the following characteristics:
+Muxed accounts (introduced in Protocol 13, [CAP-0027]) encode both a classic address and a 64-bit unsigned integer ID into a single string.
+A muxed account address has the following characteristics:
 
 * It is exactly 69 characters long
 * It starts with the character `M`
@@ -48,16 +46,15 @@ has the following characteristics:
 
 ### Federated Addresses
 
-Federated addresses (defined in SEP-0002) provide human-readable addressing in
-the format `username*domain.com`. These addresses must be resolved to a G-address
-or M-address via the federation protocol before use in transactions. For CAIP-10
-purposes, federated addresses should be resolved to their canonical G or M format.
+Federated addresses (defined in SEP-0002) provide human-readable addressing in the format `username*domain.com`.
+These addresses must be resolved to a G-address or M-address via the federation protocol before use in transactions.
+For CAIP-10 purposes, federated addresses should be resolved to their canonical G or M format.
 
 ### Syntax
 
 The `account_id` is a case-insensitive string in the form:
 
-```
+```sh
 account_id:        chain_id + ":" + account_address
 chain_id:          See [CAIP-2][]
 account_address:   classic_address | muxed_address
@@ -82,10 +79,10 @@ expressed in multiple formats:
    optionally followed by a memo. Memos are used to identify specific recipients
    or purposes at the destination address and come in several types:
 
-   - **MEMO_TEXT**: A string up to 28 bytes, encoded in ASCII or UTF-8
-   - **MEMO_ID**: A 64-bit unsigned integer (0 to 18446744073709551615)
-   - **MEMO_HASH**: A 32-byte hash (64 hex characters)
-   - **MEMO_RETURN**: A 32-byte hash intended as the hash of a transaction being refunded
+   * **MEMO_TEXT**: A string up to 28 bytes, encoded in ASCII or UTF-8
+   * **MEMO_ID**: A 64-bit unsigned integer (0 to 18446744073709551615)
+   * **MEMO_HASH**: A 32-byte hash (64 hex characters)
+   * **MEMO_RETURN**: A 32-byte hash intended as the hash of a transaction being refunded
 
    When included, the memo is separated from the address by a hyphen (`-`).
 
@@ -96,19 +93,20 @@ expressed in multiple formats:
    exchanges that use pooled accounts.
 
 **Important Notes**:
-- Memos (especially MEMO_ID) are critical for exchange deposits and withdrawals
-- Forgetting a memo when sending to an exchange typically results in lost funds
+
+* Memos (especially `MEMO_ID`) are critical for exchange deposits and withdrawals
+* Forgetting a memo when sending to an exchange typically results in lost funds
   or delayed crediting
-- Muxed addresses provide a safer alternative by embedding the memo ID directly
+* Muxed addresses provide a safer alternative by embedding the memo ID directly
   in the address
-- Only MEMO_ID can be encoded in muxed addresses; MEMO_TEXT and MEMO_HASH require
+* Only `MEMO_ID` can be encoded in muxed addresses; `MEMO_TEXT` and `MEMO_HASH` require
   classic addresses with appended memos
 
 ## Test Cases
 
 This is a list of manually composed examples
 
-```
+```sh
 # Pubnet classic address (without memo)
 stellar:pubnet:GA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA74P7UJVSGZ
 
@@ -142,21 +140,22 @@ supported by older clients and should be verified before use.
 
 ## References
 
-- [Stellar Account Addressing][] - Overview of Stellar account addressing
-- [SEP-0023: Strkey][] - Specification for strkey encoding used in Stellar addresses
-- [CAP-0027: Muxed Accounts][] - Proposal for muxed account support
-- [Stellar Memos][] - Detailed explanation of memo types and usage
-- [SEP-0002: Federation Protocol][] - Human-readable federated addresses
-- [Pooled Accounts Guide][] - Guide to muxed accounts and memos for pooled accounts
+* [Stellar Account Addressing][] - Overview of Stellar account addressing
+* [SEP-0023: Strkey][SEP-0023] - Specification for strkey encoding used in Stellar addresses
+* [CAP-0027: Muxed Accounts][CAP-0027] - Proposal for muxed account support
+* [Stellar Memos][] - Detailed explanation of memo types and usage
+* [SEP-0002: Federation Protocol][SEP-0002] - Human-readable federated addresses
+* [Pooled Accounts Guide][] - Guide to muxed accounts and memos for pooled accounts
 
 
 [CAIP-2]: ./caip2.md
 [CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md
 [Stellar Account Addressing]: https://developers.stellar.org/docs/learn/fundamentals/stellar-data-structures/accounts
-[SEP-0023: Strkey]: https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0023.md
-[CAP-0027: Muxed Accounts]: https://stellar.org/protocol/cap-27
+[SEP-0023]: https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0023.md
+[CAP-0027]: https://stellar.org/protocol/cap-27
+[RFC 4648]: https://datatracker.ietf.org/doc/html/rfc4648
 [Stellar Memos]: https://developers.stellar.org/docs/learn/encyclopedia/transactions-specialized/memos
-[SEP-0002: Federation Protocol]: https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0002.md
+[SEP-0002]: https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0002.md
 [Pooled Accounts Guide]: https://developers.stellar.org/docs/learn/encyclopedia/transactions-specialized/pooled-accounts-muxed-accounts-memos
 
 ## Copyright

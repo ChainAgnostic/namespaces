@@ -15,11 +15,14 @@ requires: ["CAIP-2", "CAIP-10", "CAIP-19", "CAIP-20"]
 
 ## Rationale
 
-In the Stellar ecosystem, assets can be represented in several distinct formats. The native asset (lumens/XLM) is identified using the SLIP-44 coin type registry (coin type 148), while issued assets are uniquely identified by combining an asset code (1-12 characters) with an issuer account address, separated by a hyphen. Additionally, Protocol 18 introduced liquidity pool shares (CAP-38) which represent fractional ownership in automated market maker pools, and Protocol 20 introduced Soroban smart contract tokens following the SEP-41 token interface standard.
+In the Stellar ecosystem, assets can be represented in several distinct formats.
+The native asset (lumens/XLM) is identified using the SLIP-44 coin type registry (coin type 148), while issued assets are uniquely identified by combining an asset code (1-12 characters) with an issuer account address, separated by a hyphen.
+Additionally, Protocol 18 introduced liquidity pool shares (defined in [CAP-38]) which represent fractional ownership in automated market maker pools, and Protocol 20 introduced Soroban smart contract tokens following the SEP-41 token interface standard.
 
 ## Syntax
 
-After the CAIP-2 namespace+chainID, a slash defines an `asset_namespace` and an `asset_reference`. Stellar supports multiple asset types with different identification schemes:
+After the [CAIP-2] namespace+chainID, a slash defines an `asset_namespace` and an `asset_reference`.
+Stellar supports multiple asset types with different identification schemes:
 
 ### Asset Namespaces
 
@@ -34,7 +37,7 @@ After the CAIP-2 namespace+chainID, a slash defines an `asset_namespace` and an 
 
 Asset codes for issued assets must:
 
-- Consist of printable ASCII characters (octets 0x21 through 0x7e)
+- Consist of printable ASCII characters (octets `0x21` through `0x7e`)
 - Be 1-12 characters in length
 - Be case-sensitive
 - Not contain the hyphen character (`-`) as it is used as the delimiter
@@ -55,7 +58,8 @@ Liquidity pool IDs are deterministically calculated as:
 ### Contract Address
 
 Soroban contract addresses are:
-- Stellar strkey-encoded contract addresses (56 characters, starting with `C`)
+
+- Stellar `strkey`-encoded contract addresses (56 characters, starting with `C`)
 - For Stellar Asset Contracts (SAC), the address can be derived from the classic asset identifier
 - Can be obtained using: `stellar contract id asset --asset {code}:{issuer} --network {network}`
 
@@ -63,10 +67,10 @@ Soroban contract addresses are:
 
 The RegEx validation strings are as follows:
 
-```
+```sh
 asset_id:           asset_type
 asset_type:         chain_id + "/" + asset_namespace + ":" + asset_reference
-chain_id:           namespace + ":" + blockchain_id (as defined in CAIP-2)
+chain_id:           namespace + ":" + blockchain_id (as defined in [CAIP-2])
 
 asset_namespace:    "slip44" | "asset" | "cap38" | "sep41"
 
@@ -85,7 +89,9 @@ Note: The `asset_code` regex `[!-,.-~]` excludes the hyphen character (ASCII 0x2
 
 ### Native Asset (XLM/Lumens)
 
-The native asset is identified using the `slip44` namespace with coin type `148` as registered in the SLIP-44 registry. The native asset is unique and does not require an issuer. It is used for:
+The native asset is identified using the `slip44` namespace with coin type `148` as registered in the SLIP-44 registry.
+The native asset is unique and does not require an issuer.
+It is used for:
 
 - Transaction fees (which are burned/destroyed)
 - Minimum account balance requirements (base reserves)
@@ -95,15 +101,18 @@ Example: `stellar:pubnet/slip44:148`
 
 ### Issued Assets
 
-Issued assets are created by issuers and must be explicitly trusted by recipients before they can be received. The combination of asset code (1-12 characters) and issuer address uniquely identifies an asset. On the Stellar network, asset codes of 1-4 characters are stored as AlphaNum4, while codes of 5-12 characters are stored as AlphaNum12, but both use the same `asset` namespace in CAIP-19.
+Issued assets are created by issuers and must be explicitly trusted by recipients before they can be received.
+The combination of asset code (1-12 characters) and issuer address uniquely identifies an asset.
+On the Stellar network, asset codes of 1-4 characters are stored as `AlphaNum4`, while codes of 5-12 characters are stored as `AlphaNum12`, but both use the same `asset` namespace in [CAIP-19].
 
 Examples:
+
 - USDC issued by Circle: `asset:USDC-{issuer_address}`
 - Custom 8-character code: `asset:MYTOKEN8-{issuer_address}`
 
 ### Liquidity Pool Shares (CAP-38)
 
-Liquidity pool shares represent fractional ownership in constant product automated market maker pools (CPAMM) as defined in CAP-38. These shares:
+Liquidity pool shares represent fractional ownership in constant product automated market maker pools (CPAMM) as defined in [CAP-38]. These shares:
 
 - Are non-transferable (cannot be sent between accounts)
 - Can be minted by depositing assets into the pool
@@ -113,9 +122,10 @@ Liquidity pool shares represent fractional ownership in constant product automat
 
 ### Soroban Contract Tokens (SEP-41)
 
-Soroban contract tokens follow the SEP-41 token interface standard and include:
+Soroban contract tokens follow the [SEP-41] token interface standard and include:
+
 - Stellar Asset Contracts (SAC): Wrapped versions of classic Stellar assets with smart contract functionality
-- Custom CAP-46-6 compliant tokens: Fully custom tokens implemented as Soroban smart contracts
+- Custom [CAP-46-6] -compliant tokens: Fully custom tokens implemented as Soroban smart contracts
 - All tokens use the `sep41` namespace and are identified by their contract address
 
 ## Examples
@@ -159,9 +169,9 @@ Soroban contract tokens were introduced in Protocol 20 (February 2024) and requi
 - [Stellar Assets Overview][] - Overview of asset types on Stellar
 - [SLIP-44][] - Registered coin types for HD wallets
 - [CAIP-20][] - Asset Reference for the SLIP44 Asset Namespace
-- [CAP-38: Automated Market Makers][] - Liquidity pools specification
-- [CAP-46-6: Smart Contract Standardized Asset][] - Soroban token standard
-- [SEP-41: Token Interface][] - Standard token interface for Soroban
+- [CAP-38: Automated Market Makers][CAP-38] - Liquidity pools specification
+- [CAP-46-6: Smart Contract Standardized Asset][CAP-46-6] - Soroban token standard
+- [SEP-41: Token Interface][SEP-41] - Standard token interface for Soroban
 - [Stellar Asset Contract][] - Documentation for Stellar Asset Contracts
 - [Liquidity Pools Guide][] - Guide to using liquidity pools on Stellar
 
@@ -172,9 +182,9 @@ Soroban contract tokens were introduced in Protocol 20 (February 2024) and requi
 [CAIP-20]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-20.md
 [SLIP-44]: https://github.com/satoshilabs/slips/blob/master/slip-0044.md
 [Stellar Assets Overview]: https://developers.stellar.org/docs/learn/fundamentals/stellar-data-structures/assets
-[CAP-38: Automated Market Makers]: https://github.com/stellar/stellar-protocol/blob/master/core/cap-0038.md
-[CAP-46-6: Smart Contract Standardized Asset]: https://github.com/stellar/stellar-protocol/blob/master/core/cap-0046-06.md
-[SEP-41: Token Interface]: https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0041.md
+[CAP-38]: https://github.com/stellar/stellar-protocol/blob/master/core/cap-0038.md
+[CAP-46-6]: https://github.com/stellar/stellar-protocol/blob/master/core/cap-0046-06.md
+[SEP-41]: https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0041.md
 [Stellar Asset Contract]: https://developers.stellar.org/docs/tokens/stellar-asset-contract
 [Liquidity Pools Guide]: https://developers.stellar.org/docs/learn/encyclopedia/sdex/liquidity-on-stellar-sdex-liquidity-pools
 
