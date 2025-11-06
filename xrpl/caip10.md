@@ -25,12 +25,12 @@ encoding. The address is derived from an account's master public key. A classic 
 address is a string with the following characteristics:
 
 * It is between 25 and 35 characters long, inclusive.
-* It starts with the character `r`
+* It starts with the character `r`.
 * It uses alphanumerical characters [excluding][base58btc] number `0`, lowercase
   letter `"l"` and capital letters `["O", "I"]`.
-* It is case-sensitive
-* It includes a 4-byte checksum making the probabilty of generating a valid address from random characters approximately 1 in 2<sup>32</sup>
-* It may optionally include a destination tag appended with a hyphen (`-`) separator
+* It is case-sensitive.
+* It includes a 4-byte checksum making the probability of generating a valid address from random characters approximately 1 in 2<sup>32</sup>.
+* It may optionally include a [destination tag][Destination Tags] in the form of a 32-bit unsigned integer appended with a hyphen (`-`) separator.
 
 ### X-Addresses
 
@@ -46,13 +46,13 @@ optional destination tag into a single string. An X-address has the following ch
 ### Syntax
 
 The `account_id` is a case-sensitive string in the form:
-
+~~~~
 ```
 account_id:        chain_id + ":" + account_address
 chain_id:          See [CAIP-2][]
 account_address:   classic_address | x_address
 classic_address:   r[1-9a-hj-zA-HJ-NP-Z]{24,34} + optional_tag
-optional_tag:      ("-" + [0-9]+)?
+optional_tag:      ("-" + [0-9]{1-10})?
 x_address:         X[1-9a-hj-zA-HJ-NP-Z]{46,47}
 ```
 
