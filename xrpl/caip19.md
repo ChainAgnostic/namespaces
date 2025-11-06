@@ -16,7 +16,9 @@ requires: ["CAIP-2", "CAIP-10", "CAIP-19", "CAIP-20"]
 
 ## Rationale
 
-The XRP Ledger supports multiple types of digital assets beyond its native XRP token. These include fungible tokens (issued currencies via trust lines), non-fungible tokens (NFTokens via XLS-20), AMM liquidity pool tokens, and the newer Multi-Purpose Tokens (MPTs). This specification defines how to identify each asset type using the CAIP-19 standard.
+The XRP Ledger supports multiple types of digital assets beyond its native XRP token.
+These include fungible tokens (issued currencies via trust lines), non-fungible tokens (NFTokens via XLS-20), AMM liquidity pool tokens, and the newer Multi-Purpose Tokens (MPTs). 
+This specification defines how to identify each asset type using the [CAIP-19] standard.
 
 ## Asset Types
 
@@ -24,7 +26,7 @@ The XRP Ledger has the following asset types:
 
 1. **Native XRP** - The native digital asset of the XRP Ledger, used for transaction fees and as a bridge currency
 2. **Trust Line Tokens (Issued Currencies)** - Fungible tokens issued by accounts, representing any asset (fiat currencies, commodities, other tokens)
-3. **NFTokens** - Non-fungible tokens following the XLS-20 standard, representing unique digital or physical assets
+3. **NFTokens** - Non-fungible tokens following the [XLS-20] standard, representing unique digital or physical assets
 4. **AMM LP Tokens** - Liquidity provider tokens from Automated Market Makers (XLS-30), representing shares in liquidity pools
 5. **Multi-Purpose Tokens (MPTs)** - Next-generation fungible tokens with improved efficiency (currently in development)
 
@@ -54,15 +56,18 @@ xls33_ref:          [0-9A-F]{64}
 
 ### Native Asset (`slip44`)
 
-The native XRP token uses the SLIP-44 coin type as defined in [CAIP-20][]. XRP has coin type 144 in the SLIP-44 registry.
+The native XRP token uses the SLIP-44 coin type as defined in [CAIP-20][].
+XRP has coin type 144 in the SLIP-44 registry.
 
 **Reference format:** `144`
 
 ### Trust Line Tokens (`token`)
 
-Issued currencies on the XRP Ledger are fungible tokens that exist in trust lines between accounts. Each token is identified by a currency code and an issuer address.
+Issued currencies on the XRP Ledger are fungible tokens that exist in trust lines between accounts.
+Each token is identified by a currency code and an issuer address.
 
 **Currency codes** can be:
+
 - **Standard format:** 3-character ASCII string (typically ISO 4217 codes like USD, EUR, but can include symbols)
 - **Nonstandard format:** 40-character (160-bit) hexadecimal string for custom identifiers
 
@@ -72,19 +77,23 @@ The currency code and issuer address are separated by a period (`.`).
 
 ### NFTokens (`xls20`)
 
-NFTokens follow the XLS-20 standard and are identified by their unique 64-character hexadecimal NFTokenID. The NFTokenID encodes multiple pieces of information including flags, transfer fee, issuer address, taxon, and sequence number.
+NFTokens follow the [XLS-20] standard and are identified by their unique 64-character hexadecimal NFTokenID.
+The NFTokenID encodes multiple pieces of information including flags, transfer fee, issuer address, taxon, and sequence number.
 
 **Reference format:** `{nftoken_id}`
 
 ### AMM LP Tokens (`xls30`)
 
-Automated Market Maker liquidity provider tokens (XLS-30) represent ownership shares in AMM pools. LP token currency codes always start with `03` followed by 38 hex characters (a truncated SHA-512 hash of the asset pair). The issuer is the AMM account address.
+Automated Market Maker liquidity provider tokens (specified in [XLS-30]) represent ownership shares in AMM pools.
+LP token currency codes always start with `03` followed by 38 hex characters (a truncated SHA-512 hash of the asset pair).
+The issuer is the AMM account address.
 
 **Reference format:** `{lp_currency_code}.{amm_address}`
 
 ### Multi-Purpose Tokens (`xls33`)
 
-Multi-Purpose Tokens (XLS-33) are next-generation fungible tokens designed for improved efficiency. Each MPT is identified by a unique 64-character hexadecimal identifier.
+Multi-Purpose Tokens (specified in [XLS-33]) are next-generation fungible tokens designed for improved efficiency.
+Each MPT is identified by a unique 64-character hexadecimal identifier.
 
 **Reference format:** `{mpt_id}`
 
@@ -92,7 +101,7 @@ Note: MPTs are currently in development and not yet available on mainnet.
 
 ## Test Cases
 
-```
+```sh
 # Native XRP on Livenet
 xrpl:0/slip44:144
 
@@ -139,6 +148,9 @@ xrpl:2/xls33:000000000A1B2C3D4E5F6789ABCDEF0123456789ABCDEF0123456789ABCDEF01
 [XRPL Currency Formats]: https://xrpl.org/docs/references/protocol/data-types/currency-formats
 [NFToken Object]: https://xrpl.org/docs/references/protocol/data-types/nftoken
 [SLIP-44]: https://github.com/satoshilabs/slips/blob/master/slip-0044.md
+[XLS-20]: https://github.com/XRPLF/XRPL-Standards/tree/master/XLS-0020-non-fungible-tokens
+[XLS-30]: https://github.com/XRPLF/XRPL-Standards/tree/master/XLS-0030-automated-market-maker
+[XLS-33]: https://github.com/XRPLF/XRPL-Standards/tree/master/XLS-0033-multi-purpose-tokens
 
 ## Copyright
 
