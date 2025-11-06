@@ -23,6 +23,7 @@ supports two address formats:
 Classic XRPL addresses are identified by an address in the XRP Ledger's [base58btc][]
 encoding. The address is derived from an account's master public key. A classic XRPL
 address is a string with the following characteristics:
+
 * It is between 25 and 35 characters long, inclusive.
 * It starts with the character `r`
 * It uses alphanumerical characters [excluding][base58btc] number `0`, lowercase
@@ -35,6 +36,7 @@ address is a string with the following characteristics:
 
 X-addresses are a newer format that encode both the destination address and an
 optional destination tag into a single string. An X-address has the following characteristics:
+
 * It starts with the character `X`
 * It uses base58 encoding (same character set as r-addresses)
 * It is case-sensitive
@@ -111,4 +113,3 @@ Not applicable
 ## Copyright
 
 Copyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
-
