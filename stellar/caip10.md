@@ -2,7 +2,7 @@
 namespace-identifier: stellar-caip10
 title: Stellar Namespace - Addresses
 author: Pelle Braendgaard (@pelle)
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/XXX
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/157
 status: Draft
 type: Standard
 created: 2025-11-6

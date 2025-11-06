@@ -2,10 +2,10 @@
 namespace-identifier: stellar-caip19
 title: Stellar Namespace - Assets
 author: Pelle Braendgaard (@pelle)
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/XXX
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/157
 status: Draft
 type: Standard
-created: 2025-01-06
+created: 2025-11-06
 requires: ["CAIP-2", "CAIP-10", "CAIP-19", "CAIP-20"]
 ---
 
