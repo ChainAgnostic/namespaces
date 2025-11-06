@@ -130,7 +130,7 @@ Soroban contract tokens follow the [SEP-41] token interface standard and include
 
 ## Examples
 
-```
+```sh
 # Native asset (lumens/XLM) on Pubnet
 stellar:pubnet/slip44:148
 
