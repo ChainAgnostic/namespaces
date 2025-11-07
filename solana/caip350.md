@@ -63,11 +63,11 @@ Solana addresses are 32-byte public keys, conventionally displayed to users as b
 
 base58btc-encoded ASCII of the entire public key bytes.
 
-##### Text representation -> customary text address formats conversion
+##### Text representation -> native representation conversion
 
 No transformation.
 
-##### customary text addresses -> text representation conversion
+##### native representation conversion -> text representation conversion
 
 No transformation.
 
@@ -88,6 +88,10 @@ base58btc encoding
 `7S3P4HxJpyyigGzodYwHtCxZyUQe9JiBMHyRWXArAaKv` -> `0x5F90554BB3D8C2FC82B6EE59C49AAA143E77F7D49A83E956CE1DBEF17A43F805`
 
 `DYw8jCTfwHNRJhhmFcbXvVDTqWMEVFBX6ZKUmG5CNSKK` -> `0xBA7A74F374AB05B70D114A78112EF0D3F0695A819572C79710B5372000D81AE2`
+
+### Error handling
+
+### Implementation considerations
 
 ### Extra considerations
 
