@@ -52,14 +52,15 @@ ChainType binary key: `0xXXXX`
 
 <!-- a description of the format of addresses intended for the text representation of ERC-7930 Interoperable Addresses -->
 
-##### Text representation -> customary text address formats conversion
+##### Text representation -> native representation conversion
 
-<!-- instructions for how to convert from the above to the address formats normally used in the ecosystem -->
+<!-- instructions for how to convert from the above to the native address formats normally used in the ecosystem -->
 <!-- MUST cover all address types used in the ecosystem -->
+<!-- Note: actor addresses should be addressed here natively, i.e. in the native representation format -->
 
-##### customary text addresses -> text representation conversion
+##### Native representation -> text representation conversion
 
-<!-- instructions for how to convert from text address normally used in the ecosystem to the Interoperable Address format -->
+<!-- instructions for how to convert from native address formats normally used in the ecosystem to the Interoperable Address text representation -->
 <!-- MUST cover all address types used in the ecosystem -->
 
 #### Binary representation
@@ -72,10 +73,28 @@ ChainType binary key: `0xXXXX`
 
 #### Binary -> text conversion
 
-<!-- instructions for converting from the text representation to the binary one -->
+<!-- instructions for converting from the binary representation to the text one -->
 
 #### Examples
 
-## Extra considerations
+### Error handling
+
+<!-- _(Optional section)_ -->
+
+<!-- Document any error handling considerations specific to this namespace, such as:
+- Scenarios where loss of information may occur during conversions (e.g., CAIP-2 -> CAIP-350 when full chainId can't be determined)
+- Error types and how they should be handled -->
+
+### Implementation considerations
+
+<!-- _(Optional section)_ -->
+
+<!-- Document any implementation considerations specific to this namespace, such as:
+- Account types that cannot be chain-specified
+- Chain-wildcard limitations
+- Other implementation footguns specific to this ecosystem -->
+
+### Extra considerations
 
 <!-- Anything that is particular to this namespace and of interest to users, such as not being able to satisfy canonicity requirements or imminent expansions/revisions to the conventions of the ecosystem -->
+
