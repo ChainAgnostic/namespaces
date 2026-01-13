@@ -10,16 +10,18 @@ created: <date created on, in ISO 8601 (yyyy-mm-dd) format>
 requires: <list of standards required to understand this one>
 ---
 
-## Chain reference
-
+## Namespace Reference
 ChainType binary key: `0xXXXX`
 [CAIP-104] namespace: `XXXXX`
+
+## Chain reference
 
 <!-- check existing caip350 profiles on namespaces chainagnostic.org as well as open PRs for collisions with previously-registered binary keys -->
 
 ### Text representation
 
-<!-- a description of the format of chain namespace + reference intended for the text representation of ERC-7930 Interoperable Addresses -->
+<!-- a description of the format of the chain reference specific to this namespace -->
+<!-- this defines ONLY the chainReference portion; per CAIP-350, the full chain identifier is <namespace>:<chainReference> -->
 <!-- MUST include how to represent the ChainType without a reference, since that is supported by [ERC-7930] -->
 
 ##### Text representation -> CAIP-2 conversion

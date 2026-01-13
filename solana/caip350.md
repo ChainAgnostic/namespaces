@@ -22,7 +22,13 @@ We chose to use the blockhash in full, as opposed to using the [CAIP-2], for con
 
 ### Text representation
 
-The full base58btc-encoded genesis blockhash is used. This is larger than the [CAIP-2] representation.
+```
+<genesis_blockhash>
+```
+Where `<genesis_blockhash>` is the full 44-character base58btc-encoded genesis blockhash. This is larger than the [CAIP-2] representation (which truncates to 32 characters).
+
+> **Note:** Per [CAIP-350], the full chain identifier is `solana:<genesis_blockhash>` (e.g., `solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d`).
+
 
 ##### Text representation -> CAIP-2 conversion
 
@@ -61,7 +67,11 @@ Solana addresses are 32-byte public keys, conventionally displayed to users as b
 
 ### Text representation
 
-base58btc-encoded ASCII of the entire public key bytes.
+```
+<public_key>
+```
+
+Where `<public_key>` is the base58btc-encoded ASCII of the entire 32-byte public key.
 
 ##### Text representation -> native representation conversion
 

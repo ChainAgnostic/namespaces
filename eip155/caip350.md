@@ -22,9 +22,13 @@ See [EIP-155] and [EIP-2294].
 ### Text representation
 
 ```
-eip155:<number>
+<number>
 ```
+
 Where `<number>` is the decimal representation of the chain's `chainId`, without leading zeroes.
+
+> **Note:** Per [CAIP-350], the full chain identifier is `eip155:<number>` (e.g., `eip155:1`, `eip155:10`).
+
 
 ##### Text representation -> CAIP-2 conversion
 
@@ -60,8 +64,11 @@ Bytes of EVM addresses are trivially stored as the payload.
 It's worth noting that addresses are currently 20 bytes, but that might change in the future, most likely to 32 bytes [^2]
 
 ### Text representation
+```
+<address>
+```
+Where `<address>` is the 20 bytes of an EVM address, hexadecimal-encoded according to [EIP-55].
 
-For text representation, the 20 bytes of EVM addresses should be hexadecimal-encoded according to [EIP-55].
 This standard deliberately does not define the text representation of EVM addresses if they are extended in the future, since it's not possible to know which human-readable representation will be more familiar to users in such hypothetical scenario.
 This profile should be amended in the future to reflect it in such a case.
 
