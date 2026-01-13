@@ -30,7 +30,7 @@ ChainType binary key: `0xXXXX`
 
 ##### Customary (CAIP-2) conversion - text representation conversion
 
-<!-- instructions for how to convert from a CAIP-2 string to the Interoperable Address format -->
+<!-- instructions for how to convert from a CAIP-2 string to this standard's text representation -->
 
 #### Binary representation
 
