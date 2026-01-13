@@ -30,11 +30,11 @@ Where `<number>` is the decimal representation of the chain's `chainId`, without
 > **Note:** Per [CAIP-350], the full chain identifier is `eip155:<number>` (e.g., `eip155:1`, `eip155:10`).
 
 
-##### Text representation -> CAIP-2 conversion
+##### Text representation -> customary (CAIP-2) conversion
 
 In the case where the `chainId` is larger than what can be represented in 32 decimal characters, the leading 32 characters should be used.
 
-##### CAIP-2 - text representation conversion
+##### Customary (CAIP-2) conversion - text representation conversion
 
 This transformation would not be fully deterministic in the case where `chainId`s larger than 10^32 are used. It is assumed wallets and other software will be able to differentiate between chains from just the leading 32 decimal characters, and use a lookup table of popular chains to complete the missing information to convert CAIP-2 identifiers to this standard.
 

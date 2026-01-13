@@ -24,11 +24,11 @@ ChainType binary key: `0xXXXX`
 <!-- this defines ONLY the chainReference portion; per CAIP-350, the full chain identifier is <namespace>:<chainReference> -->
 <!-- MUST include how to represent the ChainType without a reference, since that is supported by [ERC-7930] -->
 
-##### Text representation -> CAIP-2 conversion
+##### Text representation -> customary (CAIP-2) conversion
 
 <!-- instructions for how to convert from the above to a CAIP-2 string -->
 
-##### CAIP-2 - text representation conversion
+##### Customary (CAIP-2) conversion - text representation conversion
 
 <!-- instructions for how to convert from a CAIP-2 string to the Interoperable Address format -->
 
