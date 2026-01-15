@@ -19,8 +19,8 @@ The namespace "tron" refers to the TRON blockchain and its testnets.
 
 ## References
 
-- [TRON]: TRON Website
-- [API]: TRON API documentation
+- [TRON Website][TRON]
+- [TRON API documentation][API]
 
 ## Copyright
 
