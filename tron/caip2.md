@@ -15,18 +15,15 @@ requires:
 
 ## Rationale
 
-In the TRON ecosystem, chain IDs uniquely identify each network. They are
-derived from the genesis block hash, as specified in [TIP-474].
+In the TRON ecosystem, chain IDs uniquely identify each network.
+They are derived from the genesis block hash, as specified in [TIP-474].
 
 ## Syntax
 
-A [CAIP-2] chain ID for a TRON network uses the `tron` namespace, and the
-reference portion is the decimal representation of the value returned by the
-[`eth_chainId`] RPC method.
+A [CAIP-2] chain ID for a TRON network uses the `tron` namespace, and the reference portion is the decimal representation of the value returned by the [`eth_chainId`] RPC method.
 
-In TRON, the RPC’s `eth_chainId` response is defined as the last four bytes of
-the genesis block hash. As a 32-bit value, it ranges from `0x00000000` through
-`0xFFFFFFFF`.
+In TRON, the RPC’s `eth_chainId` response is defined as the last four bytes of the genesis block hash.
+As a 32-bit value, it ranges from `0x00000000` through `0xFFFFFFFF`.
 
 A full TRON CAIP-2 chain ID has the form:
 
@@ -55,8 +52,7 @@ To obtain the chain ID, send an `eth_chainId` JSON-RPC request to a TRON node:
 }
 ```
 
-The `result` field is a hexadecimal string. Convert it to a base-10 integer to
-obtain the CAIP-2 reference:
+The `result` field is a hexadecimal string. Convert it to a base-10 integer to obtain the CAIP-2 reference:
 
 ```text
 0x2b6653dc → 728126428
