@@ -2,7 +2,7 @@
 namespace-identifier: haneul
 title: Haneul Ecosystem
 author: Geunhwa Jeong (@GeunhwaJeong)
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/XXX
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/168
 status: Draft
 type: Informational
 created: 2026-01-19
