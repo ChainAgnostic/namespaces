@@ -2,7 +2,7 @@
 namespace-identifier: aptos
 title: Aptos Ecosystem
 author: Jon Tang <@jtang17>
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/XXX
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/169
 status: Draft
 type: Informational
 created: 2025-12-12
