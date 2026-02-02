@@ -67,7 +67,7 @@ It's worth noting that addresses are currently 20 bytes, but that might change i
 ```
 <address>
 ```
-Where `<address>` is the 20 bytes of an EVM address, hexadecimal-encoded according to [EIP-55].
+Where `<address>` is the 20 bytes of an EVM address, hexadecimal-encoded according to [EIP-55] with `0x` prefix.
 
 This standard deliberately does not define the text representation of EVM addresses if they are extended in the future, since it's not possible to know which human-readable representation will be more familiar to users in such hypothetical scenario.
 This profile should be amended in the future to reflect it in such a case.
