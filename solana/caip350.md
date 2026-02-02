@@ -32,7 +32,7 @@ Where `<genesis_blockhash>` is the full 44-character base58btc-encoded genesis b
 
 ##### Text representation -> customary (CAIP-2) conversion
 
-The leading 32 characters are used, and the rest discarded, in a manner similar to what is specified on [this namespace's CAIP-2](caip2.md) profile.
+The leading 32 characters are used, and the rest discarded, in a manner similar to what is specified on [this namespace's CAIP-2](caip2.md) profile (e.g., `solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp`).
 
 ##### Customary (CAIP-2) conversion?CAIP-2 - text representation conversion
 
