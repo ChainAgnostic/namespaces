@@ -59,9 +59,9 @@ stacks:2147483648
 - [SIP-005][] - Blocks and Transactions
 - [API documentation][] - Core API info
 
-[SIP-005][https://github.com/stacksgov/sips/blob/main/sips/sip-005/sip-005-blocks-and-transactions.md]
-[API documentation][https://hirosystems.github.io/stacks-blockchain-api/#operation/get_core_api_info]
-[CAIP-2][https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md]
+[SIP-005]: https://github.com/stacksgov/sips/blob/main/sips/sip-005/sip-005-blocks-and-transactions.md
+[API documentation]: https://hirosystems.github.io/stacks-blockchain-api/#operation/get_core_api_info
+[CAIP-2]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
 
 ## Copyright
 Copyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
