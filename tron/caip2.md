@@ -89,7 +89,7 @@ tron:0x94a9059e
 
 ## Backwards Compatibility
 
-Prior to TIP-474, Tron did not have a standardized chain ID mechanism for cross-chain identification.
+Prior to [TIP-474], Tron did not have a standardized chain ID mechanism for cross-chain identification.
 The introduction of hexadecimal chain IDs maintains compatibility with:
 - Existing EVM tooling and wallets (MetaMask, etc.)
 - Blockchain registries (ChainList, ChainID.network)
