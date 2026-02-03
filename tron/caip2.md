@@ -1,7 +1,7 @@
 ---
 namespace-identifier: tron-caip2
 title: Tron Namespace - Blockchain ID Specification
-author: WalletConnect Team
+author: Ignacio Rivera (@riveign), Daniel Rocha (@danroc)
 discussions-to: https://github.com/ChainAgnostic/namespaces/pull/XXX
 status: Draft
 type: Standard
