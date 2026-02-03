@@ -1,7 +1,7 @@
 ---
 namespace-identifier: tron
 title: Tron Ecosystem
-author: WalletConnect Team
+author: Ignacio Rivera (@riveign), Daniel Rocha (@danroc)
 status: Draft
 type: Informational
 created: 2026-01-27
