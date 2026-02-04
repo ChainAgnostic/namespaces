@@ -25,36 +25,36 @@ See this namespace's [CAIP-2](caip2.md) profile. Chains are identified by string
 <chain_id_string>
 ```
 
-Where `<chain_id_string>` is the case-sensitive chain identifier (e.g. `SN_MAIN`, `SN_GOERLI`) as returned by `starknet_chainId` after converting the hex-encoded field element to a string.
+Where `<chain_id_string>` is the case-sensitive chain identifier (e.g. `SN_MAIN`, `SN_GOERLI`).
 
 > **Note:** Per [CAIP-350], the full chain identifier is `starknet:<chain_id_string>` (e.g., `starknet:SN_MAIN`, `starknet:SN_GOERLI`).
 
 ##### Text representation -> customary (CAIP-2) conversion
 
-The text representation is identical to the [CAIP-2](caip2.md) chain identifier; no conversion is needed.
+The text representation (chain reference) is the same as the chain reference in the [CAIP-2](caip2.md) chain identifier; no conversion is needed.
 
 ##### Customary (CAIP-2) conversion - text representation conversion
 
-The [CAIP-2](caip2.md) chain identifier is identical to the text representation; no conversion is needed.
+The chain reference in the [CAIP-2](caip2.md) chain identifier is the same as the text representation; no conversion is needed.
 
 #### Binary representation
 
-The chain reference is the binary form of the chain ID as used by the chain: the bytes obtained by decoding the hex-encoded value returned by `starknet_chainId` (RFC-4616 base16, strip any `0x` prefix). This is the field element in byte form. Length is variable (e.g. 7 bytes for `SN_MAIN`, 9 bytes for `SN_GOERLI`). The ChainReference field in binary Interoperable Addresses must carry this byte sequence; higher-level framing (e.g. length prefix) is defined by [ERC-7930][] / CAIP-350.
+The chain reference is the UTF-8 encoding of the chain ID string. Length is variable (e.g. 7 bytes for `SN_MAIN`, 9 bytes for `SN_GOERLI`). The ChainReference field in binary Interoperable Addresses must carry this byte sequence; higher-level framing (e.g. length prefix) is defined by [ERC-7930][] / CAIP-350.
 
 #### Text -> binary conversion
 
-Obtain the chain ID string (the segment after `starknet:`). To get the binary form: decode the hex returned by `starknet_chainId` for that chain to bytes. Equivalently, for current chain IDs the byte form coincides with the UTF-8 encoding of the string.
+Encode the chain ID string as UTF-8 bytes.
 
 #### Binary -> text conversion
 
-Decode the bytes to the chain ID string (for current identifiers, the bytes are UTF-8/ASCII) and format as `starknet:<string>`.
+Decode the bytes to the chain ID string (for current identifiers, the bytes are UTF-8/ASCII).
 
 #### Examples
 
-| Chain | Text | Binary (hex of ChainReference) |
-|-------|------|--------------------------------|
-| StarkNet mainnet | `starknet:SN_MAIN` | `0x534e5f4d41494e` (binary form from `starknet_chainId`) |
-| StarkNet Goerli | `starknet:SN_GOERLI` | `0x534e5f474f45524c49` (binary form from `starknet_chainId`) |
+| Chain | Text (chain reference) | Binary |
+|-------|------------------------|--------------------------------|
+| StarkNet mainnet | `SN_MAIN` | `0x534e5f4d41494e` |
+| StarkNet Goerli | `SN_GOERLI` | `0x534e5f474f45524c49` |
 
 ## Addresses
 
@@ -100,7 +100,7 @@ When converting from CAIP-2 to this profile, the chain reference is fully determ
 
 ### Implementation considerations
 
-Chain IDs are resolved via `starknet_chainId` (hex-encoded); the interoperable format uses the string form for text representation and the hex-decoded bytes (binary form) for binary representation. Addresses are always 32 bytes; leading zero in hex is normal for field elements below 2^255.
+The interoperable format uses the chain ID string for text representation and its UTF-8 encoding for binary. Chain IDs may be resolved via `starknet_chainId` when needed (e.g. to discover the identifier for a connected node). Addresses are always 32 bytes; leading zero in hex is normal for field elements below 2^255.
 
 ### Extra considerations
 

@@ -31,11 +31,11 @@ Where `<genesis_hash_prefix>` is the first 32 lowercase hex characters (16 bytes
 
 ##### Text representation -> customary (CAIP-2) conversion
 
-The text representation is identical to the [CAIP-2](caip2.md) chain identifier; no conversion is needed.
+The text representation (chain reference) is the same as the chain reference in the [CAIP-2](caip2.md) chain identifier; no conversion is needed.
 
 ##### Customary (CAIP-2) conversion - text representation conversion
 
-The [CAIP-2](caip2.md) chain identifier is identical to the text representation; no conversion is needed.
+The chain reference in the [CAIP-2](caip2.md) chain identifier is the same as the text representation; no conversion is needed.
 
 #### Binary representation
 
@@ -51,11 +51,11 @@ Encode the 16 bytes as 32 lowercase hex characters (RFC-4616 base16, no 0x-prefi
 
 #### Examples
 
-| Chain | Text | Binary (hex of ChainReference) |
-|-------|------|--------------------------------|
-| Bitcoin mainnet | `bip122:000000000019d6689c085ae165831e93` | `0x000000000019d6689c085ae165831e93` |
-| Bitcoin testnet | `bip122:000000000933ea01ad0ee984209779ba` | `0x000000000933ea01ad0ee984209779ba` |
-| Litecoin mainnet | `bip122:12a765e31ffd4059bada1e25190f6e98` | `0x12a765e31ffd4059bada1e25190f6e98` |
+| Chain | Text (chain reference) | Binary |
+|-------|------------------------|--------------------------------|
+| Bitcoin mainnet | `000000000019d6689c085ae165831e93` | `0x000000000019d6689c085ae165831e93` |
+| Bitcoin testnet | `000000000933ea01ad0ee984209779ba` | `0x000000000933ea01ad0ee984209779ba` |
+| Litecoin mainnet | `12a765e31ffd4059bada1e25190f6e98` | `0x12a765e31ffd4059bada1e25190f6e98` |
 
 ## Addresses
 
