@@ -88,21 +88,21 @@ Remove the `0x` prefix and decode the 64 hex characters to 32 bytes (via [RFC-46
 
 Encode the 32 bytes as 64 hex characters and prepend `0x`. Apply [EIP-55][] checksum casing for the canonical form.
 
-#### Examples
+### Examples
 
 | Text | Binary (hex of Address field) |
 |------|-------------------------------|
 | `0x02DdfB499765c064eaC5039E3841AA5f382E73B598097a40073BD8B48170Ab57` | `0x02ddfb499765c064eac5039e3841aa5f382e73b598097a40073bd8b48170ab57` (32 bytes) |
 
-### Error handling
+## Error handling
 
 When converting from [CAIP-2] to this profile, the chain reference is fully determined by the chain ID string, so no loss of information occurs. If a chain ID is unknown or the UTF-8 encoding is invalid, implementations should signal an error.
 
-### Implementation considerations
+## Implementation considerations
 
 The interoperable format uses the chain ID string for text representation and its UTF-8 encoding for binary. Chain IDs may be resolved via the `starknet_chainId` method when needed (e.g. to discover the identifier for a connected node). Addresses are always 32 bytes; leading zero in hex is normal for field elements below 2^255.
 
-### Extra considerations
+## Extra considerations
 
 Wallets and other software are expected to be able to fetch the extra information needed to convert from [CAIP-2](caip2.md) to produce the corresponding identifier defined by this standard.
 
