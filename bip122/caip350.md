@@ -69,15 +69,15 @@ See this namespace's [CAIP-10](caip10.md) profile. BIP122 supports multiple addr
 
 Where `<address>` is the full native ASCII form (base58btc, bech32, or bech32m) as in [CAIP-10](caip10.md)—e.g. P2SH `35PBEaofpUeH8VnnNSorM1QZsadrZoQp4N`, SegWit `bc1qwz2lhc40s8ty3l5jg3plpve3y3l82x9l42q7fk`, or Taproot `bc1pmzfrwwndsqmk5yh69yjr5lfgfg4ev8c0tsc06e`.
 
-##### Text representation -> native representation conversion
+#### Text representation -> native representation conversion
 
 No transformation; the text representation is the native representation.
 
-##### Native representation -> text representation conversion
+#### Native representation -> text representation conversion
 
 No transformation; the native representation is the text representation.
 
-#### Binary representation
+### Binary representation
 
 The binary representation uses a one-byte type prefix followed by the decoded payload (without checksum):
 
@@ -98,7 +98,7 @@ Checksums are omitted in binary; they can be recomputed when converting back to 
 2. For 0x01: read 21 bytes (1 version + 20 hash), encode with base58btc including checksum for the target network.
 3. For 0x02: read 1 byte witness version, then 20 or 32 bytes program; encode with [bech32][] or [bech32m][] (and correct HRP for network).
 
-#### Examples
+### Examples
 
 | Text (Bitcoin mainnet) | Binary (hex, after type byte) |
 |------------------------|-------------------------------|
@@ -106,15 +106,15 @@ Checksums are omitted in binary; they can be recomputed when converting back to 
 | SegWit `bc1qwz2lhc40s8ty3l5jg3plpve3y3l82x9l42q7fk` | `0x02` + `0x00` + 20-byte witness program |
 | Taproot `bc1pmzfrwwndsqmk5yh69yjr5lfgfg4ev8c0tsc06e` | `0x02` + `0x01` + 32-byte witness program |
 
-### Error handling
+## Error handling
 
 When converting from this profile's [CAIP-2] encoding to this profile's [CAIP-350] encoding, the chain reference is already fully specified (32 hex chars), so no loss of information or difference of expression occurs. For addresses, invalid or unsupported native encodings (e.g. legacy P2PKH excluded from [CAIP-10](caip10.md)) should be rejected with an appropriate error.
 
-### Implementation considerations
+## Implementation considerations
 
 Legacy P2PKH addresses are excluded from [CAIP-10](caip10.md) and therefore from this profile. Only P2SH, SegWit, and Taproot address types are supported. Implementations must use the correct HRP and version bytes per network (e.g. mainnet vs testnet, or other BIP122 chains).
 
-### Extra considerations
+## Extra considerations
 
 Wallets and other software are expected to be able to fetch the extra information needed to convert from [CAIP-2](caip2.md) to produce the corresponding identifier defined by this standard.
 
