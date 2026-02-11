@@ -17,7 +17,7 @@ ChainType binary key: `0x0003`
 
 ## Chain reference
 
-See this namespace's [CAIP-2](caip2.md) profile. Chains are identified by string identifiers (e.g. `SN_MAIN`, `SN_GOERLI`) that are encoded as field elements on the chain but expressed as ASCII strings in CAIP-2.
+See this namespace's [CAIP-2](caip2.md) profile. Chains are identified by string identifiers (e.g. `SN_MAIN`, `SN_GOERLI`) that are encoded as field elements on the chain but expressed as ASCII strings in [CAIP-2].
 
 ### Text representation
 
@@ -29,17 +29,17 @@ Where `<chain_id_string>` is the case-sensitive chain identifier (e.g. `SN_MAIN`
 
 > **Note:** Per [CAIP-350], the full chain identifier is `starknet:<chain_id_string>` (e.g., `starknet:SN_MAIN`, `starknet:SN_GOERLI`).
 
-##### Text representation -> customary (CAIP-2) conversion
+#### Text representation -> customary (CAIP-2) conversion
 
 The text representation (chain reference) is the same as the chain reference in the [CAIP-2](caip2.md) chain identifier; no conversion is needed.
 
-##### Customary (CAIP-2) conversion - text representation conversion
+#### Customary (CAIP-2) conversion - text representation conversion
 
 The chain reference in the [CAIP-2](caip2.md) chain identifier is the same as the text representation; no conversion is needed.
 
-#### Binary representation
+### Binary representation
 
-The chain reference is the UTF-8 encoding of the chain ID string. Length is variable (e.g. 7 bytes for `SN_MAIN`, 9 bytes for `SN_GOERLI`). The ChainReference field in binary Interoperable Addresses must carry this byte sequence; higher-level framing (e.g. length prefix) is defined by [ERC-7930][] / CAIP-350.
+The chain reference is the UTF-8 encoding of the chain ID string. Length is variable (e.g. 7 bytes for `SN_MAIN`, 9 bytes for `SN_GOERLI`). The ChainReference field in binary Interoperable Addresses must carry this byte sequence; higher-level framing (e.g. length prefix) is defined by [ERC-7930][] / [CAIP-350][].
 
 #### Text -> binary conversion
 
@@ -47,7 +47,7 @@ Encode the chain ID string as UTF-8 bytes.
 
 #### Binary -> text conversion
 
-Decode the bytes to the chain ID string (for current identifiers, the bytes are UTF-8/ASCII).
+Decode the bytes to the chain ID string (for all current identifiers, the bytes are UTF-8/ASCII).
 
 #### Examples
 
@@ -82,11 +82,11 @@ The address is stored as the raw 32 bytes (big-endian), as in the native field e
 
 #### Text -> binary conversion
 
-Remove the `0x` prefix and decode the 64 hex characters to 32 bytes (RFC-4616 base16).
+Remove the `0x` prefix and decode the 64 hex characters to 32 bytes (via [RFC-4616] base16).
 
 #### Binary -> text conversion
 
-Encode the 32 bytes as 64 hex characters and prepend `0x`. Apply [EIP-55][] checksum for the canonical form.
+Encode the 32 bytes as 64 hex characters and prepend `0x`. Apply [EIP-55][] checksum casing for the canonical form.
 
 #### Examples
 
@@ -96,11 +96,11 @@ Encode the 32 bytes as 64 hex characters and prepend `0x`. Apply [EIP-55][] chec
 
 ### Error handling
 
-When converting from CAIP-2 to this profile, the chain reference is fully determined by the chain ID string, so no loss of information occurs. If a chain ID is unknown or the UTF-8 encoding is invalid, implementations should signal an error.
+When converting from [CAIP-2] to this profile, the chain reference is fully determined by the chain ID string, so no loss of information occurs. If a chain ID is unknown or the UTF-8 encoding is invalid, implementations should signal an error.
 
 ### Implementation considerations
 
-The interoperable format uses the chain ID string for text representation and its UTF-8 encoding for binary. Chain IDs may be resolved via `starknet_chainId` when needed (e.g. to discover the identifier for a connected node). Addresses are always 32 bytes; leading zero in hex is normal for field elements below 2^255.
+The interoperable format uses the chain ID string for text representation and its UTF-8 encoding for binary. Chain IDs may be resolved via the `starknet_chainId` method when needed (e.g. to discover the identifier for a connected node). Addresses are always 32 bytes; leading zero in hex is normal for field elements below 2^255.
 
 ### Extra considerations
 
@@ -114,3 +114,4 @@ Wallets and other software are expected to be able to fetch the extra informatio
 [CAIP-350]: https://chainagnostic.org/CAIPs/caip-350
 [EIP-55]: https://eips.ethereum.org/EIPS/eip-55
 [ERC-7930]: https://eips.ethereum.org/EIPS/eip-7930
+[RFC-4616]: https://datatracker.ietf.org/doc/html/rfc4616
