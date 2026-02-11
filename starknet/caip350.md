@@ -102,10 +102,6 @@ When converting from [CAIP-2] to this profile, the chain reference is fully dete
 
 The interoperable format uses the chain ID string for text representation and its UTF-8 encoding for binary. Chain IDs may be resolved via the `starknet_chainId` method when needed (e.g. to discover the identifier for a connected node). Addresses are always 32 bytes; leading zero in hex is normal for field elements below 2^255.
 
-## Extra considerations
-
-Wallets and other software are expected to be able to fetch the extra information needed to convert from [CAIP-2](caip2.md) to produce the corresponding identifier defined by this standard.
-
 ## References
 
 [CAIP-2]: https://chainagnostic.org/CAIPs/caip-2

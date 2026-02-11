@@ -114,10 +114,6 @@ When converting from this profile's [CAIP-2] encoding to this profile's [CAIP-35
 
 Legacy P2PKH addresses are excluded from [CAIP-10](caip10.md) and therefore from this profile. Only P2SH, SegWit, and Taproot address types are supported. Implementations must use the correct HRP and version bytes per network (e.g. mainnet vs testnet, or other BIP122 chains).
 
-## Extra considerations
-
-Wallets and other software are expected to be able to fetch the extra information needed to convert from [CAIP-2](caip2.md) to produce the corresponding identifier defined by this standard.
-
 ## References
 
 [BIP122]: https://github.com/bitcoin/bips/blob/master/bip-0122.mediawiki
