@@ -6,7 +6,7 @@ discussions-to: https://github.com/ChainAgnostic/namespaces/pull/168
 status: Draft
 type: Informational
 created: 2026-01-19
-updated: 2026-01-19
+updated: 2026-02-11
 ---
 
 # CAIP-2
@@ -39,11 +39,15 @@ Where `<network>` is one of the following reserved, stable identifiers:
 
 `^haneul:(mainnet|testnet|devnet)$`
 
-Only these exact network identifiers are currently supported.
+Only these exact network identifiers are currently supported. Network names are lowercase ASCII strings with a maximum length of 7 characters. The resolved chain identifier returned by RPC is 4 bytes (8 hex characters), derived from the first 4 bytes of the 32-byte Blake2b-256 genesis checkpoint digest.
 
 #### Example
 
 `haneul:testnet`
+
+### Governance
+
+New network identifiers and chain resets are decided by Haneul Labs. Adding a new network name requires a protocol-level code change and validator coordination. Resets of `testnet` and `devnet` may occur during protocol upgrades or development cycles; `mainnet` is not expected to be reset under normal circumstances.
 
 ### Resolution Mechanics
 
@@ -78,7 +82,7 @@ This approach allows developers to use intuitive, readable CAIP-2 identifiers (e
 
 The separation of **stable identifiers** (e.g., `haneul:testnet`) from the **unambiguous chain identifier** (e.g., the identifier returned by `haneul_getChainIdentifier`) is particularly important because:
 
-- **`testnet` and `devnet` may be reset** by Haneul maintainers, resulting in a new genesis state.
+- **`testnet` and `devnet` may be reset** by Haneul maintainers, resulting in a new genesis state. A reset is a complete reinitialization — all on-chain state, including balances, objects, and smart contract data, is wiped and a new genesis checkpoint is produced. Only the stable network name (e.g., `testnet`) persists across resets.
 - When this happens, the **genesis checkpoint digest changes**, meaning the underlying chain identifier is no longer the same.
 - If clients depended directly on the digest as the CAIP-2 identifier, each reset would break compatibility or require external coordination.
 - By resolving the digest dynamically via RPC, clients can ensure they're talking to the correct chain, without needing to change the CAIP-2 identifier they rely on.
