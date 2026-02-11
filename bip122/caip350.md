@@ -96,7 +96,7 @@ Checksums are omitted in binary; they can be recomputed when converting back to 
 
 1. Read the type byte (0x01 or 0x02).
 2. For 0x01: read 21 bytes (1 version + 20 hash), encode with base58btc including checksum for the target network.
-3. For 0x02: read 1 byte witness version, then 20 or 32 bytes program; encode with bech32 or bech32m (and correct HRP for network).
+3. For 0x02: read 1 byte witness version, then 20 or 32 bytes program; encode with [bech32][] or [bech32m][] (and correct HRP for network).
 
 #### Examples
 
@@ -108,7 +108,7 @@ Checksums are omitted in binary; they can be recomputed when converting back to 
 
 ### Error handling
 
-When converting from CAIP-2 to this profile, the chain reference is already fully specified (32 hex chars), so no loss of information occurs. For addresses, invalid or unsupported native encodings (e.g. legacy P2PKH excluded from [CAIP-10](caip10.md)) should be rejected with an appropriate error.
+When converting from this profile's [CAIP-2] encoding to this profile's [CAIP-350] encoding, the chain reference is already fully specified (32 hex chars), so no loss of information or difference of expression occurs. For addresses, invalid or unsupported native encodings (e.g. legacy P2PKH excluded from [CAIP-10](caip10.md)) should be rejected with an appropriate error.
 
 ### Implementation considerations
 
