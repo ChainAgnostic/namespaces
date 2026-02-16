@@ -18,11 +18,13 @@ the Stacks ecosystem.
 - [Stacks developer documentation][]
 - [CAIP-2][]
 - [CAIP-10][]
+- [CAIP-19][]
 
 [SIP-005]: https://github.com/stacksgov/sips/blob/main/sips/sip-005/sip-005-blocks-and-transactions.md
 [Stacks developer documentation]: https://docs.stacks.co/
 [CAIP-2]: https://github.com/chainagnostic/caips/blob/master/caips/caip-2.md
 [CAIP-10]: https://github.com/chainagnostic/caips/blob/master/caips/caip-10.md
+[CAIP-19]: https://github.com/chainagnostic/caips/blob/master/caips/caip-19.md
 
 ## Copyright
 
