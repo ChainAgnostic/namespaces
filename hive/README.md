@@ -22,7 +22,7 @@ Registering the `hive` namespace enables:
 - Standard CAIP-2 chain identifiers for Hive networks
 - Use of CAIP-10 account identifiers for Hive account names
 - Interoperability with multichain wallets and tooling
-- Deterministic identification of Hive mainnet and testnet
+- Deterministic identification of Hive networks (mainnet, mirrornet)
 
 Hive networks expose a protocol-defined `chain_id` used in transaction signing to prevent cross-network replay. This makes Hive suitable for deterministic CAIP-2 identification.
 

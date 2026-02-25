@@ -20,7 +20,7 @@ Hive defines a 32-byte (`64` hex characters) `chain_id` value used for transacti
 
 Because CAIP-2 restricts the `reference` field to a maximum of 32 characters, this specification defines the `reference` as:
 
-> The first 32 lowercase hexadecimal characters of Hive’s `chain_id`.
+> The first 32 lowercase hexadecimal characters of Hive's `chain_id`.
 
 This approach ensures:
 
@@ -40,16 +40,34 @@ This approach ensures:
 The `reference` MUST:
 
 - Be lowercase hexadecimal
-- Match the pattern: [0-9a-f]{32}
+- Match the pattern: `[0-9a-f]{32}`
 
 ### Resolution
 
 To derive a valid CAIP-2 identifier:
 
-1. Query a Hive node configuration.
-2. Retrieve the `chain_id` value.
+1. Query a Hive node using `database_api.get_config`.
+2. Retrieve the `HIVE_CHAIN_ID` value from the response.
 3. Convert to lowercase.
 4. Truncate to the first 32 hexadecimal characters.
+
+#### Example Request
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "database_api.get_config",
+  "id": 1
+}
+```
+
+#### Example Response (partial)
+
+```json
+{
+  "HIVE_CHAIN_ID": "beeab0de00000000000000000000000000000000000000000000000000000000"
+}
+```
 
 ## Known Networks (Non-Normative Examples)
 
@@ -60,11 +78,12 @@ CAIP-2: `hive:beeab0de000000000000000000000000`
 
 ---
 
-### Hive Testnet
+### Hive Mirrornet
 
 Full chain_id: `42`
-CAIP-2: `42000000000000000000000000000000`
+CAIP-2: `hive:42000000000000000000000000000000` (zero-padded to 32 hex characters)
 
+> **Note:** The mirrornet is a periodic snapshot of mainnet used for testing. There is no permanent public testnet at this time; mirrornet instances are ephemeral.
 
 ## Security Considerations
 
@@ -74,16 +93,18 @@ Hive uses account-based identity rather than address-based identity. Application
 
 ## Test Cases
 
+```
 hive:beeab0de000000000000000000000000
 hive:42000000000000000000000000000000
-
+```
 
 ## References
 
-Hive configuration documentation:
-https://developers.hive.io/tutorials-recipes/understanding-configuration-values.html
+- Hive configuration documentation:
+  https://developers.hive.io/tutorials-recipes/understanding-configuration-values.html
+- CAIP-2 specification:
+  https://chainagnostic.org/CAIPs/caip-2
 
 ## Copyright
 
 Copyright and related rights waived via CC0 1.0.
-
