@@ -13,6 +13,7 @@ requires: CAIP-2
 ## Namespace Reference
 
 ChainType binary key: `0x0003`
+
 [CAIP-104] namespace: `starknet`
 
 ## Chain reference

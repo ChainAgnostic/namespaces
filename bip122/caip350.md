@@ -13,6 +13,7 @@ requires: CAIP-2
 ## Namespace Reference
 
 ChainType binary key: `0x0001`
+
 [CAIP-104] namespace: `bip122`
 
 ## Chain reference
@@ -25,7 +26,7 @@ See this namespace's [CAIP-2](caip2.md) profile. The chain reference is the firs
 <genesis_hash_prefix>
 ```
 
-Where `<genesis_hash_prefix>` is the first 32 lowercase hex characters (16 bytes) of the genesis block hash as defined in [BIP122][].
+This is the first 32 lowercase hex characters (16 bytes) of the genesis block hash as defined in [BIP122][].
 
 > **Note:** Per [CAIP-350], the full chain identifier is `bip122:<genesis_hash_prefix>` (e.g., `bip122:000000000019d6689c085ae165831e93`, `bip122:000000000933ea01ad0ee984209779ba`).
 
