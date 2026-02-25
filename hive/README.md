@@ -2,7 +2,7 @@
 namespace-identifier: hive
 title: Hive
 author: ["@feruzm"]
-discussions-to: 
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/174
 status: Draft
 type: Informational
 created: 2026-02-25
