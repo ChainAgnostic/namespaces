@@ -2,7 +2,7 @@
 namespace-identifier: hive-caip2
 title: Hive Namespace - CAIP-2 Chain Identifiers
 author: ["@feruzm"]
-discussions-to: 
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/174
 status: Draft
 type: Standard
 created: 2026-02-25
