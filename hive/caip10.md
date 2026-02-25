@@ -2,7 +2,7 @@
 namespace-identifier: hive-caip10
 title: Hive Namespace - CAIP-10 Account Identifiers
 author: ["@feruzm"]
-discussions-to: 
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/174
 status: Draft
 type: Standard
 created: 2026-02-25
