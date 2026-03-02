@@ -1,7 +1,7 @@
 ---
 namespace-identifier: casper
 title: Casper network
-author: <["David Hernando <david.hernando@make.services>", "Adrian Wrona <adrian@casper.network>"]>
+author: ["David Hernando <david.hernando@make.services>", "Adrian Wrona <adrian@casper.network>"]
 discussions-to: https://github.com/ChainAgnostic/namespaces/pull/100
 status: Draft
 type: Informational
