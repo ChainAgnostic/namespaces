@@ -11,8 +11,7 @@ requires: CAIP-2
 
 # CAIP-2
 
-For context, see the CAIP-2 specification:
-https://chainagnostic.org/CAIPs/caip-2
+For context, see the [CAIP-2] specification:
 
 ## Rationale
 
@@ -25,7 +24,7 @@ Because CAIP-2 restricts the `reference` field to a maximum of 32 characters, th
 This approach ensures:
 
 - Deterministic chain identification
-- Compatibility with CAIP-2 length constraints
+- Compatibility with [CAIP-2] length constraints
 - Collision resistance appropriate for blockchain network identifiers
 - Alignment with other CAIP-2 namespace implementations
 
@@ -44,7 +43,7 @@ The `reference` MUST:
 
 ### Resolution
 
-To derive a valid CAIP-2 identifier:
+To derive a valid [CAIP-2] identifier:
 
 1. Query a Hive node using `database_api.get_config`.
 2. Retrieve the `HIVE_CHAIN_ID` value from the response.
@@ -87,9 +86,9 @@ CAIP-2: `hive:42000000000000000000000000000000` (zero-padded to 32 hex character
 
 ## Security Considerations
 
-Applications MUST validate network configuration before accepting CAIP-2 identifiers.
+Applications MUST validate network configuration before accepting [CAIP-2] identifiers.
 
-Hive uses account-based identity rather than address-based identity. Applications implementing CAIP-10 should validate account existence via RPC.
+Hive uses account-based identity rather than address-based identity. Applications implementing [CAIP-10] should validate account existence via RPC.
 
 ## Test Cases
 
@@ -100,10 +99,11 @@ hive:42000000000000000000000000000000
 
 ## References
 
-- Hive configuration documentation:
-  https://developers.hive.io/tutorials-recipes/understanding-configuration-values.html
-- CAIP-2 specification:
-  https://chainagnostic.org/CAIPs/caip-2
+- Hive [configuration]
+
+[CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
+[CAIP-10]: https://chainagnostic.org/CAIPs/caip-10
+[configuration]: https://developers.hive.io/tutorials-recipes/understanding-configuration-values.html
 
 ## Copyright
 

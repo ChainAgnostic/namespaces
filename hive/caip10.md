@@ -11,8 +11,7 @@ requires: ["CAIP-2", "CAIP-10"]
 
 # CAIP-10
 
-For context, see the CAIP-10 specification:
-https://chainagnostic.org/CAIPs/caip-10
+For context, see the [CAIP-10] specification.
 
 ## Rationale
 
@@ -25,11 +24,11 @@ Each Hive account name:
 - Is validated at the protocol level
 - Is constrained by naming rules enforced by consensus
 
-Because Hive accounts are stable identifiers and tied to a specific chain via `chain_id`, they are suitable for CAIP-10 account identifiers.
+Because Hive [accounts] are stable identifiers and tied to a specific chain via `chain_id`, they are suitable for CAIP-10 account identifiers.
 
 ## Specification
 
-A Hive CAIP-10 account identifier MUST follow:
+A Hive [CAIP-10] account identifier MUST follow:
 
 `hive:<reference>:<account>`
 
@@ -134,10 +133,10 @@ hive:beeab0de000000000000000000000000:has..double
 
 ## References
 
-- Hive configuration and account rules:
-  https://developers.hive.io/tutorials-recipes/understanding-configuration-values.html
-- CAIP-10 specification:
-  https://chainagnostic.org/CAIPs/caip-10
+- Hive configuration and [accounts] model
+
+[accounts]: https://developers.hive.io/tutorials-recipes/understanding-configuration-values.html
+[CAIP-10]:   https://chainagnostic.org/CAIPs/caip-10
 
 ## Copyright
 
