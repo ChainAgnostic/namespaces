@@ -68,7 +68,7 @@ See this namespace's [CAIP-10](caip10.md) profile. BIP122 supports multiple addr
 <address>
 ```
 
-Where `<address>` is the full native ASCII form (base58btc, bech32, or bech32m) as in [CAIP-10](caip10.md)—e.g. P2SH `35PBEaofpUeH8VnnNSorM1QZsadrZoQp4N`, SegWit `bc1qwz2lhc40s8ty3l5jg3plpve3y3l82x9l42q7fk`, or Taproot `bc1pmzfrwwndsqmk5yh69yjr5lfgfg4ev8c0tsc06e`.
+Where `<address>` is the full native ASCII form (base58btc, bech32, or bech32m) as in [CAIP-10](caip10.md)—e.g. P2SH `35PBEaofpUeH8VnnNSorM1QZsadrZoQp4N`, SegWit `bc1qwz2lhc40s8ty3l5jg3plpve3y3l82x9l42q7fk`, or Taproot `bc1p0xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqzk5jj0`.
 
 #### Text representation -> native representation conversion
 
@@ -105,7 +105,7 @@ Checksums are omitted in binary; they can be recomputed when converting back to 
 |------------------------|-------------------------------|
 | P2SH `35PBEaofpUeH8VnnNSorM1QZsadrZoQp4N` | `0x01` + base58btc-decoded payload (version + 20-byte hash) |
 | SegWit `bc1qwz2lhc40s8ty3l5jg3plpve3y3l82x9l42q7fk` | `0x02` + `0x00` + 20-byte witness program |
-| Taproot `bc1pmzfrwwndsqmk5yh69yjr5lfgfg4ev8c0tsc06e` | `0x02` + `0x01` + 32-byte witness program |
+| Taproot `bc1p0xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqzk5jj0` | `0x02` + `0x01` + 32-byte witness program |
 
 ## Error handling
 
