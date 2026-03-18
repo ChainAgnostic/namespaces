@@ -2,7 +2,7 @@
 namespace-identifier: atto-caip2
 title: Atto Namespace - Blockchain ID Specification
 author: Felipe Rotilho (@rotilho)
-discussions-to:
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/178
 status: Draft
 type: Standard
 created: 2026-03-18
