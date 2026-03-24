@@ -5,7 +5,7 @@ author: Andy Golay (@andygolay)
 status: Draft
 type: Informational
 created: 2026-03-23
-requires: ["CAIP-2"]
+requires: ["CAIP-2", "CAIP-10"]
 ---
 
 # Namespace for Movement Network
