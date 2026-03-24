@@ -16,7 +16,7 @@ requires: CAIP-2
 
 ## Rationale
 
-In CAIP-2 a general blockchain identification scheme is defined. This is the
+In [CAIP-2][] a general blockchain identification scheme is defined. This is the
 implementation of CAIP-2 for Movement. Blockchains in the "movement" namespace are
 identified by their numeric `chain_id`, assigned at genesis. Each network is
 maintained by a set of validators with its own REST API endpoints. These chain
@@ -29,8 +29,9 @@ The namespace "movement" refers to the Movement Network blockchain platform.
 ### Reference Definition
 
 The definition for this namespace will use the `chain_id` as an identifier
-for different Movement chains. The chain ID is a positive integer assigned at
-genesis:
+for different Movement chains. The chain ID is a positive integer (greater than
+0 with no maximum value) assigned in the genesis configuration. Each network's
+chain ID is set by the validators at genesis and is immutable thereafter:
 
 | Network | Chain ID |
 |---------|----------|
@@ -40,7 +41,8 @@ genesis:
 ### Resolution Method
 
 To resolve a blockchain reference for the Movement namespace, make an HTTP GET
-request to the [REST API][] of a fullnode, for example:
+request to the [REST API][] of a fullnode. The REST API endpoints are stable,
+long-lived URLs. For example:
 
 ```bash
 # Mainnet
