@@ -2,7 +2,7 @@
 namespace-identifier: movement-caip2
 title: Movement Namespace - Chains
 author: Andy Golay (@andygolay)
-discussions-to:
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/179
 status: Draft
 type: Standard
 created: 2026-03-23
