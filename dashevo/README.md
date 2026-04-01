@@ -12,13 +12,9 @@ requires: ["CAIP-2", "CAIP-10"]
 
 # Namespace for Dash Platform
 
-[Dash Platform][] is an application layer built on top of the [Dash][] payment
-network. It uses [Tenderdash][] (a Dash fork of Tendermint) for consensus and
-provides a decentralized identity and data contract system. Unlike Dash Core,
-which operates on a UTXO-based payment model under the [bip122][] namespace,
-Dash Platform uses an identity-based account model where users register
-identities, deploy data contracts, and create documents on a separate consensus
-layer.
+[Dash Platform][] is an application layer built on top of the [Dash][] payment network.
+It uses [Tenderdash][] (a Dash fork of Tendermint) for consensus and provides a decentralized identity and data contract system.
+Unlike Dash Core, which operates on a UTXO-based payment model under the [bip122][] namespace, Dash Platform uses an identity-based account model where users register identities, deploy data contracts, and create documents on a separate consensus layer.
 
 ## Rationale
 
@@ -33,15 +29,13 @@ from Dash Core (bip122) in every dimension relevant to chain addressing:
 
 These differences mean that CAIP-2 chain references, CAIP-10 account
 identifiers, and any higher-level CAIPs would have entirely incompatible
-semantics if forced into the bip122 namespace.
+semantics if forced into the [bip122][] namespace.
 
 ## Governance
 
 Dash Platform is governed through the [Dash Improvement Proposal][DIP] process.
-Protocol changes are proposed as DIPs, discussed by the community, and
-implemented by [Dash Core Group][DCG]. The Tenderdash consensus layer inherits
-governance from the broader Dash masternode network, where masternodes vote on
-proposals and protocol upgrades.
+Protocol changes are proposed as DIPs, discussed by the community, and implemented by [Dash Core Group][DCG].
+The Tenderdash consensus layer inherits governance from the broader Dash masternode network, where masternodes vote on proposals and protocol upgrades.
 
 ## References
 

@@ -16,64 +16,56 @@ requires: ["CAIP-2", "CAIP-10"]
 
 ## Introduction
 
-Dash Platform uses an identity-based account model. Each identity is a
-first-class on-chain object that owns cryptographic keys, holds Platform
-credits, and can create or update data contracts and documents. This is
-fundamentally different from Dash Core's UTXO address model — Platform
-identities are persistent entities, not ephemeral transaction outputs.
+Dash Platform uses an identity-based account model.
+Each identity is a first-class on-chain object that owns cryptographic keys, holds Platform credits, and can create or update data contracts and documents.
+This is fundamentally different from Dash Core's UTXO address model — Platform identities are persistent entities, not ephemeral transaction outputs.
 
 ## Specification
 
 ### Semantics
 
-A Dash Platform identity is identified by a 256-bit (32-byte) identifier
-derived from the funding outpoint that created it:
+A Dash Platform identity is identified by a 256-bit (32-byte) identifier derived from the funding outpoint that created it:
 
-```
+```sh
 identity_id = sha256(sha256(funding_outpoint))
 ```
 
-The `funding_outpoint` is the serialized Dash Core transaction output (txid +
-output index) used to fund the identity creation. The double-SHA-256 ensures a
-deterministic, collision-resistant mapping from a Layer 1 transaction to a
-Platform identity.
+The `funding_outpoint` is the serialized Dash Core transaction output (txid + output index) used to fund the identity creation.
+The double-SHA-256 ensures a deterministic, collision-resistant mapping from a Layer 1 transaction to a Platform identity.
 
-The resulting 32-byte identifier is encoded in [base58][] (not base58check —
-there is no checksum byte). The typical encoded length is 43-44 characters.
+The resulting 32-byte identifier is encoded in `[base58][]` (NOT `[base58check][]` — there is no checksum byte).
+The typical encoded length is 43-44 characters.
 
 ### Syntax
 
-The CAIP-10 identifier for a Dash Platform identity is:
+The [CAIP-10][] identifier for a Dash Platform identity is:
 
-```
+```sh
 dashevo:<chain_id>:<identity_id_base58>
 ```
 
 Where:
-- `<chain_id>` is the Tenderdash chain ID as specified in the [CAIP-2 profile][]
+
+- `<chain_id>` is the Tenderdash chain ID as specified in the [CAIP-2 profile](./caip2.md)
 - `<identity_id_base58>` is the base58-encoded 256-bit identity identifier
 
-The regular expression for the account address portion (the `identity_id_base58`
-segment) is:
+The regular expression for the account address portion (the `identity_id_base58` segment) is:
 
-```
+```sh
 [1-9A-HJ-NP-Za-km-z]{43,44}
 ```
 
-This matches the base58 alphabet (Bitcoin-style, excluding `0`, `O`, `I`, `l`)
-with a maximum length of 44 characters (the longest possible base58 encoding of
-a 32-byte value).
+This matches the base58 alphabet (Bitcoin-style, excluding `0`, `O`, `I`, `l`) with a maximum length of 44 characters (the longest possible base58 encoding of a 32-byte value).
 
-The full CAIP-10 regular expression is:
+The full [CAIP-10][] regular expression is:
 
-```
+```sh
 dashevo:[-a-zA-Z0-9]{1,32}:[1-9A-HJ-NP-Za-km-z]{43,44}
 ```
 
 ### Resolution Mechanics
 
-To verify that an identity exists on a given chain, query the Platform's
-identity endpoint via [DAPI][]:
+To verify that an identity exists on a given chain, query the Platform's identity endpoint via [DAPI][]:
 
 ```jsonc
 // Request (DAPI gRPC — conceptual representation)
@@ -90,26 +82,18 @@ platform.getIdentity({ id: "<identity_id_bytes>" })
 }
 ```
 
-The identity's `publicKeys` array contains the cryptographic keys authorized to
-sign state transitions on behalf of this identity.
+The identity's `publicKeys` array contains any cryptographic keys authorized to sign state transitions on behalf of this identity.
 
 ## Rationale
 
-The identity-based account model was chosen for Dash Platform because it
-supports persistent, key-rotatable identities that can own data contracts and
-documents — concepts that do not exist in the UTXO model. The double-SHA-256
-derivation from a funding outpoint provides a deterministic link between Layer 1
-(Dash Core) and Layer 2 (Dash Platform) without requiring any additional
-registration protocol beyond the identity creation state transition.
+The identity-based account model was chosen for Dash Platform because it supports persistent, key-rotatable identities that can own data contracts and documents — concepts that do not exist in the UTXO model.
+The double-SHA-256 derivation from a funding outpoint provides a deterministic link between Layer 1 (Dash Core) and Layer 2 (Dash Platform) without requiring any additional registration protocol beyond the identity creation state transition.
 
-Base58 encoding (without checksum) is used because Platform identity IDs are
-always validated against chain state — the checksum byte used in Dash Core
-addresses (base58check) is unnecessary when the canonical identifier is the raw
-32 bytes stored on-chain.
+[Base58][] encoding (without checksum) is used because Platform identity IDs are always validated against chain state — the checksum byte used in Dash Core addresses (base58check) is unnecessary when the canonical identifier is the raw 32 bytes stored on-chain.
 
 ## Test Cases
 
-```
+```sh
 # Mainnet identity
 dashevo:evo1:EWSqsaghuwHRjtutbXK3nR11KbRkg9a12PNAAkJWRTpY
 
@@ -129,6 +113,7 @@ dashevo:dash-testnet-51:GWRSAVFMjXx8HpQFaNJMqBV7MBgMK4br5UESsB4S31Ec
 [CAIP-10]: https://chainagnostic.org/CAIPs/caip-10
 [Dash Platform identity docs]: https://docs.dash.org/projects/platform/en/stable/docs/explanation/identity.html
 [base58]: https://en.bitcoin.it/wiki/Base58
+[base58check]: https://en.bitcoin.it/wiki/Base58Check_encoding
 [DAPI]: https://docs.dash.org/projects/platform/en/stable/docs/reference/dapi-endpoints.html
 
 ## Copyright

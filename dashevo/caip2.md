@@ -16,21 +16,17 @@ requires: CAIP-2
 
 ## Introduction
 
-Dash Platform chains are identified by string-based chain IDs assigned at
-genesis by [Tenderdash][], a Dash fork of Tendermint. Each network (mainnet,
-testnet, devnet) has a distinct `chain_id` that is returned by every node in
-that network. This is the same pattern used by the Cosmos ecosystem, but with a
-separate namespace because Dash Platform is an independent consensus layer with
-its own identity and data contract system.
+Dash Platform chains are identified by string-based chain IDs assigned at genesis by [Tenderdash][], a Dash fork of Tendermint.
+Each network (mainnet, testnet, devnet) has a distinct `chain_id` that is returned by every node in that network.
+This is the same pattern used by the Cosmos ecosystem, but with a separate namespace because Dash Platform is an independent consensus layer with its own identity and data contract system.
 
 ## Specification
 
 ### Semantics
 
-The `chain_id` is a string identifier set in the Tenderdash genesis
-configuration. It uniquely identifies a Dash Platform network. The value is
-immutable for the lifetime of a network — if a network is reset, a new
-`chain_id` is assigned.
+The `chain_id` is a string identifier set in the Tenderdash genesis configuration.
+It uniquely identifies a Dash Platform network.
+The value is immutable for the lifetime of a network — if a network is reset, a new `chain_id` is assigned.
 
 Known chain IDs:
 
@@ -39,32 +35,29 @@ Known chain IDs:
 | Mainnet  | `evo1`             |
 | Testnet  | `dash-testnet-51`  |
 
-These values are sourced from the [Platform source code][chain-id-source]
-(`getMainnetConfigFactory.js` and `getTestnetConfigFactory.js`).
+These values are sourced from the [Platform source code][chain-id-source] (see `getMainnetConfigFactory.js` and `getTestnetConfigFactory.js`).
 
 ### Syntax
 
-The CAIP-2 identifier for Dash Platform chains is formed by prefixing the
-namespace `dashevo:` to the Tenderdash `chain_id`:
+The CAIP-2 identifier for Dash Platform chains is formed by prefixing the namespace `dashevo:` to the Tenderdash `chain_id`:
 
-```
+```sh
 dashevo:<chain_id>
 ```
 
 The `chain_id` (used as the CAIP-2 `reference`) matches the following regular
 expression:
 
-```
+```sh
 [-a-zA-Z0-9]{1,32}
 ```
 
-This is the same character class as Cosmos direct references, reflecting the
-shared Tendermint heritage.
+This is the same character class as [Cosmos direct references](../cosmos/caip2.md), reflecting the shared Tendermint heritage.
 
 ### Resolution Mechanics
 
-To verify a chain ID, query any Tenderdash node's status endpoint. The
-`chain_id` appears in the `network` field of the node info response.
+To verify a chain ID, query any Tenderdash node's status endpoint.
+The `chain_id` appears in the `network` field of the `node_info` response.
 
 ```jsonc
 // Request (Tenderdash RPC)
@@ -79,29 +72,22 @@ curl -sS https://seed-1.testnet.networks.dash.org:1443/status | jq .result.node_
 ```
 
 For mainnet, query a mainnet Tenderdash node using the same `/status` path.
-The `network` field in the response can be used directly as the `reference`
-portion of the CAIP-2 identifier.
+The `network` field in the response can be used directly as the `reference` portion of the [CAIP-2][] identifier.
 
-Note: These are documentation endpoints for chain verification. They are not
-required by the WalletConnect relay protocol and are not embedded in session
-proposals.
+Note: These are documentation endpoints for chain verification.
+They are NOT required by the WalletConnect relay protocol and are NOT embedded in [CAIP-25][] session proposals.
 
 ## Rationale
 
-Dash Platform chain IDs follow the Tendermint convention of human-readable
-string identifiers set at genesis. The `evo1` mainnet identifier and
-`dash-testnet-51` testnet identifier are simple strings that fit within the
-32-character limit of CAIP-2 references and match the `[-a-zA-Z0-9]{1,32}`
-pattern without requiring hashing.
+Dash Platform chain IDs follow the [Tendermint convention](../cosmos/caip2.md) of human-readable string identifiers set at genesis.
+The `evo1` mainnet identifier and `dash-testnet-51` testnet identifier are simple strings that fit within the 32-character limit of CAIP-2 references and match the `[-a-zA-Z0-9]{1,32}` pattern without requiring hashing.
 
-The namespace `dashevo` was chosen to distinguish Dash Platform from Dash Core
-(which uses the `bip122` namespace). "Evo" is the community name for Dash
-Platform (short for "Evolution"), making `dashevo` immediately recognizable to
-Dash ecosystem participants.
+The namespace `dashevo` was chosen to distinguish Dash Platform from Dash Core (which uses the `bip122` namespace).
+"Evo" is the community name for Dash Platform (short for "Evolution"), making `dashevo` recognizable to Dash ecosystem participants.
 
 ## Test Cases
 
-```
+```sh
 # Mainnet
 dashevo:evo1
 
@@ -121,6 +107,7 @@ dashevo:dash-testnet-51
 [DAPI endpoints]: https://docs.dash.org/projects/platform/en/stable/docs/reference/dapi-endpoints.html
 [chain-id-source]: https://github.com/dashpay/platform
 [CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
+[CAIP-25]: https://chainagnostic.org/CAIPs/caip-25
 
 ## Copyright
 
