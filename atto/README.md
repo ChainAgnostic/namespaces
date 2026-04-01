@@ -26,21 +26,27 @@ A dedicated namespace allows tools to refer to Atto deployment environments cons
 
 ## Governance
 
-This namespace tracks the Atto protocol and its network identifiers as defined by the Atto ecosystem maintainers.
-Future CAIP profiles for Atto should follow this namespace to document account IDs, asset IDs, and other ecosystem-specific conventions.
-Public network naming should remain stable over time to ensure long-term interoperability.
+This namespace tracks the public Atto protocol as documented by the ecosystem's maintainers.
+Protocol-level changes and governance-relevant decisions should be validated against public Atto materials, especially the whitepaper and official documentation, and against the implementation history in the public GitHub repositories.
+Future updates to this namespace should cite those sources when describing changes to network behavior, distribution, staking, or other community-facing protocol decisions.
 
 ## References
 
 - [Documentation][] - Official documentation for the Atto ecosystem.
+- [Whitepaper][] - Public protocol and governance context, including decentralization and representative voting.
 - [Node API Reference][] - Reference for the Atto node RPC and REST interfaces.
 - [Integration Guide][] - Overview of Atto components, integration model, and operational guidance.
-- [GitHub][] - Source code and development resources.
+- [Blog][] - Public announcements and writeups for major ecosystem and protocol changes.
+- [GitHub][] - Source code, issues, and pull requests for implementation history and concrete protocol updates.
+- [Node Repository][] - Reference implementation of the Atto node and consensus behavior.
 
 [Documentation]: https://atto.cash/docs
+[Whitepaper]: https://atto.cash/docs/whitepaper
 [Node API Reference]: https://atto.cash/api/node
 [Integration Guide]: https://atto.cash/docs/integration
+[Blog]: https://atto.cash/blog
 [GitHub]: https://github.com/attocash
+[Node Repository]: https://github.com/attocash/node
 
 ## Copyright
 

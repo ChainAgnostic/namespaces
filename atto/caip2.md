@@ -19,7 +19,7 @@ The `atto` namespace identifies Atto chains.
 Atto is a native layer-1 payment network with an account-chain model, native address format, native transaction serialization, and lightweight proof-of-work used for anti-spam rather than consensus.
 
 A CAIP-2 identifier in this namespace takes the form `atto:<reference>`.
-The reference identifies a concrete Atto network environment such as mainnet, beta/test, development, or local/private development.
+The reference identifies a concrete Atto network environment such as mainnet, beta/test, a shared development network, or an ephemeral local/private development network.
 
 ## Specification
 
@@ -32,11 +32,11 @@ The following references are defined by this draft:
 
 - `live` — Atto mainnet
 - `beta` — Atto public beta / test network
-- `dev` — Atto development network
-- `local` — local or private development network
+- `dev` — Atto public development network
+- `local` — ephemeral local/private network
 
-These references are intentionally short and stable.
-They are meant to be human-readable deployment identifiers rather than hashes of genesis state.
+`atto:dev` is intended for a development deployment that is reachable by multiple participants and stable enough for shared testing, integration work, or external references.
+`atto:local` is reserved for local-only, such as integration tests, benchmarks, and developer machines, where a fresh genesis may be created and no persistence or public discoverability is assumed.
 
 ### Syntax
 
@@ -73,8 +73,10 @@ For public/shared environments, implementations SHOULD map the following identif
 
 - `atto:live` → mainnet infrastructure
 - `atto:beta` → public beta/test infrastructure
-- `atto:dev` → development infrastructure
+- `atto:dev` → shared development infrastructure
 - `atto:local` → local/private development infrastructure
+
+Implementations SHOULD treat `atto:local` similarly to a localhost-style environment: it is not expected to name a globally shared network, and identifiers using it are not expected to remain reusable outside the local context in which they were created.
 
 If an implementation exposes multiple Atto environments, it MUST ensure that transactions, account state reads, and address validation are performed against infrastructure for the selected Atto chain only.
 
@@ -85,6 +87,8 @@ The same client or wallet logic used for EVM, Stellar, or Solana cannot be reuse
 Atto-native tooling must understand native account-chain state, native address encoding, and Atto-native transaction verification.
 
 The references `live`, `beta`, `dev`, and `local` are chosen because they are short, operationally intuitive, and consistent with how integrators commonly distinguish production, test, development, and local environments.
+This draft uses stable, human-readable environment names instead of genesis-derived identifiers, because Atto deployments are intended to be referenced operationally by role.
+This draft gives `local` stronger semantics than a generic development label: it is reserved for ephemeral or operator-scoped environments, while `dev` refers to a shared Atto development network that other participants may also target.
 This draft intentionally avoids deriving chain identifiers from opaque hashes or environment-specific values that are less legible for wallet and payment tooling.
 
 ### Backwards Compatibility
@@ -100,10 +104,10 @@ atto:live
 # Atto public beta / test network
 atto:beta
 
-# Atto development network
+# Atto shared development network
 atto:dev
 
-# Atto local / private development network
+# Atto ephemeral local / private development network
 atto:local
 ```
 
