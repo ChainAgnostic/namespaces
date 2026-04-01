@@ -12,7 +12,7 @@ created: 2026-03-18
 ## Introduction
 
 The `atto` namespace refers to the Atto ecosystem:
-a feeless account-chain payment network where value transfers are represented as native Atto blocks and transactions.
+a fee-less account-chain payment network where value transfers are represented as native Atto blocks and transactions.
 
 Atto is a native layer-1 system with its own chain model, transaction encoding, and account addressing, all defined by the Atto protocol.
 
