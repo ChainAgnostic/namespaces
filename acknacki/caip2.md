@@ -24,8 +24,11 @@ in every block header. Each network (mainnet, shellnet) has a unique
 ### Semantics
 
 Each Acki Nacki network is uniquely identified by its `global_id`, a signed
-32-bit integer present in every block. This value is set at genesis and remains
-constant for the lifetime of the network.
+32-bit integer present in every block. This value is fixed at genesis and
+remains constant for the lifetime of the network. The public mainnet
+(`global_id = 0`) and shellnet (`global_id = 1`) values are conventionally
+reserved; anyone bootstrapping a private Acki Nacki network selects their
+own `global_id` at genesis.
 
 ### Syntax
 
@@ -78,6 +81,23 @@ Using `global_id` from the block header follows the same pattern as the `tvm`
 namespace (which uses the identical field for Everscale and TON). This provides
 a simple, deterministic, on-chain verifiable identifier that requires no
 external registry.
+
+### Verification and Trust Model
+
+Because `global_id` is embedded in every block header, the resolution method
+above is protocol-level verifiable: a client can cross-check the value against
+multiple Block Keepers rather than trusting a single GraphQL endpoint. Acki
+Nacki is permissionless, so there is no central registry that can prevent two
+unrelated private networks from picking the same `global_id`; applications
+that need stronger guarantees should additionally fingerprint the chain
+(genesis block hash, well-known system contract addresses).
+
+For outside observers requiring cryptographic assurance of the chain history
+itself, Acki Nacki includes a network-history proof system based on
+zero-knowledge proofs that lets an external verifier validate the chain's
+witness without trusting any single node. The proof system is currently
+under test and is planned for activation on mainnet to harden the witness
+for light clients and cross-chain verifiers.
 
 ### Backwards Compatibility
 

@@ -14,11 +14,11 @@ consensus protocol optimized for fast finality, while allowing for high
 throughputs via execution parallelization. It achieves higher Byzantine
 fault tolerance than Nakamoto, BFT (including Hotstuff and AptosBFT),
 Solana, and other modern consensus protocols. The protocol reaches
-consensus in two communication steps and has a total number of messages
-that are subquadratic to the number of nodes.
+consensus in two communication steps and exchanges a total number of
+messages per consensus round that is subquadratic in the number of nodes.
 
-Acki Nacki runs AVM (Advanced Virtual Machine) supporting both TVM and
-WASM execution environments. It features a DApp ID system for gasless
+Acki Nacki runs AVM (Advanced Virtual Machine) supporting both Ton Virtual
+Machine (TVM) and WASM execution environments. It features a DApp ID system for gasless
 internal transactions, ECC (Extra Currency Collection) token transfers,
 and native support for AI agent operations.
 
@@ -37,9 +37,11 @@ A separate namespace from `tvm` is necessary because:
 
 ## Governance
 
-Acki Nacki protocol development is managed by GOSH Technology Ltd.
-Protocol specifications and node software are open source at
-[github.com/ackinacki/ackinacki][github].
+Acki Nacki core protocol developer is [GOSH](https://gosh.sh). Protocol
+specifications and node software are open source at
+[github.com/ackinacki/ackinacki][github]. Network updates are performed
+bitcoin-style — node owners update their nodes to a newest version at
+will. There is no DAO, foundation or governance body.
 
 The consensus protocol is formally described in a peer-reviewed
 publication at [ACNS 2024 (Springer)][springer].

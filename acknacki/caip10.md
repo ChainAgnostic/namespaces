@@ -20,13 +20,37 @@ identified by a **DApp ID** (256 bits) and an **Account ID** (256 bits),
 forming a 512-bit composite address called `AccountRouting`.
 
 The DApp ID groups contracts into a logical application. All contracts
-within the same DApp ID share a gas pool (DappConfig) and can transact
-internally without gas costs. The Account ID uniquely identifies the
-contract within its DApp.
+within the same DApp ID share ONE (1) gas pool (defined in DappConfig) and
+can transact internally without gas costs. The Account ID uniquely identifies
+the contract within its DApp.
 
 When a contract is deployed by an external message, its DApp ID equals
 its own Account ID (self-originating). When deployed by an internal
 message from another contract, it inherits the sender's DApp ID.
+
+### Account Model
+
+Acki Nacki uses an account-based model in which **every account is itself a
+smart contract**; there are no EVM-style externally owned accounts (EOAs). A
+private key is not an actor on its own — it can only sign external messages
+addressed to an already-deployed contract whose code chooses whether to
+accept the signature and execute. A "user wallet" on Acki Nacki is therefore
+a deployed contract (typically a multisig).
+
+Peer-to-peer value transfers always flow contract-to-contract:
+
+- **Inside a DApp ID** — internal messages are gasless: gas is drawn from
+  the shared `DappConfig` pool via `gosh.mintshell()`.
+- **From outside (external message)** — the receiving contract pays gas
+  from its own balance. A bare AccountID with no deployed contract is
+  *uninitialized*: incoming messages either bounce or, when accompanied by
+  a `stateInit`, deploy the contract at that address.
+- **Cross-DApp transfers** — the native VMSHELL token is zeroed at the
+  protocol level when crossing DApp boundaries; ECC tokens (e.g. SHELL)
+  can cross.
+
+A bare AccountID is therefore meaningful only as a destination address —
+it cannot originate a transaction until a contract has been deployed at it.
 
 ## Specification
 
@@ -52,6 +76,10 @@ Where:
 - `<chain_id>` is the CAIP-2 reference (e.g. `0` for mainnet)
 - `<dapp_id>` is the 64-character lowercase hex DApp ID
 - `<account_id>` is the 64-character lowercase hex Account ID
+
+Hex encoding is lowercase and does **not** include the `0x` prefix used in
+EVM-style addresses; both DApp ID and Account ID are exactly 64 hex
+characters with no separator.
 
 For self-originating contracts (deployed via external message),
 `dapp_id == account_id`.
