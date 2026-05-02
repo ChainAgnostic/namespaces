@@ -33,10 +33,11 @@ Two asset namespaces are defined:
 | `token`           | Fungible token registered in Tenzro's unified token registry, identified by 32-byte token ID |
 | `nft`             | Non-fungible token, identified by `<collection_id>/<token_id>` where `collection_id` is the 32-byte collection ID |
 
-The native TNZO coin SHOULD use the `slip44` namespace once a SLIP-44 index
-is registered upstream. Until then, implementations MAY use the literal
-reference `tenzro` under `slip44` (vendor-prefixed pre-registration); see
-the SLIP-44 PR tracker for the registered index.
+The native TNZO coin uses SLIP-44 coin type **`1414421071`**
+(`0xd44e5a4f`), registered via [satoshilabs/slips#2015][slip44-pr]. Until
+that PR is merged, implementations MAY also accept the literal reference
+`tenzro` under `slip44` (vendor-prefixed pre-registration form) for
+forward compatibility.
 
 ## Syntax
 
@@ -50,8 +51,9 @@ asset_id := chain_id "/" asset_namespace ":" asset_reference [ "/" token_id ]
 - `chain_id`: CAIP-2 identifier (see `caip2.md`)
 - `asset_namespace`: `slip44` | `token` | `nft`
 - `asset_reference`:
-  - For `slip44`: registered SLIP-44 coin index (decimal integer) or the
-    pre-registration string `tenzro`
+  - For `slip44`: SLIP-44 coin index `1414421071` (decimal); the
+    pre-registration string `tenzro` MAY also be accepted on input
+    until the upstream PR merges
   - For `token`: 64-character lowercase hex of the 32-byte token ID
   - For `nft`: 64-character lowercase hex of the 32-byte collection ID
 - `token_id` (NFT only): 64-character lowercase hex of the 32-byte
@@ -61,7 +63,10 @@ asset_id := chain_id "/" asset_namespace ":" asset_reference [ "/" token_id ]
 ## Examples
 
 ```
-# Tenzro Testnet — native TNZO coin (pre-registration form)
+# Tenzro Testnet — native TNZO coin (registered SLIP-44 index)
+tenzro:92bd27db9713293097f0e63476e3911e/slip44:1414421071
+
+# Tenzro Testnet — native TNZO coin (pre-registration form, accepted until slips#2015 merges)
 tenzro:92bd27db9713293097f0e63476e3911e/slip44:tenzro
 
 # Tenzro Testnet — fungible token (e.g. an ERC-20 deployed via TOKEN_FACTORY)
@@ -99,6 +104,7 @@ canonical name; the per-VM contract addresses are aliases.
 [CAIP-10]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md
 [CAIP-19]: https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-19.md
 [SLIP-44]: https://github.com/satoshilabs/slips/blob/master/slip-0044.md
+[slip44-pr]: https://github.com/satoshilabs/slips/pull/2015
 [repo]: https://github.com/tenzro/tenzro-network
 
 ## Copyright
