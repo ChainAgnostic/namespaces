@@ -28,6 +28,26 @@ whitepaper at <https://tenzro.com>. Implementations of this namespace expose
 both an EVM-compatible JSON-RPC surface (`eth_*`, `chain_id` integer) and a
 Tenzro-native namespace (`tenzro_*`, including multi-VM scope methods).
 
+## Multi-VM façades
+
+A single Tenzro chain (one `tenzro:<reference>` identifier) hosts three
+execution-layer façades over a shared state:
+
+- **EVM** — reachable via `eth_*` JSON-RPC; the integer `chain_id` returned
+  by `eth_chainId` is exposed for compatibility with EVM tooling but is
+  **not** a separate CAIP-2 reference.
+- **SVM** — Solana VM bytecode runs natively. SPL Token instructions are
+  mapped to the Tenzro native token registry; SPL amounts are 9-decimal
+  values that get truncated to match the underlying token's stored
+  precision.
+- **Canton/DAML** — DAML 3.x contracts execute against the same shared
+  state; CIP-56 holdings are first-class.
+
+Each façade reads and writes the same balances and storage. SVM and Canton
+account references therefore resolve under `tenzro:`, not under `solana:`
+or any Canton-specific namespace; the underlying chain is identified by
+its Tenzro genesis hash regardless of which façade a caller uses.
+
 ## References
 
 - [Tenzro Network repository][repo]
