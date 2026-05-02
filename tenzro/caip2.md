@@ -2,7 +2,7 @@
 namespace-identifier: tenzro-caip2
 title: Tenzro Namespace - Chains
 author: Tenzro Engineering (eng@tenzro.com)
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/TBD
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/184
 status: Draft
 type: Standard
 created: 2026-05-02

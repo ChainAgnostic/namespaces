@@ -2,7 +2,7 @@
 namespace-identifier: tenzro-caip25
 title: Tenzro Namespace - JSON-RPC Provider Authorization
 author: Tenzro Engineering (eng@tenzro.com)
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/TBD
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/184
 status: Draft
 type: Standard
 created: 2026-05-02
