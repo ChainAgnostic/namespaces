@@ -30,15 +30,15 @@ Where `<number>` is the decimal representation of the chain's `chainId`, without
 > **Note:** Per [CAIP-350], the full chain identifier is `eip155:<number>` (e.g., `eip155:1`, `eip155:10`).
 
 
-##### Text representation -> customary (CAIP-2) conversion
+#### Text -> customary (CAIP-2) conversion
 
 In the case where the `chainId` is larger than what can be represented in 32 decimal characters, the leading 32 characters should be used.
 
-##### Customary (CAIP-2) conversion - text representation conversion
+#### Customary (CAIP-2) -> text conversion
 
 This transformation would not be fully deterministic in the case where `chainId`s larger than 10^32 are used. It is assumed wallets and other software will be able to differentiate between chains from just the leading 32 decimal characters, and use a lookup table of popular chains to complete the missing information to convert CAIP-2 identifiers to this standard.
 
-#### Binary representation
+### Binary representation
 
 The bare `chainId` encoded as a big-endian unsigned integer of the minimum necessary amount of bytes will be used [^1], and leading zeroes will be prohibited.
 
@@ -50,7 +50,7 @@ Encode the decimal integer as a big-endian unsigned integer using the minimum ne
 
 Compute the decimal representation of the stored big-endian unsigned integer.
 
-#### Examples
+### Examples
 
 Ethereum Mainnet: `0x01` (integer `1`, encoded as uint8)
 
@@ -72,15 +72,15 @@ Where `<address>` is the 20 bytes of an EVM address, hexadecimal-encoded accordi
 This standard deliberately does not define the text representation of EVM addresses if they are extended in the future, since it's not possible to know which human-readable representation will be more familiar to users in such hypothetical scenario.
 This profile should be amended in the future to reflect it in such a case.
 
-##### Text representation -> native representation conversion
+#### Text -> native conversion
 
 See [EIP-55].
 
-##### Native representation -> text representation conversion
+#### Native -> text conversion
 
 See [EIP-55].
 
-#### Binary representation
+### Binary representation
 
 Bytes of EVM addresses are trivially stored as the payload.
 It's worth noting that addresses are currently 20 bytes, but that might change in the future, most likely to 32 bytes [^2].
@@ -93,15 +93,15 @@ Specified in [EIP-55].
 
 Specified in [EIP-55].
 
-#### Examples
+### Examples
 
 See [EIP-55].
 
-### Error handling
+## Error handling
 
-### Implementation considerations
+## Implementation considerations
 
-### Extra considerations
+## Extra considerations
 
 Wallets and other software are expected to be able to fetch the extra information needed to convert from [CAIP-2] to this standard.
 
