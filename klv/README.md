@@ -14,7 +14,8 @@ This document defines the applicability of CAIP schemes to the networks of the
 Klever blockchain ecosystem. Klever is a layer-1 proof-of-stake blockchain
 with ed25519 keys, Bech32 addresses prefixed `klv1...`, Wasmer-based smart
 contracts, and a native multi-asset model (KDA — Klever Digital Asset) that
-supports fungible tokens, NFTs, and SFTs as first-class on-chain primitives.
+supports fungible tokens, non-fungible tokens (NFTs), and semi-fungible
+tokens (SFTs) as first-class on-chain primitives.
 
 ## Syntax
 
