@@ -2,7 +2,7 @@
 namespace-identifier: xync-caip19
 title: Xync Network - Asset ID Specification
 author: Xync Network (@XyncNet)
-discussions-to: TODO-PR-URL
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/188
 status: Draft
 type: Informational
 created: 2026-07-08

@@ -2,7 +2,7 @@
 namespace-identifier: xync-caip2
 title: Xync Network - Blockchain ID Specification
 author: Xync Network (@XyncNet)
-discussions-to: TODO-PR-URL
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/188
 status: Draft
 type: Informational
 created: 2026-07-08
