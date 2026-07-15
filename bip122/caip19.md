@@ -2,10 +2,11 @@
 namespace-identifier: bip122-caip19
 title: BIP122 Namespace - Assets (Ordinals Inscriptions)
 author: ordspv (https://github.com/ordspv)
+discussions-to: https://github.com/ordinals/ord/discussions/4547
 status: Draft
 type: Standard
 created: 2026-07-11
-requires: ["CAIP-19", "BIP-122"]
+requires: ["CAIP-2", "CAIP-19"]
 ---
 
 ## CAIP-19
