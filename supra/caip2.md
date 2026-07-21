@@ -2,7 +2,7 @@
 namespace-identifier: supra-caip2
 title: Supra Namespace - Chains
 author: Bharat Jain <supra-bharatjain>
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/PENDING
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/192
 status: Draft
 type: Standard
 created: 2026-07-21
