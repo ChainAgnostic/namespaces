@@ -74,6 +74,12 @@ To validate a Kaspa CAIP-10 identifier:
 After validation, an implementation can use Kaspa node or SDK address utilities to derive the corresponding transaction script public key.
 Address validity does not depend on whether the address currently has unspent outputs.
 
+### Canonicalization
+
+Kaspa address encoders produce a canonical payload with zero-valued right-padding bits.
+Native decoders may accept alternative strings that differ only in unused padding bits while decoding to the same address.
+Implementations that compare, deduplicate, or store CAIP-10 identifiers SHOULD reconstruct the native address, decode it, and use the payload produced by re-encoding as the canonical form.
+
 ### Backwards Compatibility
 
 Not applicable.
@@ -84,7 +90,9 @@ A regular-expression match alone does not establish that an address payload is v
 Implementations MUST decode the reconstructed native address and validate its version, body length, and checksum.
 
 The native prefix MUST be derived from the CAIP-2 reference rather than accepted as separate input.
-A payload paired with the wrong network reference fails the prefix-dependent checksum and MUST be rejected.
+The checksum binds the payload to a native prefix class such as `kaspa` or `kaspatest`, not to the complete numbered testnet reference.
+Implementations MUST validate the CAIP-2 reference before deriving the native prefix.
+A payload paired with the wrong native prefix class fails the checksum and MUST be rejected.
 When displaying a native Kaspa address, applications SHOULD restore and display its network prefix to avoid ambiguity.
 
 A Kaspa address identifies a locking condition, not a persistent account, owner, or balance.
@@ -111,7 +119,7 @@ kaspa:testnet-10:qxaqrlzlf6wes72en3568khahq66wf27tuhfxn5nytkd8tcep2c0vrse6gdmpks
 Invalid:
 
 ```text
-# Mainnet payload paired with testnet-10
+# Mainnet payload paired with testnet-10 (wrong native prefix class)
 kaspa:testnet-10:qp0l70zd5x85ttwd6jv7g3s3a8llzj96d8dncn4zmhv4tlzx5k2jyqh70xmfj
 
 # Native prefix incorrectly retained inside account_address

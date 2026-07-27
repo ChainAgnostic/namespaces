@@ -21,7 +21,7 @@ Blockchains in the `kaspa` namespace are identified by the network names defined
 The Rusty Kaspa full-node implementation exposes the same identifier through RPC with a `kaspa-` prefix.
 
 Kaspa has its own blockDAG consensus, node RPC, and native network identification.
-It does not use the Bitcoin-family resolution method defined by the `bip122` namespace.
+It does not use the Bitcoin-family resolution method defined by the [BIP-122 Namespace][].
 
 ## Syntax
 
@@ -70,15 +70,18 @@ const response = await rpc.getBlockDagInfo();
 
 #### Example Response (partial)
 
-```jsonc
+```json
 {
-  "networkName": "kaspa-testnet-10"
+  "network": "testnet-10"
 }
 ```
 
-The returned `networkName` maps directly to the corresponding entry in the reference table.
-For example, `kaspa-testnet-10` resolves to `kaspa:testnet-10`.
-Implementations that require an immutable network fingerprint can also compare the configured genesis hash with the table above.
+The returned `network` value is a native `NetworkId` and maps directly to the corresponding entry in the reference table.
+For example, `testnet-10` resolves to `kaspa:testnet-10`.
+
+The network identifier is self-reported by the connected node.
+Applications requiring authenticated network identification SHOULD use a trusted or self-hosted node.
+The genesis hashes above document the registered networks; they are not returned by `getBlockDagInfo`, and this RPC call does not independently prove chain ancestry.
 
 ### Backwards Compatibility
 
@@ -101,10 +104,11 @@ kaspa:testnet-10
 - [Network ID Implementation][] - Native network parsing and serialization
 - [Network Parameters][] - Public-network parameter selection
 - [Genesis Configuration][] - Mainnet and testnet genesis constants
-- [Kaspa RPC Protocol][] - `getBlockDagInfo` and `networkName`
+- [Kaspa RPC Protocol][] - gRPC `getBlockDagInfo` protocol definition
 - [Kaspa Integration Guide][] - SDK connection and `getBlockDagInfo` examples
 - [Kaspa Node Connectivity][] - Public-node discovery and self-hosted endpoint guidance
 - [Rusty Kaspa][] - Kaspa full-node implementation and related SDK libraries
+- [BIP-122 Namespace][] - CASA namespace profile for Bitcoin-family chains
 
 [Network ID Implementation]: https://github.com/kaspanet/rusty-kaspa/blob/78257f273a26c4be085bab0f79437dee99ca8835/consensus/core/src/network.rs
 [Network Parameters]: https://github.com/kaspanet/rusty-kaspa/blob/78257f273a26c4be085bab0f79437dee99ca8835/consensus/core/src/config/params.rs
@@ -113,6 +117,7 @@ kaspa:testnet-10
 [Kaspa Integration Guide]: https://docs.kaspa.org/integrate/getting-started
 [Kaspa Node Connectivity]: https://docs.kaspa.org/references
 [Rusty Kaspa]: https://github.com/kaspanet/rusty-kaspa
+[BIP-122 Namespace]: https://namespaces.chainagnostic.org/bip122/README
 [CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
 
 ## Copyright
