@@ -20,7 +20,7 @@ This is the implementation of CAIP-2 for Kaspa.
 Blockchains in the `kaspa` namespace are identified by the network names defined by the Rusty Kaspa `NetworkId` implementation.
 The Rusty Kaspa full-node implementation exposes the same identifier through RPC with a `kaspa-` prefix.
 
-Kaspa has its own blockDAG consensus, node RPC, and native network identification.
+Kaspa has its own GHOSTDAG consensus, node RPC, and native network identification.
 It does not use the Bitcoin-family resolution method defined by the [BIP-122 Namespace][].
 
 ## Syntax

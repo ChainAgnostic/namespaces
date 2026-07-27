@@ -14,7 +14,7 @@ requires: ["CAIP-2", "CAIP-10"]
 ## Introduction
 
 Blockchains in the `kaspa` namespace are identified by the network names defined by the Rusty Kaspa `NetworkId` implementation.
-Kaspa is a proof-of-work Layer 1 that orders blocks using blockDAG consensus and uses a native UTXO transaction model.
+Kaspa is a proof-of-work Layer 1 with a native UTXO transaction model that uses GHOSTDAG consensus to order parallel blocks in a blockDAG.
 It has its own consensus protocol, RPC interfaces, transaction serialization, and address encoding.
 
 Although Kaspa uses UTXOs, it does not implement Bitcoin or the [BIP-122][] chain-identification method.
