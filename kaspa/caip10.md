@@ -78,7 +78,21 @@ Address validity does not depend on whether the address currently has unspent ou
 
 Not applicable.
 
+## Security Considerations
+
+A regular-expression match alone does not establish that an address payload is valid.
+Implementations MUST decode the reconstructed native address and validate its version, body length, and checksum.
+
+The native prefix MUST be derived from the CAIP-2 reference rather than accepted as separate input.
+A payload paired with the wrong network reference fails the prefix-dependent checksum and MUST be rejected.
+When displaying a native Kaspa address, applications SHOULD restore and display its network prefix to avoid ambiguity.
+
+A Kaspa address identifies a locking condition, not a persistent account, owner, or balance.
+Applications MUST NOT infer control of an address or the existence of spendable outputs from a valid CAIP-10 identifier.
+
 ## Test Cases
+
+Valid:
 
 ```text
 # Mainnet Schnorr public-key address
@@ -94,11 +108,24 @@ kaspa:testnet-10:qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqhqrxplya
 kaspa:testnet-10:qxaqrlzlf6wes72en3568khahq66wf27tuhfxn5nytkd8tcep2c0vrse6gdmpks
 ```
 
+Invalid:
+
+```text
+# Mainnet payload paired with testnet-10
+kaspa:testnet-10:qp0l70zd5x85ttwd6jv7g3s3a8llzj96d8dncn4zmhv4tlzx5k2jyqh70xmfj
+
+# Native prefix incorrectly retained inside account_address
+kaspa:mainnet:kaspa:qp0l70zd5x85ttwd6jv7g3s3a8llzj96d8dncn4zmhv4tlzx5k2jyqh70xmfj
+
+# Unsupported CAIP-2 reference
+kaspa:testnet-11:qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqhqrxplya
+```
+
 ## References
 
 - [Address Implementation][] - Native prefixes, address versions, and payload lengths
 - [Address Encoding][] - Base32 alphabet and prefix-dependent checksum
-- [Rusty Kaspa][] - Kaspa reference-node and SDK implementation
+- [Rusty Kaspa][] - Kaspa full-node implementation and related SDK libraries
 
 [Kaspa CAIP-2 Profile]: ./caip2.md
 [Address Implementation]: https://github.com/kaspanet/rusty-kaspa/blob/78257f273a26c4be085bab0f79437dee99ca8835/crypto/addresses/src/lib.rs

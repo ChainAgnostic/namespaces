@@ -25,13 +25,24 @@ The `kaspa` namespace therefore identifies Kaspa networks directly rather than p
 The namespace `kaspa` refers to the Kaspa open-source blockchain platform.
 The initial profiles cover Kaspa mainnet and the stable public testnet-10 network.
 
+## Governance
+
+Kaspa is a decentralized proof-of-work network with no single governing organization or authority.
+Protocol changes are developed openly and take effect through adoption by independent network participants, including node operators and miners.
+The resources referenced in this profile document the network and its implementation; they are not governing authorities.
+
+This namespace profile documents identifiers already used across the Kaspa ecosystem for interoperability.
+Changes to this profile are reviewed through the CASA namespace process and should be informed by public Kaspa community discussion and implementation evidence.
+
 ## References
 
-- [Kaspa][] - Kaspa project website
-- [Rusty Kaspa][] - Kaspa reference-node implementation
+- [Kaspa][] - Kaspa ecosystem website
+- [Kaspa Docs][] - Kaspa builder documentation
+- [Rusty Kaspa][] - Kaspa full-node implementation and related SDK libraries
 - [Kaspa Community Discussion][] - Community review of the identifier convention
 
 [Kaspa]: https://kaspa.org/
+[Kaspa Docs]: https://docs.kaspa.org/
 [Rusty Kaspa]: https://github.com/kaspanet/rusty-kaspa
 [Kaspa Community Discussion]: https://kas-smiths.org/t/kaspa-x402-pay-per-request-kas-payments-for-apis-and-ai-agents/15
 
