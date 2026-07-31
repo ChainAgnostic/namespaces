@@ -11,9 +11,16 @@ requires: ["CAIP-2"]
 # Namespace for the BSV Blockchain
 
 BSV is a proof-of-work UTXO blockchain descended from the original Bitcoin protocol.
-This namespace identifies BSV networks (mainnet and testnet) by their human-readable
-network name, mirroring how BSV wallets and application infrastructure already refer
-to the network they operate on.
+This namespace identifies BSV networks by their human-readable network name, mirroring
+how BSV wallets and application infrastructure already refer to the network they
+operate on.
+
+Registered networks:
+
+- `bsv:mainnet` — BSV main network
+- `bsv:testnet` — BSV public test network
+- `bsv:ttn` — Teranode Test Net (public Teranode scaling test network / Teratestnet)
+- `bsv:tstn` — Teranode Scaling Test Net (private, per-deployment scaling test network)
 
 ## Rationale
 
@@ -25,15 +32,19 @@ identifier could in principle be constructed the same way, from BSV's fork block
 
 This namespace exists for a different reason. The BSV application layer — BRC-100
 wallets, overlay services, ARC transaction broadcasters, and SPV clients — universally
-identifies a network by a stable human-readable name (`mainnet` / `testnet`), never by
-a fork-block hash. A BRC-100 wallet self-reports its network via a `getNetwork` call
-returning `mainnet` or `testnet`; SV Node's `getblockchaininfo` returns a `chain` field
-of `main` or `test`. A CAIP-2 identifier that mirrors this name lets cross-chain tooling
-(payment protocols such as x402, CAIP-10 account references, CAIP-19 asset references)
-map directly onto the identifiers applications already exchange, without a full-node RPC
-round-trip to recover a fork-block hash. Following the precedent set by the [casper][]
-namespace, whose Chain ID "should not be confused with the genesis_hash," this namespace
-uses the network name as the CAIP-2 reference.
+identifies a network by a stable human-readable name, never by a fork-block hash.
+A BRC-100 wallet self-reports its network via a `getNetwork` call; SV Node's
+`getblockchaininfo` returns a `chain` field of `main` or `test`. A CAIP-2 identifier
+that mirrors this name lets cross-chain tooling (payment protocols such as x402,
+CAIP-10 account references, CAIP-19 asset references) map directly onto the
+identifiers applications already exchange, without a full-node RPC round-trip to
+recover a fork-block hash. Following the precedent set by the [casper][] namespace,
+whose Chain ID "should not be confused with the genesis_hash," this namespace uses
+the network name as the CAIP-2 reference.
+
+`ttn` and `tstn` are included so high-throughput payment protocols can exercise
+Teranode test environments without overloading `bsv:testnet` or inventing ad-hoc
+names that later need client migration.
 
 ## Governance
 
