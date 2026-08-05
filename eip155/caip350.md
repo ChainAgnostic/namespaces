@@ -112,6 +112,7 @@ Wallets and other software are expected to be able to fetch the extra informatio
 
 [CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
 [CAIP-104]: https://chainagnostic.org/CAIPs/caip-104
+[CAIP-350]: https://chainagnostic.org/CAIPs/caip-350
 [EIP-55]: https://eips.ethereum.org/EIPS/eip-55
 [EIP-155]: https://eips.ethereum.org/EIPS/eip-155
 [EIP-2294]: https://eips.ethereum.org/EIPS/eip-2294

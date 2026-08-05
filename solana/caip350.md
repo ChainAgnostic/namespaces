@@ -41,7 +41,7 @@ It is assumed wallets and other software will be able to differentiate between c
 
 ### Binary representation
 
-To obtain the binary representation from the base58btc-encoded genesis blockhash, first truncate the base58btc-encoded text to its first 32 characters as described above and then decode it to raw bytes.
+The binary representation is the 32 raw bytes obtained by base58btc-decoding the full 44-character genesis blockhash. The truncation described above applies only to the [CAIP-2] text form, never to the binary one: decoding the truncated 32-character string yields 23 bytes, which is neither a valid genesis blockhash nor a prefix of one [^1].
 
 #### Text -> binary conversion
 
@@ -113,3 +113,4 @@ Wallets and other software are expected to be able to fetch the extra informatio
 
 [CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
 [CAIP-104]: https://chainagnostic.org/CAIPs/caip-104
+[CAIP-350]: https://chainagnostic.org/CAIPs/caip-350
