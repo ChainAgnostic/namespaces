@@ -52,7 +52,7 @@ The BSV protocol is stewarded by the [BSV Association][], a Switzerland-based
 non-profit that maintains the network's technical standards and the reference node
 implementation. Application-layer standards are published through the openly editable
 [BRC (Bitcoin Request for Comment)][BRCs] process, which defines wallet interfaces
-(BRC-100), key derivation (BRC-42/BRC-43), payment protocols (BRC-29), and transaction
+([BRC-100]), key derivation (BRC-42/BRC-43), payment protocols (BRC-29), and transaction
 serialization (BRC-62/BRC-95), among others. Changes to this namespace should be
 discussed with the BSV Association and the BRC maintainers.
 
