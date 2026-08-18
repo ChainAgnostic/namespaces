@@ -50,7 +50,6 @@ The reference uses ASCII decimal digits without a sign, base prefix,
 separators, surrounding whitespace, or leading zeroes.
 The single value zero is encoded as `0`.
 It is a valid reference and has no special meaning.
-The namespace is lowercase and CAIP-2 identifiers are case-sensitive.
 
 ### Resolution Mechanics
 
