@@ -65,6 +65,7 @@ discussed with the BSV Association and the BRC maintainers.
 
 [BSV Association]: https://www.bsvblockchain.org/
 [BRCs]: https://github.com/bitcoin-sv/BRCs
+[BRC-100]: https://github.com/bitcoin-sv/BRCs/blob/master/wallet/0100.md
 [bip122]: https://namespaces.chainagnostic.org/bip122/README
 [casper]: https://namespaces.chainagnostic.org/casper/README
 
