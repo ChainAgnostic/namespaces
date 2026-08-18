@@ -2,9 +2,10 @@
 namespace-identifier: pinet
 title: Pi Network Ecosystem
 author: Hakkyung Lee (@hklee93)
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/199
 status: Draft
 type: Informational
-created: 2026-08-04
+created: 2026-08-19
 requires: ["CAIP-2"]
 ---
 
@@ -68,6 +69,7 @@ unless they become persistent interoperability targets.
 [CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
 [Pi Whitepaper]: https://minepi.com/white-paper/
 [Pi Developer Documentation]: https://developers.minepi.com/
+[Pi Developer JS SDK]: https://github.com/pi-apps/pi-platform-docs/
 [Pi Network Updates]: https://minepi.com/category/update/
 
 ## Copyright

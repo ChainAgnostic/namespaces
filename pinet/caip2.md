@@ -2,10 +2,10 @@
 namespace-identifier: pinet-caip2
 title: Pi Network - Blockchain ID Specification
 author: Hakkyung Lee (@hklee93)
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/XXX
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/199
 status: Draft
 type: Informational
-created: 2026-08-04
+created: 2026-08-19
 requires: CAIP-2
 ---
 
