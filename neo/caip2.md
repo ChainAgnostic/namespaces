@@ -49,6 +49,7 @@ The regular expression alone is not sufficient to enforce the upper bound.
 The reference uses ASCII decimal digits without a sign, base prefix,
 separators, surrounding whitespace, or leading zeroes.
 The single value zero is encoded as `0`.
+It is a valid reference and has no special meaning.
 The namespace is lowercase and CAIP-2 identifiers are case-sensitive.
 
 ### Resolution Mechanics
@@ -142,7 +143,7 @@ This profile does not change Neo's native Network Magic values.
 
 | Identifier | Reason |
 | --- | --- |
-| `neo:0` | Lower `uint32` boundary |
+| `neo:0` | Valid zero reference |
 | `neo:91414437` | NeoFS MainNet |
 | `neo:860833102` | Neo N3 MainNet |
 | `neo:894710606` | Neo N3 TestNet T5 |
