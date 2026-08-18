@@ -25,6 +25,10 @@ Key architectural facts relevant to cross-chain developers:
   registration (`0` is the genesis operator). Public keys are
   *rotatable* (`rekey`), so the stable account identifier is the
   index, not a key or its hash. This drives the CAIP-10 design.
+  Internally an account holds one *currency account* per currency it
+  spends from (the pair "user + currency", carrying that currency's
+  sequence number); the CAIP-10 address names the user, which is all a
+  payer needs — receiving never requires a currency account.
 - **Transactions:** the entire transfer packs into 128 bits (= UUID);
   a signed transfer is 80 bytes on the wire.
 - **Currencies:** a protocol-level registry of up to 255 currencies
@@ -34,7 +38,7 @@ Key architectural facts relevant to cross-chain developers:
 Profiles in this namespace:
 
 - [caip2.md](caip2.md) — Blockchain ID (`xync:main`)
-- [caip10.md](caip10.md) — Account ID (`xync:main:518-K7`)
+- [caip10.md](caip10.md) — Account ID (`xync:main:518-3Y`)
 - [caip19.md](caip19.md) — Asset ID (`xync:main/cur:1`)
 
 ## Rationale
@@ -45,8 +49,9 @@ networks by their genesis `chain_id`, accounts by their integer index,
 currencies by their single-byte registry code. Keys are rotatable and
 therefore unfit as identifiers; hashes would be verbose and, for
 accounts, would require an on-chain reverse index. The three profiles
-map 1:1 onto the fields of the native 128-bit transaction, so a CAIP
-identifier converts to its on-the-wire form without transformation.
+map onto the protocol's own numbering — a CAIP-10 index is literally the
+recipient field of the native 128-bit transaction — so a CAIP identifier
+converts to its on-the-wire form without transformation.
 
 ## Governance
 

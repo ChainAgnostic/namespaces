@@ -51,8 +51,12 @@ code:            0 | [1-9][0-9]{0,2}     (0..255)
 ## Rationale
 
 A currency is a registry number, not a deployed contract: zero
-attack surface, identical behavior for every asset, and a 1:1 mapping
-to the 8-bit currency field of the native 128-bit transaction format.
+attack surface and identical behavior for every asset. The registry code
+is a single byte; the native 128-bit transaction does not carry it
+directly — a transfer names the sender's *currency account* (the pair
+"user + currency", which owns the sequence number), and the currency is
+read from that account. A CAIP-19 reference therefore maps 1:1 onto the
+currency half of every account in the ledger.
 
 ### Backwards Compatibility
 
