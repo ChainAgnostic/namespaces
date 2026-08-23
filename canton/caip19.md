@@ -2,7 +2,7 @@
 namespace-identifier: canton-caip19
 title: Canton Namespace - Assets
 author: Marc Juchli (@mjuchli-da) <marc.juchli@digitalasset.com>
-discussions-to: https://github.com/ChainAgnostic/namespaces/pulls
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/201
 status: Draft
 type: Standard
 created: 2026-08-21

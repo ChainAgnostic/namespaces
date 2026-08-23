@@ -2,7 +2,7 @@
 namespace-identifier: canton-caip10
 title: Canton Namespace - Addresses
 author: Marc Juchli (@mjuchli-da) <marc.juchli@digitalasset.com>
-discussions-to: https://github.com/ChainAgnostic/namespaces/pulls
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/201
 status: Draft
 type: Standard
 created: 2026-08-21
