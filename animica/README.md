@@ -2,7 +2,7 @@
 namespace-identifier: animica
 title: Animica
 author: Animica (@animicaorg)
-discussions-to: https://github.com/ChainAgnostic/namespaces/pulls
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/200
 status: Draft
 type: Informational
 created: 2026-08-22

@@ -2,7 +2,7 @@
 namespace-identifier: animica-caip2
 title: Animica Namespace - Chains
 author: Animica (@animicaorg)
-discussions-to: https://github.com/ChainAgnostic/namespaces/pulls
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/200
 status: Draft
 type: Standard
 created: 2026-08-22
