@@ -42,16 +42,16 @@ Hence, for `CC` on `mainnet`, the `asset_type` is `canton:mainnet/slip44:6767`.
 For CIP-0056 assets without a SLIP-44 coin type leveraging optional Asset ID (identified by `token_id` for fungibles):
 ```
 chain_id = canton:{synchronizer} // see CAIP-2
-asset_namespace = cip-0056
+asset_namespace = cip-56
 asset_reference = percentEncode({instrumentId.admin})
 token_id = percentEncode({instrumentId.id})
 
-asset_type = canton:mainnet/cip-0056:{instrumentId.admin}/{token_id}
+asset_type = canton:mainnet/cip-56:{instrumentId.admin}/{token_id}
 ```
 
 For Example:
 ```
-canton:mainnet/cip-0056:decentralized-usdc-interchain-rep%3A%3A12208115f1e168dd7e792320be9c4ca720c751a02a3053c7606e1c1cd3dad9bf60ef/USDCx
+canton:mainnet/cip-56:decentralized-usdc-interchain-rep%3A%3A12208115f1e168dd7e792320be9c4ca720c751a02a3053c7606e1c1cd3dad9bf60ef/USDCx
 ```
 
 **Note:** CAIP-19 defines a maximum length of 78 characters for the optional `token_id` component. The compatibility of this mapping depends on the serialized length of the corresponding Canton `instrumentId.id` value after any required encoding. Implementations **MUST** ensure that the resulting token_id complies with the CAIP-19 length constraint.
