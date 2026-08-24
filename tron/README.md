@@ -18,16 +18,16 @@ Tron is a blockchain-based decentralized platform founded in 2017 that aims to b
 The Tron network supports smart contracts through its TVM (Tron Virtual Machine) and provides high throughput with approximately 2,000 transactions per second and 3-second block times.
 
 The Tron ecosystem includes:
-- **Mainnet**: Production network for live applications
-- **Shasta Testnet**: Testing environment compatible with mainnet parameters
-- **Nile Testnet**: Bleeding-edge testing network for new features
+- **Mainnet** (`tron:728126428`): Production network for live applications
+- **Shasta Testnet** (`tron:3448148188`): Testing environment compatible with mainnet parameters
+- **Nile Testnet** (`tron:2494104990`): Bleeding-edge testing network for new features
 
 ## Blockchain Identification
 
-Tron chains are identified using hexadecimal chain IDs derived from the last 4 bytes of their genesis block hashes, as specified in TIP-474.
+Tron chains are identified using decimal chain IDs, the unsigned 32-bit integer value of the last 4 bytes of their genesis block hashes, as specified in TIP-474.
 This approach provides:
 - Deterministic chain identification from genesis block
-- Compatibility with EVM tooling through `eth_chainId` method
+- Compatibility with EVM tooling through the `eth_chainId` method, which returns the same integer
 - Replay protection across networks
 - Integration with existing blockchain infrastructure
 

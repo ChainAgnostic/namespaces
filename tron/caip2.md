@@ -2,7 +2,7 @@
 namespace-identifier: tron-caip2
 title: Tron Namespace - Blockchain ID Specification
 author: Ignacio Rivera (@riveign), Daniel Rocha (@danroc)
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/XXX
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/170
 status: Draft
 type: Standard
 created: 2026-01-27
@@ -15,7 +15,7 @@ requires: CAIP-2
 
 ## Rationale
 
-Tron uses hexadecimal chain IDs derived from the last 4 bytes of the genesis block hash, as specified in [TIP-474][].
+Tron chain IDs are derived from the last 4 bytes of the genesis block hash, as specified in [TIP-474][], and are expressed in decimal — the same form returned by `eth_chainId` and used by the `eip155` namespace.
 This approach provides several benefits:
 - Deterministic derivation from the immutable genesis block
 - Compatibility with EVM tooling and infrastructure
@@ -30,10 +30,10 @@ The namespace "tron" refers to the Tron blockchain platform and its associated n
 
 ### Reference Definition
 
-The reference format for Tron chains uses the hexadecimal representation of the chain ID, prefixed with `0x`.
-This chain ID is derived from the last 4 bytes of the genesis block hash.
+The reference format for Tron chains is the decimal representation of the chain ID, an unsigned 32-bit integer.
+This chain ID is the numeric value of the last 4 bytes of the genesis block hash.
 
-**Format**: `tron:0x{chainId}` where `chainId` is an 8-character hexadecimal string (4 bytes)
+**Format**: `tron:{chainId}` where `chainId` is the chain ID rendered in decimal, without leading zeroes
 
 ### Semantics
 
@@ -41,7 +41,8 @@ The chain ID derivation follows this algorithm:
 1. Query the genesis block (block height 0)
 2. Extract the block hash
 3. Take the last 4 bytes (8 hexadecimal characters) of the genesis block hash
-4. Use this as the chain ID with `0x` prefix
+4. Interpret those 4 bytes as a big-endian unsigned 32-bit integer
+5. Render that integer in decimal
 
 ### Resolution Method
 
@@ -50,9 +51,9 @@ Applications should use the following pre-determined chain IDs:
 
 | Network | Chain ID | Genesis Hash (last 4 bytes) |
 |---------|----------|----------------------------|
-| Mainnet | `0x2b6653dc` | `...2b6653dc` |
-| Shasta  | `0xcd8690dc` | `...cd8690dc` |
-| Nile    | `0x94a9059e` | `...94a9059e` |
+| Mainnet | `728126428` | `...2b6653dc` |
+| Shasta  | `3448148188` | `...cd8690dc` |
+| Nile    | `2494104990` | `...94a9059e` |
 
 These chain IDs are deterministically derived and do not change. For verification purposes, you can query the genesis block to confirm the derivation, but the chain IDs themselves are constants that should be used for network identification.
 
@@ -64,24 +65,29 @@ This is a list of manually composed and validated examples:
 
 ```bash
 # Tron Mainnet
-tron:0x2b6653dc
+tron:728126428
 
 # Tron Shasta Testnet (mainnet-compatible testing)
-tron:0xcd8690dc
+tron:3448148188
 
 # Tron Nile Testnet (bleeding-edge features)
-tron:0x94a9059e
+tron:2494104990
 ```
 
 ### Chain ID Verification
 
-| Network | Chain ID (Hex) | Chain ID (Decimal) | Genesis Hash (last 4 bytes) |
-|---------|----------------|--------------------|-----------------------------|
-| Mainnet | `0x2b6653dc` | `728126428` | `...2b6653dc` |
-| Shasta  | `0xcd8690dc` | `3448148188` | `...cd8690dc` |
-| Nile    | `0x94a9059e` | `2494104990` | `...94a9059e` |
+| Network | Chain ID (Decimal) | Genesis Hash (last 4 bytes) | Hexadecimal Equivalent |
+|---------|--------------------|-----------------------------|------------------------|
+| Mainnet | `728126428` | `...2b6653dc` | `0x2b6653dc` |
+| Shasta  | `3448148188` | `...cd8690dc` | `0xcd8690dc` |
+| Nile    | `2494104990` | `...94a9059e` | `0x94a9059e` |
+
+The hexadecimal column is informative only; it shows the derivation from the genesis hash and is not a valid CAIP-2 reference.
 
 ### RPC Endpoints for Resolution
+
+Endpoint URLs change over time.
+The authoritative list is maintained by the Tron Foundation in [Tron Developer Hub - Networks][]; the values below are current at the time of writing.
 
 - **Mainnet**: `https://api.trongrid.io/jsonrpc`
 - **Shasta**: `https://api.shasta.trongrid.io/jsonrpc`
@@ -90,12 +96,18 @@ tron:0x94a9059e
 ## Backwards Compatibility
 
 Prior to [TIP-474], Tron did not have a standardized chain ID mechanism for cross-chain identification.
-The introduction of hexadecimal chain IDs maintains compatibility with:
-- Existing EVM tooling and wallets (MetaMask, etc.)
-- Blockchain registries (ChainList, ChainID.network)
-- Cross-chain protocols and bridges
 
-Legacy integrations that predate TIP-474 should migrate to using the standardized hexadecimal chain IDs.
+Both a decimal and a `0x`-prefixed hexadecimal rendering of the same 4-byte value have circulated in the ecosystem.
+This specification designates the decimal form as canonical, which keeps the namespace consistent with:
+- The `eth_chainId` JSON-RPC method, whose return value is an integer
+- Tron's existing registrations in [ethereum-lists/chains][] and [ChainList][] (`728126428` for Mainnet)
+- Existing wallet implementations, including MetaMask and `tronwallet-adapter`
+- The `eip155` namespace, which uses decimal references
+
+The decimal form was agreed as the canonical CAIP-2 representation for Tron in TRON Wallet Dev Community Call #5 on 2026-08-19; see [tronprotocol/pm#229][].
+
+Implementations that previously emitted the hexadecimal form should treat it as a deprecated alias: accept `tron:0x2b6653dc` on input, normalise it to `tron:728126428`, and emit only the decimal form.
+The underlying chain ID value is unchanged, so no address-level or on-chain migration is required.
 
 ## Additional Considerations
 
@@ -147,6 +159,8 @@ Applications should use:
 [Tron Developer Hub - eth_chainId]: https://developers.tron.network/reference/eth_chainid
 [ChainList]: https://chainlist.org/
 [ChainID.network]: https://chainid.network/
+[ethereum-lists/chains]: https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-728126428.json
+[tronprotocol/pm#229]: https://github.com/tronprotocol/pm/issues/229
 [TronGrid]: https://www.trongrid.io/
 [Tronscan]: https://tronscan.org/
 

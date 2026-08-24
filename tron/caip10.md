@@ -2,7 +2,7 @@
 namespace-identifier: tron-caip10
 title: Tron Namespace - Account ID Specification
 author: Ignacio Rivera (@riveign), Daniel Rocha (@danroc)
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/XXX
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/170
 status: Draft
 type: Standard
 created: 2026-01-27
@@ -50,11 +50,11 @@ Tron addresses are generated through the following process:
 
 *For context, see the [CAIP-2][] specification.*
 
-| Network        | Chain ID (Hex) | Chain ID (CAIP-2)  |
-|----------------|----------------|--------------------|
-| Mainnet        | `0x2b6653dc`   | `tron:0x2b6653dc`  |
-| Shasta Testnet | `0xcd8690dc`   | `tron:0xcd8690dc`  |
-| Nile Testnet   | `0x94a9059e`   | `tron:0x94a9059e`  |
+| Network        | Chain ID     | Chain ID (CAIP-2) |
+|----------------|--------------|-------------------|
+| Mainnet        | `728126428`  | `tron:728126428`  |
+| Shasta Testnet | `3448148188` | `tron:3448148188` |
+| Nile Testnet   | `2494104990` | `tron:2494104990` |
 
 ## Test Cases
 
@@ -62,16 +62,16 @@ This is a list of manually composed and validated examples:
 
 ```bash
 # Tron Mainnet - Standard account address
-tron:0x2b6653dc:TNPeeaaFB7K9cmo4uQpcU32zGK8G1NYqeL
+tron:728126428:TNPeeaaFB7K9cmo4uQpcU32zGK8G1NYqeL
 
 # Tron Mainnet - USDT TRC-20 contract address
-tron:0x2b6653dc:TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t
+tron:728126428:TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t
 
 # Tron Shasta Testnet
-tron:0xcd8690dc:TQQg4EL8o1BSeKJY4MJ8TB8XK7xufxFBvK
+tron:3448148188:TQQg4EL8o1BSeKJY4MJ8TB8XK7xufxFBvK
 
 # Tron Nile Testnet
-tron:0x94a9059e:TLyqzVGLV1srkB7dToTAEqgDSfPtXRJZYH
+tron:2494104990:TLyqzVGLV1srkB7dToTAEqgDSfPtXRJZYH
 ```
 
 ## Address Validation
