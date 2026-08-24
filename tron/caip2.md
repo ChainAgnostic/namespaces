@@ -52,10 +52,12 @@ Applications should use the following pre-determined chain IDs:
 | Network | Chain ID | Genesis Hash (last 4 bytes) |
 |---------|----------|----------------------------|
 | Mainnet | `728126428` | `...2b6653dc` |
-| Shasta  | `3448148188` | `...cd8690dc` |
-| Nile    | `2494104990` | `...94a9059e` |
+| Shasta  | `2494104990` | `...94a9059e` |
+| Nile    | `3448148188` | `...cd8690dc` |
 
 These chain IDs are deterministically derived and do not change. For verification purposes, you can query the genesis block to confirm the derivation, but the chain IDs themselves are constants that should be used for network identification.
+
+These values are published by the Tron Foundation in [Tron Developer Hub - eth_chainId][], which is the authoritative source should the table above fall out of date. They can also be confirmed at any time by calling `eth_chainId` or reading the genesis block on each network.
 
 **Note**: Applications should use Tron-native RPC methods with the `tron_` prefix (e.g., `tron_getBalance`, `tron_signTransaction`). While Tron implements some EVM-compatible JSON-RPC endpoints (including `eth_chainId`) for tooling compatibility, these are secondary interfaces. The chain ID values remain the same regardless of which RPC interface is used.
 
@@ -70,10 +72,10 @@ This is a list of manually composed and validated examples:
 tron:728126428
 
 # Tron Shasta Testnet (mainnet-compatible testing)
-tron:3448148188
+tron:2494104990
 
 # Tron Nile Testnet (bleeding-edge features)
-tron:2494104990
+tron:3448148188
 ```
 
 ### Chain ID Verification
@@ -81,8 +83,8 @@ tron:2494104990
 | Network | Chain ID (Decimal) | Genesis Hash (last 4 bytes) | Hexadecimal Equivalent |
 |---------|--------------------|-----------------------------|------------------------|
 | Mainnet | `728126428` | `...2b6653dc` | `0x2b6653dc` |
-| Shasta  | `3448148188` | `...cd8690dc` | `0xcd8690dc` |
-| Nile    | `2494104990` | `...94a9059e` | `0x94a9059e` |
+| Shasta  | `2494104990` | `...94a9059e` | `0x94a9059e` |
+| Nile    | `3448148188` | `...cd8690dc` | `0xcd8690dc` |
 
 The hexadecimal column is informative only; it shows the derivation from the genesis hash and is not a valid CAIP-2 reference.
 
@@ -124,12 +126,12 @@ The full genesis block hashes for reference:
 
 **Shasta Testnet**:
 ```
-0x0000000000000000d698d4192c56cb6be724a558448e2684802de4d6cd8690dc
+0x0000000000000000de1aa88295e1fcf982742f773e0419c5a9c134c994a9059e
 ```
 
 **Nile Testnet**:
 ```
-0x0000000000000000de1aa88295e1fcf982742f773e0419c5a9c134c994a9059e
+0x0000000000000000d698d4192c56cb6be724a558448e2684802de4d6cd8690dc
 ```
 
 ### Registry Information

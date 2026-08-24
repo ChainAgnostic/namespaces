@@ -53,8 +53,8 @@ Tron addresses are generated through the following process:
 | Network        | Chain ID     | Chain ID (CAIP-2) |
 |----------------|--------------|-------------------|
 | Mainnet        | `728126428`  | `tron:728126428`  |
-| Shasta Testnet | `3448148188` | `tron:3448148188` |
-| Nile Testnet   | `2494104990` | `tron:2494104990` |
+| Shasta Testnet | `2494104990` | `tron:2494104990` |
+| Nile Testnet   | `3448148188` | `tron:3448148188` |
 
 ## Test Cases
 
@@ -68,10 +68,10 @@ tron:728126428:TNPeeaaFB7K9cmo4uQpcU32zGK8G1NYqeL
 tron:728126428:TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t
 
 # Tron Shasta Testnet
-tron:3448148188:TQQg4EL8o1BSeKJY4MJ8TB8XK7xufxFBvK
+tron:2494104990:TQQg4EL8o1BSeKJY4MJ8TB8XK7xufxFBvK
 
 # Tron Nile Testnet
-tron:2494104990:TLyqzVGLV1srkB7dToTAEqgDSfPtXRJZYH
+tron:3448148188:TLyqzVGLV1srkB7dToTAEqgDSfPtXRJZYH
 ```
 
 ## Address Validation

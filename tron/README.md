@@ -19,8 +19,8 @@ The Tron network supports smart contracts through its TVM (Tron Virtual Machine)
 
 The Tron ecosystem includes:
 - **Mainnet** (`tron:728126428`): Production network for live applications
-- **Shasta Testnet** (`tron:3448148188`): Testing environment compatible with mainnet parameters
-- **Nile Testnet** (`tron:2494104990`): Bleeding-edge testing network for new features
+- **Shasta Testnet** (`tron:2494104990`): Testing environment compatible with mainnet parameters
+- **Nile Testnet** (`tron:3448148188`): Bleeding-edge testing network for new features
 
 ## Blockchain Identification
 
