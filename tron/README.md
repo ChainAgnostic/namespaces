@@ -27,7 +27,7 @@ The Tron ecosystem includes:
 Tron chains are identified using decimal chain IDs, the unsigned 32-bit integer value of the last 4 bytes of their genesis block hashes, as specified in TIP-474.
 This approach provides:
 - Deterministic chain identification from genesis block
-- Compatibility with EVM tooling through the `eth_chainId` method, which returns the same integer
+- Compatibility with EVM tooling through the `eth_chainId` method, which returns the same value base-16-encoded
 - Replay protection across networks
 - Integration with existing blockchain infrastructure
 

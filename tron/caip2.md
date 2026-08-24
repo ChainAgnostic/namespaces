@@ -15,7 +15,7 @@ requires: CAIP-2
 
 ## Rationale
 
-Tron chain IDs are derived from the last 4 bytes of the genesis block hash, as specified in [TIP-474][], and are expressed in decimal — the same form returned by `eth_chainId` and used by the `eip155` namespace.
+Tron chain IDs are derived from the last 4 bytes of the genesis block hash, as specified in [TIP-474][], and are expressed in decimal, following the same convention as the `eip155` namespace.
 This approach provides several benefits:
 - Deterministic derivation from the immutable genesis block
 - Compatibility with EVM tooling and infrastructure
@@ -59,6 +59,8 @@ These chain IDs are deterministically derived and do not change. For verificatio
 
 **Note**: Applications should use Tron-native RPC methods with the `tron_` prefix (e.g., `tron_getBalance`, `tron_signTransaction`). While Tron implements some EVM-compatible JSON-RPC endpoints (including `eth_chainId`) for tooling compatibility, these are secondary interfaces. The chain ID values remain the same regardless of which RPC interface is used.
 
+When resolving via `eth_chainId`, the response is a base-16-encoded integer (e.g. `0x2b6653dc`) and must be converted to base 10 to form a CAIP-2 reference, as in the `eip155` namespace.
+
 ## Test Cases
 
 This is a list of manually composed and validated examples:
@@ -99,7 +101,7 @@ Prior to [TIP-474], Tron did not have a standardized chain ID mechanism for cros
 
 Both a decimal and a `0x`-prefixed hexadecimal rendering of the same 4-byte value have circulated in the ecosystem.
 This specification designates the decimal form as canonical, which keeps the namespace consistent with:
-- The `eth_chainId` JSON-RPC method, whose return value is an integer
+- The underlying type of the chain ID, which [TIP-474][] and the `CHAINID` opcode treat as an integer rather than a byte string
 - Tron's existing registrations in [ethereum-lists/chains][] and [ChainList][] (`728126428` for Mainnet)
 - Existing wallet implementations, including MetaMask and `tronwallet-adapter`
 - The `eip155` namespace, which uses decimal references
