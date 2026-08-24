@@ -50,13 +50,10 @@ See reference below for exact `domainId` values.
 
 ### Other synchronizers
 
-Additional aliases **MAY** be proposed and **MUST** use one of the following formats:
+Aliases for dedicated synchronizers **MAY** be proposed and **SHOULD** be prefixed with the corresponding network:
 
 ```
-canton:private-name  # Private domainId, eg. sync::1220f5d7...
-
-// Prefix to indicate a network extension
-canton:{mainnet|testnet|devnet}/private-name
+canton:{mainnet|testnet|devnet}/dedicated-name
 ```
 
 This approach provides human-readable, interoperable identifiers while decoupling the CAIP representation from Canton's internal identifier format and remaining compatible with future network evolution.

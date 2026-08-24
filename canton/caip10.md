@@ -19,7 +19,9 @@ CAIP‑10 defines `account_id` as `{chain_id}:{account_address}`
 - `chain_id` the [CAIP2 Canton ID](./caip2.md)
 - `account_address` the user or entity address on that chain (`[-.%a-zA-Z0-9]{1,128}`).
 
-The `account_address` is derived from the canonical textual representation of a Canton Party ID. A Canton Party ID has the following canonical form:
+The `account_address` is derived from the canonical textual representation of a Canton Party ID.  A given Party ID (e.g. `account_address`) is shared across multiple synchronizers (e.g. `chain_id`).
+
+A Canton Party ID has the following canonical form:
 ```
 {partyHint}::{partyNamespace}
 ```
@@ -36,6 +38,8 @@ canton:testnet:bob%3A%3A1220def...
 ```
 
 The percent-encoded value preserves the canonical Party ID and can be decoded by implementations using standard percent-decoding. This approach ensures compliance with the CAIP-10 grammar while preserving Canton's existing Party ID semantics and avoiding the introduction of a new account address format.
+
+**Note:** the same PartyId (e.g. account_address) is shared across multiple synchronizers (e.g. chain_id).
 
 ## Limitations
 
