@@ -41,9 +41,9 @@ The mapping between a network identifier and its Synchronizer identifier **MUST*
 The `chain_id` for the well known global synchronizers are:
 
 ```
-canton:mainnet  # Global Synchronizer MainNet
-canton:testnet  # Global Synchronizer TestNet
-canton:devnet   # Global Synchronizer DevNet
+canton:mainnet-global  # Global Synchronizer MainNet
+canton:testnet-global  # Global Synchronizer TestNet
+canton:devnet-global   # Global Synchronizer DevNet
 ```
 
 See reference below for exact `domainId` values.
@@ -53,8 +53,10 @@ See reference below for exact `domainId` values.
 Aliases for dedicated synchronizers **MAY** be proposed and **SHOULD** be prefixed with the corresponding network:
 
 ```
-canton:{mainnet|testnet|devnet}/dedicated-name
+canton:{mainnet|testnet|devnet}-dedicated-name
 ```
+
+The complete network identifier, prefix and dedicated name together, **MUST** satisfy the CAIP-2 reference production `[-_a-zA-Z0-9]{1,32}`, leaving at most 24 characters for `{dedicated-name}`.
 
 This approach provides human-readable, interoperable identifiers while decoupling the CAIP representation from Canton's internal identifier format and remaining compatible with future network evolution.
 

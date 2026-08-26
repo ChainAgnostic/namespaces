@@ -33,8 +33,8 @@ canton:{networkIdentifier}:{partyHint}%3A%3A{partyNamespace}
 
 Examples:
 ```
-canton:mainnet:alice%3A%3A123abc...
-canton:testnet:bob%3A%3A1220def...
+canton:mainnet-global:alice%3A%3A123abc...
+canton:testnet-global:bob%3A%3A1220def...
 ```
 
 The percent-encoded value preserves the canonical Party ID and can be decoded by implementations using standard percent-decoding. This approach ensures compliance with the CAIP-10 grammar while preserving Canton's existing Party ID semantics and avoiding the introduction of a new account address format.
@@ -45,7 +45,7 @@ The percent-encoded value preserves the canonical Party ID and can be decoded by
 
 The `account_address` lenght **MUST** be <= 128 characters. The party namespace takes 64 characters, the url encoded colons 4 characters, the `canton:` prefix 7 characters, and thus leaving 53 characters for the  `{networkIdentifier}:{partyHint}`.
 
-In the case of `networkIdentifier` being `da-mainnet`, the party hint must be <= 43 characters.
+In the case of `networkIdentifier` being `mainnet-global`, the party hint must be <= 32 characters.
 
 
 ## References
