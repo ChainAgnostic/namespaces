@@ -90,12 +90,14 @@ The hexadecimal column is informative only; it shows the derivation from the gen
 
 ### RPC Endpoints for Resolution
 
-Endpoint URLs change over time.
-The authoritative list is maintained by the Tron Foundation in [Tron Developer Hub - Networks][]; the values below are current at the time of writing.
+The endpoints below are operated as part of [TronGrid][], the TRON network's hosted node service, which exposes JSON-RPC alongside its FullNode, SolidityNode and gRPC interfaces.
+Rather than treating this list as normative, implementers should consult the official documentation, which is the authoritative and maintained source: [TronGrid][TronGrid Docs] for the service itself, and [Networks][Tron Developer Hub - Networks] for the per-network endpoints.
 
 - **Mainnet**: `https://api.trongrid.io/jsonrpc`
 - **Shasta**: `https://api.shasta.trongrid.io/jsonrpc`
 - **Nile**: `https://nile.trongrid.io/jsonrpc`
+
+Note that TronGrid applies rate limits and expects an API key for production use; see the TronGrid documentation for current terms.
 
 ## Backwards Compatibility
 
@@ -153,6 +155,7 @@ Applications should use:
 - [TIP-474][]: Tron Improvement Proposal for chain ID optimization
 - [Tron Developer Hub - Networks][]: Official network documentation
 - [Tron Developer Hub - eth_chainId][]: Chain ID RPC method documentation
+- [TronGrid Docs][]: Documentation for the TronGrid hosted node service
 - [ChainList][]: Tron chain listings
 - [TronGrid][]: Official Tron API service
 - [Tronscan][]: Tron blockchain explorer
@@ -161,6 +164,7 @@ Applications should use:
 [TIP-474]: https://github.com/tronprotocol/tips/blob/master/tip-474.md
 [Tron Developer Hub - Networks]: https://developers.tron.network/docs/networks
 [Tron Developer Hub - eth_chainId]: https://developers.tron.network/reference/eth_chainid
+[TronGrid Docs]: https://developers.tron.network/docs/trongrid
 [ChainList]: https://chainlist.org/
 [ChainID.network]: https://chainid.network/
 [ethereum-lists/chains]: https://github.com/ethereum-lists/chains/blob/master/_data/chains/eip155-728126428.json
