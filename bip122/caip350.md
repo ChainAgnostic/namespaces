@@ -30,15 +30,15 @@ This is the first 32 lowercase hex characters (16 bytes) of the genesis block ha
 
 > **Note:** Per [CAIP-350], the full chain identifier is `bip122:<genesis_hash_prefix>` (e.g., `bip122:000000000019d6689c085ae165831e93`, `bip122:000000000933ea01ad0ee984209779ba`).
 
-##### Text representation -> customary (CAIP-2) conversion
+#### Text -> customary (CAIP-2) conversion
 
 The text representation (chain reference) is the same as the chain reference in the [CAIP-2](caip2.md) chain identifier; no conversion is needed.
 
-##### Customary (CAIP-2) conversion - text representation conversion
+#### Customary (CAIP-2) -> text conversion
 
 The chain reference in the [CAIP-2](caip2.md) chain identifier is the same as the text representation; no conversion is needed.
 
-#### Binary representation
+### Binary representation
 
 The chain reference is the 16 bytes corresponding to the first 32 hex characters of the genesis block hash. Bytes are in the same order as the hex string (first two hex characters encode the first byte, etc.).
 
@@ -50,7 +50,7 @@ Decode the 32-character lowercase hex string to 16 bytes (RFC-4616 base16, no 0x
 
 Encode the 16 bytes as 32 lowercase hex characters (RFC-4616 base16, no 0x-prefix).
 
-#### Examples
+### Examples
 
 | Chain | Text (chain reference) | Binary |
 |-------|------------------------|--------------------------------|
@@ -70,11 +70,11 @@ See this namespace's [CAIP-10](caip10.md) profile. BIP122 supports multiple addr
 
 Where `<address>` is the full native ASCII form (base58btc, bech32, or bech32m) as in [CAIP-10](caip10.md)—e.g. P2SH `35PBEaofpUeH8VnnNSorM1QZsadrZoQp4N`, SegWit `bc1qwz2lhc40s8ty3l5jg3plpve3y3l82x9l42q7fk`, or Taproot `bc1pmzfrwwndsqmk5yh69yjr5lfgfg4ev8c0tsc06e`.
 
-#### Text representation -> native representation conversion
+#### Text -> native conversion
 
 No transformation; the text representation is the native representation.
 
-#### Native representation -> text representation conversion
+#### Native -> text conversion
 
 No transformation; the native representation is the text representation.
 
