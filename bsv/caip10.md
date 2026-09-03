@@ -2,7 +2,7 @@
 namespace-identifier: bsv-caip10
 title: BSV Blockchain - Account Identifiers
 author: Deggen (@sirdeggen) <d.kellenschwiler@bsvassociation.org>
-discussions-to: ["https://github.com/ChainAgnostic/namespaces/pull/190", "https://github.com/x402-foundation/x402/pull/2890"]
+discussions-to: ["https://github.com/ChainAgnostic/namespaces/pull/202", "https://github.com/ChainAgnostic/namespaces/pull/190", "https://github.com/x402-foundation/x402/pull/2890"]
 status: Draft
 type: Standard
 created: 2026-09-03
