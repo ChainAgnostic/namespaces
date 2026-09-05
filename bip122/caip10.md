@@ -81,6 +81,9 @@ bip122:12a765e31ffd4059bada1e25190f6e98:ltc1q8c6fshw2dlwun7ekn9qwf37cu2rn755u9ym
 # Litecoin testnet, Native SegWit address (P2WPKH)
 bip122:4966625a4b2851d9fdee139e56211a0d:tltc1qlustmw64lgd744h45n0t07wxnxw8pmv2sv07r9
 
+# Neurai mainnet, P2PKH address
+bip122:00000044d33c0c0ba019be5c02497304:NX7syqGJzweY57vW2K1D9G3kn8DXSq9Azc
+
 ```
 
 ## References
