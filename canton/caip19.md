@@ -32,7 +32,7 @@ asset_reference = 6767 // CC
 asset_type = {chain_id}/slip44:6767
 ```
 
-Hence, for `CC` on `canton:mainnet-global`, the `asset_type` is `canton:mainnet/slip44:6767`.
+Hence, for `CC` on `canton:mainnet-global`, the `asset_type` is `canton:mainnet-global/slip44:6767`.
 
 
 ### Assets without SLIP-44
@@ -48,9 +48,11 @@ asset_reference = percentEncode({instrumentId.admin}) + "." + percentEncode({ins
 asset_type = {chain_id}/cip-56:{asset_reference}
 ```
 
+*Percent-encoding preserves ensures compliance with the CAIP-19 grammar while preserving Canton's existing Party ID semantics.*
+
 For Example:
 ```
-canton:mainnet-global/cip-56:decentralized-usdc-interchain-rep%3A%3A12208115f1e168dd7e792320be9c4ca720c751a02a3053c7606e1c1cd3dad9bf60ef/USDCx
+canton:mainnet-global/cip-56:decentralized-usdc-interchain-rep%3A%3A12208115f1e168dd7e792320be9c4ca720c751a02a3053c7606e1c1cd3dad9bf60ef.USDCx
 ```
 
 **Note:** CAIP-19 defines a maximum length of 128 characters for the `asset_reference` component.
