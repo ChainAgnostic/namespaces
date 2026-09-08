@@ -56,7 +56,7 @@ Aliases for dedicated synchronizers **MAY** be proposed and **SHOULD** be prefix
 canton:{mainnet|testnet|devnet}-dedicated-name
 ```
 
-The complete network identifier, prefix and dedicated name together, **MUST** satisfy the CAIP-2 reference production `[-_a-zA-Z0-9]{1,32}`, leaving at most 24 characters for `{dedicated-name}`.
+The complete network identifier, prefix and dedicated name together, **MUST** satisfy the CAIP-2 reference production `[-_a-zA-Z0-9]{1,32}`, leaving a limited number of characters for the `{dedicated-name}`.
 
 This approach provides human-readable, interoperable identifiers while decoupling the CAIP representation from Canton's internal identifier format and remaining compatible with future network evolution.
 

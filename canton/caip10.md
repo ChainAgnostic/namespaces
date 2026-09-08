@@ -43,10 +43,9 @@ The percent-encoded value preserves the canonical Party ID and can be decoded by
 
 ## Limitations
 
-The `account_address` length **MUST** be <= 128 characters. The party namespace takes 64 characters, the url encoded colons 4 characters, the `canton:` prefix 7 characters, and thus leaving 53 characters for the  `{networkIdentifier}:{partyHint}`.
+The `account_address` length **MUST** be <= 128 characters. The party namespace takes 68 characters, the url encoded colons 6 characters, the `canton:` prefix 7 characters, and thus leaving 49 characters for the `{networkIdentifier}:{partyHint}`.
 
-In the case of `networkIdentifier` being `mainnet-global`, the party hint must be <= 32 characters.
-
+In the case of `networkIdentifier` being `mainnet-global` (14 characters), and 1 colon separator, the party hint must be <= 32 characters.
 
 ## References
 
