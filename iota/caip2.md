@@ -51,7 +51,7 @@ or the first 4 hex-encoded bytes of the genesis checkpoint digest (e.g. `6364aad
 ### Resolution Mechanics
 
 To resolve a CAIP-2 `iota:<network>` identifier to a unique chain identitier, clients typically query a trusted full node associated with the specified network.
-While the `iotax_getChainIdentifier` JSON-RPC method is commonly used for this purpose, resolution is not limited to JSON-RPC.
+While the `iota_getChainIdentifier` JSON-RPC method is commonly used for this purpose, resolution is not limited to JSON-RPC.
 Other node interfaces, such as GraphQL, may also support retrieving identifiers pertinent to locating records, such as a genesis checkpoint digest unique to each chain.
 
 **Sample request**
@@ -60,7 +60,7 @@ Other node interfaces, such as GraphQL, may also support retrieving identifiers 
 {
   "jsonrpc": "2.0",
   "id": 1,
-  "method": "iotax_getChainIdentifier",
+  "method": "iota_getChainIdentifier",
   "params": []
 }
 ```
@@ -81,7 +81,7 @@ The response returns the first four bytes of the genesis checkpoint digest for t
 
 This approach allows developers to use intuitive, readable CAIP-2 identifiers (e.g., `iota:mainnet`) while still achieving unambiguous and verifiable identification of the underlying chain through the genesis checkpoint digest.
 
-The separation of **stable identifiers** (e.g., `iota:testnet`) from the **unambiguous chain identifier** (e.g., the identifier returned by `iotax_getChainIdentifier`) is particularly important because:
+The separation of **stable identifiers** (e.g., `iota:testnet`) from the **unambiguous chain identifier** (e.g., the identifier returned by `iota_getChainIdentifier`) is particularly important because:
 
 - **`testnet` and `devnet` may be reset** by IOTA maintainers, resulting in a new genesis state.
 - When this happens, the **genesis checkpoint digest changes**, meaning the underlying chain identifier is no longer the same.
