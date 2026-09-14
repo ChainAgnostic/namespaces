@@ -32,7 +32,7 @@ For example:
 curl --request POST \
   --header "Content-Type: application/json" \
   --data '{"jsonrpc":"2.0", "id": 1, "method":"info_get_status", "params":{}}' \
-  http://52.35.59.254:7777/rpc | jq .result.chainspec_name
+  https://node.testnet.casper.network/rpc | jq .result.chainspec_name
 
 // Result
 "casper-test"
@@ -54,8 +54,8 @@ casper:casper-test
 
 For testing purposes, the Casper Association maintains the following RPC endpoints:
 
-* Casper Mainnet: http://34.224.191.55:7777/rpc
-* Testnet: http://52.35.59.254:7777/rpc
+* Casper Mainnet: https://node.mainnet.casper.network/rpc
+* Testnet: https://node.testnet.casper.network/rpc
 
 
 ## References
