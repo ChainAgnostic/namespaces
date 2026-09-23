@@ -30,16 +30,16 @@ Where `<genesis_blockhash>` is the full 44-character base58btc-encoded genesis b
 > **Note:** Per [CAIP-350], the full chain identifier is `solana:<genesis_blockhash>` (e.g., `solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d`).
 
 
-##### Text representation -> customary (CAIP-2) conversion
+#### Text -> customary (CAIP-2) conversion
 
 The leading 32 characters are used, and the rest discarded, in a manner similar to what is specified on [this namespace's CAIP-2](caip2.md) profile (e.g., `solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp`).
 
-##### Customary (CAIP-2) conversion?CAIP-2 - text representation conversion
+#### Customary (CAIP-2) -> text conversion
 
 This transformation is not fully deterministic.
 It is assumed wallets and other software will be able to differentiate between chains with just the leading 32 base58btc-encoded characters, and use a lookup table of chains to complete the missing information to convert [CAIP-2] identifiers to those defined in this standard.
 
-#### Binary representation
+### Binary representation
 
 To obtain the binary representation from the base58btc-encoded genesis blockhash, first truncate the base58btc-encoded text to its first 32 characters as described above and then decode it to raw bytes.
 
@@ -51,7 +51,7 @@ Text should be base58btc-decoded into raw bytes.
 
 Raw bytes should be base58btc encoded into text.
 
-#### Examples
+### Examples
 
 Solana Mainnet
 : `solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d`
@@ -73,15 +73,15 @@ Solana addresses are 32-byte public keys, conventionally displayed to users as b
 
 Where `<public_key>` is the base58btc-encoded ASCII of the entire 32-byte public key.
 
-##### Text representation -> native representation conversion
+#### Text -> native conversion
 
 No transformation.
 
-##### native representation conversion -> text representation conversion
+#### Native -> text conversion
 
 No transformation.
 
-#### Binary representation
+### Binary representation
 
 Entire 32-byte public key.
 
@@ -93,17 +93,17 @@ base58btc decoding
 
 base58btc encoding
 
-#### Examples
+### Examples
 
 `7S3P4HxJpyyigGzodYwHtCxZyUQe9JiBMHyRWXArAaKv` -> `0x5F90554BB3D8C2FC82B6EE59C49AAA143E77F7D49A83E956CE1DBEF17A43F805`
 
 `DYw8jCTfwHNRJhhmFcbXvVDTqWMEVFBX6ZKUmG5CNSKK` -> `0xBA7A74F374AB05B70D114A78112EF0D3F0695A819572C79710B5372000D81AE2`
 
-### Error handling
+## Error handling
 
-### Implementation considerations
+## Implementation considerations
 
-### Extra considerations
+## Extra considerations
 
 Wallets and other software are expected to be able to fetch the extra information needed to convert from [CAIP-2] to produce the corresponding identifier defined by this standard.
 
