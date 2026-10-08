@@ -1,12 +1,12 @@
 ---
 namespace-identifier: sui-caip2
 title: Sui Namespace - Chains
-author: William Robertson (@williamrobertson13)
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/146
+author: William Robertson (@williamrobertson13), Omer Sadika (@omersadika)
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/146, https://github.com/ChainAgnostic/namespaces/pull/236
 status: Draft
 type: Informational
 created: 2025-06-18
-updated: 2025-06-18
+updated: 2026-10-08
 ---
 
 # CAIP-2
@@ -15,111 +15,177 @@ _For context, see the [CAIP-2][] specification._
 
 ## Introduction
 
-The Sui namespace in CAIP-2 uses human-readable chain identifiers — such as `mainnet`, `testnet`, and `devnet` — to identify specific Sui networks. These identifiers are **stable**, **concise**, and **easy to communicate**, and can be resolved to a unique genesis checkpoint digest through a supported Sui RPC interface.
+The Sui namespace identifies networks by name or chain identifier.
 
-This design provides both developer ergonomics and cryptographic assurance, allowing developers to work with simple names while still supporting verifiable chain identification.
+- Names (`mainnet`, `testnet`, `devnet`, `localnet`) stay the same across resets.
+- Chain identifiers are the first four bytes of the genesis checkpoint digest in lowercase hex, e.g. `35834a8a` for mainnet. They stay fixed for each chain but are not globally unique.
+
+A full node reports its network's genesis checkpoint digest, so either form can be checked against it.
 
 ## Specification
 
 ### Semantics
 
-A valid CAIP-2 identifier in the Sui namespace takes the form:
+A valid CAIP-2 identifier in the Sui namespace takes one of two forms:
 
 `sui:<network>`
 
-Where `<network>` is one of the following reserved, stable identifiers:
+Where `<network>` is one of the following reserved names:
 
 - `mainnet`
 - `testnet`
 - `devnet`
+- `localnet`
+
+`sui:<chain identifier>`
+
+Where `<chain identifier>` is the first four bytes of the network's genesis checkpoint digest, as eight lowercase hexadecimal characters.
+
+Sui's RPCs and SDKs use "chain identifier" for the full 32-byte digest, base58btc-encoded, and the Sui CLI calls the four-byte hex value the short form.
+The full digest exceeds the 32-character limit on [CAIP-2][] references, so in this profile "chain identifier" always means the four-byte form.
+
+The two forms name networks differently:
+
+- `mainnet` always names the same chain, whose short identifier is `35834a8a`.
+- `testnet` has run since May 2023 with short identifier `4c78adac`. A reset is not expected, but is allowed with notice ([Sui Networks]). After a reset, `sui:testnet` would name the new chain; the old chain would keep its short identifier `4c78adac`.
+- `devnet` resets regularly, wiping all state and creating a new chain ([Sui Networks]). `sui:devnet` names the current chain.
+- `localnet` names the client's local network.
+- A private network has no reserved name and is named by its chain identifier.
+
+A network can have two IDs, and different networks can share a four-byte identifier.
+To compare chains, resolve each ID using trusted network information and compare the full genesis digests ([Resolution Mechanics](#resolution-mechanics)).
 
 ### Syntax
 
 #### Regular Expression
 
-`^sui:(mainnet|testnet|devnet)$`
+`^sui:(mainnet|testnet|devnet|localnet|[0-9a-f]{8})$`
 
-Only these exact network identifiers are currently supported.
+Every name contains a letter that is not a hexadecimal digit, so names and chain identifiers cannot be confused.
+Future names will follow the same rule and use only lowercase letters, digits and hyphens, up to 32 characters.
+This regular expression will be updated when one is added.
 
-#### Example
+#### Examples
 
 `sui:mainnet`
 
+`sui:35834a8a`
+
+### Governance
+
+A new name is added only by updating this profile, for example when a new long-running public network launches.
+Updates are accepted from this profile's authors, or from Mysten Labs (@MystenLabs) or the Sui Foundation, which coordinate Sui's standards ([README][Sui Namespace]).
+
 ### Resolution Mechanics
 
-To resolve a CAIP-2 `sui:<network>` identifier into a unique chain identitier, clients typically query a trusted full node associated with the specified network. While the `suix_getChainIdentifier` JSON-RPC method is commonly used for this purpose, resolution is not limited to JSON-RPC. Other node interfaces, such as GraphQL, may also support retrieving identifiers pertinent to locating records, such as a genesis checkpoint digest unique to each chain.
+To resolve a CAIP-2 identifier, ask a trusted full node of the network for its genesis checkpoint digest.
+Its first four bytes, in lowercase hex, are the chain identifier; for `sui:<chain identifier>`, check that they match.
+A matching prefix alone does not identify the intended network.
+Use a retained full digest or trusted endpoint to resolve ambiguity; fail if the network remains ambiguous.
 
-**Sample request**
+Mainnet and the current testnet can also be resolved from the digests under [Test Cases](#test-cases), taken from [Sui's source][Sui digests].
+After a testnet reset, use its new digest for `sui:testnet`.
+Comparing a node's digest against them detects a node serving the wrong network.
+A node does not report the names `devnet` or `localnet`: for those, the network is whichever one the client's configured node serves.
+
+There is no registry of chain identifiers or endpoints.
+The public networks' endpoints are listed in [Sui Networks]; a private network's operators share its endpoints themselves.
+
+Over gRPC, call `GetServiceInfo` on `sui.rpc.v2.LedgerService`.
+It returns `chain_id`, the base58btc-encoded genesis checkpoint digest, and `chain`: `mainnet`, `testnet`, or `unknown` for any other network, including devnet and local networks.
+
+**Sample request (for mainnet):**
+
+```
+grpcurl fullnode.mainnet.sui.io:443 sui.rpc.v2.LedgerService/GetServiceInfo
+```
+
+**Sample response (abridged):**
 
 ```json
 {
-  "jsonrpc": "2.0",
-  "id": 1,
-  "method": "suix_getChainIdentifier",
-  "params": []
+  "chainId": "4btiuiMPvEENsttpZC7CZ53DruC3MAgfznDbASZ7DR6S",
+  "chain": "mainnet"
 }
 ```
 
-**Sample response (for mainnet):**
+Decoding `4btiuiMPvEENsttpZC7CZ53DruC3MAgfznDbASZ7DR6S` from base58btc gives `35834a8ac17ca48fb14ac8f99c17c98747e95dd07294ae41a46b382246a4499b`, whose first four bytes are the chain identifier `35834a8a`.
 
-```json
-{
-  "jsonrpc": "2.0",
-  "id": 1,
-  "result": "35834a8a"
-}
-```
-
-The response returns the first four bytes of the genesis checkpoint digest for the network.
+Over GraphQL ([Sui GraphQL API]), the `chainIdentifier` field returns the same base58btc-encoded digest.
 
 ## Rationale
 
-This approach allows developers to use intuitive, readable CAIP-2 identifiers (e.g., `sui:mainnet`) while still achieving unambiguous and verifiable identification of the underlying chain through the genesis checkpoint digest.
+Names and chain identifiers serve different needs:
 
-The separation of **stable identifiers** (e.g., `sui:testnet`) from the **unambiguous chain identifier** (e.g., the identifier returned by `suix_getChainIdentifier`) is particularly important because:
+- Names let clients follow devnet resets or switch local networks without changing their chain ID configuration.
+- Chain identifiers stay fixed for a chain; a reset's new genesis digest determines its identifier.
 
-- **`testnet` and `devnet` may be reset** by Sui maintainers, resulting in a new genesis state.
-- When this happens, the **genesis checkpoint digest changes**, meaning the underlying chain identifier is no longer the same.
-- If clients depended directly on the digest as the CAIP-2 identifier, each reset would break compatibility or require external coordination.
-- By resolving the digest dynamically via RPC, clients can ensure they’re talking to the correct chain, without needing to change the CAIP-2 identifier they rely on.
+`localnet` follows the chain names the [Sui wallet standard][Sui Wallet Standard] already uses, and works like shared local-development chain IDs elsewhere, such as `eip155:31337`, the default for Hardhat and Anvil.
 
-This pattern balances human readability, forward compatibility, and security.
+The chain identifier form lets a chain that has no reserved name, such as a private network, be identified without changing this profile.
+It is the four-byte value Sui's JSON-RPC API and CLI have long shown.
+
+Four bytes distinguish the current public Sui networks, but private or local networks can collide with each other or with a public network.
+Records that must tell any two Sui chains apart should also store the full genesis checkpoint digest.
 
 ### Backwards Compatibility
 
-There are no legacy identifiers or alternate forms for Sui chains.
+Every identifier valid under the earlier version of this profile (`sui:mainnet`, `sui:testnet`, `sui:devnet`) is still valid and keeps its meaning.
+
+The earlier version resolved names over JSON-RPC, which returned the chain identifier directly (for example `35834a8a`).
+JSON-RPC is deprecated on Sui's public full nodes, but a value obtained from it is a chain identifier as this profile defines it.
 
 ## Test Cases
 
-Below are manually composed examples:
-
 #### Sui Mainnet
 
-- **CAIP-2 Chain ID:** `sui:mainnet`
-- **Resolved Chain Identifier:** `35834a8a`
+- **CAIP-2 Chain IDs:** `sui:mainnet`, `sui:35834a8a`
+- **Genesis checkpoint digest:** `4btiuiMPvEENsttpZC7CZ53DruC3MAgfznDbASZ7DR6S`
 
 #### Sui Testnet
 
-- **CAIP-2 Chain ID:** `sui:testnet`
-- **Resolved Chain Identifier:** `4c78adac` _(value depends on the current testnet)_
+- **CAIP-2 Chain ID:** `sui:testnet`, or, for the current testnet, `sui:4c78adac`
+- **Genesis checkpoint digest:** `69WiPg3DAQiwdxfncX6wYQ2siKwAe6L9BZthQea3JNMD`
 
 #### Sui Devnet
 
-- **CAIP-2 Chain ID:** `sui:devnet`
-- **Resolved Chain Identifier:** `aba3e445` _(value depends on the current devnet)_
+- **CAIP-2 Chain ID:** `sui:devnet`, or the current devnet's chain identifier
+- **Resolved chain identifier:** changes with each reset; `945654c4` on 2026-10-08
+
+#### Local network
+
+- **CAIP-2 Chain ID:** `sui:localnet`, or the local network's chain identifier
+- **Resolved chain identifier:** depends on the local network
+
+#### Invalid
+
+- `sui:Mainnet` (names are lowercase)
+- `sui:35834A8A` (chain identifiers are lowercase)
+- `sui:35834a8ac17ca48f` (a chain identifier is exactly four bytes)
+- `sui:4btiuiMPvEENsttpZC7CZ53DruC3MAgfznDbASZ7DR6S` (the full base58btc digest; use its first four bytes, in hex)
 
 ## References
 
 - [Sui Docs] - Developer documentation and concept overviews for building on Sui.
-- [Sui RPC] - Reference documentation for interacting with Sui networks via RPC.
+- [Sui Networks] - Sui's networks and their data-retention policies.
+- [Sui gRPC API] - `LedgerService`, including `GetServiceInfo`.
+- [Sui GraphQL API] - Reference for Sui's GraphQL RPC, including `chainIdentifier`.
+- [Sui digests] - The genesis checkpoint digests of mainnet and testnet in Sui's source.
 - [Sui GitHub] - Official GitHub repository for the Sui smart contract platform.
 - [Sui Network Info] - Information regarding Sui networks and their release schedules.
+- [Sui Namespace] - This namespace's overview, including its governance.
+- [Sui Wallet Standard] - The chain names Sui wallets use.
 - [CAIP-2] - Chain ID Specification.
 
 [Sui Docs]: https://docs.sui.io/
-[Sui RPC]: https://docs.sui.io/references/sui-api
+[Sui Networks]: https://docs.sui.io/develop/sui-architecture/networks
+[Sui gRPC API]: https://github.com/MystenLabs/sui-apis/blob/main/proto/sui/rpc/v2/ledger_service.proto
+[Sui GraphQL API]: https://docs.sui.io/references/sui-graphql
+[Sui digests]: https://github.com/MystenLabs/sui/blob/main/crates/sui-types/src/digests.rs
 [Sui GitHub]: https://github.com/MystenLabs/sui
 [Sui Network Info]: https://sui.io/networkinfo
+[Sui Namespace]: ./README.md
+[Sui Wallet Standard]: https://github.com/MystenLabs/ts-sdks/blob/main/packages/wallet-standard/src/chains.ts
 [CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
 
 ## Copyright
