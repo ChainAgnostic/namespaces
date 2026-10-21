@@ -47,9 +47,14 @@ and configuration updates for each network.
 
 Changes to this namespace follow the review process of the Chain Agnostic
 `namespaces` repository.
-A new chain reference should be added only when Pi Network exposes a stable
-environment with a distinct network passphrase and deterministic resolution
-mechanics.
+Change controllers for this namespace are members of the `PiCoreTeam` GitHub
+organization.
+While that organization's membership is not public, updates will be accepted
+from the following GitHub users: `@hklee93`, `@aurelienshz`, and `@kokkalis`.
+Any listed change controller may update this list.
+A new chain reference should be added by a change controller only when Pi
+Network exposes a stable environment with a distinct network passphrase and
+deterministic resolution mechanics.
 Temporary or private deployments should not be assigned a shared reference
 unless they become persistent interoperability targets.
 
