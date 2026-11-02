@@ -5,7 +5,7 @@ author: Deggen (@sirdeggen) <d.kellenschwiler@bsvassociation.org>
 status: Draft
 type: Informational
 created: 2026-07-10
-requires: ["CAIP-2"]
+requires: ["CAIP-2", "CAIP-10"]
 ---
 
 # Namespace for the BSV Blockchain
@@ -21,6 +21,11 @@ Registered networks:
 - `bsv:testnet` — BSV public test network
 - `bsv:ttn` — Teranode Test Net (public Teranode scaling test network / Teratestnet)
 - `bsv:tstn` — Teranode Scaling Test Net (private, per-deployment scaling test network)
+
+A BSV *account* in this namespace is a BRC-100 wallet identity public key, not a
+Bitcoin address.
+See the [CAIP-10 profile][] for the identifier format and for the BTC/BCH
+assumptions this namespace rejects.
 
 ## Rationale
 
@@ -62,12 +67,14 @@ discussed with the BSV Association and the BRC maintainers.
 - [BRCs][] - the Bitcoin Request for Comment repository defining BSV application standards
 - [bip122][] - the CAIP-2 namespace for Bitcoin-based networks, which identifies forks by fork-block hash
 - [casper][] - a CAIP-2 namespace precedent using a human-readable Chain ID rather than a genesis hash
+- [CAIP-10 profile][] - BRC-100 identity public keys as account identifiers
 
 [BSV Association]: https://www.bsvblockchain.org/
 [BRCs]: https://github.com/bitcoin-sv/BRCs
 [BRC-100]: https://github.com/bitcoin-sv/BRCs/blob/master/wallet/0100.md
 [bip122]: https://namespaces.chainagnostic.org/bip122/README
 [casper]: https://namespaces.chainagnostic.org/casper/README
+[CAIP-10 profile]: ./caip10.md
 
 ## Copyright
 Copyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
