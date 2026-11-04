@@ -18,6 +18,26 @@ When linking to an image in the CAN, use relative links such as `../assets/names
 
 It is greatly appreciated if you can render your PR locally to check the Jekyll syntax; to do so, run `bundle exec jekyll serve`.
 
+## Machine-readable Supplements
+
+To facilitate validation and multi-chain registries, you may choose to include (or editors may include) a secondary copy of each profile's validation sections and test cases in the form of a `.json` file, with the following format:
+
+### Example: eip155/caip2.json
+
+```json
+{
+    "standard":"caip2",
+    "validation":"[0-9]{1-32}",
+    "test cases": [
+        "Ethereum mainnet": "eip155:1",
+        "Görli": "eip155:5",
+        "Auxilium Network Mainnet": "eip155:28945486"
+    ]
+}
+```
+
+These machine-readable records are for illustrative purposes only, and any time they contradict or grow out-of-date with their corresponding specifications, the latter should be considered authoritative.
+
 ## Style Guide
 
 Github-flavored Markdown is encouraged for all CAIP documents, with the following conventions observed:
