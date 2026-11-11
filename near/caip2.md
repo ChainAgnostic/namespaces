@@ -19,7 +19,9 @@ Every NEAR Protocol node is configured with a `chain_id`: a human-readable strin
 The reference implementation, [nearcore][], describes this field in its own genesis schema as "ID of the blockchain. This must be unique for every blockchain."
 The `near` CAIP-2 profile identifies a network by that string, used verbatim.
 
-NEAR does not assign networks a numeric chain identifier in the manner of [EIP-155][], and it does not derive an everyday network identifier from a genesis hash in the manner of [BIP-122][].
+The `chain_id` string is NEAR's native network identifier.
+[NEP-518][] also assigns [EIP-155][] chain IDs — 397 for mainnet, 398 for testnet, and 399 for any other NEAR network — so that Web3-compatible wallets can address NEAR; those integers name the same networks from the EVM side and belong to the `eip155` namespace, not to this profile.
+NEAR does not derive an everyday network identifier from a genesis hash in the manner of [BIP-122][].
 A genesis hash does exist and is served by the same RPC call used here, but it is 44 base58 characters and cannot be carried in a CAIP-2 reference without truncation.
 The Rationale below sets out that trade-off explicitly, because a human-readable identifier is a social convention while a genesis hash is self-certifying, and readers deserve to know which property they are getting.
 
@@ -133,15 +135,14 @@ It is also the namespace proposed in the closed 2021 draft [CAIPs PR #43][], so 
 The following table lets clients label well-known networks without an RPC round trip.
 It is informative; resolution via `status` remains authoritative.
 
-| Network | `chain_id` | CAIP-2 chain ID |
-| --- | --- | --- |
-| NEAR mainnet | `mainnet` | `near:mainnet` |
-| NEAR testnet | `testnet` | `near:testnet` |
-| Pre-release testing network | `mocknet` | `near:mocknet` |
-| Fungible-token benchmark network | `benchmarknet` | `near:benchmarknet` |
+| Network | `chain_id` | CAIP-2 chain ID | EIP-155 ID ([NEP-518][]) |
+| --- | --- | --- | --- |
+| NEAR mainnet | `mainnet` | `near:mainnet` | 397 |
+| NEAR testnet | `testnet` | `near:testnet` | 398 |
 
-`mainnet` and `testnet` are the two public networks described in NEAR's [networks documentation][].
-All four constants are defined in nearcore at [`core/primitives-core/src/chains.rs`][chains.rs], which also defines `congestion_control_test` for protocol testing.
+`mainnet` and `testnet` are the two public networks described in NEAR's [networks documentation][], and both constants are defined in nearcore at [`core/primitives-core/src/chains.rs`][chains.rs].
+That file also defines `mocknet`, `benchmarknet`, and `congestion_control_test`; these name internal test deployments that nobody outside can reach, so they are not listed as well-known networks, although they are valid references under this profile.
+The EIP-155 column is informative and belongs to the `eip155` namespace; NEP-518's catch-all 399 is shared by every other NEAR network and so cannot discriminate between them.
 
 The retired `betanet` appears in older material, including [CAIPs PR #43][].
 Its endpoint `https://rpc.betanet.near.org` returned no response when queried on 2026-09-14 and no `betanet` constant remains in nearcore.
@@ -166,6 +167,7 @@ Identifiers minted against that draft for `mainnet` and `testnet` remain valid u
 
 That draft resolved the `chain_id` through `EXPERIMENTAL_genesis_config` and additionally enumerated the Aurora EVM chain IDs under `eip155`.
 This profile prefers the stable `status` method, and it does not claim EVM chain IDs: Aurora is a contract deployed on NEAR whose EVM-facing identifiers belong to the `eip155` namespace and are out of scope here.
+The same holds for NEAR's own [NEP-518][] EIP-155 IDs: `eip155:397` and `near:mainnet` name the same network from two namespaces, and this profile defines only the second.
 
 This profile does not change any native NEAR `chain_id` value.
 
@@ -193,7 +195,7 @@ This profile does not change any native NEAR `chain_id` value.
 | `near: mainnet` | Leading whitespace |
 | `near:mainnet.near` | `.` is not permitted in a CAIP-2 reference |
 | `near:EPnLgE7iEq9s7yTkos96M3cWymH5avBAPm3qx3NXqR8H` | Genesis hash, 44 characters, exceeds the 32-character limit |
-| `near:1` | NEAR assigns no numeric chain identifier |
+| `near:1` | No NEAR `chain_id` is numeric; NEAR's EIP-155 IDs (397, 398, 399) belong to `eip155`, not here |
 
 ## Security Considerations
 
@@ -201,8 +203,14 @@ Resolving a chain ID through `status` establishes only what the queried endpoint
 Because the reference is a self-declared string rather than a digest, a hostile or misconfigured endpoint can claim `mainnet` at no cost, and nothing in the identifier detects it.
 
 Clients that need assurance should pin `genesis_hash` alongside the chain ID.
-`status` returns both in one response, so a client can require that `near:mainnet` be accompanied by `EPnLgE7iEq9s7yTkos96M3cWymH5avBAPm3qx3NXqR8H` and reject the endpoint otherwise.
-Both values were confirmed on 2026-09-14 from two independently operated providers, `https://rpc.mainnet.near.org` and `https://free.rpc.fastnear.com`, which agreed exactly.
+`status` returns both in one response, so a client can require that a chain ID be accompanied by its expected genesis hash and reject the endpoint otherwise:
+
+| CAIP-2 chain ID | `genesis_hash` |
+| --- | --- |
+| `near:mainnet` | `EPnLgE7iEq9s7yTkos96M3cWymH5avBAPm3qx3NXqR8H` |
+| `near:testnet` | `FWJ9kR6KFWoyMoNjpLXXGHeuiy7tEY6GmoFeCA5yuc6b` |
+
+Both pairs were confirmed on 2026-09-14 from two independently operated providers, `rpc.*.near.org` and FastNEAR, which agreed exactly, and re-confirmed on 2026-11-11; NEAR reviewers independently confirmed them against dRPC and Intear.
 
 Transport authentication remains the responsibility of the client.
 A pinned genesis hash proves which chain an honest response describes; it does not prove the response was honest, is current, or was not replayed.
@@ -212,7 +220,8 @@ A pinned genesis hash proves which chain an honest response describes; it does n
 A CAIP-10 profile for `near` will need to address one constraint this profile does not reach.
 NEAR account IDs may contain `_`, which is legal in a CAIP-2 reference but is excluded from [CAIP-10][]'s `account_address` grammar `[-.%a-zA-Z0-9]{1,128}` and from [CAIP-19][]'s identical `asset_reference` grammar.
 Live NEP-141 token contracts are affected: `v3.oin_finance.near` is deployed on mainnet and answers `ft_metadata` with symbol `nUSDO`.
-Percent-encoding `_` as `%5F` is permitted by both CAIPs and is the obvious remedy, but the choice belongs to those profiles and is left open here.
+Percent-encoding `_` as `%5F` is permitted by both CAIPs and has been confirmed by NEAR reviewers as the intended remedy (`v3.oin_finance.near` → `v3.oin%5Ffinance.near`); since account IDs are lowercase, nothing else needs normalising.
+The CAIP-10 and CAIP-19 profiles that codify it are left to a follow-up, along with NEAR's three implicit and deterministic account formats.
 
 ## References
 
@@ -220,7 +229,7 @@ Percent-encoding `_` as `%5F` is permitted by both CAIPs and is the obvious reme
 - [CAIP-10][] - Account ID specification, whose grammar excludes `_`
 - [CAIP-19][] - Asset type and ID specification, whose grammar excludes `_`
 - [nearcore][] - Reference implementation of NEAR Protocol
-- [chains.rs][] - nearcore constants defining `mainnet`, `testnet`, `mocknet`, and `benchmarknet`
+- [chains.rs][] - nearcore constants defining `mainnet`, `testnet`, and internal test networks
 - [`status`][] - JSON-RPC method returning `chain_id` and `genesis_hash`; first example in NEAR's RPC introduction
 - [NEAR JSON-RPC OpenAPI][] - Machine-readable schema; `RpcStatusResponse.chain_id` is required and documented as "Unique chain id."
 - [genesis_config][] - JSON-RPC method returning the genesis configuration, including `chain_id` and `genesis_height`
@@ -228,6 +237,7 @@ Percent-encoding `_` as `%5F` is permitted by both CAIPs and is the obvious reme
 - [Nomicon: Accounts][] - Normative NEAR account ID rules
 - [BIP-122][] - Precedent for a truncated genesis-hash reference
 - [EIP-155][] - Precedent for a numeric chain identifier
+- [NEP-518][] - Web3-compatible wallet support; assigns EIP-155 chain IDs 397 (mainnet), 398 (testnet) and 399 (other)
 - [CAIPs PR #43][] - Closed 2021 NEAR CAIP-2 draft
 - [namespaces issue #106][] - Open issue tracking the missing NEAR namespace
 
@@ -243,6 +253,7 @@ Percent-encoding `_` as `%5F` is permitted by both CAIPs and is the obvious reme
 [Nomicon: Accounts]: https://nomicon.io/DataStructures/Account
 [BIP-122]: https://github.com/bitcoin/bips/blob/master/bip-0122.mediawiki
 [EIP-155]: https://eips.ethereum.org/EIPS/eip-155
+[NEP-518]: https://github.com/near/NEPs/blob/master/neps/nep-0518.md
 [CAIPs PR #43]: https://github.com/ChainAgnostic/CAIPs/pull/43
 [namespaces issue #106]: https://github.com/ChainAgnostic/namespaces/issues/106
 
