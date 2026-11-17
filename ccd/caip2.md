@@ -3,17 +3,17 @@ namespace-identifier: ccd-caip2
 title: Concordium - Networks
 author: "Concordium development team <developers@concordium.com>"
 discussions-to: https://github.com/ChainAgnostic/namespaces/pull/83
-status: Draft
+status: Accepted
 type: Standard
 created: 2023-04-01
 ---
 
-<!--You can leave these HTML comments in your merged EIP and delete the 
- visible duplicate text guides, they will not appear and may be helpful to 
+<!--You can leave these HTML comments in your merged EIP and delete the
+ visible duplicate text guides, they will not appear and may be helpful to
  refer to if you edit it again. This is the suggested template for new EIPs.
  Note that an EIP number will be assigned by an editor. When opening a pull
- request to submit your EIP, please use an abbreviated title in the 
- filename, `caipX.md`, all lowercase, no `-` between the CAIP and its 
+ request to submit your EIP, please use an abbreviated title in the
+ filename, `caipX.md`, all lowercase, no `-` between the CAIP and its
  number.-->
 
 # CAIP-2
