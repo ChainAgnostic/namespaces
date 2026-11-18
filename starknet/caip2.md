@@ -20,7 +20,7 @@ supersedes: CAIP-5
 The namespace `starknet` refers to the StarkNet Layer 2 on Ethereum.
 
 StarkNet currently represents its chains with string identifiers such as
-`SN_MAIN` and `SN_GOERLI`. Internally, these strings are encoded as field
+`SN_MAIN` and `SN_SEPOLIA`. Internally, these strings are encoded as field
 elements (according to a transformation documented in the system's [core
 documentation][Transaction structure]), but using the case-sensitive root string
 identifiers simplifies interoperability by sidestepping type system
@@ -39,8 +39,8 @@ response = requests.post(
   json={"jsonrpc": "2.0", "method": "starknet_chainId", "params": [], "id": 1},
 )
 
-hex_chain_id = response.json()["result"]              # "0x534e5f474f45524c49"
-chain_id = bytes.fromhex(hex_chain_id[2:]).decode()   # "SN_GOERLI"
+hex_chain_id = response.json()["result"]              # "0x534e5f5345504f4c4941"
+chain_id = bytes.fromhex(hex_chain_id[2:]).decode()   # "SN_SEPOLIA"
 ```
 
 The response will return a base-16-encoded field element that should be converted to
@@ -54,8 +54,8 @@ This is a list of manually composed examples:
 # StarkNet mainnet alpha
 starknet:SN_MAIN
 
-# StarkNet goerli alpha
-starknet:SN_GOERLI
+# Starknet Sepolia testnet
+starknet:SN_SEPOLIA
 ```
 
 ## References
