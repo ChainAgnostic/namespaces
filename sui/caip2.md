@@ -47,16 +47,14 @@ Only these exact network identifiers are currently supported.
 
 ### Resolution Mechanics
 
-To resolve a CAIP-2 `sui:<network>` identifier into a unique chain identitier, clients typically query a trusted full node associated with the specified network. While the `suix_getChainIdentifier` JSON-RPC method is commonly used for this purpose, resolution is not limited to JSON-RPC. Other node interfaces, such as GraphQL, may also support retrieving identifiers pertinent to locating records, such as a genesis checkpoint digest unique to each chain.
+To resolve a CAIP-2 `sui:<network>` identifier into a unique chain identitier, clients typically query a trusted full node associated with the specified network. The `suix_getChainIdentifier` JSON-RPC method was commonly used for this purpose, but **JSON-RPC is deprecated on Sui public fullnodes** and now returns `-32601`; clients are directed to gRPC or GraphQL.
+Resolution is in any case not limited to any single transport, since the identifier derives from the genesis checkpoint digest, which every node interface can expose.
 
 **Sample request**
 
-```json
+```graphql
 {
-  "jsonrpc": "2.0",
-  "id": 1,
-  "method": "suix_getChainIdentifier",
-  "params": []
+  chainIdentifier
 }
 ```
 
@@ -64,13 +62,19 @@ To resolve a CAIP-2 `sui:<network>` identifier into a unique chain identitier, c
 
 ```json
 {
-  "jsonrpc": "2.0",
-  "id": 1,
-  "result": "35834a8a"
+  "data": {
+    "chainIdentifier": "4btiuiMPvEENsttpZC7CZ53DruC3MAgfznDbASZ7DR6S"
+  }
 }
 ```
 
-The response returns the first four bytes of the genesis checkpoint digest for the network.
+The GraphQL field returns the **full** genesis checkpoint digest, base58-encoded.
+The CAIP-2 reference is the first four bytes of that digest, lowercase hex:
+base58-decoding the value above yields the 32 bytes
+`35834a8ac17ca48fb14ac8f99c17c98747e95dd07294ae41a46b382246a4499b`, whose first
+four bytes are `35834a8a` — the mainnet reference documented in this profile.
+The deprecated JSON-RPC method returned that four-byte prefix directly.
+
 
 ## Rationale
 
