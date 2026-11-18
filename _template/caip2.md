@@ -60,6 +60,10 @@ section below if possible, as well as an explanation of any steps needed to
 validate the results, calculate checksums, persist session metadata or nonces,
  etc. -->
 
+### Null Network Reference
+
+<!-- Some network reference systems allow the concept of a "Null" reference or non-specified network, for universal state or "offchain" state, direct wallet RPCs, etc. Leave blank and remove section if not applicable. -->
+
 ## Rationale
 
 <!-- Explain here how the mapping or translation between native identifiers and
