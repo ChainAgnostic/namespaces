@@ -77,6 +77,9 @@ bip122:4966625a4b2851d9fdee139e56211a0d
 
 # Dogecoin testnet
 bip122:bb0a78264637406b6360aad926284d54
+
+# Neurai mainnet (see https://github.com/NeuraiProject/Neurai)
+bip122:00000044d33c0c0ba019be5c02497304
 ```
 
 ## References
