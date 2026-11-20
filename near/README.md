@@ -1,8 +1,8 @@
 ---
 namespace-identifier: near
 title: NEAR Protocol
-author: ["Billy Rennekamp (@okwme)"]
-discussions-to: https://github.com/0xcounting/FAR/issues/1
+author: ["Billy Rennekamp (@okwme)", "Iker Alustiza (@IkerAlus)"]
+discussions-to: https://github.com/ChainAgnostic/namespaces/issues/106
 status: Draft
 type: Informational
 created: 2026-09-14
@@ -28,6 +28,7 @@ A NEAR account ID is a human-readable name such as `alice.near`, between 2 and 6
 Names are hierarchical like domain names: only `near` can create `alice.near`, and only `alice.near` can create `app.alice.near`.
 There are also implicit accounts, whose ID is derived from a key rather than registered: a NEAR-implicit account ID is the 64-character lowercase hex encoding of an ED25519 public key, and an ETH-implicit account ID is `0x` followed by 40 lowercase hex characters.
 [NEP-616][] adds a third kind, deterministic account IDs, derived from a contract's initial state rather than a key: `0s` followed by 40 lowercase hex characters.
+[NEP-655][] adds universal account IDs, live since protocol version 88: `0u` followed by 52 lowercase Crockford base32 characters, derived from a SHA3-256 hash of the account's initial state.
 Crucially, an account and a contract are the same object.
 Deploying a contract does not mint a new address — it attaches code to an existing account, which continues to hold a balance, keys, and storage.
 There is no separate "contract address" concept to map onto, so a CAIP-10 profile for `near` describes accounts and contracts with one syntax.
@@ -40,7 +41,7 @@ A future CAIP-19 profile for this namespace must confront one concrete obstacle.
 [CAIP-19][] restricts `asset_reference` to `[-.%a-zA-Z0-9]{1,128}`, and [CAIP-10][] restricts `account_address` to the same character set.
 Neither permits `_`, which is legal inside a NEAR account ID and is in live use: `v3.oin_finance.near` is a deployed NEP-141 contract whose `ft_metadata` call returns symbol `nUSDO`.
 Percent-encoding `_` as `%5F` is permitted by both CAIPs, and reviewers from Near One have confirmed it as the NEAR-side answer (`v3.oin_finance.near` → `v3.oin%5Ffinance.near`); because account IDs are lowercase, no other normalisation is needed.
-This document scopes itself to CAIP-2; the CAIP-10 and CAIP-19 profiles, which will codify that encoding, are expected to follow from the NEAR side.
+This document scopes itself to CAIP-2; the CAIP-10 and CAIP-19 profiles, which codify that encoding, are proposed from the NEAR side in [namespaces PR #241][].
 
 ## Rationale
 
@@ -74,11 +75,13 @@ Changing the `chain_id` of an existing public network would be a hard fork of it
 - [NEP-141][] - Fungible token standard; tokens are addressed by contract account ID
 - [NEP-518][] - Web3-compatible wallet support; assigns EIP-155 chain IDs 397, 398 and 399 to NEAR networks
 - [NEP-616][] - Deterministic account IDs, `0s` followed by 40 hex characters
+- [NEP-655][] - Universal account IDs, `0u` followed by 52 Crockford base32 characters
 - [CAIP-2][] - Blockchain ID specification
 - [CAIP-10][] - Account ID specification, whose `account_address` grammar excludes `_`
 - [CAIP-19][] - Asset type and ID specification, whose `asset_reference` grammar excludes `_`
 - [CAIPs PR #43][] - Closed 2021 draft of a NEAR CAIP-2, the prior art for the `near` namespace
 - [namespaces issue #106][] - Open issue tracking the missing NEAR namespace
+- [namespaces PR #241][] - NEAR CAIP-10 and CAIP-19 profiles
 
 [NEAR documentation]: https://docs.near.org
 [NEAR networks]: https://docs.near.org/protocol/network/networks
@@ -88,11 +91,13 @@ Changing the `chain_id` of an existing public network would be a hard fork of it
 [NEP-141]: https://github.com/near/NEPs/blob/master/neps/nep-0141.md
 [NEP-518]: https://github.com/near/NEPs/blob/master/neps/nep-0518.md
 [NEP-616]: https://github.com/near/NEPs/blob/master/neps/nep-0616.md
+[NEP-655]: https://github.com/near/NEPs/blob/master/neps/nep-0655.md
 [CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
 [CAIP-10]: https://chainagnostic.org/CAIPs/caip-10
 [CAIP-19]: https://chainagnostic.org/CAIPs/caip-19
 [CAIPs PR #43]: https://github.com/ChainAgnostic/CAIPs/pull/43
 [namespaces issue #106]: https://github.com/ChainAgnostic/namespaces/issues/106
+[namespaces PR #241]: https://github.com/ChainAgnostic/namespaces/pull/241
 
 ## Copyright
 

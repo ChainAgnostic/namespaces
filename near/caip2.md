@@ -1,8 +1,8 @@
 ---
 namespace-identifier: near-caip2
 title: NEAR Protocol Namespace - Blockchain ID Specification
-author: ["Billy Rennekamp (@okwme)"]
-discussions-to: https://github.com/0xcounting/FAR/issues/1
+author: ["Billy Rennekamp (@okwme)", "Iker Alustiza (@IkerAlus)"]
+discussions-to: https://github.com/ChainAgnostic/namespaces/issues/106
 status: Draft
 type: Standard
 created: 2026-09-14
@@ -221,7 +221,7 @@ A CAIP-10 profile for `near` will need to address one constraint this profile do
 NEAR account IDs may contain `_`, which is legal in a CAIP-2 reference but is excluded from [CAIP-10][]'s `account_address` grammar `[-.%a-zA-Z0-9]{1,128}` and from [CAIP-19][]'s identical `asset_reference` grammar.
 Live NEP-141 token contracts are affected: `v3.oin_finance.near` is deployed on mainnet and answers `ft_metadata` with symbol `nUSDO`.
 Percent-encoding `_` as `%5F` is permitted by both CAIPs and has been confirmed by NEAR reviewers as the intended remedy (`v3.oin_finance.near` → `v3.oin%5Ffinance.near`); since account IDs are lowercase, nothing else needs normalising.
-The CAIP-10 and CAIP-19 profiles that codify it are left to a follow-up, along with NEAR's three implicit and deterministic account formats.
+The CAIP-10 and CAIP-19 profiles that codify it, covering all of NEAR's account ID kinds, are proposed in [namespaces PR #241][].
 
 ## References
 
@@ -240,6 +240,7 @@ The CAIP-10 and CAIP-19 profiles that codify it are left to a follow-up, along w
 - [NEP-518][] - Web3-compatible wallet support; assigns EIP-155 chain IDs 397 (mainnet), 398 (testnet) and 399 (other)
 - [CAIPs PR #43][] - Closed 2021 NEAR CAIP-2 draft
 - [namespaces issue #106][] - Open issue tracking the missing NEAR namespace
+- [namespaces PR #241][] - NEAR CAIP-10 and CAIP-19 profiles
 
 [CAIP-2]: https://chainagnostic.org/CAIPs/caip-2
 [CAIP-10]: https://chainagnostic.org/CAIPs/caip-10
@@ -256,6 +257,7 @@ The CAIP-10 and CAIP-19 profiles that codify it are left to a follow-up, along w
 [NEP-518]: https://github.com/near/NEPs/blob/master/neps/nep-0518.md
 [CAIPs PR #43]: https://github.com/ChainAgnostic/CAIPs/pull/43
 [namespaces issue #106]: https://github.com/ChainAgnostic/namespaces/issues/106
+[namespaces PR #241]: https://github.com/ChainAgnostic/namespaces/pull/241
 
 ## Copyright
 
