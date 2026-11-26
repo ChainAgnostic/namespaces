@@ -2,7 +2,7 @@
 namespace-identifier: nano-caip2
 title: Nano Namespace - Networks
 author: ["Frank Kilkelly (@kilkelly)"]
-discussions-to: https://github.com/ChainAgnostic/namespaces/pull/XXX
+discussions-to: https://github.com/ChainAgnostic/namespaces/pull/242
 status: Draft
 type: Standard
 created: 2026-11-26
